@@ -446,7 +446,7 @@
                 <!-- Language Switcher in Header -->
                 <div class="lang-switcher" id="headerLangSwitcher">
                     <button class="lang-btn" id="headerLangBtn">
-                        <span class="currentLangFlag">🇷🇺</span> <span class="currentLangText">RU</span>
+                        <span class="currentLangFlag">🇷🇺</span>
                     </button>
                     <div class="lang-dropdown">
                         <button class="lang-option" data-lang="ru"><span>🇷🇺</span> RU</button>
@@ -600,7 +600,7 @@
     <!-- Floating Language Switcher Widget (Bottom Right) -->
     <div class="lang-switcher floating-lang" id="floatingLangSwitcher">
         <button class="lang-btn" id="floatingLangBtn">
-            <span class="currentLangFlag">🇷🇺</span> <span class="currentLangText">RU</span>
+            <span class="currentLangFlag">🇷🇺</span>
         </button>
         <div class="lang-dropdown">
             <button class="lang-option" data-lang="ru"><span>🇷🇺</span> RU</button>
@@ -886,7 +886,7 @@
                 opt_10: "Доставка автомобіля",
                 opt_11: "Консультації та підтримка",
                 form_submit: "Надіслати заявку",
-                footer_text: "&copy; 2026 SwissCars. Автоконсьєрж-сервіс у Швейцарії. Всі права захищені.",
+                footer_text: "&copy; 2026 SwissCars. Автоконсьєрж-сервис у Швейцарії. Всі права захищені.",
                 alert_success: "Дякуємо! Вашу заявку успішно надіслано. Ми зв'яжемося з вами найближчим часом."
             }
         };
@@ -913,10 +913,9 @@
                 }
             });
 
-            // Update widgets (both header and floating)
+            // Update widgets (both header and floating) - showing ONLY the flag emoji
             const flags = { ru: '🇷🇺', en: '🇬🇧', ukr: '🇺🇦' };
             document.querySelectorAll('.currentLangFlag').forEach(el => el.innerText = flags[lang]);
-            document.querySelectorAll('.currentLangText').forEach(el => el.innerText = lang.toUpperCase());
 
             // Update active states in all dropdowns
             document.querySelectorAll('.lang-option').forEach(opt => {

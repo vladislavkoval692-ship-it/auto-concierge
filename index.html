@@ -500,6 +500,8 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.6);
             transform: translateY(20px);
             transition: var(--transition);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .modal-overlay.active .modal-content {
@@ -562,6 +564,10 @@
         .form-control:focus {
             outline: none;
             border-color: var(--accent);
+        }
+
+        select.form-control {
+            cursor: pointer;
         }
 
         .modal-content .btn {
@@ -861,6 +867,18 @@
                     <label data-i18n="form_phone">Номер телефона / Telegram</label>
                     <input type="text" class="form-control" required placeholder="+41 ...">
                 </div>
+                <div class="form-group">
+                    <label data-i18n="form_email">Электронная почта</label>
+                    <input type="email" class="form-control" required placeholder="example@domain.com">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form_service">Выберите услугу / пакет</label>
+                    <select class="form-control" id="serviceSelect">
+                        <option value="start" data-i18n="pkg1_title">Пакет «Старт» (от CHF 1,500)</option>
+                        <option value="premium" data-i18n="pkg2_title">Пакет «Премиум» (от CHF 4,900)</option>
+                        <option value="vip" data-i18n="pkg3_title">Пакет «VIP / Elite» (от CHF 12,000+)</option>
+                    </select>
+                </div>
                 <button type="submit" class="btn" data-i18n="form_submit">Отправить заявку</button>
             </form>
         </div>
@@ -890,7 +908,7 @@
                 });
             }
 
-            // 2. Simple Multilingual Dictionary Mock & Logic
+            // 2. Multilingual Dictionary Logic
             const translations = {
                 ru: {
                     nav_about: "О нас",
@@ -902,10 +920,15 @@
                     hero_btn: "Начать подбор",
                     services_title: "Услуги и их стоимость",
                     services_subtitle: "Три структурированных пакета от базовой оптимизации до премиального консьерж-сервиса",
+                    pkg1_title: "Пакет «Старт»",
+                    pkg2_title: "Пакет «Премиум»",
+                    pkg3_title: "Пакет «VIP / Elite»",
                     modal_title: "Оставить заявку",
                     modal_subtitle: "Заполните форму, и наш специалист свяжется с вами в ближайшее время.",
                     form_name: "Ваше имя",
                     form_phone: "Номер телефона / Telegram",
+                    form_email: "Электронная почта",
+                    form_service: "Выберите услугу / пакет",
                     form_submit: "Отправить заявку"
                 },
                 ukr: {
@@ -918,10 +941,15 @@
                     hero_btn: "Почати підбір",
                     services_title: "Послуги та їх вартість",
                     services_subtitle: "Три структуровані пакети від базової оптимізації до преміального консьєрж-сервісу",
+                    pkg1_title: "Пакет «Старт»",
+                    pkg2_title: "Пакет «Преміум»",
+                    pkg3_title: "Пакет «VIP / Elite»",
                     modal_title: "Залишити заявку",
                     modal_subtitle: "Заповніть форму, і наш фахівець зв'яжеться з вами найближчим часом.",
                     form_name: "Ваше ім'я",
                     form_phone: "Номер телефону / Telegram",
+                    form_email: "Електронна пошта",
+                    form_service: "Виберіть послугу / пакет",
                     form_submit: "Надіслати заявку"
                 },
                 de: {
@@ -934,10 +962,15 @@
                     hero_btn: "Suche starten",
                     services_title: "Leistungen & Preise",
                     services_subtitle: "Drei strukturierte Pakete von der Basisoptimierung bis zum Premium-Concierge-Service",
+                    pkg1_title: "Paket «Start»",
+                    pkg2_title: "Paket «Premium»",
+                    pkg3_title: "Paket «VIP / Elite»",
                     modal_title: "Anfrage senden",
                     modal_subtitle: "Füllen Sie das Formular aus und unser Spezialist wird sich in Kürze mit Ihnen in Verbindung setzen.",
                     form_name: "Ihr Name",
                     form_phone: "Telefonnummer / Telegram",
+                    form_email: "E-Mail-Adresse",
+                    form_service: "Dienstleistung / Paket wählen",
                     form_submit: "Anfrage absenden"
                 },
                 en: {
@@ -950,10 +983,15 @@
                     hero_btn: "Start Search",
                     services_title: "Services & Pricing",
                     services_subtitle: "Three structured packages from basic optimization to premium concierge service",
+                    pkg1_title: "Package «Start»",
+                    pkg2_title: "Package «Premium»",
+                    pkg3_title: "Package «VIP / Elite»",
                     modal_title: "Leave a Request",
                     modal_subtitle: "Fill out the form and our specialist will contact you shortly.",
                     form_name: "Your Name",
                     form_phone: "Phone number / Telegram",
+                    form_email: "Email address",
+                    form_service: "Select service / package",
                     form_submit: "Submit Request"
                 }
             };
@@ -972,7 +1010,6 @@
                         }
                     });
 
-                    // Update dropdown flag icon if needed, or close dropdown
                     switcher.classList.remove('active');
                 });
             });

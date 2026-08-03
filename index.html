@@ -228,7 +228,7 @@
             transition: var(--transition);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
         }
 
         .card:hover {
@@ -660,7 +660,7 @@
             <h2 class="section-title" data-i18n="services_title">Услуги и их стоимость</h2>
             <p class="section-subtitle" data-i18n="services_subtitle">Три структурированных пакета от базовой оптимизации до премиального консьерж-сервиса</p>
             
-            <div class="grid-3">
+            <div class="grid-3" style="margin-bottom: 40px;">
                 <div class="card">
                     <div>
                         <h3 data-i18n="pkg1_title">Пакет «Старт»</h3>
@@ -673,7 +673,6 @@
                             <li data-i18n="pkg1_l4">Поддержка в рабочие часы</li>
                         </ul>
                     </div>
-                    <button class="btn open-modal-btn" style="width: 100%; margin-top: 25px; text-align: center;" data-i18n="btn_request">Оставить заявку</button>
                 </div>
 
                 <div class="card" style="border-color: var(--accent);">
@@ -688,7 +687,6 @@
                             <li data-i18n="pkg2_l4">Круглосуточная поддержка 24/7</li>
                         </ul>
                     </div>
-                    <button class="btn open-modal-btn" style="width: 100%; margin-top: 25px; text-align: center;" data-i18n="btn_request">Оставить заявку</button>
                 </div>
 
                 <div class="card">
@@ -703,8 +701,12 @@
                             <li data-i18n="pkg3_l4">Абсолютная конфиденциальность</li>
                         </ul>
                     </div>
-                    <button class="btn open-modal-btn" style="width: 100%; margin-top: 25px; text-align: center;" data-i18n="btn_request">Оставить заявку</button>
                 </div>
+            </div>
+
+            <!-- Single button below the three blocks -->
+            <div style="text-align: center;">
+                <button class="btn open-modal-btn" style="padding: 15px 40px; font-size: 1rem;" data-i18n="btn_request">Оставить заявку</button>
             </div>
         </div>
     </section>
@@ -940,7 +942,7 @@
                     hero_desc: "Купівля, перевірка, продаж та повний юридичний супровід автомобілів під ключ. Без стресу, зайвої витрати часу та прихованих ризиків.",
                     hero_btn: "Почати підбір",
                     services_title: "Послуги та їх вартість",
-                    services_subtitle: "Три структуровані пакети від базової оптимізації до преміального консьєрж-сервісу",
+                    services_subtitle: "Три структуровані пакети від базової оптимізації до преміального консьерж-сервісу",
                     pkg1_title: "Пакет «Старт»",
                     pkg2_title: "Пакет «Преміум»",
                     pkg3_title: "Пакет «VIP / Elite»",

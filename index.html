@@ -31,7 +31,7 @@
             overflow-x: hidden;
         }
 
-        container {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
@@ -78,6 +78,7 @@
             transition: var(--transition);
             border: none;
             cursor: pointer;
+            display: inline-block;
         }
 
         .btn:hover {
@@ -132,7 +133,7 @@
         /* Grids */
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
 
@@ -142,6 +143,9 @@
             border-radius: 12px;
             padding: 30px;
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
@@ -187,6 +191,7 @@
             padding: 25px;
             border-radius: 10px;
             border: 1px solid var(--border);
+            text-align: center;
         }
 
         .why-item h4 {
@@ -206,6 +211,95 @@
             background: radial-gradient(circle at center, #131b2e 0%, var(--bg-color) 100%);
         }
 
+        /* Modal Popup */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            transform: translateY(-20px);
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--text-main);
+        }
+
+        .modal h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--accent);
+        }
+
         /* Footer */
         footer {
             padding: 40px 0;
@@ -221,6 +315,10 @@
             section {
                 padding: 50px 0;
             }
+            .modal {
+                margin: 0 15px;
+                padding: 25px;
+            }
         }
     </style>
 </head>
@@ -230,7 +328,7 @@
     <header>
         <div class="container header-content">
             <div class="logo">SWISS<span>CARS</span></div>
-            <a href="#contact" class="btn">Оставить заявку</a>
+            <button class="btn open-modal-btn">Оставить заявку</button>
         </div>
     </header>
 
@@ -239,7 +337,7 @@
         <div class="container">
             <h1>Автоконсьерж-сервис <br><span>в Швейцарии</span></h1>
             <p>Покупка, проверка, продажа и полное юридическое сопровождение автомобилей под ключ. Без стресса, лишней траты времени и скрытых рисков.</p>
-            <a href="#services" class="btn" style="padding: 15px 30px; font-size: 1rem;">Начать подбор</a>
+            <button class="btn open-modal-btn" style="padding: 15px 30px; font-size: 1rem;">Начать подбор</button>
         </div>
     </section>
 
@@ -252,74 +350,86 @@
             <div class="grid-3">
                 <!-- 1 -->
                 <div class="card">
-                    <h3>Индивидуальный подбор</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Мы самостоятельно ищем лучшие предложения на рынке под ваши параметры:</p>
-                    <ul>
-                        <li>Бюджет и желаемая модель</li>
-                        <li>Год выпуска и пробег</li>
-                        <li>Комплектация и тип двигателя</li>
-                        <li>Готовый список выгодных вариантов</li>
-                    </ul>
+                    <div>
+                        <h3>Индивидуальный подбор</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Самостоятельно ищем лучшие предложения на рынке под ваши параметры:</p>
+                        <ul>
+                            <li>Бюджет и желаемая модель</li>
+                            <li>Год выпуска, пробег и тип двигателя</li>
+                            <li>Комплектация и пожелания</li>
+                            <li>Готовый список выгодных вариантов</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- 2 -->
                 <div class="card">
-                    <h3>Проверка перед покупкой</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Детальный анализ автомобиля перед заключением сделки:</p>
-                    <ul>
-                        <li>Проверка истории и объявлений</li>
-                        <li>Оценка состояния и скрытых дефектов</li>
-                        <li>Анализ адекватности цены</li>
-                        <li>Честные рекомендации и сравнения</li>
-                    </ul>
+                    <div>
+                        <h3>Проверка перед покупкой</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Детальный анализ автомобиля перед заключением сделки:</p>
+                        <ul>
+                            <li>Проверка истории и объявлений</li>
+                            <li>Поиск скрытых дефектов</li>
+                            <li>Оценка адекватности цены</li>
+                            <li>Честные плюсы и минусы</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- 3 -->
                 <div class="card">
-                    <h3>Осмотр автомобиля</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Личный выезд и профессиональный осмотр:</p>
-                    <ul>
-                        <li>Кузов, салон и подвеска</li>
-                        <li>Двигатель и документы</li>
-                        <li>Общее техническое состояние</li>
-                        <li>Подробный отчет с фото и выводами</li>
-                    </ul>
+                    <div>
+                        <h3>Осмотр автомобиля</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Личный выезд и профессиональный осмотр:</p>
+                        <ul>
+                            <li>Кузов, салон и подвеска</li>
+                            <li>Двигатель и документы</li>
+                            <li>Техническое состояние</li>
+                            <li>Подробный отчет с фото</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- 4 -->
                 <div class="card">
-                    <h3>Переговоры и торг</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Общаемся с продавцом за вас:</p>
-                    <ul>
-                        <li>Правильные технические вопросы</li>
-                        <li>Уточнение реальной истории</li>
-                        <li>Профессиональный торг</li>
-                        <li>Достижение максимально выгодной цены</li>
-                    </ul>
+                    <div>
+                        <h3>Переговоры и торг</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Общаемся с продавцом за вас:</p>
+                        <ul>
+                            <li>Правильные технические вопросы</li>
+                            <li>Уточнение истории авто</li>
+                            <li>Профессиональный торг</li>
+                            <li>Максимально выгодная цена</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- 5 -->
                 <div class="card">
-                    <h3>Регистрация и МФК (MFK)</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Берем на себя всю бюрократию в Швейцарии:</p>
-                    <ul>
-                        <li>Помощь с прохождением MFK (техосмотра)</li>
-                        <li>Оформление страховки и документов</li>
-                        <li>Сопровождение при получении номеров</li>
-                        <li>Доставка автомобиля при необходимости</li>
-                    </ul>
+                    <div>
+                        <h3>Регистрация и MFK</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Берем на себя всю бюрократию в Швейцарии:</p>
+                        <ul>
+                            <li>Помощь с прохождением MFK</li>
+                            <li>Оформление страховки</li>
+                            <li>Сопровождение при получении номеров</li>
+                            <li>Доставка автомобиля</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- 6 -->
                 <div class="card">
-                    <h3>Продажа под ключ</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Поможем быстро и выгодно продать ваш авто:</p>
-                    <ul>
-                        <li>Профессиональная фотосессия</li>
-                        <li>Создание продающего объявления</li>
-                        <li>Предпродажная подготовка и мойка</li>
-                        <li>Консультации и полное сопровождение сделки</li>
-                    </ul>
+                    <div>
+                        <h3>Продажа и Консультации</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Помощь в реализации и экспертные советы:</p>
+                        <ul>
+                            <li>Профессиональная фотосессия и объявление</li>
+                            <li>Предпродажная подготовка</li>
+                            <li>Консультации по выбору и обслуживанию</li>
+                            <li>Поддержка после покупки</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -338,7 +448,7 @@
                 </div>
                 <div class="why-item">
                     <h4>Честность и открытость</h4>
-                    <p>Откровенно рассказываем о плюсах и минусах каждого варианта, без навязывания.</p>
+                    <p>Откровенно рассказываем о плюсах и минусах каждого варианта.</p>
                 </div>
                 <div class="why-item">
                     <h4>Безопасность сделки</h4>
@@ -353,13 +463,52 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section class="contact">
         <div class="container" style="max-width: 600px;">
             <h2 class="section-title">Готовы найти автомобиль?</h2>
             <p class="section-subtitle">Оставьте заявку, и мы свяжемся с вами в ближайшее время для обсуждения деталей.</p>
-            <a href="https://t.me/your_telegram" class="btn" style="padding: 15px 30px; font-size: 1.1rem; display: inline-block;">Связаться в Telegram</a>
+            <button class="btn open-modal-btn" style="padding: 15px 30px; font-size: 1.1rem;">Оставить заявку</button>
         </div>
     </section>
+
+    <!-- Modal Popup Form -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3>Оставить заявку</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="fullName">ФИО</label>
+                    <input type="text" id="fullName" required placeholder="Введите ваше имя">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" required placeholder="+41 (XX) XXX XX XX">
+                </div>
+                <div class="form-group">
+                    <label for="email">Электронная почта</label>
+                    <input type="email" id="email" required placeholder="example@domain.com">
+                </div>
+                <div class="form-group">
+                    <label for="serviceSelect">Выберите услугу</label>
+                    <select id="serviceSelect">
+                        <option value="Индивидуальный подбор">Индивидуальный подбор автомобиля</option>
+                        <option value="Проверка перед покупкой">Проверка автомобиля перед покупкой</option>
+                        <option value="Осмотр автомобиля">Осмотр автомобиля</option>
+                        <option value="Переговоры с продавцом">Переговоры с продавцом</option>
+                        <option value="Подбор страховки">Подбор выгодной страховки</option>
+                        <option value="Подготовка к продаже">Подготовка автомобиля к продаже</option>
+                        <option value="Фотосъемка">Профессиональная фотосъемка</option>
+                        <option value="Создание объявления">Создание продающего объявления</option>
+                        <option value="Регистрация и MFK">Регистрация и помощь с MFK</option>
+                        <option value="Доставка автомобиля">Доставка автомобиля</option>
+                        <option value="Консультации / Поддержка">Консультации и поддержка</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 10px; padding: 12px;">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -368,5 +517,35 @@
         </div>
     </footer>
 
+    <script>
+        // Modal Logic
+        const modalOverlay = document.getElementById('modalOverlay');
+        const openModalBtns = document.querySelectorAll('.open-modal-btn');
+        const closeModalBtn = document.getElementById('modalClose');
+
+        openModalBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modalOverlay.classList.add('active');
+            });
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modalOverlay.classList.remove('active');
+        });
+
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('active');
+            }
+        });
+
+        // Form submit simulation
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.');
+            modalOverlay.classList.remove('active');
+            e.target.reset();
+        });
+    </script>
 </body>
 </html>

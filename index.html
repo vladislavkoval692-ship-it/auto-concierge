@@ -9,8 +9,10 @@
         :root {
             --bg-color: #0b0f19;
             --card-bg: #131b2e;
-            --accent: #e11d48;
-            --accent-hover: #f43f5e;
+            /* Измененные цвета: благородный золотисто-янтарный акцент вместо красного */
+            --accent: #d4af37;
+            --accent-hover: #e6c55c;
+            --accent-glow: rgba(212, 175, 55, 0.3);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border: #1e293b;
@@ -93,26 +95,44 @@
             gap: 12px;
         }
 
+        /* Обновленный премиальный стиль кнопок */
         .btn {
-            background-color: var(--accent);
-            color: white;
-            padding: 9px 18px;
+            background: linear-gradient(135deg, var(--accent) 0%, #b89728 100%);
+            color: #0b0f19;
+            padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.85rem;
             transition: var(--transition);
             border: none;
             cursor: pointer;
             display: inline-block;
             white-space: nowrap;
-            box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
+            box-shadow: 0 4px 16px var(--accent-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::after {
+            left: 100%;
         }
 
         .btn:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(225, 29, 72, 0.35);
+            background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(212, 175, 55, 0.45);
         }
 
         /* Hero Section with Video Background */
@@ -268,7 +288,7 @@
         }
 
         .why-item:hover {
-            border-color: rgba(225, 29, 72, 0.4);
+            border-color: rgba(212, 175, 55, 0.4);
         }
 
         .why-item h4 {
@@ -287,7 +307,7 @@
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--accent);
-            background: rgba(225, 29, 72, 0.1);
+            background: rgba(212, 175, 55, 0.1);
             padding: 10px 16px;
             border-radius: 8px;
             text-align: center;
@@ -321,7 +341,7 @@
             font-size: 1.2rem;
             font-weight: 700;
             color: var(--accent);
-            background: rgba(225, 29, 72, 0.1);
+            background: rgba(212, 175, 55, 0.1);
             width: 36px;
             height: 36px;
             display: flex;
@@ -405,7 +425,6 @@
             background: rgba(19, 27, 46, 0.8);
         }
 
-        /* SVG Flag Graphic Styling */
         .flag-icon {
             width: 24px;
             height: 18px;
@@ -439,7 +458,6 @@
             display: block;
         }
 
-        /* Bottom right floating switcher variant */
         .floating-lang {
             position: fixed;
             bottom: 25px;
@@ -470,14 +488,14 @@
         }
 
         .lang-option:hover {
-            background: rgba(225, 29, 72, 0.12);
+            background: rgba(212, 175, 55, 0.12);
             color: var(--text-main);
         }
 
         .lang-option.active {
             color: var(--text-main);
             font-weight: 700;
-            background: rgba(225, 29, 72, 0.06);
+            background: rgba(212, 175, 55, 0.06);
         }
 
         /* Modal Popup */
@@ -574,7 +592,7 @@
 
         .form-group input:focus, .form-group select:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
         }
 
         /* Footer */
@@ -788,7 +806,7 @@
                     <div class="canton-number">4</div>
                     <div class="canton-content">
                         <h4 data-i18n="c4_name">Лозанна (Lausanne)</h4>
-                        <p data-i18n="c4_desc">Очаровательный олимпийский центр на склонах Женевской ривьеры, объединяющий традиции и молодость.</p>
+                        <p data-i18n="c4_desc">Очаровательный олимпийский центр на склонах Женевской ривьеры, объединяющий традиций и молодость.</p>
                     </div>
                 </div>
                 <div class="canton-item">
@@ -892,559 +910,18 @@
                     <p data-i18n="w3_desc">Помогаем избежать дорогостоящих ошибок и скрытых дефектов.</p>
                 </div>
                 <div class="why-item">
-                    <h4 data-i18n="w4_title">Поддержка 24/7</h4>
-                    <p data-i18n="w4_desc">Остаемся на связи и после сделки: сервис, страховка, обслуживание.</p>
+                    <h4 data-i18n="w4_title">Индивидуальный подход</h4>
+                    <p data-i18n="w4_desc">Учитываем все ваши пожелания и бюджет при подборе авто.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="container" style="max-width: 600px;">
-            <h2 class="section-title" data-i18n="contact_title">Готовы найти автомобиль?</h2>
-            <p class="section-subtitle" data-i18n="contact_subtitle">Оставьте заявку, и мы свяжемся с вами в ближайшее время для обсуждения деталей.</p>
-            <button class="btn open-modal-btn" style="padding: 15px 30px; font-size: 1.1rem;" data-i18n="btn_request">Оставить заявку</button>
-        </div>
-    </section>
-
-    <!-- Floating Language Switcher Widget (Bottom Right) -->
-    <div class="lang-switcher floating-lang" id="floatingLangSwitcher">
-        <button class="lang-btn" id="floatingLangBtn" aria-label="Language menu">
-            <svg class="flag-icon currentLangFlag" viewBox="0 0 640 480"><path fill="#fff" d="M0 0h640v480H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>
-        </button>
-        <div class="lang-dropdown">
-            <button class="lang-option" data-lang="ru">
-                <svg class="flag-icon" viewBox="0 0 640 480"><path fill="#fff" d="M0 0h640v480H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>
-                Русский
-            </button>
-            <button class="lang-option" data-lang="ukr">
-                <svg class="flag-icon" viewBox="0 0 640 480"><path fill="#0057b7" d="M0 0h640v240H0z"/><path fill="#ffd700" d="M0 240h640v240H0z"/></svg>
-                Українська
-            </button>
-            <button class="lang-option" data-lang="de">
-                <svg class="flag-icon" viewBox="0 0 640 480"><path fill="#000" d="M0 0h640v160H0z"/><path fill="#d00" d="M0 160h640v160H0z"/><path fill="#ffce00" d="M0 320h640v160H0z"/></svg>
-                Deutsch
-            </button>
-            <button class="lang-option" data-lang="en">
-                <svg class="flag-icon" viewBox="0 0 640 480"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="M75 0l244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/><path fill="#C8102E" d="M424 281l216 164v35L364 281h60zM0 350l196-145H0v56l135 100H0v-11zm640-280L444 215h196V159L505 59h135V70zM0 0l224 165H0V0z"/></svg>
-                English
-            </button>
-        </div>
-    </div>
-
-    <!-- Modal Popup Form -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <h3 data-i18n="modal_title">Оставить заявку</h3>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="fullName" data-i18n="form_name">ФИО</label>
-                    <input type="text" id="fullName" required placeholder="Введите ваше имя" data-i18n-placeholder="form_name_placeholder">
-                </div>
-                <div class="form-group">
-                    <label for="phone" data-i18n="form_phone">Номер телефона</label>
-                    <input type="tel" id="phone" required placeholder="+41 (XX) XXX XX XX">
-                </div>
-                <div class="form-group">
-                    <label for="email" data-i18n="form_email">Электронная почта</label>
-                    <input type="email" id="email" required placeholder="example@domain.com">
-                </div>
-                <div class="form-group">
-                    <label for="serviceSelect" data-i18n="form_service">Выберите услугу</label>
-                    <select id="serviceSelect">
-                        <option value="Пакет Старт" data-i18n="opt_p1">Пакет «Старт» (от CHF 1,500)</option>
-                        <option value="Пакет Премиум" data-i18n="opt_p2">Пакет «Премиум» (от CHF 4,900)</option>
-                        <option value="Пакет VIP / Elite" data-i18n="opt_p3">Пакет «VIP / Elite» (от CHF 12,000+)</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn" style="width: 100%; margin-top: 10px; padding: 13px;" data-i18n="form_submit">Отправить заявку</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p data-i18n="footer_text">&copy; 2026 SwissCars. Автоконсьерж-сервис в Швейцарии. Все права защищены.</p>
+            <p>&copy; 2026 SWISS CARS. Все права защищены.</p>
         </div>
     </footer>
 
-    <script>
-        // Quad-lingual translation dictionary (RU, UKR, DE, EN)
-        const translations = {
-            ru: {
-                meta_title: "Автоконсьерж-сервис в Швейцарии — Покупка и продажа автомобилей под ключ",
-                nav_about: "О нас",
-                nav_services: "Услуги и стоимость",
-                nav_cantons: "Коммуны и кантоны",
-                nav_why: "Почему мы",
-                btn_request: "Оставить заявку",
-                hero_title: "Автоконсьерж-сервис <br><span>в Швейцарии</span>",
-                hero_desc: "Покупка, проверка, продажа и полное юридическое сопровождение автомобилей под ключ. Без стресса, лишней траты времени и скрытых рисков.",
-                hero_btn: "Начать подбор",
-                about_main_title: "О нас",
-                about_main_subtitle: "Эксклюзивный подход к каждому клиенту",
-                about_quote: "«Мы создаем не просто решения — мы формируем стандарты исключительного <span>превосходства</span>».",
-                about_text_1: "Наша философия базируется на трех абсолютных принципах: безупречная репутация, элитарный подход и абсолютная конфиденциальность. Мы объединяем глубокую экспертную аналитику, передовые технологии и эстетику роскоши, чтобы воплощать в жизнь проекты исключительного уровня.",
-                about_text_2: "Для тех, кто привык выбирать лучшее и не приемлет компромиссов, мы открываем двери в мир абсолютного комфорта, статуса и бесконечных возможностей. Ваше доверие — наш главный капитал, ваше превосходство — наш неизменный результат.",
-                services_title: "Услуги и их стоимость",
-                services_subtitle: "Три структурированных пакета от базовой оптимизации до премиального консьерж-сервиса",
-                pkg1_title: "Пакет «Старт»",
-                pkg1_desc: "Базовое решение для быстрого и безопасного старта без лишних затрат.",
-                pkg1_l1: "Первичная экспертная консультация",
-                pkg1_l2: "Аудит текущей ситуации и ТЗ",
-                pkg1_l3: "Базовый пакет документов",
-                pkg1_l4: "Поддержка в рабочие часы",
-                pkg2_title: "Пакет «Премиум»",
-                pkg2_desc: "Оптимальный выбор для глубокой проработки и безупречного результата.",
-                pkg2_l1: "Полный цикл сопровождения «под ключ»",
-                pkg2_l2: "Глубокая юридическая аналитика",
-                pkg2_l3: "Персональный менеджер проекта",
-                pkg2_l4: "Круглосуточная поддержка 24/7",
-                pkg3_title: "Пакет «VIP / Elite»",
-                pkg3_desc: "Эксклюзивный консьерж-сервис высшей лиги для максимального статуса.",
-                pkg3_l1: "Вовлечение руководства компании",
-                pkg3_l2: "Сложные задачи и нестандартные кейсы",
-                pkg3_l3: "Прямое взаимодействие с топ-партнерами",
-                pkg3_l4: "Абсолютная конфиденциальность",
-                cantons_title: "Коммуны и кантоны",
-                cantons_subtitle: "Топ-15 самых густонаселенных и динамичных центров притяжения капитала и жизни в Швейцарии",
-                c1_name: "Цюрих (Zurich)",
-                c1_desc: "Финансовое сердце Европы, где безупречный швейцарский стиль встречается с динамикой глобального мегаполиса.",
-                c2_name: "Женева (Geneva)",
-                c2_desc: "Глобальный центр дипломатии, элегантности и роскоши на берегу живописного Женевского озера.",
-                c3_name: "Базель (Basel)",
-                c3_desc: "Культурная столица и перекресток инноваций, искусства и фармацевтической элиты на берегах Рейна.",
-                c4_name: "Лозанна (Lausanne)",
-                c4_desc: "Очаровательный олимпийский центр на склонах Женевской ривьеры, объединяющий традиции и молодость.",
-                c5_name: "Берн (Bern)",
-                c5_desc: "Историческая федеральная столица Конфедерации, хранящая величие архитектуры под защитой ЮНЕСКО.",
-                c6_name: "Винтертур (Winterthur)",
-                c6_desc: "Индустриально-культурный жемчуг кантона Цюрих, гармонично сочетающий историю и современные инновации.",
-                c7_name: "Люцерн (Lucerne)",
-                c7_desc: "Живописнейший альпийский курорт и культурный центр у подножия величественных гор и зеркального озера.",
-                c8_name: "Санкт-Галлен (St. Gallen)",
-                c8_desc: "Исторический текстильный и университетский центр восточной Швейцарии с мировым именем.",
-                c9_name: "Лугано (Lugano)",
-                c9_desc: "Солнечная швейцарская ривьера с итальянским темпераментом, пальмами и элитным банковским сектором.",
-                c10_name: "Биль / Бьенн (Biel/Bienne)",
-                c10_desc: "Уникальный двуязычный центр часового искусства и точных технологий мирового масштаба.",
-                c11_name: "Тун (Thun)",
-                c11_desc: "Ворота в Бернский Оберленд, где кристальная вода озер сливается с величием снежных вершин.",
-                c12_name: "Беллинцона (Bellinzona)",
-                c12_desc: "Южные ворота Швейцарии, знаменитые своими неприступными средневековыми замками из списка ЮНЕСКО.",
-                c13_name: "Кёниц (Köniz)",
-                c13_desc: "Респектабельный и зеленый стратегический спутник столицы с высочайшим качеством жизни.",
-                c14_name: "Фрибур (Fribourg)",
-                c14_desc: "Двуязычный средневековый бастион на скалах, привлекающий инвестиции, таланты и динамичное население.",
-                c15_name: "Шаффхаузен (Schaffhausen)",
-                c15_desc: "Северный форпост страны у грандиозного Рейнского водопада, сочетающий деловую активность и историческую красоту.",
-                why_title: "Почему выбирают нас",
-                why_subtitle: "Принципы нашей работы в Швейцарии",
-                w1_title: "Экономия времени",
-                w1_desc: "Избавляем вас от просмотра сотен объявлений и пустых звонков.",
-                w2_title: "Честность и открытость",
-                w2_desc: "Откровенно рассказываем о плюсах и минусах каждого варианта.",
-                w3_title: "Безопасность сделки",
-                w3_desc: "Помогаем избежать дорогостоящих ошибок и скрытых дефектов.",
-                w4_title: "Поддержка 24/7",
-                w4_desc: "Остаемся на связи и после сделки: сервис, страховка, обслуживание.",
-                contact_title: "Готовы найти автомобиль?",
-                contact_subtitle: "Оставьте заявку, и мы свяжемся с вами в ближайшее время для обсуждения деталей.",
-                modal_title: "Оставить заявку",
-                form_name: "ФИО",
-                form_name_placeholder: "Введите ваше имя",
-                form_phone: "Номер телефона",
-                form_email: "Электронная почта",
-                form_service: "Выберите услугу",
-                opt_p1: "Пакет «Старт» (от CHF 1,500)",
-                opt_p2: "Пакет «Премиум» (от CHF 4,900)",
-                opt_p3: "Пакет «VIP / Elite» (от CHF 12,000+)",
-                form_submit: "Отправить заявку",
-                footer_text: "&copy; 2026 SwissCars. Автоконсьерж-сервис в Швейцарии. Все права защищены.",
-                alert_success: "Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время."
-            },
-            ukr: {
-                meta_title: "Автоконсьєрж-сервис у Швейцарії — Купівля та продаж автомобілів під ключ",
-                nav_about: "Про нас",
-                nav_services: "Послуги та вартість",
-                nav_cantons: "Комуни та кантони",
-                nav_why: "Чому ми",
-                btn_request: "Залишити заявку",
-                hero_title: "Автоконсьєрж-сервіс <br><span>у Швейцарії</span>",
-                hero_desc: "Купівля, перевірка, продаж та повний юридичний супровід автомобілів під ключ. Без стресу, зайвої втрати часу та прихованих ризиків.",
-                hero_btn: "Розпочати підбір",
-                about_main_title: "Про нас",
-                about_main_subtitle: "Ексклюзивний підхід до кожного клієнта",
-                about_quote: "«Ми створюємо не просто рішення — ми формуємо стандарти виняткового <span>переваги</span>».",
-                about_text_1: "Наша філософія базується на трьох абсолютних принципах: бездоганна репутація, елітарний підхід та абсолютна конфіденційність. Ми об'єднуємо глибоку експертну аналітику, передові технології та естетику розкоші, щоб втілювати в життя проєкти виняткового рівня.",
-                about_text_2: "Для тих, хто звик обирати найкраще і не приемле компромісів, ми відкриваємо двері у світ абсолютного комфорту, статусу та нескінченних можливостей. Ваша довіра — наш головний капітал, ваша перевага — наш незмінний результат.",
-                services_title: "Послуги та їх вартість",
-                services_subtitle: "Три структуровані пакети від базової оптимізації до преміального консьєрж-сервісу",
-                pkg1_title: "Пакет «Старт»",
-                pkg1_desc: "Базове рішення для швидкого та безпечного старту без зайвих витрат.",
-                pkg1_l1: "Первинна експертна консультація",
-                pkg1_l2: "Аудит поточної ситуації та ТЗ",
-                pkg1_l3: "Базовий пакет документів",
-                pkg1_l4: "Підтримка в робочі години",
-                pkg2_title: "Пакет «Преміум»",
-                pkg2_desc: "Оптимальний вибір для глибокого опрацювання та бездоганного результату.",
-                pkg2_l1: "Повний цикл супроводу «під ключ»",
-                pkg2_l2: "Глибока юридична аналітика",
-                pkg2_l3: "Персональний менеджер проєкту",
-                pkg2_l4: "Цілодобова підтримка 24/7",
-                pkg3_title: "Пакет «VIP / Elite»",
-                pkg3_desc: "Ексклюзивний консьєрж-сервіс вищої ліги для максимального статусу.",
-                pkg3_l1: "Залучення керівництва компанії",
-                pkg3_l2: "Складні завдання та нестандартні кейси",
-                pkg3_l3: "Пряма взаємодія з топ-партнерами",
-                pkg3_l4: "Абсолютна конфіденційність",
-                cantons_title: "Комуни та кантони",
-                cantons_subtitle: "Топ-15 найгустонаселеніших і найдинамічніших центрів тяжіння капіталу та життя у Швейцарії",
-                c1_name: "Цюрих (Zurich)",
-                c1_desc: "Фінансове серце Європи, де бездоганний швейцарський стиль зустрічається з динамікою глобального мегаполіса.",
-                c2_name: "Женева (Geneva)",
-                c2_desc: "Глобальний центр дипломатії, елегантності та розкоші на березі мальовничого Женевського озера.",
-                c3_name: "Базель (Basel)",
-                c3_desc: "Культурна столиця та перехрестя інновацій, мистецтва та фармацевтичної еліти на берегах Рейну.",
-                c4_name: "Лозанна (Lausanne)",
-                c4_desc: "Очаровательный олимпийский центр на склонах Женевской ривьеры, объединяющий традиции и молодость.",
-                c5_name: "Берн (Bern)",
-                c5_desc: "Історична федеральна столиця Конфедерації, що зберігає велич архітектури під захистом ЮНЕСКО.",
-                c6_name: "Вінтертур (Winterthur)",
-                c6_desc: "Індустріально-культурна перлина кантона Цюрих, що гармонійно поєднує історію та сучасні інновації.",
-                c7_name: "Люцерн (Lucerne)",
-                c7_desc: "Мальовничий альпійський курорт і культурний центр біля підніжжя величних гір та дзеркального озера.",
-                c8_name: "Санкт-Галлен (St. Gallen)",
-                c8_desc: "Історичний текстильний та університетський центр східної Швейцарії зі світовим ім'ям.",
-                c9_name: "Лугано (Lugano)",
-                c9_desc: "Сонячна швейцарська рив'єра з італійським темпераментом, пальмами та елітним банківським сектором.",
-                c10_name: "Біль / Бьенн (Biel/Bienne)",
-                c10_desc: "Унікальний двомовний центр годинникового мистецтва та точних технологій світового масштабу.",
-                c11_name: "Тун (Thun)",
-                c11_desc: "Ворота в Бернський Оберленд, де кришталева вода озер зливається з величчю снігових вершин.",
-                c12_name: "Беллинцона (Bellinzona)",
-                c12_desc: "Південні ворота Швейцарії, відомі своїми неприступними середньовічними замками зі списку ЮНЕСКО.",
-                c13_name: "Кёниц (Köniz)",
-                c13_desc: "Респектабельний і зелений стратегічний супутник столиці з найвищою якістю життя.",
-                c14_name: "Фрибур (Fribourg)",
-                c14_desc: "Двомовний середньовічний бастіон на скелях, що залучає інвестиції, таланти та динамічне населення.",
-                c15_name: "Шаффхаузен (Schaffhausen)",
-                c15_desc: "Північний форпост країни біля грандіозного Рейнського водопаду, що поєднує ділову активність та історичну красу.",
-                why_title: "Чому обирають нас",
-                why_subtitle: "Принципи нашої роботи у Швейцарії",
-                w1_title: "Економія часу",
-                w1_desc: "Звільняємо вас від перегляду сотень оголошень та порожніх дзвінків.",
-                w2_title: "Чесність та відкритість",
-                w2_desc: "Відверто розповідаємо про плюси та мінуси кожного варіанта.",
-                w3_title: "Безпека угоди",
-                w3_desc: "Допомагаємо уникнути дорогих помилок та прихованих дефектів.",
-                w4_title: "Підтримка 24/7",
-                w4_desc: "Залишаємося на зв'язку і після угоди: сервіс, страховка, обслуговування.",
-                contact_title: "Готові знайти автомобіль?",
-                contact_subtitle: "Залиште заявку, и ми зв'яжемося з вами найближчим часом для обговорення деталей.",
-                modal_title: "Залишити заявку",
-                form_name: "ПІБ",
-                form_name_placeholder: "Введіть ваше ім'я",
-                form_phone: "Номер телефону",
-                form_email: "Електронна пошта",
-                form_service: "Виберіть послугу",
-                opt_p1: "Пакет «Старт» (від CHF 1,500)",
-                opt_p2: "Пакет «Премиум» (від CHF 4,900)",
-                opt_p3: "Пакет «VIP / Elite» (від CHF 12,000+)",
-                form_submit: "Надіслати заявку",
-                footer_text: "&copy; 2026 SwissCars. Автоконсьєрж-сервіс у Швейцарії. Всі права захищені.",
-                alert_success: "Дякуємо! Вашу заявку успішно надіслано. Ми зв'яжемося з вами найближчим часом."
-            },
-            de: {
-                meta_title: "Autoconcierge-Service in der Schweiz — Schlüsselfertiger Autokauf & Verkauf",
-                nav_about: "Über uns",
-                nav_services: "Leistungen & Preise",
-                nav_cantons: "Gemeinden & Kantone",
-                nav_why: "Warum wir",
-                btn_request: "Anfrage senden",
-                hero_title: "Autoconcierge-Service <br><span>in der Schweiz</span>",
-                hero_desc: "Schlüsselfertiger Autokauf, Überprüfung, Verkauf und umfassende rechtliche Betreuung. Ohne Stress, Zeitverschwendung und versteckte Risiken.",
-                hero_btn: "Suche starten",
-                about_main_title: "Über uns",
-                about_main_subtitle: "Exklusiver Ansatz für jeden Kunden",
-                about_quote: "«Wir schaffen nicht nur Lösungen — wir setzen Maßstäbe für außergewöhnliche <span>Exzellenz</span>».",
-                about_text_1: "Unsere Philosophie basiert auf drei absoluten Prinzipien: tadelloser Ruf, elitärer Ansatz und absolute Vertraulichkeit. Wir verbinden tiefgehende Expertenanalysen, modernste Technologien und die Ästhetik des Luxus.",
-                about_text_2: "Für diejenigen, die es gewohnt sind, das Beste zu wählen und keine Kompromisse eingehen, öffnen wir die Türen zu einer Welt von absolutem Komfort, Status und unbegrenzten Möglichkeiten.",
-                services_title: "Leistungen und Preise",
-                services_subtitle: "Drei strukturierte Pakete von der Basisoptimierung bis zum Premium-Concierge-Service",
-                pkg1_title: "Paket «Start»",
-                pkg1_desc: "Die Basislösung für einen schnellen und sicheren Start ohne unnötige Kosten.",
-                pkg1_l1: "Erste Expertenberatung",
-                pkg1_l2: "Audit der Ist-Situation & Aufgabenstellung",
-                pkg1_l3: "Basis-Dokumentenpaket",
-                pkg1_l4: "Support während der Arbeitszeiten",
-                pkg2_title: "Paket «Premium»",
-                pkg2_desc: "Die optimale Wahl für eine tiefe Ausarbeitung und ein makelloses Ergebnis.",
-                pkg2_l1: "Schlüsselfertiger Rundum-Service",
-                pkg2_l2: "Tiefgehende Rechtsanalyse",
-                pkg2_l3: "Persönlicher Projektmanager",
-                pkg2_l4: "24/7 Rund-um-die-Uhr-Support",
-                pkg3_title: "Paket «VIP / Elite»",
-                pkg3_desc: "Exklusiver Concierge-Service der Spitzenklasse für maximalen Status.",
-                pkg3_l1: "Einbindung der Unternehmensleitung",
-                pkg3_l2: "Komplexe Aufgaben & Sonderfälle",
-                pkg3_l3: "Direkter Kontakt zu Top-Partnern",
-                pkg3_l4: "Absolute Vertraulichkeit",
-                cantons_title: "Gemeinden und Kantone",
-                cantons_subtitle: "Die Top 15 der bevölkerungsreichsten und dynamischsten Zentren der Schweiz",
-                c1_name: "Zürich",
-                c1_desc: "Das finanzielle Herz Europas, wo makelloser Schweizer Stil auf die Dynamik einer globalen Metropole trifft.",
-                c2_name: "Genf (Geneva)",
-                c2_desc: "Das globale Zentrum für Diplomatie, Eleganz und Luxus am Ufer des malerischen Genfersees.",
-                c3_name: "Basel",
-                c3_desc: "Kulturhauptstadt und Knotenpunkt für Innovation, Kunst und Pharma-Elite am Rhein.",
-                c4_name: "Lausanne",
-                c4_desc: "Charmantes olympisches Zentrum an den Hängen der Genfer Riviera, das Tradition und Jugend vereint.",
-                c5_name: "Bern",
-                c5_desc: "Die historische Bundeshauptstadt der Konföderation mit UNESCO-geschützter Architektur.",
-                c6_name: "Winterthur",
-                c6_desc: "Das industriell-kulturelle Juwel des Kantons Zürich, das Geschichte und Innovation verbindet.",
-                c7_name: "Luzern (Lucerne)",
-                c7_desc: "Malerischer Alpenurlaubsort und Kulturzentrum am Fuße majestätischer Berge und spiegelnder Seen.",
-                c8_name: "St. Gallen",
-                c8_desc: "Historisches Textil- und Universitätszentrum der Ostschweiz von Weltruf.",
-                c9_name: "Lugano",
-                c9_desc: "Die sonnige Schweizer Riviera mit italienischem Temperament, Palmen und Elite-Bankensektor.",
-                c10_name: "Biel/Bienne",
-                c10_desc: "Einzigartiges zweisprachiges Zentrum der Uhrmacherei und Hochpräzisionstechnologie.",
-                c11_name: "Thun",
-                c11_desc: "Das Tor zum Berner Oberland, wo kristallklares Wasser auf schneebedeckte Gipfel trifft.",
-                c12_name: "Bellinzona",
-                c12_desc: "Das Südtor der Schweiz, berühmt für seine uneinnehmbaren UNESCO-Mittelalterburgen.",
-                c13_name: "Köniz",
-                c13_desc: "Respektabler und grüner strategischer Vorort der Hauptstadt mit höchster Lebensqualität.",
-                c14_name: "Freiburg (Fribourg)",
-                c14_desc: "Zweisprachige Mittelalterfestung auf Felsen, die Investitionen und Talente anzieht.",
-                c15_name: "Schaffhausen",
-                c15_desc: "Nördlicher Vorposten am gewaltigen Rheinfall, der Wirtschaft und historische Schönheit verbindet.",
-                why_title: "Warum Sie uns wählen",
-                why_subtitle: "Grundsätze unserer Arbeit in der Schweiz",
-                w1_title: "Zeitersparnis",
-                w1_desc: "Wir bewahren Sie vor dem Durchstöbern hunderter Anzeigen und Leerläufen.",
-                w2_title: "Ehrlichkeit & Offenheit",
-                w2_desc: "Wir sprechen offen über Vor- und Nachteile jeder Option.",
-                w3_title: "Transaktionssicherheit",
-                w3_desc: "Wir helfen Ihnen, teure Fehler und versteckte Mängel zu vermeiden.",
-                w4_title: "24/7 Support",
-                w4_desc: "Auch nach dem Deal erreichbar: Service, Versicherung, Wartung.",
-                contact_title: "Bereit, ein Auto zu finden?",
-                contact_subtitle: "Hinterlassen Sie eine Anfrage und wir melden uns in Kürze.",
-                modal_title: "Anfrage senden",
-                form_name: "Vollständiger Name",
-                form_name_placeholder: "Geben Sie Ihren Namen ein",
-                form_phone: "Telefonnummer",
-                form_email: "E-Mail-Adresse",
-                form_service: "Dienstleistung auswählen",
-                opt_p1: "Paket «Start» (ab CHF 1,500)",
-                opt_p2: "Paket «Premium» (ab CHF 4,900)",
-                opt_p3: "Paket «VIP / Elite» (ab CHF 12,000+)",
-                form_submit: "Anfrage absenden",
-                footer_text: "&copy; 2026 SwissCars. Autoconcierge-Service in der Schweiz. Alle Rechte vorbehalten.",
-                alert_success: "Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns in Kürze."
-            },
-            en: {
-                meta_title: "Car Concierge Service in Switzerland — Turnkey Car Buying & Selling",
-                nav_about: "About Us",
-                nav_services: "Services & Pricing",
-                nav_cantons: "Communes & Cantons",
-                nav_why: "Why Us",
-                btn_request: "Get a Quote",
-                hero_title: "Car Concierge Service <br><span>in Switzerland</span>",
-                hero_desc: "Turnkey car purchase, inspection, sale, and full legal support. No stress, no wasted time, and zero hidden risks.",
-                hero_btn: "Start Searching",
-                about_main_title: "About Us",
-                about_main_subtitle: "Exclusive approach for every client",
-                about_quote: "«We don't just create solutions — we set the standards for exceptional <span>excellence</span>».",
-                about_text_1: "Our philosophy is based on three absolute principles: impeccable reputation, elite approach, and absolute confidentiality. We combine deep expert analytics, advanced technologies, and luxury aesthetics.",
-                about_text_2: "For those accustomed to choosing the best and accepting no compromises, we open doors to a world of absolute comfort, status, and endless possibilities.",
-                services_title: "Services and Pricing",
-                services_subtitle: "Three structured packages from basic optimization to premium concierge service",
-                pkg1_title: "«Start» Package",
-                pkg1_desc: "Basic solution for a quick and safe start with zero unnecessary costs.",
-                pkg1_l1: "Initial expert consultation",
-                pkg1_l2: "Current situation audit & tech specs",
-                pkg1_l3: "Basic document package",
-                pkg1_l4: "Support during working hours",
-                pkg2_title: "«Premium» Package",
-                pkg2_desc: "Optimal choice for deep processing and a flawless result.",
-                pkg2_l1: "Turnkey full-cycle support",
-                pkg2_l2: "Deep legal analytics",
-                pkg2_l3: "Personal project manager",
-                pkg2_l4: "24/7 round-the-clock support",
-                pkg3_title: "«VIP / Elite» Package",
-                pkg3_desc: "Exclusive top-league concierge service for maximum status.",
-                pkg3_l1: "Involvement of company management",
-                pkg3_l2: "Complex tasks & non-standard cases",
-                pkg3_l3: "Direct interaction with top partners",
-                pkg3_l4: "Absolute confidentiality",
-                cantons_title: "Communes and Cantons",
-                cantons_subtitle: "Top 15 most populous and dynamic centers of capital and life in Switzerland",
-                c1_name: "Zurich",
-                c1_desc: "The financial heart of Europe, where impeccable Swiss style meets the dynamics of a global metropolis.",
-                c2_name: "Geneva",
-                c2_desc: "The global center of diplomacy, elegance, and luxury on the shores of picturesque Lake Geneva.",
-                c3_name: "Basel",
-                c3_desc: "Cultural capital and crossroads of innovation, art, and pharmaceutical elite on the Rhine.",
-                c4_name: "Lausanne",
-                c4_desc: "Charming Olympic center on the slopes of the Swiss Riviera, uniting tradition and youth.",
-                c5_name: "Bern",
-                c5_desc: "The historical federal capital of the Confederation, preserving UNESCO-protected architecture.",
-                c6_name: "Winterthur",
-                c6_desc: "Industrial and cultural pearl of Zurich canton, harmoniously combining history and modern innovation.",
-                c7_name: "Lucerne",
-                c7_desc: "Picturesque alpine resort and cultural center at the foot of majestic mountains and a mirror lake.",
-                c8_name: "St. Gallen",
-                c8_desc: "Historical textile and university center of Eastern Switzerland with global renown.",
-                c9_name: "Lugano",
-                c9_desc: "Sunny Swiss Riviera with Italian temperament, palms, and an elite banking sector.",
-                c10_name: "Biel/Bienne",
-                c10_desc: "Unique bilingual center of watchmaking and high-precision world-scale technology.",
-                c11_name: "Thun",
-                c11_desc: "Gateway to the Bernese Oberland, where crystal-clear water merges with snow peaks.",
-                c12_name: "Bellinzona",
-                c12_desc: "Southern gateway of Switzerland, famous for its impregnable medieval UNESCO castles.",
-                c13_name: "Köniz",
-                c13_desc: "Respectable and green strategic suburb of the capital with the highest quality of life.",
-                c14_name: "Fribourg",
-                c14_desc: "Bilingual medieval bastion on rocks, attracting investments, talents, and dynamic population.",
-                c15_name: "Schaffhausen",
-                c15_desc: "Northern outpost by the grand Rhine Falls, combining business activity and historical beauty.",
-                why_title: "Why Choose Us",
-                why_subtitle: "Principles of our work in Switzerland",
-                w1_title: "Time Saving",
-                w1_desc: "Save you from browsing hundreds of ads and empty calls.",
-                w2_title: "Honesty & Openness",
-                w2_desc: "Honestly telling about pros and cons of each option.",
-                w3_title: "Transaction Security",
-                w3_desc: "Helping avoid costly mistakes and hidden defects.",
-                w4_title: "24/7 Support",
-                w4_desc: "Staying in touch even after the deal: service, insurance, maintenance.",
-                contact_title: "Ready to find a car?",
-                contact_subtitle: "Leave a request and we will contact you shortly to discuss details.",
-                modal_title: "Send a Request",
-                form_name: "Full Name",
-                form_name_placeholder: "Enter your name",
-                form_phone: "Phone Number",
-                form_email: "Email",
-                form_service: "Select Service",
-                opt_p1: "«Start» Package (from CHF 1,500)",
-                opt_p2: "«Premium» Package (from CHF 4,900)",
-                opt_p3: "«VIP / Elite» Package (from CHF 12,000+)",
-                form_submit: "Submit Request",
-                footer_text: "&copy; 2026 SwissCars. Car Concierge Service in Switzerland. All rights reserved.",
-                alert_success: "Thank you! Your request has been successfully sent. We will contact you soon."
-            }
-        };
-
-        // Complete markup structures for crisp SVG flag rendering inside toggles
-        const flagSvgs = {
-            ru: '<svg class="flag-icon" viewBox="0 0 640 480"><path fill="#fff" d="M0 0h640v480H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>',
-            ukr: '<svg class="flag-icon" viewBox="0 0 640 480"><path fill="#0057b7" d="M0 0h640v240H0z"/><path fill="#ffd700" d="M0 240h640v240H0z"/></svg>',
-            de: '<svg class="flag-icon" viewBox="0 0 640 480"><path fill="#000" d="M0 0h640v160H0z"/><path fill="#d00" d="M0 160h640v160H0z"/><path fill="#ffce00" d="M0 320h640v160H0z"/></svg>',
-            en: '<svg class="flag-icon" viewBox="0 0 640 480"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="M75 0l244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/><path fill="#C8102E" d="M424 281l216 164v35L364 281h60zM0 350l196-145H0v56l135 100H0v-11zm640-280L444 215h196V159L505 59h135V70zM0 0l224 165H0V0z"/></svg>'
-        };
-
-        let currentLang = 'ru';
-
-        function setLanguage(lang) {
-            currentLang = lang;
-            const t = translations[lang];
-
-            // Update text elements
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (t[key]) {
-                    el.innerHTML = t[key];
-                }
-            });
-
-            // Update placeholders
-            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-                const key = el.getAttribute('data-i18n-placeholder');
-                if (t[key]) {
-                    el.placeholder = t[key];
-                }
-            });
-
-            // Update flags across all switcher buttons
-            if (flagSvgs[lang]) {
-                document.querySelectorAll('.currentLangFlag').forEach(el => {
-                    el.outerHTML = flagSvgs[lang].replace('class="flag-icon"', 'class="flag-icon currentLangFlag"');
-                });
-            }
-
-            // Update active states in all dropdowns
-            document.querySelectorAll('.lang-option').forEach(opt => {
-                if (opt.getAttribute('data-lang') === lang) {
-                    opt.classList.add('active');
-                } else {
-                    opt.classList.remove('active');
-                }
-            });
-
-            // Close all dropdown menus
-            document.querySelectorAll('.lang-switcher').forEach(sw => sw.classList.remove('active'));
-        }
-
-        // Language Switchers Toggle Logic
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const switcher = btn.closest('.lang-switcher');
-                document.querySelectorAll('.lang-switcher').forEach(s => {
-                    if (s !== switcher) s.classList.remove('active');
-                });
-                switcher.classList.toggle('active');
-            });
-        });
-
-        document.querySelectorAll('.lang-option').forEach(opt => {
-            opt.addEventListener('click', () => {
-                const lang = opt.getAttribute('data-lang');
-                setLanguage(lang);
-            });
-        });
-
-        window.addEventListener('click', () => {
-            document.querySelectorAll('.lang-switcher').forEach(sw => sw.classList.remove('active'));
-        });
-
-        // Modal Logic
-        const modalOverlay = document.getElementById('modalOverlay');
-        const openModalBtns = document.querySelectorAll('.open-modal-btn');
-        const closeModalBtn = document.getElementById('modalClose');
-
-        openModalBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                modalOverlay.classList.add('active');
-            });
-        });
-
-        closeModalBtn.addEventListener('click', () => {
-            modalOverlay.classList.remove('active');
-        });
-
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) {
-                modalOverlay.classList.remove('active');
-            }
-        });
-
-        // Form submit handling
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert(translations[currentLang].alert_success);
-            modalOverlay.classList.remove('active');
-            e.target.reset();
-        });
-    </script>
 </body>
 </html>

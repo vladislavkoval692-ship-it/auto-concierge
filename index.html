@@ -264,15 +264,16 @@
             margin-bottom: 0;
         }
 
-        /* Чистый видео-блок без рамок и карточек */
+        /* Абсолютно чистый видео-блок без рамок и фона */
         .about-video-wrapper {
             width: 100%;
             height: 420px;
             border-radius: 16px;
             overflow: hidden;
             position: relative;
-            background: transparent;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
         }
 
         .about-video {
@@ -280,6 +281,7 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            background: transparent;
         }
 
         /* Grids */
@@ -675,7 +677,7 @@
         </div>
     </section>
 
-    <!-- About Us Section (Wide, Minimalistic & with Playing Video) -->
+    <!-- About Us Section -->
     <section id="about">
         <div class="container-wide">
             <h2 class="section-title" data-i18n="about_main_title">О нас</h2>
@@ -694,9 +696,9 @@
                     </p>
                 </div>
                 <div class="about-video-wrapper">
-                    <!-- Добавлен обязательный атрибут muted для автозапуска в браузерах -->
-                    <video autoplay muted loop playsinline class="about-video">
+                    <video autoplay muted loop playsinline preload="auto" class="about-video" id="aboutVideo">
                         <source src="vash_novyj_video_file.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
                     </video>
                 </div>
             </div>
@@ -943,6 +945,13 @@
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Принудительный запуск видео принудительным методом
+            const aboutVideo = document.getElementById('aboutVideo');
+            if (aboutVideo) {
+                aboutVideo.muted = true;
+                aboutVideo.play().catch(e => console.log("Auto-play prevented:", e));
+            }
+
             const switcher = document.getElementById('headerLangSwitcher');
             const langBtn = document.getElementById('headerLangBtn');
 

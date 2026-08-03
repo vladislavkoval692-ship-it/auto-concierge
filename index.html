@@ -466,6 +466,111 @@
             color: var(--text-main);
         }
 
+        /* Modal Window Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            max-width: 480px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--text-main);
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .modal-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .modal-content .btn {
+            width: 100%;
+            margin-top: 10px;
+            padding: 14px;
+            font-size: 1rem;
+        }
+
         /* Footer */
         footer {
             padding: 40px 0;
@@ -741,11 +846,174 @@
         </div>
     </section>
 
+    <!-- Modal Window -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 class="modal-title" data-i18n="modal_title">Оставить заявку</h3>
+            <p class="modal-subtitle" data-i18n="modal_subtitle">Заполните форму, и наш специалист свяжется с вами в ближайшее время.</p>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label data-i18n="form_name">Ваше имя</label>
+                    <input type="text" class="form-control" required placeholder="Иван">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form_phone">Номер телефона / Telegram</label>
+                    <input type="text" class="form-control" required placeholder="+41 ...">
+                </div>
+                <button type="submit" class="btn" data-i18n="form_submit">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <p>&copy; 2026 SWISS CARS. Все права защищены.</p>
         </div>
     </footer>
 
+    <!-- Scripts for Language Switcher & Modal functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Language Switcher Dropdown Toggle
+            const switcher = document.getElementById('headerLangSwitcher');
+            const langBtn = document.getElementById('headerLangBtn');
+
+            if (langBtn && switcher) {
+                langBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    switcher.classList.toggle('active');
+                });
+
+                document.addEventListener('click', () => {
+                    switcher.classList.remove('active');
+                });
+            }
+
+            // 2. Simple Multilingual Dictionary Mock & Logic
+            const translations = {
+                ru: {
+                    nav_about: "О нас",
+                    nav_services: "Услуги и стоимость",
+                    nav_cantons: "Коммуны и кантоны",
+                    btn_request: "Оставить заявку",
+                    hero_title: "Автоконсьерж-сервис <br><span>в Швейцарии</span>",
+                    hero_desc: "Покупка, проверка, продажа и полное юридическое сопровождение автомобилей под ключ. Без стресса, лишней траты времени и скрытых рисков.",
+                    hero_btn: "Начать подбор",
+                    services_title: "Услуги и их стоимость",
+                    services_subtitle: "Три структурированных пакета от базовой оптимизации до премиального консьерж-сервиса",
+                    modal_title: "Оставить заявку",
+                    modal_subtitle: "Заполните форму, и наш специалист свяжется с вами в ближайшее время.",
+                    form_name: "Ваше имя",
+                    form_phone: "Номер телефона / Telegram",
+                    form_submit: "Отправить заявку"
+                },
+                ukr: {
+                    nav_about: "Про нас",
+                    nav_services: "Послуги та вартість",
+                    nav_cantons: "Комуни та кантони",
+                    btn_request: "Залишити заявку",
+                    hero_title: "Автоконсьєрж-сервіс <br><span>у Швейцарії</span>",
+                    hero_desc: "Купівля, перевірка, продаж та повний юридичний супровід автомобілів під ключ. Без стресу, зайвої витрати часу та прихованих ризиків.",
+                    hero_btn: "Почати підбір",
+                    services_title: "Послуги та їх вартість",
+                    services_subtitle: "Три структуровані пакети від базової оптимізації до преміального консьєрж-сервісу",
+                    modal_title: "Залишити заявку",
+                    modal_subtitle: "Заповніть форму, і наш фахівець зв'яжеться з вами найближчим часом.",
+                    form_name: "Ваше ім'я",
+                    form_phone: "Номер телефону / Telegram",
+                    form_submit: "Надіслати заявку"
+                },
+                de: {
+                    nav_about: "Über uns",
+                    nav_services: "Leistungen & Preise",
+                    nav_cantons: "Gemeinden & Kantone",
+                    btn_request: "Anfrage senden",
+                    hero_title: "Autoconcierge-Service <br><span>in der Schweiz</span>",
+                    hero_desc: "Kauf, Prüfung, Verkauf und vollständige rechtliche Begleitung von Autos aus einer Hand. Ohne Stress, Zeitverschwendung und versteckte Risiken.",
+                    hero_btn: "Suche starten",
+                    services_title: "Leistungen & Preise",
+                    services_subtitle: "Drei strukturierte Pakete von der Basisoptimierung bis zum Premium-Concierge-Service",
+                    modal_title: "Anfrage senden",
+                    modal_subtitle: "Füllen Sie das Formular aus und unser Spezialist wird sich in Kürze mit Ihnen in Verbindung setzen.",
+                    form_name: "Ihr Name",
+                    form_phone: "Telefonnummer / Telegram",
+                    form_submit: "Anfrage absenden"
+                },
+                en: {
+                    nav_about: "About Us",
+                    nav_services: "Services & Pricing",
+                    nav_cantons: "Cantons",
+                    btn_request: "Leave a Request",
+                    hero_title: "Car Concierge Service <br><span>in Switzerland</span>",
+                    hero_desc: "Purchase, inspection, sale, and full legal support for turnkey vehicles. Without stress, wasted time, and hidden risks.",
+                    hero_btn: "Start Search",
+                    services_title: "Services & Pricing",
+                    services_subtitle: "Three structured packages from basic optimization to premium concierge service",
+                    modal_title: "Leave a Request",
+                    modal_subtitle: "Fill out the form and our specialist will contact you shortly.",
+                    form_name: "Your Name",
+                    form_phone: "Phone number / Telegram",
+                    form_submit: "Submit Request"
+                }
+            };
+
+            const langOptions = document.querySelectorAll('.lang-option');
+            langOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const lang = option.getAttribute('data-lang');
+                    const dict = translations[lang];
+                    if (!dict) return;
+
+                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                        const key = el.getAttribute('data-i18n');
+                        if (dict[key]) {
+                            el.innerHTML = dict[key];
+                        }
+                    });
+
+                    // Update dropdown flag icon if needed, or close dropdown
+                    switcher.classList.remove('active');
+                });
+            });
+
+            // 3. Modal Functionality (Open/Close)
+            const modal = document.getElementById('orderModal');
+            const openModalBtns = document.querySelectorAll('.open-modal-btn');
+            const closeModalBtn = document.getElementById('modalClose');
+
+            openModalBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (modal) modal.classList.add('active');
+                });
+            });
+
+            if (closeModalBtn && modal) {
+                closeModalBtn.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                });
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.remove('active');
+                    }
+                });
+            }
+
+            // Form submission simulation
+            const orderForm = document.getElementById('orderForm');
+            if (orderForm) {
+                orderForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Заявка успешно отправлена! Мы свяжемся с вами.');
+                    orderForm.reset();
+                    modal.classList.remove('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

@@ -39,6 +39,13 @@
             padding: 0 20px;
         }
 
+        /* Увеличенная ширина для секции «О нас» */
+        .container-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
         /* Header */
         header {
             position: fixed;
@@ -217,47 +224,44 @@
         .section-subtitle {
             text-align: center;
             color: var(--text-muted);
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             font-size: 1.1rem;
         }
 
-        /* About Us New Layout */
+        /* About Us Minimalistic Wide Layout */
         .about-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
+            gap: 60px;
             align-items: center;
         }
 
-        .about-elite-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        .about-text-content {
             text-align: left;
         }
 
-        .about-elite-box blockquote {
-            font-size: 1.25rem;
+        .about-text-content blockquote {
+            font-size: 1.35rem;
             font-style: italic;
             color: var(--text-main);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             line-height: 1.5;
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
         }
 
-        .about-elite-box blockquote span {
+        .about-text-content blockquote span {
             color: var(--accent);
         }
 
-        .about-elite-box p {
+        .about-text-content p {
             color: var(--text-muted);
-            font-size: 0.98rem;
-            line-height: 1.7;
-            margin-bottom: 16px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
 
-        .about-elite-box p:last-child {
+        .about-text-content p:last-child {
             margin-bottom: 0;
         }
 
@@ -265,8 +269,8 @@
             background: var(--card-bg);
             border: 2px dashed var(--border);
             border-radius: 16px;
-            height: 100%;
-            min-height: 380px;
+            width: 100%;
+            min-height: 420px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -285,13 +289,13 @@
         .about-image-placeholder span {
             color: var(--accent);
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             margin-bottom: 8px;
         }
 
         .about-image-placeholder p {
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         /* Grids */
@@ -639,6 +643,7 @@
             }
             .about-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
         }
     </style>
@@ -686,14 +691,14 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
+    <!-- About Us Section (Wide & Minimalistic) -->
     <section id="about">
-        <div class="container">
+        <div class="container-wide">
             <h2 class="section-title" data-i18n="about_main_title">О нас</h2>
             <p class="section-subtitle" data-i18n="about_main_subtitle">Эксклюзивный подход к каждому клиенту</p>
             
             <div class="about-grid">
-                <div class="about-elite-box">
+                <div class="about-text-content">
                     <blockquote data-i18n="about_quote">
                         «Мы создаем не просто решения — мы формируем стандарты исключительного <span>превосходства</span>».
                     </blockquote>
@@ -762,7 +767,6 @@
                 </div>
             </div>
 
-            <!-- Single button below the three blocks -->
             <div style="text-align: center;">
                 <button class="btn open-modal-btn" style="padding: 15px 40px; font-size: 1rem;" data-i18n="btn_request">Оставить заявку</button>
             </div>
@@ -950,10 +954,9 @@
         </div>
     </footer>
 
-    <!-- Scripts for Language Switcher & Modal functionality -->
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Language Switcher Dropdown Toggle
             const switcher = document.getElementById('headerLangSwitcher');
             const langBtn = document.getElementById('headerLangBtn');
 
@@ -968,7 +971,6 @@
                 });
             }
 
-            // 2. Multilingual Dictionary Logic
             const translations = {
                 ru: {
                     nav_about: "О нас",
@@ -1074,7 +1076,6 @@
                 });
             });
 
-            // 3. Modal Functionality (Open/Close)
             const modal = document.getElementById('orderModal');
             const openModalBtns = document.querySelectorAll('.open-modal-btn');
             const closeModalBtn = document.getElementById('modalClose');
@@ -1100,7 +1101,6 @@
                 });
             }
 
-            // Form submission simulation
             const orderForm = document.getElementById('orderForm');
             if (orderForm) {
                 orderForm.addEventListener('submit', (e) => {

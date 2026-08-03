@@ -47,7 +47,7 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
-            padding: 15px 0;
+            padding: 12px 0;
         }
 
         .header-content {
@@ -58,7 +58,7 @@
 
         .logo {
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             letter-spacing: 0.5px;
             color: var(--text-main);
         }
@@ -67,18 +67,25 @@
             color: var(--accent);
         }
 
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .btn {
             background-color: var(--accent);
             color: white;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: var(--transition);
             border: none;
             cursor: pointer;
             display: inline-block;
+            white-space: nowrap;
         }
 
         .btn:hover {
@@ -133,7 +140,7 @@
         /* Grids */
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
@@ -217,27 +224,23 @@
             background: radial-gradient(circle at center, #131b2e 0%, var(--bg-color) 100%);
         }
 
-        /* Language Switcher Widget (Bottom Right) */
+        /* Language Switcher Components */
         .lang-switcher {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 1500;
+            position: relative;
         }
 
         .lang-btn {
             background: var(--card-bg);
             border: 1px solid var(--border);
             color: var(--text-main);
-            padding: 10px 16px;
-            border-radius: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            gap: 6px;
             transition: var(--transition);
         }
 
@@ -247,30 +250,46 @@
 
         .lang-dropdown {
             position: absolute;
-            bottom: 100%;
+            top: 100%;
             right: 0;
-            margin-bottom: 8px;
+            margin-top: 6px;
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 8px;
             overflow: hidden;
             display: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            min-width: 130px;
+            min-width: 110px;
+            z-index: 1500;
         }
 
         .lang-switcher.active .lang-dropdown {
             display: block;
         }
 
+        /* Bottom right switcher variant */
+        .floating-lang {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1500;
+        }
+
+        .floating-lang .lang-dropdown {
+            top: auto;
+            bottom: 100%;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+
         .lang-option {
-            padding: 10px 14px;
+            padding: 9px 12px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             cursor: pointer;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: var(--transition);
             background: none;
             border: none;
@@ -304,6 +323,7 @@
             opacity: 0;
             visibility: hidden;
             transition: var(--transition);
+            padding: 15px;
         }
 
         .modal-overlay.active {
@@ -314,13 +334,15 @@
         .modal {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 40px;
+            padding: 30px;
             border-radius: 12px;
             width: 100%;
             max-width: 450px;
             position: relative;
             transform: translateY(-20px);
             transition: var(--transition);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .modal-overlay.active .modal {
@@ -345,7 +367,7 @@
 
         .modal h3 {
             margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             text-align: center;
         }
 
@@ -385,6 +407,7 @@
             font-size: 0.9rem;
         }
 
+        /* Mobile Adaptability Adjustments */
         @media (max-width: 768px) {
             .hero {
                 padding: 130px 0 50px;
@@ -392,9 +415,22 @@
             section {
                 padding: 50px 0;
             }
-            .modal {
-                margin: 0 15px;
-                padding: 25px;
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .header-right {
+                gap: 6px;
+            }
+            .btn {
+                padding: 7px 12px;
+                font-size: 0.8rem;
+            }
+            .lang-btn {
+                padding: 7px 10px;
+                font-size: 0.8rem;
+            }
+            .logo {
+                font-size: 1rem;
             }
         }
     </style>
@@ -405,7 +441,20 @@
     <header>
         <div class="container header-content">
             <div class="logo">SWISS<span>CARS</span></div>
-            <button class="btn open-modal-btn" data-i18n="btn_request">Оставить заявку</button>
+            <div class="header-right">
+                <button class="btn open-modal-btn" data-i18n="btn_request">Оставить заявку</button>
+                <!-- Language Switcher in Header -->
+                <div class="lang-switcher" id="headerLangSwitcher">
+                    <button class="lang-btn" id="headerLangBtn">
+                        <span class="currentLangFlag">🇷🇺</span> <span class="currentLangText">RU</span>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-option" data-lang="ru"><span>🇷🇺</span> RU</button>
+                        <button class="lang-option" data-lang="en"><span>🇬🇧</span> EN</button>
+                        <button class="lang-option" data-lang="ukr"><span>🇺🇦</span> UKR</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -548,10 +597,10 @@
         </div>
     </section>
 
-    <!-- Language Switcher Widget (Bottom Right) -->
-    <div class="lang-switcher" id="langSwitcher">
-        <button class="lang-btn" id="langBtn">
-            <span id="currentLangFlag">🇷🇺</span> <span id="currentLangText">RU</span>
+    <!-- Floating Language Switcher Widget (Bottom Right) -->
+    <div class="lang-switcher floating-lang" id="floatingLangSwitcher">
+        <button class="lang-btn" id="floatingLangBtn">
+            <span class="currentLangFlag">🇷🇺</span> <span class="currentLangText">RU</span>
         </button>
         <div class="lang-dropdown">
             <button class="lang-option" data-lang="ru"><span>🇷🇺</span> RU</button>
@@ -864,12 +913,12 @@
                 }
             });
 
-            // Update widget button
+            // Update widgets (both header and floating)
             const flags = { ru: '🇷🇺', en: '🇬🇧', ukr: '🇺🇦' };
-            document.getElementById('currentLangFlag').innerText = flags[lang];
-            document.getElementById('currentLangText').innerText = lang.toUpperCase();
+            document.querySelectorAll('.currentLangFlag').forEach(el => el.innerText = flags[lang]);
+            document.querySelectorAll('.currentLangText').forEach(el => el.innerText = lang.toUpperCase());
 
-            // Update active states in dropdown
+            // Update active states in all dropdowns
             document.querySelectorAll('.lang-option').forEach(opt => {
                 if (opt.getAttribute('data-lang') === lang) {
                     opt.classList.add('active');
@@ -878,16 +927,21 @@
                 }
             });
 
-            document.getElementById('langSwitcher').classList.remove('active');
+            // Close switchers
+            document.querySelectorAll('.lang-switcher').forEach(sw => sw.classList.remove('active'));
         }
 
-        // Language Switcher Toggle
-        const langSwitcher = document.getElementById('langSwitcher');
-        const langBtn = document.getElementById('langBtn');
-
-        langBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            langSwitcher.classList.toggle('active');
+        // Language Switchers Toggle Logic
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const switcher = btn.closest('.lang-switcher');
+                // Close others first
+                document.querySelectorAll('.lang-switcher').forEach(s => {
+                    if (s !== switcher) s.classList.remove('active');
+                });
+                switcher.classList.toggle('active');
+            });
         });
 
         document.querySelectorAll('.lang-option').forEach(opt => {
@@ -898,7 +952,7 @@
         });
 
         window.addEventListener('click', () => {
-            langSwitcher.classList.remove('active');
+            document.querySelectorAll('.lang-switcher').forEach(sw => sw.classList.remove('active'));
         });
 
         // Modal Logic

@@ -264,14 +264,14 @@
             margin-bottom: 0;
         }
 
-        /* Video block instead of placeholder */
+        /* Чистый видео-блок без рамок и карточек */
         .about-video-wrapper {
             width: 100%;
             height: 420px;
             border-radius: 16px;
             overflow: hidden;
-            border: 1px solid var(--border);
             position: relative;
+            background: transparent;
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
 
@@ -279,6 +279,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         /* Grids */
@@ -674,7 +675,7 @@
         </div>
     </section>
 
-    <!-- About Us Section (Wide, Minimalistic & with Video) -->
+    <!-- About Us Section (Wide, Minimalistic & with Playing Video) -->
     <section id="about">
         <div class="container-wide">
             <h2 class="section-title" data-i18n="about_main_title">О нас</h2>
@@ -693,6 +694,7 @@
                     </p>
                 </div>
                 <div class="about-video-wrapper">
+                    <!-- Добавлен обязательный атрибут muted для автозапуска в браузерах -->
                     <video autoplay muted loop playsinline class="about-video">
                         <source src="vash_novyj_video_file.mp4" type="video/mp4">
                     </video>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Автоконсьерж-сервис в Швейцарии — Покупка и продажа автомобилей под ключ</title>
+    <title data-i18n="meta_title">Автоконсьерж-сервис в Швейцарии — Покупка и продажа автомобилей под ключ</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -159,6 +159,12 @@
             color: var(--text-main);
         }
 
+        .card p.card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
         .card ul {
             list-style: none;
         }
@@ -209,6 +215,77 @@
         .contact {
             text-align: center;
             background: radial-gradient(circle at center, #131b2e 0%, var(--bg-color) 100%);
+        }
+
+        /* Language Switcher Widget (Bottom Right) */
+        .lang-switcher {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1500;
+        }
+
+        .lang-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: var(--transition);
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent);
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            margin-bottom: 8px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            display: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            min-width: 130px;
+        }
+
+        .lang-switcher.active .lang-dropdown {
+            display: block;
+        }
+
+        .lang-option {
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: var(--transition);
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .lang-option:hover {
+            background: rgba(225, 29, 72, 0.1);
+            color: var(--text-main);
+        }
+
+        .lang-option.active {
+            color: var(--text-main);
+            font-weight: 600;
         }
 
         /* Modal Popup */
@@ -328,36 +405,36 @@
     <header>
         <div class="container header-content">
             <div class="logo">SWISS<span>CARS</span></div>
-            <button class="btn open-modal-btn">Оставить заявку</button>
+            <button class="btn open-modal-btn" data-i18n="btn_request">Оставить заявку</button>
         </div>
     </header>
 
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1>Автоконсьерж-сервис <br><span>в Швейцарии</span></h1>
-            <p>Покупка, проверка, продажа и полное юридическое сопровождение автомобилей под ключ. Без стресса, лишней траты времени и скрытых рисков.</p>
-            <button class="btn open-modal-btn" style="padding: 15px 30px; font-size: 1rem;">Начать подбор</button>
+            <h1 data-i18n="hero_title">Автоконсьерж-сервис <br><span>в Швейцарии</span></h1>
+            <p data-i18n="hero_desc">Покупка, проверка, продажа и полное юридическое сопровождение автомобилей под ключ. Без стресса, лишней траты времени и скрытых рисков.</p>
+            <button class="btn open-modal-btn" style="padding: 15px 30px; font-size: 1rem;" data-i18n="hero_btn">Начать подбор</button>
         </div>
     </section>
 
     <!-- Services -->
     <section id="services">
         <div class="container">
-            <h2 class="section-title">Наши услуги</h2>
-            <p class="section-subtitle">Комплексная забота о вашем автомобиле на каждом этапе</p>
+            <h2 class="section-title" data-i18n="services_title">Наши услуги</h2>
+            <p class="section-subtitle" data-i18n="services_subtitle">Комплексная забота о вашем автомобиле на каждом этапе</p>
             
             <div class="grid-3">
                 <!-- 1 -->
                 <div class="card">
                     <div>
-                        <h3>Индивидуальный подбор</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Самостоятельно ищем лучшие предложения на рынке под ваши параметры:</p>
+                        <h3 data-i18n="s1_title">Индивидуальный подбор</h3>
+                        <p class="card-desc" data-i18n="s1_desc">Самостоятельно ищем лучшие предложения на рынке под ваши параметры:</p>
                         <ul>
-                            <li>Бюджет и желаемая модель</li>
-                            <li>Год выпуска, пробег и тип двигателя</li>
-                            <li>Комплектация и пожелания</li>
-                            <li>Готовый список выгодных вариантов</li>
+                            <li data-i18n="s1_l1">Бюджет и желаемая модель</li>
+                            <li data-i18n="s1_l2">Год выпуска, пробег и тип двигателя</li>
+                            <li data-i18n="s1_l3">Комплектация и пожелания</li>
+                            <li data-i18n="s1_l4">Готовый список выгодных вариантов</li>
                         </ul>
                     </div>
                 </div>
@@ -365,13 +442,13 @@
                 <!-- 2 -->
                 <div class="card">
                     <div>
-                        <h3>Проверка перед покупкой</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Детальный анализ автомобиля перед заключением сделки:</p>
+                        <h3 data-i18n="s2_title">Проверка перед покупкой</h3>
+                        <p class="card-desc" data-i18n="s2_desc">Детальный анализ автомобиля перед заключением сделки:</p>
                         <ul>
-                            <li>Проверка истории и объявлений</li>
-                            <li>Поиск скрытых дефектов</li>
-                            <li>Оценка адекватности цены</li>
-                            <li>Честные плюсы и минусы</li>
+                            <li data-i18n="s2_l1">Проверка истории и объявлений</li>
+                            <li data-i18n="s2_l2">Поиск скрытых дефектов</li>
+                            <li data-i18n="s2_l3">Оценка адекватности цены</li>
+                            <li data-i18n="s2_l4">Честные плюсы и минусы</li>
                         </ul>
                     </div>
                 </div>
@@ -379,13 +456,13 @@
                 <!-- 3 -->
                 <div class="card">
                     <div>
-                        <h3>Осмотр автомобиля</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Личный выезд и профессиональный осмотр:</p>
+                        <h3 data-i18n="s3_title">Осмотр автомобиля</h3>
+                        <p class="card-desc" data-i18n="s3_desc">Личный выезд и профессиональный осмотр:</p>
                         <ul>
-                            <li>Кузов, салон и подвеска</li>
-                            <li>Двигатель и документы</li>
-                            <li>Техническое состояние</li>
-                            <li>Подробный отчет с фото</li>
+                            <li data-i18n="s3_l1">Кузов, салон и подвеска</li>
+                            <li data-i18n="s3_l2">Двигатель и документы</li>
+                            <li data-i18n="s3_l3">Техническое состояние</li>
+                            <li data-i18n="s3_l4">Подробный отчет с фото</li>
                         </ul>
                     </div>
                 </div>
@@ -393,13 +470,13 @@
                 <!-- 4 -->
                 <div class="card">
                     <div>
-                        <h3>Переговоры и торг</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Общаемся с продавцом за вас:</p>
+                        <h3 data-i18n="s4_title">Переговоры и торг</h3>
+                        <p class="card-desc" data-i18n="s4_desc">Общаемся с продавцом за вас:</p>
                         <ul>
-                            <li>Правильные технические вопросы</li>
-                            <li>Уточнение истории авто</li>
-                            <li>Профессиональный торг</li>
-                            <li>Максимально выгодная цена</li>
+                            <li data-i18n="s4_l1">Правильные технические вопросы</li>
+                            <li data-i18n="s4_l2">Уточнение истории авто</li>
+                            <li data-i18n="s4_l3">Профессиональный торг</li>
+                            <li data-i18n="s4_l4">Максимально выгодная цена</li>
                         </ul>
                     </div>
                 </div>
@@ -407,13 +484,13 @@
                 <!-- 5 -->
                 <div class="card">
                     <div>
-                        <h3>Регистрация и MFK</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Берем на себя всю бюрократию в Швейцарии:</p>
+                        <h3 data-i18n="s5_title">Регистрация и MFK</h3>
+                        <p class="card-desc" data-i18n="s5_desc">Берем на себя всю бюрократию в Швейцарии:</p>
                         <ul>
-                            <li>Помощь с прохождением MFK</li>
-                            <li>Оформление страховки</li>
-                            <li>Сопровождение при получении номеров</li>
-                            <li>Доставка автомобиля</li>
+                            <li data-i18n="s5_l1">Помощь с прохождением MFK</li>
+                            <li data-i18n="s5_l2">Оформление страховки</li>
+                            <li data-i18n="s5_l3">Сопровождение при получении номеров</li>
+                            <li data-i18n="s5_l4">Доставка автомобиля</li>
                         </ul>
                     </div>
                 </div>
@@ -421,13 +498,13 @@
                 <!-- 6 -->
                 <div class="card">
                     <div>
-                        <h3>Продажа и Консультации</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">Помощь в реализации и экспертные советы:</p>
+                        <h3 data-i18n="s6_title">Продажа и Консультации</h3>
+                        <p class="card-desc" data-i18n="s6_desc">Помощь в реализации и экспертные советы:</p>
                         <ul>
-                            <li>Профессиональная фотосессия и объявление</li>
-                            <li>Предпродажная подготовка</li>
-                            <li>Консультации по выбору и обслуживанию</li>
-                            <li>Поддержка после покупки</li>
+                            <li data-i18n="s6_l1">Профессиональная фотосессия и объявление</li>
+                            <li data-i18n="s6_l2">Предпродажная подготовка</li>
+                            <li data-i18n="s6_l3">Консультации по выбору и обслуживанию</li>
+                            <li data-i18n="s6_l4">Поддержка после покупки</li>
                         </ul>
                     </div>
                 </div>
@@ -438,25 +515,25 @@
     <!-- Why Us -->
     <section>
         <div class="container">
-            <h2 class="section-title">Почему выбирают нас</h2>
-            <p class="section-subtitle">Принципы нашей работы в Швейцарии</p>
+            <h2 class="section-title" data-i18n="why_title">Почему выбирают нас</h2>
+            <p class="section-subtitle" data-i18n="why_subtitle">Принципы нашей работы в Швейцарии</p>
 
             <div class="why-grid">
                 <div class="why-item">
-                    <h4>Экономия времени</h4>
-                    <p>Избавляем вас от просмотра сотен объявлений и пустых звонков.</p>
+                    <h4 data-i18n="w1_title">Экономия времени</h4>
+                    <p data-i18n="w1_desc">Избавляем вас от просмотра сотен объявлений и пустых звонков.</p>
                 </div>
                 <div class="why-item">
-                    <h4>Честность и открытость</h4>
-                    <p>Откровенно рассказываем о плюсах и минусах каждого варианта.</p>
+                    <h4 data-i18n="w2_title">Честность и открытость</h4>
+                    <p data-i18n="w2_desc">Откровенно рассказываем о плюсах и минусах каждого варианта.</p>
                 </div>
                 <div class="why-item">
-                    <h4>Безопасность сделки</h4>
-                    <p>Помогаем избежать дорогостоящих ошибок и скрытых дефектов.</p>
+                    <h4 data-i18n="w3_title">Безопасность сделки</h4>
+                    <p data-i18n="w3_desc">Помогаем избежать дорогостоящих ошибок и скрытых дефектов.</p>
                 </div>
                 <div class="why-item">
-                    <h4>Поддержка 24/7</h4>
-                    <p>Остаемся на связи и после сделки: сервис, страховка, обслуживание.</p>
+                    <h4 data-i18n="w4_title">Поддержка 24/7</h4>
+                    <p data-i18n="w4_desc">Остаемся на связи и после сделки: сервис, страховка, обслуживание.</p>
                 </div>
             </div>
         </div>
@@ -465,47 +542,59 @@
     <!-- Contact Section -->
     <section class="contact">
         <div class="container" style="max-width: 600px;">
-            <h2 class="section-title">Готовы найти автомобиль?</h2>
-            <p class="section-subtitle">Оставьте заявку, и мы свяжемся с вами в ближайшее время для обсуждения деталей.</p>
-            <button class="btn open-modal-btn" style="padding: 15px 30px; font-size: 1.1rem;">Оставить заявку</button>
+            <h2 class="section-title" data-i18n="contact_title">Готовы найти автомобиль?</h2>
+            <p class="section-subtitle" data-i18n="contact_subtitle">Оставьте заявку, и мы свяжемся с вами в ближайшее время для обсуждения деталей.</p>
+            <button class="btn open-modal-btn" style="padding: 15px 30px; font-size: 1.1rem;" data-i18n="btn_request">Оставить заявку</button>
         </div>
     </section>
+
+    <!-- Language Switcher Widget (Bottom Right) -->
+    <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn" id="langBtn">
+            <span id="currentLangFlag">🇷🇺</span> <span id="currentLangText">RU</span>
+        </button>
+        <div class="lang-dropdown">
+            <button class="lang-option" data-lang="ru"><span>🇷🇺</span> RU</button>
+            <button class="lang-option" data-lang="en"><span>🇬🇧</span> EN</button>
+            <button class="lang-option" data-lang="ukr"><span>🇺🇦</span> UKR</button>
+        </div>
+    </div>
 
     <!-- Modal Popup Form -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
             <button class="modal-close" id="modalClose">&times;</button>
-            <h3>Оставить заявку</h3>
+            <h3 data-i18n="modal_title">Оставить заявку</h3>
             <form id="contactForm">
                 <div class="form-group">
-                    <label for="fullName">ФИО</label>
-                    <input type="text" id="fullName" required placeholder="Введите ваше имя">
+                    <label for="fullName" data-i18n="form_name">ФИО</label>
+                    <input type="text" id="fullName" required placeholder="Введите ваше имя" data-i18n-placeholder="form_name_placeholder">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Номер телефона</label>
+                    <label for="phone" data-i18n="form_phone">Номер телефона</label>
                     <input type="tel" id="phone" required placeholder="+41 (XX) XXX XX XX">
                 </div>
                 <div class="form-group">
-                    <label for="email">Электронная почта</label>
+                    <label for="email" data-i18n="form_email">Электронная почта</label>
                     <input type="email" id="email" required placeholder="example@domain.com">
                 </div>
                 <div class="form-group">
-                    <label for="serviceSelect">Выберите услугу</label>
+                    <label for="serviceSelect" data-i18n="form_service">Выберите услугу</label>
                     <select id="serviceSelect">
-                        <option value="Индивидуальный подбор">Индивидуальный подбор автомобиля</option>
-                        <option value="Проверка перед покупкой">Проверка автомобиля перед покупкой</option>
-                        <option value="Осмотр автомобиля">Осмотр автомобиля</option>
-                        <option value="Переговоры с продавцом">Переговоры с продавцом</option>
-                        <option value="Подбор страховки">Подбор выгодной страховки</option>
-                        <option value="Подготовка к продаже">Подготовка автомобиля к продаже</option>
-                        <option value="Фотосъемка">Профессиональная фотосъемка</option>
-                        <option value="Создание объявления">Создание продающего объявления</option>
-                        <option value="Регистрация и MFK">Регистрация и помощь с MFK</option>
-                        <option value="Доставка автомобиля">Доставка автомобиля</option>
-                        <option value="Консультации / Поддержка">Консультации и поддержка</option>
+                        <option value="Индивидуальный подбор" data-i18n="opt_1">Индивидуальный подбор автомобиля</option>
+                        <option value="Проверка перед покупкой" data-i18n="opt_2">Проверка автомобиля перед покупкой</option>
+                        <option value="Осмотр автомобиля" data-i18n="opt_3">Осмотр автомобиля</option>
+                        <option value="Переговоры с продавцом" data-i18n="opt_4">Переговоры с продавцом</option>
+                        <option value="Подбор страховки" data-i18n="opt_5">Подбор выгодной страховки</option>
+                        <option value="Подготовка к продаже" data-i18n="opt_6">Подготовка автомобиля к продаже</option>
+                        <option value="Фотосъемка" data-i18n="opt_7">Профессиональная фотосъемка</option>
+                        <option value="Создание объявления" data-i18n="opt_8">Создание продающего объявления</option>
+                        <option value="Регистрация и MFK" data-i18n="opt_9">Регистрация и помощь с MFK</option>
+                        <option value="Доставка автомобиля" data-i18n="opt_10">Доставка автомобиля</option>
+                        <option value="Консультации / Поддержка" data-i18n="opt_11">Консультации и поддержка</option>
                     </select>
                 </div>
-                <button type="submit" class="btn" style="width: 100%; margin-top: 10px; padding: 12px;">Отправить заявку</button>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 10px; padding: 12px;" data-i18n="form_submit">Отправить заявку</button>
             </form>
         </div>
     </div>
@@ -513,11 +602,305 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 SwissCars. Автоконсьерж-сервис в Швейцарии. Все права защищены.</p>
+            <p data-i18n="footer_text">&copy; 2026 SwissCars. Автоконсьерж-сервис в Швейцарии. Все права защищены.</p>
         </div>
     </footer>
 
     <script>
+        // Translations Dictionary
+        const translations = {
+            ru: {
+                meta_title: "Автоконсьерж-сервис в Швейцарии — Покупка и продажа автомобилей под ключ",
+                btn_request: "Оставить заявку",
+                hero_title: "Автоконсьерж-сервис <br><span>в Швейцарии</span>",
+                hero_desc: "Покупка, проверка, продажа и полное юридическое сопровождение автомобилей под ключ. Без стресса, лишней траты времени и скрытых рисков.",
+                hero_btn: "Начать подбор",
+                services_title: "Наши услуги",
+                services_subtitle: "Комплексная забота о вашем автомобиле на каждом этапе",
+                s1_title: "Индивидуальный подбор",
+                s1_desc: "Самостоятельно ищем лучшие предложения на рынке под ваши параметры:",
+                s1_l1: "Бюджет и желаемая модель",
+                s1_l2: "Год выпуска, пробег и тип двигателя",
+                s1_l3: "Комплектация и пожелания",
+                s1_l4: "Готовый список выгодных вариантов",
+                s2_title: "Проверка перед покупкой",
+                s2_desc: "Детальный анализ автомобиля перед заключением сделки:",
+                s2_l1: "Проверка истории и объявлений",
+                s2_l2: "Поиск скрытых дефектов",
+                s2_l3: "Оценка адекватности цены",
+                s2_l4: "Честные плюсы и минусы",
+                s3_title: "Осмотр автомобиля",
+                s3_desc: "Личный выезд и профессиональный осмотр:",
+                s3_l1: "Кузов, салон и подвеска",
+                s3_l2: "Двигатель и документы",
+                s3_l3: "Техническое состояние",
+                s3_l4: "Подробный отчет с фото",
+                s4_title: "Переговоры и торг",
+                s4_desc: "Общаемся с продавцом за вас:",
+                s4_l1: "Правильные технические вопросы",
+                s4_l2: "Уточнение истории авто",
+                s4_l3: "Профессиональный торг",
+                s4_l4: "Максимально выгодная цена",
+                s5_title: "Регистрация и MFK",
+                s5_desc: "Берем на себя всю бюрократию в Швейцарии:",
+                s5_l1: "Помощь с прохождением MFK",
+                s5_l2: "Оформление страховки",
+                s5_l3: "Сопровождение при получении номеров",
+                s5_l4: "Доставка автомобиля",
+                s6_title: "Продажа и Консультации",
+                s6_desc: "Помощь в реализации и экспертные советы:",
+                s6_l1: "Профессиональная фотосессия и объявление",
+                s6_l2: "Предпродажная подготовка",
+                s6_l3: "Консультации по выбору и обслуживанию",
+                s6_l4: "Поддержка после покупки",
+                why_title: "Почему выбирают нас",
+                why_subtitle: "Принципы нашей работы в Швейцарии",
+                w1_title: "Экономия времени",
+                w1_desc: "Избавляем вас от просмотра сотен объявлений и пустых звонков.",
+                w2_title: "Честность и открытость",
+                w2_desc: "Откровенно рассказываем о плюсах и минусах каждого варианта.",
+                w3_title: "Безопасность сделки",
+                w3_desc: "Помогаем избежать дорогостоящих ошибок и скрытых дефектов.",
+                w4_title: "Поддержка 24/7",
+                w4_desc: "Остаемся на связи и после сделки: сервис, страховка, обслуживание.",
+                contact_title: "Готовы найти автомобиль?",
+                contact_subtitle: "Оставьте заявку, и мы свяжемся с вами в ближайшее время для обсуждения деталей.",
+                modal_title: "Оставить заявку",
+                form_name: "ФИО",
+                form_name_placeholder: "Введите ваше имя",
+                form_phone: "Номер телефона",
+                form_email: "Электронная почта",
+                form_service: "Выберите услугу",
+                opt_1: "Индивидуальный подбор автомобиля",
+                opt_2: "Проверка автомобиля перед покупкой",
+                opt_3: "Осмотр автомобиля",
+                opt_4: "Переговоры с продавцом",
+                opt_5: "Подбор выгодной страховки",
+                opt_6: "Подготовка автомобиля к продаже",
+                opt_7: "Профессиональная фотосъемка",
+                opt_8: "Создание продающего объявления",
+                opt_9: "Регистрация и помощь с MFK",
+                opt_10: "Доставка автомобиля",
+                opt_11: "Консультации и поддержка",
+                form_submit: "Отправить заявку",
+                footer_text: "&copy; 2026 SwissCars. Автоконсьерж-сервис в Швейцарии. Все права защищены.",
+                alert_success: "Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время."
+            },
+            en: {
+                meta_title: "Car Concierge Service in Switzerland — Turnkey Car Buying & Selling",
+                btn_request: "Get a Quote",
+                hero_title: "Car Concierge Service <br><span>in Switzerland</span>",
+                hero_desc: "Turnkey car purchase, inspection, sale, and full legal support. No stress, no wasted time, and zero hidden risks.",
+                hero_btn: "Start Searching",
+                services_title: "Our Services",
+                services_subtitle: "Comprehensive care for your car at every stage",
+                s1_title: "Individual Search",
+                s1_desc: "Independently finding the best market offers matching your parameters:",
+                s1_l1: "Budget and desired model",
+                s1_l2: "Year, mileage, and engine type",
+                s1_l3: "Trim and special wishes",
+                s1_l4: "Ready list of profitable options",
+                s2_title: "Pre-Purchase Inspection",
+                s2_desc: "Detailed car analysis before concluding the deal:",
+                s2_l1: "History and listing checks",
+                s2_l2: "Hidden defects search",
+                s2_l3: "Price adequacy evaluation",
+                s2_l4: "Honest pros and cons",
+                s3_title: "Car Examination",
+                s3_desc: "Personal visit and professional inspection:",
+                s3_l1: "Body, interior, and suspension",
+                s3_l2: "Engine and documents",
+                s3_l3: "General technical condition",
+                s3_l4: "Detailed report with photos",
+                s4_title: "Negotiation & Bargaining",
+                s4_desc: "Communicating with the seller on your behalf:",
+                s4_l1: "Proper technical questions",
+                s4_l2: "Clarifying car history",
+                s4_l3: "Professional bargaining",
+                s4_l4: "Achieving the best price",
+                s5_title: "Registration & MFK",
+                s5_desc: "Handling all bureaucracy in Switzerland:",
+                s5_l1: "Assistance with MFK passing",
+                s5_l2: "Insurance arrangement",
+                s5_l3: "Support with license plates",
+                s5_l4: "Car delivery",
+                s6_title: "Sales & Consultations",
+                s6_desc: "Assistance in sales and expert advice:",
+                s6_l1: "Professional photoshoot and ad creation",
+                s6_l2: "Pre-sale preparation",
+                s6_l3: "Consultations on choice and maintenance",
+                s6_l4: "Post-purchase support",
+                why_title: "Why Choose Us",
+                why_subtitle: "Principles of our work in Switzerland",
+                w1_title: "Time Saving",
+                w1_desc: "Save you from browsing hundreds of ads and empty calls.",
+                w2_title: "Honesty & Openness",
+                w2_desc: "Honestly telling about pros and cons of each option.",
+                w3_title: "Transaction Security",
+                w3_desc: "Helping avoid costly mistakes and hidden defects.",
+                w4_title: "24/7 Support",
+                w4_desc: "Staying in touch even after the deal: service, insurance, maintenance.",
+                contact_title: "Ready to find a car?",
+                contact_subtitle: "Leave a request and we will contact you shortly to discuss details.",
+                modal_title: "Send a Request",
+                form_name: "Full Name",
+                form_name_placeholder: "Enter your name",
+                form_phone: "Phone Number",
+                form_email: "Email",
+                form_service: "Select Service",
+                opt_1: "Individual car search",
+                opt_2: "Pre-purchase car inspection",
+                opt_3: "Car examination",
+                opt_4: "Negotiation with seller",
+                opt_5: "Optimal insurance selection",
+                opt_6: "Car preparation for sale",
+                opt_7: "Professional photography",
+                opt_8: "Ad creation",
+                opt_9: "Registration & MFK assistance",
+                opt_10: "Car delivery",
+                opt_11: "Consultations & support",
+                form_submit: "Submit Request",
+                footer_text: "&copy; 2026 SwissCars. Car Concierge Service in Switzerland. All rights reserved.",
+                alert_success: "Thank you! Your request has been successfully sent. We will contact you soon."
+            },
+            ukr: {
+                meta_title: "Автоконсьєрж-сервіс у Швейцарії — Покупка та продаж автомобілів під ключ",
+                btn_request: "Залишити заявку",
+                hero_title: "Автоконсьєрж-сервіс <br><span>у Швейцарії</span>",
+                hero_desc: "Купівля, перевірка, продаж та повний юридичний супровід автомобілів під ключ. Без стресу, зайвої втрати часу та прихованих ризиків.",
+                hero_btn: "Розпочати підбір",
+                services_title: "Наші послуги",
+                services_subtitle: "Комплексна турбота про ваш автомобіль на кожному етапі",
+                s1_title: "Індивідуальний підбір",
+                s1_desc: "Самостійно шукаємо найкращі пропозиції на ринку під ваші параметри:",
+                s1_l1: "Бюджет та бажана модель",
+                s1_l2: "Рік випуску, пробіг та тип двигуна",
+                s1_l3: "Комплектація та побажання",
+                s1_l4: "Готовий список вигідних варіантів",
+                s2_title: "Перевірка перед покупкою",
+                s2_desc: "Детальний аналіз автомобіля перед укладанням угоди:",
+                s2_l1: "Перевірка історії та оголошень",
+                s2_l2: "Пошук прихованих дефектів",
+                s2_l3: "Оцінка адекватності ціни",
+                s2_l4: "Чесні плюси та мінуси",
+                s3_title: "Огляд автомобіля",
+                s3_desc: "Особистий виїзд та професійний огляд:",
+                s3_l1: "Кузов, салон та підвіска",
+                s3_l2: "Двигун та документи",
+                s3_l3: "Технічний стан",
+                s3_l4: "Детальний звіт з фото",
+                s4_title: "Переговори та торг",
+                s4_desc: "Спілкуємося з продавцем за вас:",
+                s4_l1: "Правильні технічні питання",
+                s4_l2: "Уточнення історії авто",
+                s4_l3: "Професійний торг",
+                s4_l4: "Максимально вигідна ціна",
+                s5_title: "Реєстрація та MFK",
+                s5_desc: "Беремо на себе всю бюрократію у Швейцарії:",
+                s5_l1: "Допомога з проходженням MFK",
+                s5_l2: "Оформлення страховки",
+                s5_l3: "Супровід при отриманні номерів",
+                s5_l4: "Доставка автомобіля",
+                s6_title: "Продаж та Консультації",
+                s6_desc: "Допомога в реалізації та експертні поради:",
+                s6_l1: "Професійна фотосесія та оголошення",
+                s6_l2: "Передпродажна підготовка",
+                s6_l3: "Консультації щодо вибору та обслуговування",
+                s6_l4: "Підтримка після покупки",
+                why_title: "Чому обирають нас",
+                why_subtitle: "Принципи нашої роботи у Швейцарії",
+                w1_title: "Економія часу",
+                w1_desc: "Звільняємо вас від перегляду сотень оголошень та порожніх дзвінків.",
+                w2_title: "Чесність та відкритість",
+                w2_desc: "Відверто розповідаємо про плюси та мінуси кожного варіанта.",
+                w3_title: "Безпека угоди",
+                w3_desc: "Допомагаємо уникнути дорогих помилок та прихованих дефектів.",
+                w4_title: "Підтримка 24/7",
+                w4_desc: "Залишаємося на зв'язку і після угоди: сервіс, страховка, обслуговування.",
+                contact_title: "Готові знайти автомобіль?",
+                contact_subtitle: "Залиште заявку, і ми зв'яжемося з вами найближчим часом для обговорення деталей.",
+                modal_title: "Залишити заявку",
+                form_name: "ПІБ",
+                form_name_placeholder: "Введіть ваше ім'я",
+                form_phone: "Номер телефону",
+                form_email: "Електронна пошта",
+                form_service: "Виберіть послугу",
+                opt_1: "Індивідуальний підбір автомобіля",
+                opt_2: "Перевірка автомобіля перед покупкою",
+                opt_3: "Огляд автомобіля",
+                opt_4: "Переговори з продавцем",
+                opt_5: "Підбір вигідної страховки",
+                opt_6: "Підготовка автомобіля до продажу",
+                opt_7: "Професійна фотозйомка",
+                opt_8: "Створення продаючого оголошення",
+                opt_9: "Реєстрація та допомога з MFK",
+                opt_10: "Доставка автомобіля",
+                opt_11: "Консультації та підтримка",
+                form_submit: "Надіслати заявку",
+                footer_text: "&copy; 2026 SwissCars. Автоконсьєрж-сервіс у Швейцарії. Всі права захищені.",
+                alert_success: "Дякуємо! Вашу заявку успішно надіслано. Ми зв'яжемося з вами найближчим часом."
+            }
+        };
+
+        let currentLang = 'ru';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+
+            // Update text elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    el.innerHTML = t[key];
+                }
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (t[key]) {
+                    el.placeholder = t[key];
+                }
+            });
+
+            // Update widget button
+            const flags = { ru: '🇷🇺', en: '🇬🇧', ukr: '🇺🇦' };
+            document.getElementById('currentLangFlag').innerText = flags[lang];
+            document.getElementById('currentLangText').innerText = lang.toUpperCase();
+
+            // Update active states in dropdown
+            document.querySelectorAll('.lang-option').forEach(opt => {
+                if (opt.getAttribute('data-lang') === lang) {
+                    opt.classList.add('active');
+                } else {
+                    opt.classList.remove('active');
+                }
+            });
+
+            document.getElementById('langSwitcher').classList.remove('active');
+        }
+
+        // Language Switcher Toggle
+        const langSwitcher = document.getElementById('langSwitcher');
+        const langBtn = document.getElementById('langBtn');
+
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langSwitcher.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.lang-option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                const lang = opt.getAttribute('data-lang');
+                setLanguage(lang);
+            });
+        });
+
+        window.addEventListener('click', () => {
+            langSwitcher.classList.remove('active');
+        });
+
         // Modal Logic
         const modalOverlay = document.getElementById('modalOverlay');
         const openModalBtns = document.querySelectorAll('.open-modal-btn');
@@ -542,7 +925,7 @@
         // Form submit simulation
         document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.');
+            alert(translations[currentLang].alert_success);
             modalOverlay.classList.remove('active');
             e.target.reset();
         });

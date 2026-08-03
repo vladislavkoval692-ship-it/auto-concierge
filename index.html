@@ -30,6 +30,7 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -63,6 +64,13 @@
             font-size: 1.15rem;
             letter-spacing: 0.5px;
             color: var(--text-main);
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            opacity: 0.85;
         }
 
         .logo span {
@@ -597,7 +605,7 @@
     <!-- Header -->
     <header>
         <div class="container header-content">
-            <div class="logo">SWISS<span>CARS</span></div>
+            <a href="#" class="logo">SWISS<span>CARS</span></a>
             <ul class="nav-links">
                 <li><a href="#about" data-i18n="nav_about">О нас</a></li>
                 <li><a href="#services" data-i18n="nav_services">Услуги и стоимость</a></li>

@@ -221,6 +221,79 @@
             font-size: 1.1rem;
         }
 
+        /* About Us New Layout */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-elite-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            text-align: left;
+        }
+
+        .about-elite-box blockquote {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .about-elite-box blockquote span {
+            color: var(--accent);
+        }
+
+        .about-elite-box p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .about-elite-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-image-placeholder {
+            background: var(--card-bg);
+            border: 2px dashed var(--border);
+            border-radius: 16px;
+            height: 100%;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image-placeholder:hover {
+            border-color: var(--accent);
+        }
+
+        .about-image-placeholder span {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .about-image-placeholder p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
         /* Grids */
         .grid-3 {
             display: grid;
@@ -367,39 +440,6 @@
             font-size: 0.9rem;
             color: var(--text-muted);
             line-height: 1.5;
-        }
-
-        /* About Us Elite Block */
-        .about-elite-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 50px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-        }
-
-        .about-elite-box blockquote {
-            font-size: 1.35rem;
-            font-style: italic;
-            color: var(--text-main);
-            margin-bottom: 25px;
-            line-height: 1.5;
-            position: relative;
-        }
-
-        .about-elite-box blockquote span {
-            color: var(--accent);
-        }
-
-        .about-elite-box p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
         }
 
         /* Language Switcher System */
@@ -597,6 +637,9 @@
             .nav-links {
                 display: none;
             }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -648,16 +691,23 @@
         <div class="container">
             <h2 class="section-title" data-i18n="about_main_title">О нас</h2>
             <p class="section-subtitle" data-i18n="about_main_subtitle">Эксклюзивный подход к каждому клиенту</p>
-            <div class="about-elite-box">
-                <blockquote data-i18n="about_quote">
-                    «Мы создаем не просто решения — мы формируем стандарты исключительного <span>превосходства</span>».
-                </blockquote>
-                <p data-i18n="about_text_1">
-                    Наша философия базируется на трех абсолютных принципах: безупречная репутация, элитарный подход и абсолютная конфиденциальность. Мы объединяем глубокую экспертную аналитику, передовые технологии и эстетику роскоши, чтобы воплощать в жизнь проекты исключительного уровня.
-                </p>
-                <p data-i18n="about_text_2">
-                    Для тех, кто привык выбирать лучшее и не приемлет компромиссов, мы открываем двери в мир абсолютного комфорта, статуса и бесконечных возможностей. Ваше доверие — наш главный капитал, ваше превосходство — наш неизменный результат.
-                </p>
+            
+            <div class="about-grid">
+                <div class="about-elite-box">
+                    <blockquote data-i18n="about_quote">
+                        «Мы создаем не просто решения — мы формируем стандарты исключительного <span>превосходства</span>».
+                    </blockquote>
+                    <p data-i18n="about_text_1">
+                        Наша философия базируется на трех абсолютных принципах: безупречная репутация, элитарный подход и абсолютная конфиденциальность. Мы объединяем глубокую экспертную аналитику, передовые технологии и эстетику роскоши, чтобы воплощать в жизнь проекты исключительного уровня.
+                    </p>
+                    <p data-i18n="about_text_2">
+                        Для тех, кто привык выбирать лучшее и не приемлет компромиссов, мы открываем двери в мир абсолютного комфорта, статуса и бесконечных возможностей. Ваше доверие — наш главный капитал, ваше превосходство — наш неизменный результат.
+                    </p>
+                </div>
+                <div class="about-image-placeholder">
+                    <span>Место для фото</span>
+                    <p>Добавьте изображение в этот блок, когда найдете подходящее</p>
+                </div>
             </div>
         </div>
     </section>

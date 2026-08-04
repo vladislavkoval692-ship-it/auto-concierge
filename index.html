@@ -431,7 +431,6 @@
             color: var(--accent);
         }
 
-        /* Скрытые карточки по умолчанию */
         .calc-card.hidden-service {
             display: none;
         }
@@ -830,12 +829,11 @@
             <p data-i18n="hero_desc">Покупка, проверка, продажа и полное юридическое сопровождение автомобилей под ключ. Без стресса, лишней траты времени и скрытых рисков.</p>
             <div class="hero-buttons">
                 <button class="btn open-modal-btn" style="padding: 15px 30px; font-size: 1rem;" data-i18n="hero_btn">Начать подбор</button>
-                <a href="https://wa.me/41764795820?text=Здравствуйте,%20хочу%20обсудить%20подбор%20автомобиля" target="_blank" class="btn btn-whatsapp" style="padding: 15px 30px; font-size: 1rem;" data-i18n="hero_whatsapp">Написать в WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- About Us Section (Слева, без обводки) -->
+    <!-- About Us Section -->
     <section id="about" class="about-section">
         <div class="about-video-container">
             <video autoplay muted loop playsinline preload="auto" class="about-bg-video" id="aboutVideo">
@@ -874,7 +872,7 @@
             
             <div class="calc-layout">
                 <div class="calc-services-grid" id="calcServicesGrid">
-                    <!-- Первые 4 видимых карточки (кратная 2 сетка для идеальной симметрии) -->
+                    <!-- Первые 4 видимых карточки -->
                     <div class="calc-card" data-price="950" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ" data-name-de="Auto-Kauf komplett" data-name-en="Turnkey car purchase">
                         <div>
                             <div class="calc-card-header">
@@ -1086,7 +1084,7 @@
                         </div>
                     </div>
 
-                    <!-- Кнопка развернуть/свернуть остальные услуги -->
+                    <!-- Кнопка развернуть/свернуть -->
                     <div class="calc-toggle-container">
                         <button type="button" class="btn" id="toggleServicesBtn" data-i18n="btn_more_services" style="padding: 12px 30px;">Показать все услуги (15)</button>
                     </div>
@@ -1195,33 +1193,6 @@
         </div>
     </section>
 
-    <!-- Why Us Section -->
-    <section id="why">
-        <div class="container">
-            <h2 class="section-title" data-i18n="why_title">Почему выбирают нас</h2>
-            <p class="section-subtitle" data-i18n="why_subtitle">Принципы нашей работы в Швейцарии</p>
-
-            <div class="why-grid">
-                <div class="why-item">
-                    <h4 data-i18n="w1_title">Экономия времени</h4>
-                    <p data-i18n="w1_desc">Избавляем вас от просмотра сотен объявлений и пустых звонков.</p>
-                </div>
-                <div class="why-item">
-                    <h4 data-i18n="w2_title">Честность и открытость</h4>
-                    <p data-i18n="w2_desc">Откровенно рассказываем о плюсах и минусах каждого варианта.</p>
-                </div>
-                <div class="why-item">
-                    <h4 data-i18n="w3_title">Безопасность сделки</h4>
-                    <p data-i18n="w3_desc">Помогаем избежать дорогостоящих ошибок и скрытых дефектов.</p>
-                </div>
-                <div class="why-item">
-                    <h4 data-i18n="w4_title">Индивидуальный подход</h4>
-                    <p data-i18n="w4_desc">Учитываем все ваши пожелания и бюджет при подборе авто.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Modal Window -->
     <div class="modal-overlay" id="orderModal">
         <div class="modal-content">
@@ -1279,7 +1250,6 @@
                 });
             }
 
-            // Динамический калькулятор услуг + аккордеон для видимости 4 карточек
             let currentLang = 'ru';
             const calcCards = document.querySelectorAll('.calc-card');
             const summaryList = document.getElementById('summaryList');
@@ -1360,7 +1330,6 @@
                     hero_title: "Автоконсьерж-сервис <br><span>в Швейцарии</span>",
                     hero_desc: "Покупка, проверка, продажа и полное юридическое сопровождение автомобилей под ключ. Без стресса, лишней траты времени и скрытых рисков.",
                     hero_btn: "Начать подбор",
-                    hero_whatsapp: "Написать в WhatsApp",
                     about_main_title: "О нас",
                     about_main_subtitle: "Эксклюзивный подход к каждому клиенту",
                     about_quote: "«Мы создаем не просто решения — мы формируем стандарты исключительного <span>превосходства</span>».",
@@ -1439,16 +1408,6 @@
                     c2_desc: "Оперативный выезд экспертов для проверки и покупки машин в северных и центральных кантонах.",
                     c3_name: "Лугано и Лозанна",
                     c3_desc: "Полное покрытие южного и франкоязычного регионов Швейцарии под ключ.",
-                    why_title: "Почему выбирают нас",
-                    why_subtitle: "Принципы нашей работы в Швейцарии",
-                    w1_title: "Экономия времени",
-                    w1_desc: "Избавляем вас от просмотра сотен объявлений и пустых звонков.",
-                    w2_title: "Честность и открытость",
-                    w2_desc: "Откровенно рассказываем о плюсах и минусах каждого варианта.",
-                    w3_title: "Безопасность сделки",
-                    w3_desc: "Помогаем избежать дорогостоящих ошибок и скрытых дефектов.",
-                    w4_title: "Индивидуальный подход",
-                    w4_desc: "Учитываем все ваши пожелания и бюджет при подборе авто.",
                     modal_title: "Оставить заявку",
                     modal_subtitle: "Заполните форму, и наш специалист свяжется с вами в ближайшее время.",
                     form_name: "Ваше имя",
@@ -1466,7 +1425,6 @@
                     hero_title: "Автоконсьєрж-сервіс <br><span>у Швейцарії</span>",
                     hero_desc: "Купівля, перевірка, продаж та повний юридичний супровід автомобілів під ключ. Без стресу, зайвої витрати часу та прихованих ризиків.",
                     hero_btn: "Почати підбір",
-                    hero_whatsapp: "Написати в WhatsApp",
                     about_main_title: "Про нас",
                     about_main_subtitle: "Ексклюзивний підхід до кожного клієнта",
                     about_quote: "«Ми створюємо не просто рішення — ми формуємо стандарти виняткової <span>переваги</span>».",
@@ -1545,16 +1503,6 @@
                     c2_desc: "Оперативний виїзд експертів для перевірки та купівлі машин у північних кантонах.",
                     c3_name: "Лугано і Лозанна",
                     c3_desc: "Повне покриття південного та франкомовного регіонів Швейцарії під ключ.",
-                    why_title: "Чому обирають нас",
-                    why_subtitle: "Принципи нашої роботи у Швейцарії",
-                    w1_title: "Економія часу",
-                    w1_desc: "Зберігаємо ваш час від перегляду сотень оголошень та порожніх дзвінків.",
-                    w2_title: "Чесність і відкритість",
-                    w2_desc: "Відверто розповідаємо про плюси та мінуси кожного варіанта.",
-                    w3_title: "Безпека угоди",
-                    w3_desc: "Допомагаємо уникнути дороговартісних помилок та прихованих дефектів.",
-                    w4_title: "Індивідуальний підхід",
-                    w4_desc: "Враховуємо всі ваші побажання та бюджет при підборі авто.",
                     modal_title: "Залишити заявку",
                     modal_subtitle: "Заповніть форму, і наш фахівець зв'яжеться з вами найближчим часом.",
                     form_name: "Ваше ім'я",
@@ -1572,7 +1520,6 @@
                     hero_title: "Autoconcierge-Service <br><span>in der Schweiz</span>",
                     hero_desc: "Kauf, Prüfung, Verkauf und vollständige rechtliche Begleitung von Autos aus einer Hand. Ohne Stress, Zeitverschwendung und versteckte Risiken.",
                     hero_btn: "Suche starten",
-                    hero_whatsapp: "Auf WhatsApp schreiben",
                     about_main_title: "Über uns",
                     about_main_subtitle: "Exklusiver Ansatz für jeden Kunden",
                     about_quote: "«Wir schaffen nicht nur Lösungen – wir prägen Standards außergewöhnlicher <span>Exzellenz</span>».",
@@ -1651,16 +1598,6 @@
                     c2_desc: "Schneller Einsatz von Experten für Fahrzeugprüfungen in den nördlichen und zentralen Regionen.",
                     c3_name: "Lugano & Lausanne",
                     c3_desc: "Komplette Abdeckung der südlichen und französischsprachigen Regionen der Schweiz.",
-                    why_title: "Warum uns wählen",
-                    why_subtitle: "Prinzipien unserer Arbeit in der Schweiz",
-                    w1_title: "Zeitersparnis",
-                    w1_desc: "Wir bewahren Sie vor dem Durchsuchen hunderter Inserate.",
-                    w2_title: "Ehrlichkeit",
-                    w2_desc: "Wir sprechen offen über Vor- und Nachteile jeder Option.",
-                    w3_title: "Sicherheit",
-                    w3_desc: "Wir helfen Ihnen, kostspielige Fehler zu vermeiden.",
-                    w4_title: "Individuell",
-                    w4_desc: "Wir berücksichtigen all Ihre Wünsche und Ihr Budget.",
                     modal_title: "Anfrage senden",
                     modal_subtitle: "Füllen Sie das Formular aus, wir kontaktieren Sie in Kürze.",
                     form_name: "Ihr Name",
@@ -1678,7 +1615,6 @@
                     hero_title: "Car Concierge Service <br><span>in Switzerland</span>",
                     hero_desc: "Purchase, inspection, sale, and full legal support for turnkey vehicles. Without stress, wasted time, and hidden risks.",
                     hero_btn: "Start Search",
-                    hero_whatsapp: "Chat on WhatsApp",
                     about_main_title: "About Us",
                     about_main_subtitle: "Exclusive approach to each client",
                     about_quote: "«We do not just create solutions — we shape standards of exceptional <span>excellence</span>».",
@@ -1757,16 +1693,6 @@
                     c2_desc: "Prompt expert dispatch for car checks and purchases in northern and central cantons.",
                     c3_name: "Lugano & Lausanne",
                     c3_desc: "Full coverage of southern and French-speaking regions of Switzerland turnkey.",
-                    why_title: "Why Choose Us",
-                    why_subtitle: "Principles of our work in Switzerland",
-                    w1_title: "Time Saving",
-                    w1_desc: "Saving you from browsing hundreds of ads and making empty calls.",
-                    w2_title: "Honesty & Openness",
-                    w2_desc: "We openly talk about the pros and cons of each option.",
-                    w3_title: "Transaction Security",
-                    w3_desc: "We help you avoid costly mistakes and hidden defects.",
-                    w4_title: "Individual Approach",
-                    w4_desc: "We consider all your wishes and budget during car selection.",
                     modal_title: "Leave a Request",
                     modal_subtitle: "Fill out the form and our specialist will contact you shortly.",
                     form_name: "Your Name",

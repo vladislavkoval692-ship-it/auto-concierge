@@ -22,6 +22,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -36,7 +37,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 16px;
         }
 
         /* Header */
@@ -45,12 +46,12 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(11, 15, 25, 0.85);
+            background: rgba(11, 15, 25, 0.9);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
-            padding: 14px 0;
+            padding: 12px 0;
         }
 
         .header-content {
@@ -61,12 +62,11 @@
 
         .logo {
             font-weight: 700;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             letter-spacing: 0.5px;
             color: var(--text-main);
             text-decoration: none;
             cursor: pointer;
-            transition: var(--transition);
         }
 
         .logo span {
@@ -75,7 +75,7 @@
 
         .nav-links {
             display: flex;
-            gap: 24px;
+            gap: 16px;
             list-style: none;
             align-items: center;
         }
@@ -84,7 +84,7 @@
             color: var(--text-muted);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: var(--transition);
         }
 
@@ -95,21 +95,23 @@
         .header-right {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
         }
 
         .btn {
             background: linear-gradient(135deg, var(--accent) 0%, #b89728 100%);
             color: #0b0f19;
-            padding: 10px 20px;
+            padding: 8px 14px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             white-space: nowrap;
             box-shadow: 0 4px 16px var(--accent-glow);
             text-align: center;
@@ -118,23 +120,17 @@
         .btn:hover {
             background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent) 100%);
             transform: translateY(-2px);
-            box-shadow: 0 6px 22px rgba(212, 175, 55, 0.45);
         }
 
         .btn-whatsapp {
             background: #25d366;
             color: #ffffff;
             box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-decoration: none;
+            gap: 6px;
         }
 
         .btn-whatsapp:hover {
             background: #20ba5a;
-            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
             color: #ffffff;
         }
 
@@ -143,7 +139,7 @@
             position: relative;
             overflow: hidden;
             background: var(--bg-color);
-            padding: 170px 0 90px;
+            padding: 140px 0 70px;
             text-align: center;
         }
 
@@ -178,9 +174,9 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-size: clamp(2rem, 7vw, 3.8rem);
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             line-height: 1.2;
         }
 
@@ -189,15 +185,16 @@
         }
 
         .hero p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-size: clamp(0.95rem, 3vw, 1.25rem);
             color: var(--text-muted);
-            max-width: 750px;
-            margin: 0 auto 35px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            padding: 0 10px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
@@ -205,29 +202,30 @@
 
         /* Sections */
         section {
-            padding: 90px 0;
+            padding: 70px 0;
             border-bottom: 1px solid var(--border);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.3rem;
+            font-size: clamp(1.8rem, 5vw, 2.3rem);
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .section-subtitle {
             text-align: center;
             color: var(--text-muted);
-            margin-bottom: 60px;
-            font-size: 1.1rem;
+            margin-bottom: 40px;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            padding: 0 10px;
         }
 
         /* About Section */
         .about-section {
             position: relative;
             overflow: hidden;
-            padding: 130px 0;
+            padding: 90px 0;
         }
 
         .about-video-container {
@@ -260,7 +258,7 @@
             z-index: 2;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 16px;
         }
 
         .about-text-content {
@@ -268,19 +266,17 @@
             border: none;
             border-radius: 0;
             padding: 0;
-            backdrop-filter: none;
-            box-shadow: none;
             text-align: left;
             max-width: 650px;
         }
 
         .about-text-content blockquote {
-            font-size: 1.6rem;
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
             font-style: italic;
             color: var(--text-main);
-            margin-bottom: 30px;
+            margin-bottom: 24px;
             border-left: 4px solid var(--accent);
-            padding-left: 20px;
+            padding-left: 16px;
             line-height: 1.4;
         }
 
@@ -290,16 +286,16 @@
 
         .about-text-content p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 25px;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            line-height: 1.7;
+            margin-bottom: 20px;
         }
 
         /* Calculator Section */
         .services-section {
             position: relative;
             overflow: hidden;
-            padding: 130px 0;
+            padding: 90px 0;
         }
 
         .services-video-container {
@@ -334,22 +330,34 @@
 
         .calc-layout {
             display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-            gap: 30px;
+            grid-template-columns: 1fr;
+            gap: 24px;
             align-items: start;
+        }
+
+        @media (min-width: 992px) {
+            .calc-layout {
+                grid-template-columns: 1.3fr 0.7fr;
+            }
         }
 
         .calc-services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 650px) {
+            .calc-services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .calc-card {
             background: rgba(19, 27, 46, 0.85);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 25px;
+            border-radius: 12px;
+            padding: 20px;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -360,25 +368,23 @@
 
         .calc-card:hover {
             border-color: rgba(212, 175, 55, 0.5);
-            transform: translateY(-3px);
         }
 
         .calc-card.selected {
             border-color: var(--accent);
             background: rgba(212, 175, 55, 0.1);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
         }
 
         .calc-card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             gap: 10px;
         }
 
         .calc-card h3 {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-main);
             font-weight: 600;
         }
@@ -391,7 +397,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition);
             background: var(--bg-color);
             flex-shrink: 0;
         }
@@ -410,9 +415,9 @@
 
         .calc-card p {
             color: var(--text-muted);
-            font-size: 0.88rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            line-height: 1.4;
         }
 
         .calc-card-footer {
@@ -420,13 +425,13 @@
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid var(--border);
-            padding-top: 15px;
-            font-size: 0.9rem;
+            padding-top: 12px;
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
 
         .calc-price {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: var(--accent);
         }
@@ -447,35 +452,41 @@
 
         /* Calculator Sidebar */
         .calc-summary {
-            background: rgba(19, 27, 46, 0.9);
+            background: rgba(19, 27, 46, 0.95);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 30px;
-            position: sticky;
-            top: 100px;
+            border-radius: 14px;
+            padding: 24px;
+            position: static;
             backdrop-filter: blur(12px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (min-width: 992px) {
+            .calc-summary {
+                position: sticky;
+                top: 90px;
+            }
         }
 
         .calc-summary h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
             color: var(--text-main);
             border-bottom: 1px solid var(--border);
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
 
         .summary-items-list {
             list-style: none;
-            margin-bottom: 20px;
-            max-height: 220px;
+            margin-bottom: 16px;
+            max-height: 180px;
             overflow-y: auto;
         }
 
         .summary-items-list li {
             color: var(--text-muted);
-            font-size: 0.88rem;
-            margin-bottom: 10px;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
             display: flex;
             justify-content: space-between;
             gap: 10px;
@@ -490,10 +501,10 @@
         .summary-empty {
             color: var(--text-muted);
             font-style: italic;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
             text-align: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
         .summary-total {
@@ -501,14 +512,14 @@
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid var(--border);
-            padding-top: 20px;
-            margin-bottom: 25px;
-            font-size: 1.1rem;
+            padding-top: 16px;
+            margin-bottom: 20px;
+            font-size: 1rem;
             font-weight: 600;
         }
 
         .summary-total-price {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--accent);
             font-weight: 700;
         }
@@ -516,53 +527,63 @@
         .summary-actions {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .summary-actions .btn {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
         }
 
         /* Grid for details */
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 650px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 30px;
+            border-radius: 12px;
+            padding: 24px;
             transition: var(--transition);
         }
 
         .card:hover {
             border-color: var(--accent);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
             color: var(--text-main);
         }
 
         .card p {
             color: var(--text-muted);
-            font-size: 0.92rem;
-            line-height: 1.6;
+            font-size: 0.88rem;
+            line-height: 1.5;
         }
 
-        /* Cantons Section with Interactive Floating Cards & Video Background */
+        /* Cantons Section with Floating Cards */
         .cantons-section {
             position: relative;
             overflow: hidden;
-            min-height: 700px;
-            padding: 100px 0;
+            min-height: 600px;
+            padding: 80px 0;
         }
 
         .cantons-video-container {
@@ -598,40 +619,39 @@
         .cantons-floating-area {
             position: relative;
             width: 100%;
-            height: 480px;
+            height: 420px;
             overflow: hidden;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .canton-floating-card {
             position: absolute;
-            background: rgba(19, 27, 46, 0.85);
+            background: rgba(19, 27, 46, 0.9);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 18px;
-            width: 240px;
+            border-radius: 12px;
+            padding: 14px;
+            width: 220px;
             backdrop-filter: blur(8px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: border-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            transition: border-color 0.3s ease;
             will-change: transform;
         }
 
         .canton-floating-card:hover {
             border-color: var(--accent);
-            transform: scale(1.05);
             z-index: 10;
         }
 
         .canton-floating-card h3 {
-            font-size: 1.05rem;
-            margin-bottom: 6px;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
             color: var(--text-main);
         }
 
         .canton-floating-card p {
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
         /* Language Switcher */
@@ -643,7 +663,7 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             color: var(--text-main);
-            padding: 8px 12px;
+            padding: 6px 10px;
             border-radius: 8px;
             cursor: pointer;
             display: flex;
@@ -652,14 +672,10 @@
             transition: var(--transition);
         }
 
-        .lang-btn:hover {
-            border-color: var(--accent);
-        }
-
         .flag-icon {
-            width: 24px;
-            height: 18px;
-            border-radius: 3px;
+            width: 20px;
+            height: 14px;
+            border-radius: 2px;
             object-fit: cover;
             display: block;
         }
@@ -670,11 +686,11 @@
             right: 0;
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             display: none;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            min-width: 160px;
+            min-width: 140px;
             z-index: 1500;
         }
 
@@ -683,16 +699,15 @@
         }
 
         .lang-option {
-            padding: 11px 16px;
+            padding: 10px 14px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             cursor: pointer;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-family: inherit;
             font-weight: 500;
-            transition: var(--transition);
             background: none;
             border: none;
             width: 100%;
@@ -711,7 +726,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(11, 15, 25, 0.8);
+            background: rgba(11, 15, 25, 0.85);
             backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
@@ -720,6 +735,7 @@
             opacity: 0;
             visibility: hidden;
             transition: var(--transition);
+            padding: 16px;
         }
 
         .modal-overlay.active {
@@ -731,9 +747,9 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 40px;
+            padding: 24px;
             width: 100%;
-            max-width: 480px;
+            max-width: 440px;
             position: relative;
             box-shadow: 0 20px 40px rgba(0,0,0,0.6);
             transform: translateY(20px);
@@ -748,43 +764,38 @@
 
         .modal-close {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 16px;
+            right: 16px;
             background: none;
             border: none;
             color: var(--text-muted);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .modal-close:hover {
-            color: var(--text-main);
         }
 
         .modal-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: var(--text-main);
         }
 
         .modal-subtitle {
             color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 24px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
         }
 
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             text-align: left;
         }
 
         .form-group label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .form-control {
@@ -792,11 +803,10 @@
             background: var(--bg-color);
             border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 12px 16px;
+            padding: 10px 14px;
             color: var(--text-main);
             font-family: inherit;
-            font-size: 0.95rem;
-            transition: var(--transition);
+            font-size: 0.9rem;
         }
 
         .form-control:focus {
@@ -806,32 +816,27 @@
 
         .modal-content .btn {
             width: 100%;
-            margin-top: 10px;
-            padding: 14px;
+            margin-top: 8px;
+            padding: 12px;
         }
 
         footer {
-            padding: 40px 0;
+            padding: 30px 0;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
-        @media (max-width: 992px) {
-            .calc-layout {
-                grid-template-columns: 1fr;
-            }
-            .calc-summary {
-                position: static;
-            }
-            .cantons-floating-area {
-                height: 700px;
-            }
-        }
-
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             .nav-links {
                 display: none;
+            }
+            .cantons-floating-area {
+                height: 550px;
+            }
+            .canton-floating-card {
+                width: 200px;
+                padding: 10px;
             }
         }
     </style>
@@ -849,7 +854,7 @@
             </ul>
             <div class="header-right">
                 <a href="https://wa.me/41764795820?text=Здравствуйте,%20интересует%20автоконсьерж-сервис%20в%20Швейцарии" target="_blank" class="btn btn-whatsapp" data-i18n="btn_whatsapp">WhatsApp</a>
-                <button class="btn open-modal-btn" data-i18n="btn_request">Оставить заявку</button>
+                <button class="btn open-modal-btn" data-i18n="btn_request">Заявка</button>
                 <div class="lang-switcher" id="headerLangSwitcher">
                     <button class="lang-btn" id="headerLangBtn" aria-label="Language menu">
                         <svg class="flag-icon" viewBox="0 0 640 480"><path fill="#fff" d="M0 0h640v480H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>
@@ -877,7 +882,7 @@
             <h1 data-i18n="hero_title">Автоконсьерж-сервис <br><span>в Швейцарии</span></h1>
             <p data-i18n="hero_desc">Покупка, проверка, продажа и полное юридическое сопровождение автомобилей под ключ. Без стресса, лишней траты времени и скрытых рисков.</p>
             <div class="hero-buttons">
-                <button class="btn open-modal-btn" style="padding: 15px 30px; font-size: 1rem;" data-i18n="hero_btn">Начать подбор</button>
+                <button class="btn open-modal-btn" style="padding: 12px 24px; font-size: 0.95rem;" data-i18n="hero_btn">Начать подбор</button>
             </div>
         </div>
     </section>
@@ -1164,7 +1169,7 @@
     <!-- Detailed Services List Section -->
     <section id="details">
         <div class="container">
-            <h2 class="section-title" data-i18n="details_title">Подробно о наших услугах</h2>
+            <h2 class="section-title" data-i18n="details_title">Наши услуги</h2>
             <p class="section-subtitle" data-i18n="details_subtitle">Полный спектр решений для вашего автомобиля в Швейцарии</p>
 
             <div class="grid-3">
@@ -1235,63 +1240,63 @@
             <div class="cantons-floating-area" id="floatingArea">
                 <div class="canton-floating-card">
                     <h3>Цюрих</h3>
-                    <p>Финансовый и деловой центр с высокой плотностью премиальных авто.</p>
+                    <p>Финансовый и деловой центр с высокой плотностью авто.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Берн</h3>
-                    <p>Федеральная столица и ключевой регион авторынка.</p>
+                    <p>Федеральная столица и ключевой регион.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Во</h3>
-                    <p>Динамичный франкоязычный кантон на Женевском озере.</p>
+                    <p>Динамичный франкоязычный кантон на озере.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Аргау</h3>
-                    <p>Крупный логистический и торговый центр Швейцарии.</p>
+                    <p>Крупный логистический и торговый узел.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Санкт-Галлен</h3>
-                    <p>Главный экономический центр восточной конфедерации.</p>
+                    <p>Экономический центр восточной конфедерации.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Женева</h3>
-                    <p>Международный центр дипломатии, элегантности и роскоши.</p>
+                    <p>Международный центр дипломатии и роскоши.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Люцерн</h3>
-                    <p>Живописный альпийский центр с развитой инфраструктурой.</p>
+                    <p>Живописный альпийский культурный центр.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Золотурн</h3>
-                    <p>Исторический кантон с выгодным географическим положением.</p>
+                    <p>Исторический кантон в центре страны.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Тичино</h3>
-                    <p>Солнечный итальянский регион с элитным автопарком.</p>
+                    <p>Солнечный итальянский регион под ключ.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Базель-Ланд</h3>
-                    <p>Промышленный и транспортный узел на границе с ЕС.</p>
+                    <p>Промышленный узел на границе с ЕС.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Вале</h3>
-                    <p>Курортный регион с высокими требованиями к полному приводу.</p>
+                    <p>Курортный регион с высокими требованиями.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Фрибур</h3>
-                    <p>Двуязычный стабильный регион в сердце Швейцарии.</p>
+                    <p>Двуязычный стабильный регион Швейцарии.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Тургоу</h3>
-                    <p>Развитый экономический кантон на северо-востоке.</p>
+                    <p>Развитый экономический кантон на севере.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Базель-Штадт</h3>
-                    <p>Культурная столица и центр инновационной элиты.</p>
+                    <p>Культурная столица и центр инноваций.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Швиц</h3>
-                    <p>Историческое сердце Швейцарии с престижными коммунами.</p>
+                    <p>Историческое сердце с престижными зонами.</p>
                 </div>
             </div>
         </div>
@@ -1354,23 +1359,24 @@
                 });
             }
 
-            // Интерактивное хаотичное движение карточек кантонов
+            // Интерактивное хаотичное движение карточек кантонов (адаптировано под моб. экраны)
             const floatingArea = document.getElementById('floatingArea');
             const floatingCards = document.querySelectorAll('.canton-floating-card');
 
             if (floatingArea && floatingCards.length > 0) {
-                const areaWidth = floatingArea.clientWidth;
-                const areaHeight = floatingArea.clientHeight;
-
+                const isMobile = window.innerWidth <= 768;
                 const cardsData = Array.from(floatingCards).map((card) => {
-                    const cardWidth = 240;
-                    const cardHeight = 120;
+                    const cardWidth = isMobile ? 190 : 220;
+                    const cardHeight = 90;
                     
-                    let x = Math.random() * (areaWidth - cardWidth);
-                    let y = Math.random() * (areaHeight - cardHeight);
+                    const areaWidth = floatingArea.clientWidth;
+                    const areaHeight = floatingArea.clientHeight;
+
+                    let x = Math.random() * Math.max(10, areaWidth - cardWidth);
+                    let y = Math.random() * Math.max(10, areaHeight - cardHeight);
                     
-                    let vx = (Math.random() - 0.5) * 1.0;
-                    let vy = (Math.random() - 0.5) * 1.0;
+                    let vx = (Math.random() - 0.5) * 0.8;
+                    let vy = (Math.random() - 0.5) * 0.8;
 
                     card.style.left = `${x}px`;
                     card.style.top = `${y}px`;
@@ -1488,7 +1494,7 @@
                     nav_services: "Калькулятор",
                     nav_details: "Наши услуги",
                     btn_whatsapp: "WhatsApp",
-                    btn_request: "Оставить заявку",
+                    btn_request: "Заявка",
                     hero_title: "Автоконсьерж-сервис <br><span>в Швейцарии</span>",
                     hero_desc: "Покупка, проверка, продажа и полное юридическое сопровождение автомобилей под ключ. Без стресса, лишней траты времени и скрытых рисков.",
                     hero_btn: "Начать подбор",
@@ -1538,30 +1544,6 @@
                     calc_btn_wa: "Обсудить в WhatsApp",
                     details_title: "Наши услуги",
                     details_subtitle: "Полный спектр решений для вашего автомобиля в Швейцарии",
-                    d1_title: "Покупка под ключ",
-                    d1_desc: "Помогаем найти автомобиль, который действительно соответствует вашим требованиям и бюджету. Вместо траты недель на просмотр десятков объявлений, мы подберем лучшие варианты.",
-                    d2_title: "Индивидуальный подбор",
-                    d2_desc: "Вы рассказываете о бюджете, марке, модели, годе, пробеге, комплектации и двигателе, а мы самостоятельно ищем выгодные предложения на рынке.",
-                    d3_title: "Проверка перед покупкой",
-                    d3_desc: "Детальный анализ истории, объявлений, комплектации и оценка адекватности цены. Честно рассказываем о плюсах, минусах и целесообразности покупки.",
-                    d4_title: "Осмотр автомобиля",
-                    d4_desc: "Личный осмотр кузова, салона, двигателя, подвески и документов. Вы получаете подробный отчет с фотографиями и экспертными рекомендациями.",
-                    d5_title: "Переговоры с продавцом",
-                    d5_desc: "Общаемся вместо вас, задаем правильные вопросы, уточняем историю, обсуждаем торг и помогаем добиться максимально выгодной цены.",
-                    d6_title: "Подбор страховки",
-                    d6_desc: "Оформление оптимальной страховки с лучшим соотношением цены и покрытия благодаря сотрудничеству со специалистами сферы.",
-                    d7_title: "Подготовка к продаже",
-                    d7_desc: "Профессиональная мойка, химчистка, полировка и рекомендации по мелкому ремонту для роста привлекательности и стоимости авто.",
-                    d8_title: "Продающие фото и объявление",
-                    d8_desc: "Создаем качественные фото экстерьера, салона и деталей, а также готовим цепляющее описание для популярных площадок.",
-                    d9_title: "Регистрация и номера",
-                    d9_desc: "Сопровождение при прохождении всех этапов оформления в Швейцарии, включая страховку, документы и получение номерных знаков.",
-                    d10_title: "Помощь с MFK",
-                    d10_desc: "Предварительная оценка состояния, устранение недостатков и сопровождение процесса прохождения техосмотра для успеха с первого раза.",
-                    d11_title: "Доставка автомобиля",
-                    d11_desc: "Организация доставки или перегона автомобиля из другого города или кантона до удобного для вас места.",
-                    d12_title: "Постпродажная поддержка",
-                    d12_desc: "Мы остаемся на связи и после сделки: консультации по обслуживанию, выбор сервиса, вопросы по страховке и будущей продаже.",
                     cantons_title: "Коммуны и кантоны",
                     cantons_subtitle: "Работаем по всей Швейцарии: Цюрих, Берн, Женева и другие регионы",
                     modal_title: "Оставить заявку",
@@ -1577,7 +1559,7 @@
                     nav_services: "Калькулятор",
                     nav_details: "Наші послуги",
                     btn_whatsapp: "WhatsApp",
-                    btn_request: "Залишити заявку",
+                    btn_request: "Заявка",
                     hero_title: "Автоконсьєрж-сервіс <br><span>у Швейцарії</span>",
                     hero_desc: "Купівля, перевірка, продаж та повний юридичний супровід автомобілів під ключ. Без стресу, зайвої витрати часу та прихованих ризиків.",
                     hero_btn: "Почати підбір",
@@ -1642,7 +1624,7 @@
                     nav_services: "Rechner",
                     nav_details: "Unsere Leistungen",
                     btn_whatsapp: "WhatsApp",
-                    btn_request: "Anfrage senden",
+                    btn_request: "Anfrage",
                     hero_title: "Autoconcierge-Service <br><span>in der Schweiz</span>",
                     hero_desc: "Kauf, Prüfung, Verkauf und vollständige rechtliche Begleitung von Autos aus einer Hand. Ohne Stress, Zeitverschwendung und versteckte Risiken.",
                     hero_btn: "Suche starten",
@@ -1707,7 +1689,7 @@
                     nav_services: "Calculator",
                     nav_details: "Our Services",
                     btn_whatsapp: "WhatsApp",
-                    btn_request: "Leave a Request",
+                    btn_request: "Request",
                     hero_title: "Car Concierge Service <br><span>in Switzerland</span>",
                     hero_desc: "Purchase, inspection, sale, and full legal support for turnkey vehicles. Without stress, wasted time, and hidden risks.",
                     hero_btn: "Start Search",
@@ -1770,6 +1752,7 @@
             };
 
             const langOptions = document.querySelectorAll('.lang-option');
+            langOptions.optionHandler = true;
             langOptions.forEach(option => {
                 option.addEventListener('click', () => {
                     const lang = option.getAttribute('data-lang');

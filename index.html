@@ -524,7 +524,7 @@
             padding: 14px;
         }
 
-        /* Grid for details & cantons */
+        /* Grid for details */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -557,35 +557,81 @@
             line-height: 1.6;
         }
 
-        /* Why Us */
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+        /* Cantons Section with Interactive Floating Cards & Video Background */
+        .cantons-section {
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            padding: 100px 0;
         }
 
-        .why-item {
-            background: var(--card-bg);
-            padding: 30px 25px;
-            border-radius: 12px;
+        .cantons-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .cantons-bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cantons-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(4px);
+        }
+
+        .cantons-content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cantons-floating-area {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .canton-floating-card {
+            position: absolute;
+            background: rgba(19, 27, 46, 0.85);
             border: 1px solid var(--border);
-            text-align: center;
-            transition: var(--transition);
+            border-radius: 14px;
+            padding: 20px;
+            width: 280px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            will-change: transform;
         }
 
-        .why-item:hover {
-            border-color: rgba(212, 175, 55, 0.4);
+        .canton-floating-card:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+            z-index: 10;
         }
 
-        .why-item h4 {
+        .canton-floating-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
             color: var(--text-main);
-            margin-bottom: 12px;
-            font-size: 1.15rem;
         }
 
-        .why-item p {
+        .canton-floating-card p {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            font-size: 0.92rem;
+            line-height: 1.4;
         }
 
         /* Language Switcher */
@@ -778,6 +824,9 @@
             .calc-summary {
                 position: static;
             }
+            .cantons-floating-area {
+                height: 600px;
+            }
         }
 
         @media (max-width: 900px) {
@@ -795,8 +844,8 @@
             <a href="#" class="logo">SWISS<span>CARS</span></a>
             <ul class="nav-links">
                 <li><a href="#about" data-i18n="nav_about">О нас</a></li>
-                <li><a href="#services" data-i18n="nav_services">Калькулятор и Услуги</a></li>
-                <li><a href="#details" data-i18n="nav_details">Все этапы</a></li>
+                <li><a href="#services" data-i18n="nav_services">Калькулятор</a></li>
+                <li><a href="#details" data-i18n="nav_details">Наши услуги</a></li>
             </ul>
             <div class="header-right">
                 <a href="https://wa.me/41764795820?text=Здравствуйте,%20интересует%20автоконсьерж-сервис%20в%20Швейцарии" target="_blank" class="btn btn-whatsapp" data-i18n="btn_whatsapp">WhatsApp</a>
@@ -867,7 +916,7 @@
             <div class="services-overlay"></div>
         </div>
         <div class="container services-content-wrapper">
-            <h2 class="section-title" data-i18n="calc_main_title">Калькулятор услуг и выбор сметы</h2>
+            <h2 class="section-title" data-i18n="calc_main_title">Калькулятор</h2>
             <p class="section-subtitle" data-i18n="calc_main_subtitle">Выберите необходимые услуги для расчета стоимости в Швейцарии и странах ЕС</p>
             
             <div class="calc-layout">
@@ -1171,21 +1220,28 @@
         </div>
     </section>
 
-    <!-- Cantons Section -->
-    <section id="cantons">
-        <div class="container">
+    <!-- Cantons Section with Video Background and Floating Cards -->
+    <section id="cantons" class="cantons-section">
+        <div class="cantons-video-container">
+            <video autoplay muted loop playsinline preload="auto" class="cantons-bg-video">
+                <source src="367131.mp4" type="video/mp4">
+            </video>
+            <div class="cantons-overlay"></div>
+        </div>
+        <div class="container cantons-content-wrapper">
             <h2 class="section-title" data-i18n="cantons_title">Коммуны и кантоны</h2>
             <p class="section-subtitle" data-i18n="cantons_subtitle">Работаем по всей Швейцарии: Цюрих, Женева, Базель, Лозанна и другие регионы</p>
-            <div class="grid-3">
-                <div class="card">
+            
+            <div class="cantons-floating-area" id="floatingArea">
+                <div class="canton-floating-card">
                     <h3 data-i18n="c1_name">Цюрих и Женева</h3>
                     <p data-i18n="c1_desc">Главные финансовые и деловые хабы страны с высочайшей плотностью премиальных авто.</p>
                 </div>
-                <div class="card">
+                <div class="canton-floating-card">
                     <h3 data-i18n="c2_name">Базель и Берн</h3>
                     <p data-i18n="c2_desc">Оперативный выезд экспертов для проверки и покупки машин в северных и центральных кантонах.</p>
                 </div>
-                <div class="card">
+                <div class="canton-floating-card">
                     <h3 data-i18n="c3_name">Лугано и Лозанна</h3>
                     <p data-i18n="c3_desc">Полное покрытие южного и франкоязычного регионов Швейцарии под ключ.</p>
                 </div>
@@ -1248,6 +1304,67 @@
                 document.addEventListener('click', () => {
                     switcher.classList.remove('active');
                 });
+            }
+
+            // Интерактивное хаотичное движение карточек кантонов
+            const floatingArea = document.getElementById('floatingArea');
+            const floatingCards = document.querySelectorAll('.canton-floating-card');
+
+            if (floatingArea && floatingCards.length > 0) {
+                const areaWidth = floatingArea.clientWidth;
+                const areaHeight = floatingArea.clientHeight;
+
+                const cardsData = Array.from(floatingCards).map((card, index) => {
+                    const cardWidth = 280;
+                    const cardHeight = 160;
+                    
+                    // Начальные случайные позиции
+                    let x = Math.random() * (areaWidth - cardWidth);
+                    let y = Math.random() * (areaHeight - cardHeight);
+                    
+                    // Случайные скорости и направления
+                    let vx = (Math.random() - 0.5) * 1.2;
+                    let vy = (Math.random() - 0.5) * 1.2;
+
+                    card.style.left = `${x}px`;
+                    card.style.top = `${y}px`;
+
+                    return { el: card, x, y, vx, vy, width: cardWidth, height: cardHeight };
+                });
+
+                function animateFloating() {
+                    const currentWidth = floatingArea.clientWidth;
+                    const currentHeight = floatingArea.clientHeight;
+
+                    cardsData.forEach(item => {
+                        item.x += item.vx;
+                        item.y += item.vy;
+
+                        // Столкновение со стенами блока
+                        if (item.x <= 0) {
+                            item.x = 0;
+                            item.vx *= -1;
+                        } else if (item.x + item.width >= currentWidth) {
+                            item.x = currentWidth - item.width;
+                            item.vx *= -1;
+                        }
+
+                        if (item.y <= 0) {
+                            item.y = 0;
+                            item.vy *= -1;
+                        } else if (item.y + item.height >= currentHeight) {
+                            item.y = currentHeight - item.height;
+                            item.vy *= -1;
+                        }
+
+                        item.el.style.left = `${item.x}px`;
+                        item.el.style.top = `${item.y}px`;
+                    });
+
+                    requestAnimationFrame(animateFloating);
+                }
+
+                requestAnimationFrame(animateFloating);
             }
 
             let currentLang = 'ru';
@@ -1324,7 +1441,7 @@
                 ru: {
                     nav_about: "О нас",
                     nav_services: "Калькулятор",
-                    nav_details: "Услуги",
+                    nav_details: "Наши услуги",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Оставить заявку",
                     hero_title: "Автоконсьерж-сервис <br><span>в Швейцарии</span>",
@@ -1335,7 +1452,7 @@
                     about_quote: "«Мы создаем не просто решения — мы формируем стандарты исключительного <span>превосходства</span>».",
                     about_text_1: "Наша философия базируется на трех абсолютных принципах: безупречная репутация, элитарный подход и абсолютная конфиденциальность. Мы объединяем глубокую экспертную аналитику, передовые технологии и эстетику роскоши, чтобы воплощать в жизнь проекты исключительного уровня.",
                     about_text_2: "Полное сопровождение клиента — от первого запроса и поиска автомобиля в Швейцарии или ЕС до получения ключей, прохождения техосмотра MFK, оформления страховки и регистрации.",
-                    calc_main_title: "Калькулятор услуг и выбор сметы",
+                    calc_main_title: "Калькулятор",
                     calc_main_subtitle: "Выберите необходимые услуги для расчета стоимости в Швейцарии и странах ЕС",
                     btn_more_services: isExpanded ? "Свернуть услуги" : "Показать все услуги (15)",
                     srv_cost: "Стоимость:",
@@ -1419,7 +1536,7 @@
                 ukr: {
                     nav_about: "Про нас",
                     nav_services: "Калькулятор",
-                    nav_details: "Послуги",
+                    nav_details: "Наші послуги",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Залишити заявку",
                     hero_title: "Автоконсьєрж-сервіс <br><span>у Швейцарії</span>",
@@ -1430,7 +1547,7 @@
                     about_quote: "«Ми створюємо не просто рішення — ми формуємо стандарти виняткової <span>переваги</span>».",
                     about_text_1: "Наша філософія базується на трьох абсолютних принципах: бездоганна репутація, елітарний підхід та абсолютна конфіденційність. Ми об'єднуємо глибоку експертну аналітику, передові технології та естетику розкоші.",
                     about_text_2: "Повний супровід клієнта — від першого запиту до отримання ключів, проходження техогляду MFK, оформлення страховки та реєстрації.",
-                    calc_main_title: "Калькулятор послуг та вибір кошторису",
+                    calc_main_title: "Калькулятор",
                     calc_main_subtitle: "Виберіть необхідні послуги для розрахунку вартості у Швейцарії та країнах ЄС",
                     btn_more_services: isExpanded ? "Згорнути послуги" : "Показати всі послуги (15)",
                     srv_cost: "Вартість:",
@@ -1469,7 +1586,7 @@
                     calc_total: "Всього:",
                     calc_btn_order: "Оформити вибране",
                     calc_btn_wa: "Обговорити в WhatsApp",
-                    details_title: "Детально про наші послуги",
+                    details_title: "Наші послуги",
                     details_subtitle: "Повний спектр рішень для вашого автомобіля у Швейцарії",
                     d1_title: "Покупка під ключ",
                     d1_desc: "Допомагаємо знайти автомобіль, який дійсно відповідає вашим вимогам і бюджету.",
@@ -1514,7 +1631,7 @@
                 de: {
                     nav_about: "Über uns",
                     nav_services: "Rechner",
-                    nav_details: "Leistungen",
+                    nav_details: "Unsere Leistungen",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Anfrage senden",
                     hero_title: "Autoconcierge-Service <br><span>in der Schweiz</span>",
@@ -1525,7 +1642,7 @@
                     about_quote: "«Wir schaffen nicht nur Lösungen – wir prägen Standards außergewöhnlicher <span>Exzellenz</span>».",
                     about_text_1: "Unsere Philosophie basiert auf drei absoluten Prinzipien: tadelloser Ruf, elitärer Ansatz und absolute Vertraulichkeit. Wir vereinen tiefe Expertenanalytik und Luxusästhetik.",
                     about_text_2: "Komplette Begleitung des Kunden — von der ersten Anfrage bis zur Schlüsselübergabe, MFK-Prüfung, Versicherung und Zulassung.",
-                    calc_main_title: "Rechner & Leistungsübersicht",
+                    calc_main_title: "Rechner",
                     calc_main_subtitle: "Wählen Sie Ihre Dienstleistungen für die Schweiz und EU",
                     btn_more_services: isExpanded ? "Weniger anzeigen" : "Alle Leistungen anzeigen (15)",
                     srv_cost: "Kosten:",
@@ -1564,7 +1681,7 @@
                     calc_total: "Gesamtsumme:",
                     calc_btn_order: "Auswahl anfragen",
                     calc_btn_wa: "Über WhatsApp besprechen",
-                    details_title: "Leistungsdetails",
+                    details_title: "Unsere Leistungen",
                     details_subtitle: "Umfassender Ansatz für jede Phase des Autobesitzes in der Schweiz",
                     d1_title: "Komplettkauf",
                     d1_desc: "Wir finden das Auto, das Ihren Anforderungen und Ihrem Budget entspricht.",
@@ -1609,7 +1726,7 @@
                 en: {
                     nav_about: "About Us",
                     nav_services: "Calculator",
-                    nav_details: "Services",
+                    nav_details: "Our Services",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Leave a Request",
                     hero_title: "Car Concierge Service <br><span>in Switzerland</span>",
@@ -1620,7 +1737,7 @@
                     about_quote: "«We do not just create solutions — we shape standards of exceptional <span>excellence</span>».",
                     about_text_1: "Our philosophy is based on three absolute principles: flawless reputation, elite approach, and absolute confidentiality. We combine deep expert analytics and luxury aesthetics.",
                     about_text_2: "Full client support from the first request to key handover, MFK inspection, insurance setup, and registration.",
-                    calc_main_title: "Services Calculator & Pricing",
+                    calc_main_title: "Calculator",
                     calc_main_subtitle: "Select the required services to calculate your estimate in Switzerland and EU",
                     btn_more_services: isExpanded ? "Show less" : "Show all services (15)",
                     srv_cost: "Cost:",
@@ -1659,7 +1776,7 @@
                     calc_total: "Total:",
                     calc_btn_order: "Request Selected",
                     calc_btn_wa: "Discuss via WhatsApp",
-                    details_title: "Detailed Services",
+                    details_title: "Our Services",
                     details_subtitle: "Comprehensive approach to every stage of vehicle ownership in Switzerland",
                     d1_title: "Turnkey Purchase",
                     d1_desc: "Helping you find a car that matches your requirements and budget.",
@@ -1742,9 +1859,7 @@
 
             if (modal) {
                 modal.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        modal.classList.remove('active');
-                    }
+                    e.target === modal && modal.classList.remove('active');
                 });
             }
 

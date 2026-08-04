@@ -223,7 +223,7 @@
             font-size: 1.1rem;
         }
 
-        /* About Section (Текст по левую сторону, без рамки) */
+        /* About Section */
         .about-section {
             position: relative;
             overflow: hidden;
@@ -429,6 +429,21 @@
             font-size: 1.1rem;
             font-weight: 700;
             color: var(--accent);
+        }
+
+        /* Скрытые карточки по умолчанию */
+        .calc-card.hidden-service {
+            display: none;
+        }
+
+        .calc-card.hidden-service.visible {
+            display: flex;
+        }
+
+        .calc-toggle-container {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 10px;
         }
 
         /* Calculator Sidebar */
@@ -858,7 +873,8 @@
             <p class="section-subtitle" data-i18n="calc_main_subtitle">Выберите необходимые услуги для расчета стоимости в Швейцарии и странах ЕС</p>
             
             <div class="calc-layout">
-                <div class="calc-services-grid">
+                <div class="calc-services-grid" id="calcServicesGrid">
+                    <!-- Первые 4 видимых карточки (кратная 2 сетка для идеальной симметрии) -->
                     <div class="calc-card" data-price="950" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ" data-name-de="Auto-Kauf komplett" data-name-en="Turnkey car purchase">
                         <div>
                             <div class="calc-card-header">
@@ -915,7 +931,8 @@
                         </div>
                     </div>
 
-                    <div class="calc-card" data-price="600" data-name-ru="Переговоры с продавцом и торг" data-name-ukr="Переговори з продавцем та торг" data-name-de="Preisverhandlungen mit Verkäufer" data-name-en="Seller negotiations">
+                    <!-- Остальные скрытые карточки -->
+                    <div class="calc-card hidden-service" data-price="600" data-name-ru="Переговоры с продавцом и торг" data-name-ukr="Переговори з продавцем та торг" data-name-de="Preisverhandlungen mit Verkäufer" data-name-en="Seller negotiations">
                         <div>
                             <div class="calc-card-header">
                                 <h3 data-i18n="srv5_title">Переговоры с продавцом</h3>
@@ -929,7 +946,7 @@
                         </div>
                     </div>
 
-                    <div class="calc-card" data-price="500" data-name-ru="Подбор выгодной страховки" data-name-ukr="Підбір вигідної страховки" data-name-de="Versicherungsauswahl" data-name-en="Insurance selection">
+                    <div class="calc-card hidden-service" data-price="500" data-name-ru="Подбор выгодной страховки" data-name-ukr="Підбір вигідної страховки" data-name-de="Versicherungsauswahl" data-name-en="Insurance selection">
                         <div>
                             <div class="calc-card-header">
                                 <h3 data-i18n="srv6_title">Подбор страховки</h3>
@@ -943,7 +960,7 @@
                         </div>
                     </div>
 
-                    <div class="calc-card" data-price="800" data-name-ru="Подготовка автомобиля к продаже" data-name-ukr="Підготовка автомобіля до продажу" data-name-de="Fahrzeugaufbereitung für Verkauf" data-name-en="Car preparation for sale">
+                    <div class="calc-card hidden-service" data-price="800" data-name-ru="Подготовка автомобиля к продаже" data-name-ukr="Підготовка автомобіля до продажу" data-name-de="Fahrzeugaufbereitung für Verkauf" data-name-en="Car preparation for sale">
                         <div>
                             <div class="calc-card-header">
                                 <h3 data-i18n="srv7_title">Подготовка к продаже</h3>
@@ -957,7 +974,7 @@
                         </div>
                     </div>
 
-                    <div class="calc-card" data-price="450" data-name-ru="Профессиональная фотосъемка авто" data-name-ukr="Професійна фотозйомка авто" data-name-de="Professionelles Auto-Fotoshooting" data-name-en="Professional car photography">
+                    <div class="calc-card hidden-service" data-price="450" data-name-ru="Профессиональная фотосъемка авто" data-name-ukr="Професійна фотозйомка авто" data-name-de="Professionelles Auto-Fotoshooting" data-name-en="Professional car photography">
                         <div>
                             <div class="calc-card-header">
                                 <h3 data-i18n="srv8_title">Профессиональная фотосъемка</h3>
@@ -971,7 +988,7 @@
                         </div>
                     </div>
 
-                    <div class="calc-card" data-price="400" data-name-ru="Создание продающего объявления" data-name-ukr="Створення продаючого оголошення" data-name-de="Verkaufsanzeige erstellen" data-name-en="Selling ad creation">
+                    <div class="calc-card hidden-service" data-price="400" data-name-ru="Создание продающего объявления" data-name-ukr="Створення продаючого оголошення" data-name-de="Verkaufsanzeige erstellen" data-name-en="Selling ad creation">
                         <div>
                             <div class="calc-card-header">
                                 <h3 data-i18n="srv9_title">Создание продающего объявления</h3>
@@ -985,7 +1002,7 @@
                         </div>
                     </div>
 
-                    <div class="calc-card" data-price="900" data-name-ru="Помощь в продаже автомобиля" data-name-ukr="Допомога в продажу автомобіля" data-name-de="Hilfe beim Autoverkauf" data-name-en="Car selling assistance">
+                    <div class="calc-card hidden-service" data-price="900" data-name-ru="Помощь в продаже автомобиля" data-name-ukr="Допомога в продажу автомобіля" data-name-de="Hilfe beim Autoverkauf" data-name-en="Car selling assistance">
                         <div>
                             <div class="calc-card-header">
                                 <h3 data-i18n="srv10_title">Помощь в продаже автомобиля</h3>
@@ -999,7 +1016,7 @@
                         </div>
                     </div>
 
-                    <div class="calc-card" data-price="350" data-name-ru="Экспертные консультации по выбору" data-name-ukr="Експертні консультації щодо вибору" data-name-de="Expertenberatung" data-name-en="Expert consultations">
+                    <div class="calc-card hidden-service" data-price="350" data-name-ru="Экспертные консультации по выбору" data-name-ukr="Експертні консультації щодо вибору" data-name-de="Expertenberatung" data-name-en="Expert consultations">
                         <div>
                             <div class="calc-card-header">
                                 <h3 data-i18n="srv11_title">Консультации и сравнение</h3>
@@ -1013,7 +1030,7 @@
                         </div>
                     </div>
 
-                    <div class="calc-card" data-price="1100" data-name-ru="Сопровождение при регистрации" data-name-ukr="Супровід при реєстрації" data-name-de="Zulassungsbegleitung" data-name-en="Registration support">
+                    <div class="calc-card hidden-service" data-price="1100" data-name-ru="Сопровождение при регистрации" data-name-ukr="Супровід при реєстрації" data-name-de="Zulassungsbegleitung" data-name-en="Registration support">
                         <div>
                             <div class="calc-card-header">
                                 <h3 data-i18n="srv12_title">Сопровождение при регистрации</h3>
@@ -1027,7 +1044,7 @@
                         </div>
                     </div>
 
-                    <div class="calc-card" data-price="850" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK" data-name-de="MFK-Prüfungshilfe" data-name-en="MFK technical inspection support">
+                    <div class="calc-card hidden-service" data-price="850" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK" data-name-de="MFK-Prüfungshilfe" data-name-en="MFK technical inspection support">
                         <div>
                             <div class="calc-card-header">
                                 <h3 data-i18n="srv13_title">Помощь с MFK (техосмотром)</h3>
@@ -1041,7 +1058,7 @@
                         </div>
                     </div>
 
-                    <div class="calc-card" data-price="700" data-name-ru="Доставка или перегон автомобиля" data-name-ukr="Доставка або перегін автомобіля" data-name-de="Fahrzeugtransport" data-name-en="Vehicle delivery">
+                    <div class="calc-card hidden-service" data-price="700" data-name-ru="Доставка или перегон автомобиля" data-name-ukr="Доставка або перегін автомобіля" data-name-de="Fahrzeugtransport" data-name-en="Vehicle delivery">
                         <div>
                             <div class="calc-card-header">
                                 <h3 data-i18n="srv14_title">Доставка автомобиля</h3>
@@ -1055,7 +1072,7 @@
                         </div>
                     </div>
 
-                    <div class="calc-card" data-price="500" data-name-ru="Поддержка после покупки" data-name-ukr="Підтримка після покупки" data-name-de="Nachkauf-Support" data-name-en="Post-purchase support">
+                    <div class="calc-card hidden-service" data-price="500" data-name-ru="Поддержка после покупки" data-name-ukr="Підтримка після покупки" data-name-de="Nachkauf-Support" data-name-en="Post-purchase support">
                         <div>
                             <div class="calc-card-header">
                                 <h3 data-i18n="srv15_title">Поддержка после покупки</h3>
@@ -1067,6 +1084,11 @@
                             <span data-i18n="srv_cost">Стоимость:</span>
                             <span class="calc-price">CHF 500</span>
                         </div>
+                    </div>
+
+                    <!-- Кнопка развернуть/свернуть остальные услуги -->
+                    <div class="calc-toggle-container">
+                        <button type="button" class="btn" id="toggleServicesBtn" data-i18n="btn_more_services" style="padding: 12px 30px;">Показать все услуги (15)</button>
                     </div>
                 </div>
 
@@ -1101,7 +1123,7 @@
             <div class="grid-3">
                 <div class="card">
                     <h3 data-i18n="d1_title">Покупка под ключ</h3>
-                    <p data-i18n="d1_desc">Помогаем найти автомобиль, который действительно соответствует вашим требованиям и бюджету. Вместо траты недель на просмотр десятков объявлений, мы подберем лучшие варианты и объясним их преимущества.</p>
+                    <p data-i18n="d1_desc">Помогаем найти автомобиль, который действительно соответствует вашим требованиям и бюджету. Вместо траты недель на просмотр десятков объявлений, мы подберем лучшие варианты.</p>
                 </div>
                 <div class="card">
                     <h3 data-i18n="d2_title">Индивидуальный подбор</h3>
@@ -1257,7 +1279,7 @@
                 });
             }
 
-            // Динамический калькулятор услуг
+            // Динамический калькулятор услуг + аккордеон для видимости 4 карточек
             let currentLang = 'ru';
             const calcCards = document.querySelectorAll('.calc-card');
             const summaryList = document.getElementById('summaryList');
@@ -1265,6 +1287,29 @@
             const calcTotalPrice = document.getElementById('calcTotalPrice');
             const calcOrderBtn = document.getElementById('calcOrderBtn');
             const modalServiceInput = document.getElementById('modalServiceInput');
+            const toggleServicesBtn = document.getElementById('toggleServicesBtn');
+            const hiddenServices = document.querySelectorAll('.calc-card.hidden-service');
+
+            let isExpanded = false;
+
+            if (toggleServicesBtn) {
+                toggleServicesBtn.addEventListener('click', () => {
+                    isExpanded = !isExpanded;
+                    hiddenServices.forEach(card => {
+                        card.classList.toggle('visible', isExpanded);
+                    });
+
+                    const btnTexts = {
+                        ru: { show: "Показать все услуги (15)", hide: "Свернуть услуги" },
+                        ukr: { show: "Показати всі послуги (15)", hide: "Згорнути послуги" },
+                        de: { show: "Alle Leistungen anzeigen (15)", hide: "Weniger anzeigen" },
+                        en: { show: "Show all services (15)", hide: "Show less" }
+                    };
+
+                    const langSet = btnTexts[currentLang] || btnTexts.ru;
+                    toggleServicesBtn.textContent = isExpanded ? langSet.hide : langSet.show;
+                });
+            }
 
             function updateCalculator() {
                 const selectedCards = document.querySelectorAll('.calc-card.selected');
@@ -1323,6 +1368,7 @@
                     about_text_2: "Полное сопровождение клиента — от первого запроса и поиска автомобиля в Швейцарии или ЕС до получения ключей, прохождения техосмотра MFK, оформления страховки и регистрации.",
                     calc_main_title: "Калькулятор услуг и выбор сметы",
                     calc_main_subtitle: "Выберите необходимые услуги для расчета стоимости в Швейцарии и странах ЕС",
+                    btn_more_services: isExpanded ? "Свернуть услуги" : "Показать все услуги (15)",
                     srv_cost: "Стоимость:",
                     srv1_title: "Покупка автомобиля под ключ",
                     srv1_desc: "Поиск авто под ваши требования и бюджет, подбор лучших вариантов без потери времени.",
@@ -1428,9 +1474,10 @@
                     about_text_2: "Повний супровід клієнта — від першого запиту до отримання ключів, проходження техогляду MFK, оформлення страховки та реєстрації.",
                     calc_main_title: "Калькулятор послуг та вибір кошторису",
                     calc_main_subtitle: "Виберіть необхідні послуги для розрахунку вартості у Швейцарії та країнах ЄС",
+                    btn_more_services: isExpanded ? "Згорнути послуги" : "Показати всі послуги (15)",
                     srv_cost: "Вартість:",
                     srv1_title: "Купівля автомобіля під ключ",
-                    srv1_desc: "Пошук авто під ваші вимоги та бюджет, підбір найкращих варіантів без втрати часу.",
+                    srv1_desc: "Пошук авто під ваші вимоги та бюджет, підбор найкращих варіантів без втрати часу.",
                     srv2_title: "Індивідуальний підбір",
                     srv2_desc: "Враховуємо бюджет, марку, модель, рік, пробіг, комплектацію та тип двигуна.",
                     srv3_title: "Перевірка перед покупкою",
@@ -1533,6 +1580,7 @@
                     about_text_2: "Komplette Begleitung des Kunden — von der ersten Anfrage bis zur Schlüsselübergabe, MFK-Prüfung, Versicherung und Zulassung.",
                     calc_main_title: "Rechner & Leistungsübersicht",
                     calc_main_subtitle: "Wählen Sie Ihre Dienstleistungen für die Schweiz und EU",
+                    btn_more_services: isExpanded ? "Weniger anzeigen" : "Alle Leistungen anzeigen (15)",
                     srv_cost: "Kosten:",
                     srv1_title: "Auto-Kauf komplett (Schlüsselfertig)",
                     srv1_desc: "Suche nach Autos nach Ihren Wünschen und Budget, effiziente Auswahl.",
@@ -1638,6 +1686,7 @@
                     about_text_2: "Full client support from the first request to key handover, MFK inspection, insurance setup, and registration.",
                     calc_main_title: "Services Calculator & Pricing",
                     calc_main_subtitle: "Select the required services to calculate your estimate in Switzerland and EU",
+                    btn_more_services: isExpanded ? "Show less" : "Show all services (15)",
                     srv_cost: "Cost:",
                     srv1_title: "Turnkey Car Purchase",
                     srv1_desc: "Search for a car meeting your requirements and budget without wasting time.",
@@ -1775,7 +1824,6 @@
 
             const orderForm = document.getElementById('orderForm');
             if (orderForm) {
-                orderForm.orderFormListener = true;
                 orderForm.addEventListener('submit', (e) => {
                     e.preventDefault();
                     alert('Заявка успешно отправлена! Мы свяжемся с вами.');

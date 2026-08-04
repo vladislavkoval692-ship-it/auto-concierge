@@ -227,72 +227,26 @@
             font-size: 1.1rem;
         }
 
-        /* Fullwidth Background Video About Us Section */
-        .about-section {
-            position: relative;
-            overflow: hidden;
-            padding: 130px 0;
-        }
-
-        .about-video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .about-bg-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .about-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(11, 15, 25, 0.82);
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(3px);
-        }
-
-        .about-content-wrapper {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content-wrapper .section-title,
-        .about-content-wrapper .section-subtitle {
-            position: relative;
-            z-index: 2;
+        /* Minimalistic Wide About Us Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
         }
 
         .about-text-content {
-            background: rgba(19, 27, 46, 0.7);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 50px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             text-align: left;
         }
 
         .about-text-content blockquote {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-style: italic;
             color: var(--text-main);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             line-height: 1.5;
-            border-left: 4px solid var(--accent);
-            padding-left: 24px;
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
         }
 
         .about-text-content blockquote span {
@@ -301,13 +255,138 @@
 
         .about-text-content p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.8;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .about-text-content p:last-child {
             margin-bottom: 0;
+        }
+
+        .about-video-wrapper {
+            width: 100%;
+            height: 420px;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .about-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            background: transparent;
+        }
+
+        /* New Full-Width Video Section Styles */
+        .fullscreen-video-section {
+            position: relative;
+            width: 100%;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 120px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .fullscreen-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .fullscreen-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .fullscreen-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 25, 0.82);
+            backdrop-filter: blur(3px);
+            z-index: 2;
+        }
+
+        .fullscreen-video-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            text-align: center;
+        }
+
+        .fullscreen-video-content .section-title {
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .fullscreen-video-content .section-subtitle {
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 50px;
+        }
+
+        /* Services Cycle Grid (Stylized for SWISS CARS) */
+        .services-cycle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            text-align: left;
+        }
+
+        .service-cycle-card {
+            background: rgba(19, 27, 46, 0.75);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 35px 25px;
+            position: relative;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-cycle-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-cycle-number {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .service-cycle-card h4 {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .service-cycle-card p {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+            line-height: 1.6;
         }
 
         /* Grids */
@@ -653,8 +732,9 @@
             .nav-links {
                 display: none;
             }
-            .about-text-content {
-                padding: 30px 20px;
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
         }
     </style>
@@ -702,29 +782,68 @@
         </div>
     </section>
 
-    <!-- About Us Section with Fullwidth Background Video -->
-    <section id="about" class="about-section">
-        <div class="about-video-container">
-            <video autoplay muted loop playsinline preload="auto" class="about-bg-video" id="aboutVideo">
-                <source src="158316-816359649.mp4" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video>
-            <div class="about-overlay"></div>
-        </div>
-        <div class="container about-content-wrapper">
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="container-wide">
             <h2 class="section-title" data-i18n="about_main_title">О нас</h2>
             <p class="section-subtitle" data-i18n="about_main_subtitle">Эксклюзивный подход к каждому клиенту</p>
             
-            <div class="about-text-content">
-                <blockquote data-i18n="about_quote">
-                    «Мы создаем не просто решения — мы формируем стандарты исключительного <span>превосходства</span>».
-                </blockquote>
-                <p data-i18n="about_text_1">
-                    Наша философия базируется на трех абсолютных принципах: безупречная репутация, элитарный подход и абсолютная конфиденциальность. Мы объединяем глубокую экспертную аналитику, передовые технологии и эстетику роскоши, чтобы воплощать в жизнь проекты исключительного уровня.
-                </p>
-                <p data-i18n="about_text_2">
-                    Для тех, кто привык выбирать лучшее и не приемлет компромиссов, мы открываем двери в мир абсолютного комфорта, статуса и бесконечных возможностей. Ваше доверие — наш главный капитал, ваше превосходство — наш неизменный результат.
-                </p>
+            <div class="about-grid">
+                <div class="about-text-content">
+                    <blockquote data-i18n="about_quote">
+                        «Мы создаем не просто решения — мы формируем стандарты исключительного <span>превосходства</span>».
+                    </blockquote>
+                    <p data-i18n="about_text_1">
+                        Наша философия базируется на трех абсолютных принципах: безупречная репутация, элитарный подход и абсолютная конфиденциальность. Мы объединяем глубокую экспертную аналитику, передовые технологии и эстетику роскоши, чтобы воплощать в жизнь проекты исключительного уровня.
+                    </p>
+                    <p data-i18n="about_text_2">
+                        Для тех, кто привык выбирать лучшее и не приемлет компромиссов, мы открываем двери в мир абсолютного комфорта, статуса и бесконечных возможностей. Ваше доверие — наш главный капитал, ваше превосходство — наш неизменный результат.
+                    </p>
+                </div>
+                <div class="about-video-wrapper">
+                    <video autoplay muted loop playsinline preload="auto" class="about-video" id="aboutVideo">
+                        <source src="158316-816359649.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW FULL-WIDTH VIDEO & SERVICES CYCLE SECTION -->
+    <section class="fullscreen-video-section">
+        <div class="fullscreen-video-bg">
+            <video autoplay muted loop playsinline preload="auto">
+                <source src="24388-342401480.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </div>
+        <div class="fullscreen-video-overlay"></div>
+        <div class="container-wide fullscreen-video-content">
+            <h2 class="section-title">Цикл услуг SWISS CARS</h2>
+            <p class="section-subtitle">Безупречный процесс взаимодействия, выстроенный по стандартам швейцарского премиального сервиса</p>
+            
+            <div class="services-cycle-grid">
+                <div class="service-cycle-card">
+                    <span class="service-cycle-number">Этап 01</span>
+                    <h4>Анализ и ТЗ</h4>
+                    <p>Глубокое погружение в ваши персональные критерии, формирование стратегии подбора и юридический аудит задачи.</p>
+                </div>
+                <div class="service-cycle-card">
+                    <span class="service-cycle-number">Этап 02</span>
+                    <h4>Поиск и Экспертиза</h4>
+                    <p>Закрытый мониторинг рынка Швейцарии, полная техническая диагностика и проверка истории каждого автомобиля.</p>
+                </div>
+                <div class="service-cycle-card">
+                    <span class="service-cycle-number">Этап 03</span>
+                    <h4>Сопровождение сделки</h4>
+                    <p>Элегантное решение всех вопросов по оформлению, налогам, страховкам и безопасным расчетам в рамках швейцарского права.</p>
+                </div>
+                <div class="service-cycle-card">
+                    <span class="service-cycle-number">Этап 04</span>
+                    <h4>Передача «Под ключ»</h4>
+                    <p>Торжественная доставка автомобиля в любую точку кантона и круглосуточная поддержка персонального консьержа.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -932,203 +1051,7 @@
     <div class="modal-overlay" id="orderModal">
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
-            <h3 class="modal-title" data-i18n="modal_title">Оставить заявку</h3>
-            <p class="modal-subtitle" data-i18n="modal_subtitle">Заполните форму, и наш специалист свяжется с вами в ближайшее время.</p>
-            <form id="orderForm">
-                <div class="form-group">
-                    <label data-i18n="form_name">Ваше имя</label>
-                    <input type="text" class="form-control" required placeholder="Иван">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="form_phone">Номер телефона / Telegram</label>
-                    <input type="text" class="form-control" required placeholder="+41 ...">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="form_email">Электронная почта</label>
-                    <input type="email" class="form-control" required placeholder="example@domain.com">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="form_service">Выберите услугу / пакет</label>
-                    <select class="form-control" id="serviceSelect">
-                        <option value="start" data-i18n="pkg1_title">Пакет «Старт» (от CHF 1,500)</option>
-                        <option value="premium" data-i18n="pkg2_title">Пакет «Премиум» (от CHF 4,900)</option>
-                        <option value="vip" data-i18n="pkg3_title">Пакет «VIP / Elite» (от CHF 12,000+)</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn" data-i18n="form_submit">Отправить заявку</button>
-            </form>
         </div>
     </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 SWISS CARS. Все права защищены.</p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const aboutVideo = document.getElementById('aboutVideo');
-            if (aboutVideo) {
-                aboutVideo.muted = true;
-                aboutVideo.play().catch(e => console.log("Auto-play prevented:", e));
-            }
-
-            const switcher = document.getElementById('headerLangSwitcher');
-            const langBtn = document.getElementById('headerLangBtn');
-
-            if (langBtn && switcher) {
-                langBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    switcher.classList.toggle('active');
-                });
-
-                document.addEventListener('click', () => {
-                    switcher.classList.remove('active');
-                });
-            }
-
-            const translations = {
-                ru: {
-                    nav_about: "О нас",
-                    nav_services: "Услуги и стоимость",
-                    nav_cantons: "Коммуны и кантоны",
-                    btn_request: "Оставить заявку",
-                    hero_title: "Автоконсьерж-сервис <br><span>в Швейцарии</span>",
-                    hero_desc: "Покупка, проверка, продажа и полное юридическое сопровождение автомобилей под ключ. Без стресса, лишней траты времени и скрытых рисков.",
-                    hero_btn: "Начать подбор",
-                    services_title: "Услуги и их стоимость",
-                    services_subtitle: "Три структурированных пакета от базовой оптимизации до премиального консьерж-сервиса",
-                    pkg1_title: "Пакет «Старт»",
-                    pkg2_title: "Пакет «Премиум»",
-                    pkg3_title: "Пакет «VIP / Elite»",
-                    modal_title: "Оставить заявку",
-                    modal_subtitle: "Заполните форму, и наш специалист свяжется с вами в ближайшее время.",
-                    form_name: "Ваше имя",
-                    form_phone: "Номер телефона / Telegram",
-                    form_email: "Электронная почта",
-                    form_service: "Выберите услугу / пакет",
-                    form_submit: "Отправить заявку"
-                },
-                ukr: {
-                    nav_about: "Про нас",
-                    nav_services: "Послуги та вартість",
-                    nav_cantons: "Комуни та кантони",
-                    btn_request: "Залишити заявку",
-                    hero_title: "Автоконсьєрж-сервіс <br><span>у Швейцарії</span>",
-                    hero_desc: "Купівля, перевірка, продаж та повний юридичний супровід автомобілів під ключ. Без стресу, зайвої витрати часу та прихованих ризиків.",
-                    hero_btn: "Почати підбір",
-                    services_title: "Послуги та їх вартість",
-                    services_subtitle: "Три структуровані пакети від базової оптимізації до преміального консьерж-сервісу",
-                    pkg1_title: "Пакет «Старт»",
-                    pkg2_title: "Пакет «Преміум»",
-                    pkg3_title: "Пакет «VIP / Elite»",
-                    modal_title: "Залишити заявку",
-                    modal_subtitle: "Заповніть форму, і наш фахівець зв'яжеться з вами найближчим часом.",
-                    form_name: "Ваше ім'я",
-                    form_phone: "Номер телефону / Telegram",
-                    form_email: "Електронна пошта",
-                    form_service: "Виберіть послугу / пакет",
-                    form_submit: "Надіслати заявку"
-                },
-                de: {
-                    nav_about: "Über uns",
-                    nav_services: "Leistungen & Preise",
-                    nav_cantons: "Gemeinden & Kantone",
-                    btn_request: "Anfrage senden",
-                    hero_title: "Autoconcierge-Service <br><span>in der Schweiz</span>",
-                    hero_desc: "Kauf, Prüfung, Verkauf und vollständige rechtliche Begleitung von Autos aus einer Hand. Ohne Stress, Zeitverschwendung und versteckte Risiken.",
-                    hero_btn: "Suche starten",
-                    services_title: "Leistungen & Preise",
-                    services_subtitle: "Drei strukturierte Pakete von der Basisoptimierung bis zum Premium-Concierge-Service",
-                    pkg1_title: "Paket «Start»",
-                    pkg2_title: "Paket «Premium»",
-                    pkg3_title: "Paket «VIP / Elite»",
-                    modal_title: "Anfrage senden",
-                    modal_subtitle: "Füllen Sie das Formular aus und unser Spezialist wird sich in Kürze mit Ihnen in Verbindung setzen.",
-                    form_name: "Ihr Name",
-                    form_phone: "Telefonnummer / Telegram",
-                    form_email: "E-Mail-Adresse",
-                    form_service: "Dienstleistung / Paket wählen",
-                    form_submit: "Anfrage absenden"
-                },
-                en: {
-                    nav_about: "About Us",
-                    nav_services: "Services & Pricing",
-                    nav_cantons: "Cantons",
-                    btn_request: "Leave a Request",
-                    hero_title: "Car Concierge Service <br><span>in Switzerland</span>",
-                    hero_desc: "Purchase, inspection, sale, and full legal support for turnkey vehicles. Without stress, wasted time, and hidden risks.",
-                    hero_btn: "Start Search",
-                    services_title: "Services & Pricing",
-                    services_subtitle: "Three structured packages from basic optimization to premium concierge service",
-                    pkg1_title: "Package «Start»",
-                    pkg2_title: "Package «Premium»",
-                    pkg3_title: "Package «VIP / Elite»",
-                    modal_title: "Leave a Request",
-                    modal_subtitle: "Fill out the form and our specialist will contact you shortly.",
-                    form_name: "Your Name",
-                    form_phone: "Phone number / Telegram",
-                    form_email: "Email address",
-                    form_service: "Select service / package",
-                    form_submit: "Submit Request"
-                }
-            };
-
-            const langOptions = document.querySelectorAll('.lang-option');
-            langOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    const lang = option.getAttribute('data-lang');
-                    const dict = translations[lang];
-                    if (!dict) return;
-
-                    document.querySelectorAll('[data-i18n]').forEach(el => {
-                        const key = el.getAttribute('data-i18n');
-                        if (dict[key]) {
-                            el.innerHTML = dict[key];
-                        }
-                    });
-
-                    switcher.classList.remove('active');
-                });
-            });
-
-            const modal = document.getElementById('orderModal');
-            const openModalBtns = document.querySelectorAll('.open-modal-btn');
-            const closeModalBtn = document.getElementById('modalClose');
-
-            openModalBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    if (modal) modal.classList.add('active');
-                });
-            });
-
-            if (closeModalBtn && modal) {
-                closeModalBtn.addEventListener('click', () => {
-                    modal.classList.remove('active');
-                });
-            }
-
-            if (modal) {
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        modal.classList.remove('active');
-                    }
-                });
-            }
-
-            const orderForm = document.getElementById('orderForm');
-            if (orderForm) {
-                orderForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    alert('Заявка успешно отправлена! Мы свяжемся с вами.');
-                    orderForm.reset();
-                    modal.classList.remove('active');
-                });
-            }
-        });
-    </script>
 </body>
 </html>

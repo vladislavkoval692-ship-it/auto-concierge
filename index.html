@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="meta_title">Автоконсьерж-сервис в Швейцарии — Покупка и продажа автомобилей под ключ</title>
+    <title data-i18n="meta_title">Автоконсьерж-сервис в Швейцарии — Покупка, продажа и сопровождение авто под ключ</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -39,12 +39,6 @@
             padding: 0 20px;
         }
 
-        .container-wide {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-
         /* Header */
         header {
             position: fixed;
@@ -75,17 +69,13 @@
             transition: var(--transition);
         }
 
-        .logo:hover {
-            opacity: 0.85;
-        }
-
         .logo span {
             color: var(--accent);
         }
 
         .nav-links {
             display: flex;
-            gap: 24px;
+            gap: 20px;
             list-style: none;
             align-items: center;
         }
@@ -122,24 +112,7 @@
             display: inline-block;
             white-space: nowrap;
             box-shadow: 0 4px 16px var(--accent-glow);
-            position: relative;
-            overflow: hidden;
             text-align: center;
-        }
-
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover::after {
-            left: 100%;
         }
 
         .btn:hover {
@@ -197,7 +170,6 @@
             height: 100%;
             background: rgba(11, 15, 25, 0.75);
             backdrop-filter: blur(2px);
-            -webkit-backdrop-filter: blur(2px);
         }
 
         .hero-content {
@@ -209,7 +181,6 @@
             font-size: clamp(2.2rem, 5vw, 3.8rem);
             font-weight: 700;
             margin-bottom: 20px;
-            letter-spacing: -1px;
             line-height: 1.2;
         }
 
@@ -220,7 +191,7 @@
         .hero p {
             font-size: clamp(1rem, 2vw, 1.25rem);
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto 35px;
         }
 
@@ -243,7 +214,6 @@
             font-size: 2.3rem;
             font-weight: 700;
             margin-bottom: 15px;
-            letter-spacing: -0.5px;
         }
 
         .section-subtitle {
@@ -253,14 +223,14 @@
             font-size: 1.1rem;
         }
 
-        /* Fullwidth Background Video Sections */
-        .about-section, .services-section {
+        /* About Section */
+        .about-section {
             position: relative;
             overflow: hidden;
             padding: 130px 0;
         }
 
-        .about-video-container, .services-video-container {
+        .about-video-container {
             position: absolute;
             top: 0;
             left: 0;
@@ -269,13 +239,13 @@
             z-index: 1;
         }
 
-        .about-bg-video, .services-bg-video {
+        .about-bg-video {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .about-overlay, .services-overlay {
+        .about-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -283,63 +253,77 @@
             height: 100%;
             background: rgba(11, 15, 25, 0.82);
             backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(3px);
         }
 
-        .about-content-wrapper, .services-content-wrapper {
+        .about-content-wrapper {
             position: relative;
             z-index: 2;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .about-content-wrapper .section-title,
-        .about-content-wrapper .section-subtitle,
-        .services-content-wrapper .section-title,
-        .services-content-wrapper .section-subtitle {
-            position: relative;
-            z-index: 2;
-        }
-
-        .about-text-content {
-            background: rgba(19, 27, 46, 0.7);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 50px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            text-align: left;
             max-width: 900px;
             margin: 0 auto;
         }
 
-        .about-text-content blockquote {
-            font-size: 1.5rem;
-            font-style: italic;
-            color: var(--text-main);
-            margin-bottom: 30px;
-            line-height: 1.5;
-            border-left: 4px solid var(--accent);
-            padding-left: 24px;
+        .about-text-content {
+            background: rgba(19, 27, 46, 0.75);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 50px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        .about-text-content blockquote span {
-            color: var(--accent);
+        .about-text-content blockquote {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
         }
 
         .about-text-content p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.8;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
-        .about-text-content p:last-child {
-            margin-bottom: 0;
+        /* Calculator Section */
+        .services-section {
+            position: relative;
+            overflow: hidden;
+            padding: 130px 0;
         }
 
-        /* Calculator Layout */
+        .services-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .services-bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .services-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(4px);
+        }
+
+        .services-content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
         .calc-layout {
             display: grid;
             grid-template-columns: 1.3fr 0.7fr;
@@ -354,7 +338,7 @@
         }
 
         .calc-card {
-            background: rgba(19, 27, 46, 0.8);
+            background: rgba(19, 27, 46, 0.85);
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 25px;
@@ -363,7 +347,6 @@
             flex-direction: column;
             justify-content: space-between;
             cursor: pointer;
-            position: relative;
             backdrop-filter: blur(10px);
         }
 
@@ -374,7 +357,7 @@
 
         .calc-card.selected {
             border-color: var(--accent);
-            background: rgba(212, 175, 55, 0.08);
+            background: rgba(212, 175, 55, 0.1);
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
         }
 
@@ -382,12 +365,12 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             gap: 10px;
         }
 
         .calc-card h3 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--text-main);
             font-weight: 600;
         }
@@ -419,8 +402,9 @@
 
         .calc-card p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin-bottom: 20px;
+            line-height: 1.5;
         }
 
         .calc-card-footer {
@@ -429,6 +413,8 @@
             align-items: center;
             border-top: 1px solid var(--border);
             padding-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
         .calc-price {
@@ -437,9 +423,9 @@
             color: var(--accent);
         }
 
-        /* Calculator Summary Sidebar */
+        /* Calculator Sidebar */
         .calc-summary {
-            background: rgba(19, 27, 46, 0.85);
+            background: rgba(19, 27, 46, 0.9);
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 30px;
@@ -460,13 +446,13 @@
         .summary-items-list {
             list-style: none;
             margin-bottom: 20px;
-            max-height: 200px;
+            max-height: 220px;
             overflow-y: auto;
         }
 
         .summary-items-list li {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
@@ -476,6 +462,7 @@
         .summary-items-list li span:last-child {
             color: var(--text-main);
             font-weight: 600;
+            white-space: nowrap;
         }
 
         .summary-empty {
@@ -513,56 +500,39 @@
         .summary-actions .btn {
             width: 100%;
             padding: 14px;
-            text-align: center;
         }
 
-        /* Cantons Grid */
-        .cantons-grid {
+        /* Cantons & Details Grid */
+        .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
-        .canton-item {
-            background: var(--card-bg);
+        .card {
+            background-color: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 22px;
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
+            border-radius: 14px;
+            padding: 30px;
             transition: var(--transition);
         }
 
-        .canton-item:hover {
+        .card:hover {
             border-color: var(--accent);
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .canton-number {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent);
-            background: rgba(212, 175, 55, 0.1);
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-
-        .canton-content h4 {
-            font-size: 1.05rem;
-            margin-bottom: 6px;
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
             color: var(--text-main);
         }
 
-        .canton-content p {
-            font-size: 0.9rem;
+        .card p {
             color: var(--text-muted);
-            line-height: 1.5;
+            font-size: 0.92rem;
+            line-height: 1.6;
         }
 
         /* Why Us */
@@ -596,7 +566,7 @@
             font-size: 0.92rem;
         }
 
-        /* Language Switcher System */
+        /* Language Switcher */
         .lang-switcher {
             position: relative;
         }
@@ -616,7 +586,6 @@
 
         .lang-btn:hover {
             border-color: var(--accent);
-            background: rgba(19, 27, 46, 0.8);
         }
 
         .flag-icon {
@@ -624,7 +593,6 @@
             height: 18px;
             border-radius: 3px;
             object-fit: cover;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
             display: block;
         }
 
@@ -668,7 +636,7 @@
             color: var(--text-main);
         }
 
-        /* Modal Window Styles */
+        /* Modal */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -768,18 +736,12 @@
             border-color: var(--accent);
         }
 
-        select.form-control {
-            cursor: pointer;
-        }
-
         .modal-content .btn {
             width: 100%;
             margin-top: 10px;
             padding: 14px;
-            font-size: 1rem;
         }
 
-        /* Footer */
         footer {
             padding: 40px 0;
             text-align: center;
@@ -800,9 +762,6 @@
             .nav-links {
                 display: none;
             }
-            .about-text-content {
-                padding: 30px 20px;
-            }
         }
     </style>
 </head>
@@ -815,7 +774,7 @@
             <ul class="nav-links">
                 <li><a href="#about" data-i18n="nav_about">О нас</a></li>
                 <li><a href="#services" data-i18n="nav_services">Калькулятор и Услуги</a></li>
-                <li><a href="#cantons" data-i18n="nav_cantons">Коммуны и кантоны</a></li>
+                <li><a href="#details" data-i18n="nav_details">Все этапы</a></li>
                 <li><a href="#why" data-i18n="nav_why">Почему мы</a></li>
             </ul>
             <div class="header-right">
@@ -836,7 +795,7 @@
         </div>
     </header>
 
-    <!-- Hero with Video Background -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-video-container">
             <video autoplay muted loop playsinline class="hero-video">
@@ -854,19 +813,17 @@
         </div>
     </section>
 
-    <!-- About Us Section with Fullwidth Background Video -->
+    <!-- About Us Section -->
     <section id="about" class="about-section">
         <div class="about-video-container">
             <video autoplay muted loop playsinline preload="auto" class="about-bg-video" id="aboutVideo">
                 <source src="158316-816359649.mp4" type="video/mp4">
-                Ваш браузер не поддерживает видео.
             </video>
             <div class="about-overlay"></div>
         </div>
         <div class="container about-content-wrapper">
             <h2 class="section-title" data-i18n="about_main_title">О нас</h2>
             <p class="section-subtitle" data-i18n="about_main_subtitle">Эксклюзивный подход к каждому клиенту</p>
-            
             <div class="about-text-content">
                 <blockquote data-i18n="about_quote">
                     «Мы создаем не просто решения — мы формируем стандарты исключительного <span>превосходства</span>».
@@ -875,114 +832,140 @@
                     Наша философия базируется на трех абсолютных принципах: безупречная репутация, элитарный подход и абсолютная конфиденциальность. Мы объединяем глубокую экспертную аналитику, передовые технологии и эстетику роскоши, чтобы воплощать в жизнь проекты исключительного уровня.
                 </p>
                 <p data-i18n="about_text_2">
-                    Для тех, кто привык выбирать лучшее и не приемлет компромиссов, мы открываем двери в мир абсолютного комфорта, статуса и бесконечных возможностей. Ваше доверие — наш главный капитал, ваше превосходство — наш неизменный результат.
+                    Полное сопровождение клиента — от первого запроса и поиска автомобиля в Швейцарии или ЕС до получения ключей, прохождения техосмотра MFK, оформления страховки и регистрации.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Services & Pricing Calculator Section -->
+    <!-- Services Calculator Section -->
     <section id="services" class="services-section">
         <div class="services-video-container">
             <video autoplay muted loop playsinline preload="auto" class="services-bg-video">
                 <source src="158316-816359649.mp4" type="video/mp4">
-                Ваш браузер не поддерживает видео.
             </video>
             <div class="services-overlay"></div>
         </div>
         <div class="container services-content-wrapper">
-            <h2 class="section-title" data-i18n="services_title">Калькулятор услуг и стоимость</h2>
-            <p class="section-subtitle" data-i18n="services_subtitle">Выберите необходимые услуги для расчета сметы в Швейцарии и странах ЕС</p>
+            <h2 class="section-title" data-i18n="calc_main_title">Калькулятор и выбор услуг</h2>
+            <p class="section-subtitle" data-i18n="calc_main_subtitle">Соберите свой пакет услуг для точного расчета сметы в Швейцарии и ЕС</p>
             
             <div class="calc-layout">
-                <!-- Карточки услуг с чекбоксами -->
                 <div class="calc-services-grid">
-                    <div class="calc-card" data-id="1" data-price="1200" data-name-ru="Экспертный осмотр и диагностика авто в ЕС/Швейцарии" data-name-ukr="Експертний огляд та діагностика авто в ЄС/Швейцарії" data-name-de="Expertenprüfung & Diagnose in der EU/Schweiz" data-name-en="Expert inspection & diagnostics in EU/Switzerland">
+                    <div class="calc-card" data-price="950" data-name-ru="Индивидуальный подбор автомобиля" data-name-ukr="Індивідуальний підбір автомобіля" data-name-de="Individuelle Fahrzeugsuche" data-name-en="Individual car search">
                         <div>
                             <div class="calc-card-header">
-                                <h3 data-i18n="srv1_title">Экспертный осмотр и диагностика</h3>
+                                <h3 data-i18n="srv1_title">Индивидуальный подбор</h3>
                                 <div class="calc-checkbox"></div>
                             </div>
-                            <p data-i18n="srv1_desc">Выезд мастера, полная компьютерная диагностика, проверка кузова и ходовой части на месте.</p>
+                            <p data-i18n="srv1_desc">Поиск лучших вариантов по вашему ТЗ: бюджет, марка, модель, пробег, комплектация и двигатель.</p>
                         </div>
                         <div class="calc-card-footer">
                             <span data-i18n="srv_cost">Стоимость:</span>
-                            <span class="calc-price">CHF 1,200</span>
+                            <span class="calc-price">CHF 950</span>
                         </div>
                     </div>
 
-                    <div class="calc-card" data-id="2" data-price="2500" data-name-ru="Юридическая проверка чистоты и истории" data-name-ukr="Юридична перевірка чистоти та історії" data-name-de="Rechtliche Prüfung von Historie & Dokumenten" data-name-en="Legal history and document check">
+                    <div class="calc-card" data-price="750" data-name-ru="Проверка авто перед покупкой и осмотр" data-name-ukr="Перевірка авто перед покупкою та огляд" data-name-de="Fahrzeugprüfung & Inspektion" data-name-en="Pre-purchase inspection">
                         <div>
                             <div class="calc-card-header">
-                                <h3 data-i18n="srv2_title">Юридическая проверка истории</h3>
+                                <h3 data-i18n="srv2_title">Проверка и осмотр (диагностика)</h3>
                                 <div class="calc-checkbox"></div>
                             </div>
-                            <p data-i18n="srv2_desc">Анализ баз данных швейцарских кантонов, проверка на залоги, аресты, штрафы и честность пробега.</p>
+                            <p data-i18n="srv2_desc">Анализ истории, проверка кузова, салона, двигателя, подвески, документов и выезд мастера.</p>
                         </div>
                         <div class="calc-card-footer">
                             <span data-i18n="srv_cost">Стоимость:</span>
-                            <span class="calc-price">CHF 2,500</span>
+                            <span class="calc-price">CHF 750</span>
                         </div>
                     </div>
 
-                    <div class="calc-card" data-id="3" data-price="3500" data-name-ru="Торг с продавцом и снижение цены" data-name-ukr="Торг з продавцем та зниження ціни" data-name-de="Preisverhandlung mit dem Verkäufer" data-name-en="Price negotiation with seller">
+                    <div class="calc-card" data-price="600" data-name-ru="Переговоры с продавцом и торг" data-name-ukr="Переговори з продавцем та торг" data-name-de="Preisverhandlung mit Verkäufer" data-name-en="Price negotiations">
                         <div>
                             <div class="calc-card-header">
-                                <h3 data-i18n="srv3_title">Профессиональный торг</h3>
+                                <h3 data-i18n="srv3_title">Переговоры и торг</h3>
                                 <div class="calc-checkbox"></div>
                             </div>
-                            <p data-i18n="srv3_desc">Аргументированное снижение стоимости машины на основе дефектов. Часто окупает стоимость услуг.</p>
+                            <p data-i18n="srv3_desc">Аргументированное обсуждение цены с продавцом, выявление дефектов для максимальной скидки.</p>
                         </div>
                         <div class="calc-card-footer">
                             <span data-i18n="srv_cost">Стоимость:</span>
-                            <span class="calc-price">CHF 3,500</span>
+                            <span class="calc-price">CHF 600</span>
                         </div>
                     </div>
 
-                    <div class="calc-card" data-id="4" data-price="4900" data-name-ru="Пакет «Премиум» (Под ключ со сделкой)" data-name-ukr="Пакет «Преміум» (Під ключ з угодою)" data-name-de="Paket «Premium» (Komplettservice)" data-name-en="Package «Premium» (Turnkey deal)">
+                    <div class="calc-card" data-price="1100" data-name-ru="Сопровождение при регистрации и страховке" data-name-ukr="Супровід при реєстрації та страховці" data-name-de="Zulassung & Versicherungsbegleitung" data-name-en="Registration & insurance support">
                         <div>
                             <div class="calc-card-header">
-                                <h3 data-i18n="srv4_title">Пакет «Премиум» под ключ</h3>
+                                <h3 data-i18n="srv4_title">Регистрация и страховка</h3>
                                 <div class="calc-checkbox"></div>
                             </div>
-                            <p data-i18n="srv4_desc">Полный цикл сопровождения сделки купли-продажи, оформление контрактов и договоров.</p>
+                            <p data-i18n="srv4_desc">Помощь с оформлением оптимальной страховки, номеров и документов в Швейцарии.</p>
                         </div>
                         <div class="calc-card-footer">
                             <span data-i18n="srv_cost">Стоимость:</span>
-                            <span class="calc-price">CHF 4,900</span>
+                            <span class="calc-price">CHF 1,100</span>
                         </div>
                     </div>
 
-                    <div class="calc-card" data-id="5" data-price="2800" data-name-ru="Растаможка и сертификация в Швейцарии" data-name-ukr="Розмитнення та сертифікація у Швейцарії" data-name-de="Zollabfertigung & Zertifizierung in der Schweiz" data-name-en="Customs clearance & certification in Switzerland">
+                    <div class="calc-card" data-price="850" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK" data-name-de="MFK-Vorbereitung & Begleitung" data-name-en="MFK technical inspection support">
                         <div>
                             <div class="calc-card-header">
-                                <h3 data-i18n="srv5_title">Растаможка и сертификация</h3>
+                                <h3 data-i18n="srv5_title">Подготовка и помощь с MFK</h3>
                                 <div class="calc-checkbox"></div>
                             </div>
-                            <p data-i18n="srv5_desc">Подготовка документов для швейцарской таможни (form 13.20 A), уплата пошлин и прохождение MFK.</p>
+                            <p data-i18n="srv5_desc">Оценка состояния, устранение недочетов и полное сопровождение для успешного прохождения MFK.</p>
                         </div>
                         <div class="calc-card-footer">
                             <span data-i18n="srv_cost">Стоимость:</span>
-                            <span class="calc-price">CHF 2,800</span>
+                            <span class="calc-price">CHF 850</span>
                         </div>
                     </div>
 
-                    <div class="calc-card" data-id="6" data-price="1800" data-name-ru="Доставка авто по Швейцарии и ЕС лафетом" data-name-ukr="Доставка авто по Швейцарії та ЄС лафетом" data-name-de="Fahrzeugtransport per Anhänger EU/Schweiz" data-name-en="Enclosed trailer transport EU/Switzerland">
+                    <div class="calc-card" data-price="900" data-name-ru="Подготовка к продаже и фотосъемка" data-name-ukr="Підготовка до продажу та фотозйомка" data-name-de="Verkaufsvorbereitung & Fotoshooting" data-name-en="Sale preparation & photoshoot">
                         <div>
                             <div class="calc-card-header">
-                                <h3 data-i18n="srv6_title">Транспортировка лафетом</h3>
+                                <h3 data-i18n="srv6_title">Предпродажная подготовка и фото</h3>
                                 <div class="calc-checkbox"></div>
                             </div>
-                            <p data-i18n="srv6_desc">Бережная доставка автомобиля закрытым эвакуатором или профессиональным водителем до вашего дома.</p>
+                            <p data-i18n="srv6_desc">Мойка, химчистка, полировка, создание продающего описания и профессиональные фото авто.</p>
                         </div>
                         <div class="calc-card-footer">
                             <span data-i18n="srv_cost">Стоимость:</span>
-                            <span class="calc-price">CHF 1,800</span>
+                            <span class="calc-price">CHF 900</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-card" data-price="700" data-name-ru="Доставка и перегон автомобиля" data-name-ukr="Доставка та перегін автомобіля" data-name-de="Fahrzeugtransport & Überführung" data-name-en="Vehicle delivery & transport">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv7_title">Доставка или перегон авто</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv7_desc">Организация безопасной доставки или перегона машины из другого кантона или страны ЕС.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Стоимость:</span>
+                            <span class="calc-price">CHF 700</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-card" data-price="400" data-name-ru="Экспертные консультации по выбору авто" data-name-ukr="Експертні консультації щодо вибору авто" data-name-de="Expertenberatung" data-name-en="Expert consultations">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv8_title">Консультации и сравнение</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv8_desc">Детальный разбор слабых мест, надежности и стоимости обслуживания выбранных моделей.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Стоимость:</span>
+                            <span class="calc-price">CHF 400</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Блок расчета и итога -->
+                <!-- Summary Sidebar -->
                 <div class="calc-summary">
                     <h3 data-i18n="calc_summary_title">Ваш расчет</h3>
                     <div id="summaryItemsContainer">
@@ -1004,117 +987,70 @@
         </div>
     </section>
 
+    <!-- Detailed Services List Section -->
+    <section id="details">
+        <div class="container">
+            <h2 class="section-title" data-i18n="details_title">Полный перечень услуг автоконсьержа</h2>
+            <p class="section-subtitle" data-i18n="details_subtitle">Комплексный подход к каждому этапу владения автомобилем в Швейцарии</p>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h3 data-i18n="d1_title">1. Подбор под ключ</h3>
+                    <p data-i18n="d1_desc">Самостоятельный мониторинг рынка, отбор лучших предложений по вашим параметрам (бюджет, марка, пробег, тип двигателя) с подробным обоснованием.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d2_title">2. Детальная проверка</h3>
+                    <p data-i18n="d2_desc">Анализ истории, проверка комплектации, оценка состояния и выявление скрытых дефектов перед принятием решения о покупке.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d3_title">3. Выездной осмотр</h3>
+                    <p data-i18n="d3_desc">Личный осмотр кузова, салона, мотора и подвески. Предоставление развернутого фото- и видеоотчета с рекомендациями.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d4_title">4. Торг с продавцом</h3>
+                    <p data-i18n="d4_desc">Профессиональные переговоры, проверка адекватности цены и снижение стоимости за счет найденных недочетов.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d5_title">5. Подбор страховки</h3>
+                    <p data-i18n="d5_desc">Сотрудничество со страховыми специалистами для поиска лучших условий и покрытия с оптимальным бюджетом.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d6_title">6. Помощь в продаже</h3>
+                    <p data-i18n="d6_desc">Предпродажная подготовка, детейлинг, профессиональные фото, составление продающего текста и сопровождение сделки.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d7_title">7. Регистрация и номера</h3>
+                    <p data-i18n="d7_desc">Полное сопровождение в швейцарских инстанциях при получении номерных знаков и оформлении документов.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d8_title">8. Сопровождение MFK</h3>
+                    <p data-i18n="d8_desc">Организация и подготовка машины к прохождению обязательного швейцарского техосмотра с первого раза.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d9_title">9. Постпродажная поддержка</h3>
+                    <p data-i18n="d9_desc">Консультации по обслуживанию, выбору сервиса и дальнейшей эксплуатации автомобиля в любой момент.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Cantons Section -->
     <section id="cantons">
         <div class="container">
             <h2 class="section-title" data-i18n="cantons_title">Коммуны и кантоны</h2>
-            <p class="section-subtitle" data-i18n="cantons_subtitle">Топ-15 самых густонаселенных и динамичных центров притяжения капитала и жизни в Швейцарии</p>
-
-            <div class="cantons-grid">
-                <div class="canton-item">
-                    <div class="canton-number">1</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c1_name">Цюрих (Zurich)</h4>
-                        <p data-i18n="c1_desc">Финансовое сердце Европы, где безупречный швейцарский стиль встречается с динамикой глобального мегаполиса.</p>
-                    </div>
+            <p class="section-subtitle" data-i18n="cantons_subtitle">Работаем по всей Швейцарии: Цюрих, Женева, Базель, Лозанна и другие регионы</p>
+            <div class="grid-3">
+                <div class="card">
+                    <h3 data-i18n="c1_name">Цюрих и Женева</h3>
+                    <p data-i18n="c1_desc">Главные финансовые и деловые хабы страны с высочайшей плотностью премиальных авто.</p>
                 </div>
-                <div class="canton-item">
-                    <div class="canton-number">2</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c2_name">Женева (Geneva)</h4>
-                        <p data-i18n="c2_desc">Глобальный центр дипломатии, элегантности и роскоши на берегу живописного Женевского озера.</p>
-                    </div>
+                <div class="card">
+                    <h3 data-i18n="c2_name">Базель и Берн</h3>
+                    <p data-i18n="c2_desc">Оперативный выезд экспертов для проверки и покупки машин в северных и центральных кантонах.</p>
                 </div>
-                <div class="canton-item">
-                    <div class="canton-number">3</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c3_name">Базель (Basel)</h4>
-                        <p data-i18n="c3_desc">Культурная столица и перекресток инноваций, искусства и фармацевтической элиты на берегах Рейна.</p>
-                    </div>
-                </div>
-                <div class="canton-item">
-                    <div class="canton-number">4</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c4_name">Лозанна (Lausanne)</h4>
-                        <p data-i18n="c4_desc">Очаровательный олимпийский центр на склонах Женевской ривьеры, объединяющий традиций и молодость.</p>
-                    </div>
-                </div>
-                <div class="canton-item">
-                    <div class="canton-number">5</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c5_name">Берн (Bern)</h4>
-                        <p data-i18n="c5_desc">Историческая федеральная столица Конфедерации, хранящая величие архитектуры под защитой ЮНЕСКО.</p>
-                    </div>
-                </div>
-                <div class="canton-item">
-                    <div class="canton-number">6</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c6_name">Винтертур (Winterthur)</h4>
-                        <p data-i18n="c6_desc">Индустриально-культурный жемчуг кантона Цюрих, гармонично сочетающий историю и современные инновации.</p>
-                    </div>
-                </div>
-                <div class="canton-item">
-                    <div class="canton-number">7</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c7_name">Люцерн (Lucerne)</h4>
-                        <p data-i18n="c7_desc">Живописнейший альпийский курорт и культурный центр у подножия величественных гор и зеркального озера.</p>
-                    </div>
-                </div>
-                <div class="canton-item">
-                    <div class="canton-number">8</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c8_name">Санкт-Галлен (St. Gallen)</h4>
-                        <p data-i18n="c8_desc">Исторический текстильный и университетский центр восточной Швейцарии с мировым именем.</p>
-                    </div>
-                </div>
-                <div class="canton-item">
-                    <div class="canton-number">9</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c9_name">Лугано (Lugano)</h4>
-                        <p data-i18n="c9_desc">Солнечная швейцарская ривьера с итальянским темпераментом, пальмами и элитным банковским сектором.</p>
-                    </div>
-                </div>
-                <div class="canton-item">
-                    <div class="canton-number">10</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c10_name">Биль / Бьенн (Biel/Bienne)</h4>
-                        <p data-i18n="c10_desc">Уникальный двуязычный центр часового искусства и точных технологий мирового масштаба.</p>
-                    </div>
-                </div>
-                <div class="canton-item">
-                    <div class="canton-number">11</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c11_name">Тун (Thun)</h4>
-                        <p data-i18n="c11_desc">Ворота в Бернский Оберленд, где кристальная вода озер сливается с величием снежных вершин.</p>
-                    </div>
-                </div>
-                <div class="canton-item">
-                    <div class="canton-number">12</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c12_name">Беллинцона (Bellinzona)</h4>
-                        <p data-i18n="c12_desc">Южные ворота Швейцарии, знаменитые своими неприступными средневековыми замками из списка ЮНЕСКО.</p>
-                    </div>
-                </div>
-                <div class="canton-item">
-                    <div class="canton-number">13</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c13_name">Кёниц (Köniz)</h4>
-                        <p data-i18n="c13_desc">Респектабельный и зеленый стратегический спутник столицы с высочайшим качеством жизни.</p>
-                    </div>
-                </div>
-                <div class="canton-item">
-                    <div class="canton-number">14</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c14_name">Фрибур (Fribourg)</h4>
-                        <p data-i18n="c14_desc">Двуязычный средневековый бастион на скалах, привлекающий инвестиции, таланты и динамичное население.</p>
-                    </div>
-                </div>
-                <div class="canton-item">
-                    <div class="canton-number">15</div>
-                    <div class="canton-content">
-                        <h4 data-i18n="c15_name">Шаффхаузен (Schaffhausen)</h4>
-                        <p data-i18n="c15_desc">Северный форпост страны у грандиозного Рейнского водопада, сочетающий деловую активность и историческую красоту.</p>
-                    </div>
+                <div class="card">
+                    <h3 data-i18n="c3_name">Лугано и Лозанна</h3>
+                    <p data-i18n="c3_desc">Полное покрытие южного и франкоязычного регионов Швейцарии под ключ.</p>
                 </div>
             </div>
         </div>
@@ -1255,8 +1191,8 @@
             const translations = {
                 ru: {
                     nav_about: "О нас",
-                    nav_services: "Калькулятор и Услуги",
-                    nav_cantons: "Коммуны и кантоны",
+                    nav_services: "Калькулятор",
+                    nav_details: "Услуги",
                     nav_why: "Почему мы",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Оставить заявку",
@@ -1268,31 +1204,69 @@
                     about_main_subtitle: "Эксклюзивный подход к каждому клиенту",
                     about_quote: "«Мы создаем не просто решения — мы формируем стандарты исключительного <span>превосходства</span>».",
                     about_text_1: "Наша философия базируется на трех абсолютных принципах: безупречная репутация, элитарный подход и абсолютная конфиденциальность. Мы объединяем глубокую экспертную аналитику, передовые технологии и эстетику роскоши, чтобы воплощать в жизнь проекты исключительного уровня.",
-                    about_text_2: "Для тех, кто привык выбирать лучшее и не приемлет компромиссов, мы открываем двери в мир абсолютного комфорта, статуса и бесконечных возможностей. Ваше доверие — наш главный капитал, ваше превосходство — наш неизменный результат.",
-                    services_title: "Калькулятор услуг и стоимость",
-                    services_subtitle: "Выберите необходимые услуги для расчета сметы в Швейцарии и странах ЕС",
+                    about_text_2: "Полное сопровождение клиента — от первого запроса и поиска автомобиля в Швейцарии или ЕС до получения ключей, прохождения техосмотра MFK, оформления страховки и регистрации.",
+                    calc_main_title: "Калькулятор и выбор услуг",
+                    calc_main_subtitle: "Соберите свой пакет услуг для точного расчета сметы в Швейцарии и ЕС",
                     srv_cost: "Стоимость:",
-                    srv1_title: "Экспертный осмотр и диагностика",
-                    srv1_desc: "Выезд мастера, полная компьютерная диагностика, проверка кузова и ходовой части на месте.",
-                    srv2_title: "Юридическая проверка истории",
-                    srv2_desc: "Анализ баз данных швейцарских кантонов, проверка на залоги, аресты, штрафы и честность пробега.",
-                    srv3_title: "Профессиональный торг",
-                    srv3_desc: "Аргументированное снижение стоимости машины на основе дефектов. Часто окупает стоимость услуг.",
-                    srv4_title: "Пакет «Премиум» под ключ",
-                    srv4_desc: "Полный цикл сопровождения сделки купли-продажи, оформление контрактов и договоров.",
-                    srv5_title: "Растаможка и сертификация",
-                    srv5_desc: "Подготовка документов для швейцарской таможни (form 13.20 A), уплата пошлин и прохождение MFK.",
-                    srv6_title: "Транспортировка лафетом",
-                    srv6_desc: "Бережная доставка автомобиля закрытым эвакуатором или профессиональным водителем до вашего дома.",
+                    srv1_title: "Индивидуальный подбор",
+                    srv1_desc: "Поиск лучших вариантов по вашему ТЗ: бюджет, марка, модель, пробег, комплектация и двигатель.",
+                    srv2_title: "Проверка и осмотр (диагностика)",
+                    srv2_desc: "Анализ истории, проверка кузова, салона, двигателя, подвески, документов и выезд мастера.",
+                    srv3_title: "Переговоры и торг",
+                    srv3_desc: "Аргументированное обсуждение цены с продавцом, выявление дефектов для максимальной скидки.",
+                    srv4_title: "Регистрация и страховка",
+                    srv4_desc: "Помощь с оформлением оптимальной страховки, номеров и документов в Швейцарии.",
+                    srv5_title: "Подготовка и помощь с MFK",
+                    srv5_desc: "Оценка состояния, устранение недочетов и полное сопровождение для успешного прохождения MFK.",
+                    srv6_title: "Предпродажная подготовка и фото",
+                    srv6_desc: "Мойка, химчистка, полировка, создание продающего описания и профессиональные фото авто.",
+                    srv7_title: "Доставка или перегон авто",
+                    srv7_desc: "Организация безопасной доставки или перегона машины из другого кантона или страны ЕС.",
+                    srv8_title: "Консультации и сравнение",
+                    srv8_desc: "Детальный разбор слабых мест, надежности и стоимости обслуживания выбранных моделей.",
                     calc_summary_title: "Ваш расчет",
                     calc_empty: "Выберите одну или несколько услуг слева",
                     calc_total: "Итого:",
                     calc_btn_order: "Оформить выбранное",
                     calc_btn_wa: "Обсудить в WhatsApp",
+                    details_title: "Полный перечень услуг автоконсьержа",
+                    details_subtitle: "Комплексный подход к каждому этапу владения автомобилем в Швейцарии",
+                    d1_title: "1. Подбор под ключ",
+                    d1_desc: "Самостоятельный мониторинг рынка, отбор лучших предложений по вашим параметрам с подробным обоснованием.",
+                    d2_title: "2. Детальная проверка",
+                    d2_desc: "Анализ истории, проверка комплектации, оценка состояния и выявление скрытых дефектов перед покупкой.",
+                    d3_title: "3. Выездной осмотр",
+                    d3_desc: "Личный осмотр кузова, салона, мотора и подвески. Развернутый фото- и видеоотчет с рекомендациями.",
+                    d4_title: "4. Торг с продавцом",
+                    d4_desc: "Профессиональные переговоры, проверка адекватности цены и снижение стоимости за счет найденных недочетов.",
+                    d5_title: "5. Подбор страховки",
+                    d5_desc: "Сотрудничество со страховыми специалистами для поиска лучших условий и покрытия с оптимальным бюджетом.",
+                    d6_title: "6. Помощь в продаже",
+                    d6_desc: "Предпродажная подготовка, детейлинг, профессиональные фото, тексты объявлений и сопровождение сделки.",
+                    d7_title: "7. Регистрация и номера",
+                    d7_desc: "Полное сопровождение в швейцарских инстанциях при получении номерных знаков и оформлении документов.",
+                    d8_title: "8. Сопровождение MFK",
+                    d8_desc: "Организация и подготовка машины к прохождению обязательного швейцарского техосмотра с первого раза.",
+                    d9_title: "9. Постпродажная поддержка",
+                    d9_desc: "Консультации по обслуживанию, выбору сервиса и дальнейшей эксплуатации автомобиля в любой момент.",
                     cantons_title: "Коммуны и кантоны",
-                    cantons_subtitle: "Топ-15 самых густонаселенных и динамичных центров притяжения капитала и жизни в Швейцарии",
+                    cantons_subtitle: "Работаем по всей Швейцарии: Цюрих, Женева, Базель, Лозанна и другие регионы",
+                    c1_name: "Цюрих и Женева",
+                    c1_desc: "Главные финансовые и деловые хабы страны с высочайшей плотностью премиальных авто.",
+                    c2_name: "Базель и Берн",
+                    c2_desc: "Оперативный выезд экспертов для проверки и покупки машин в северных и центральных кантонах.",
+                    c3_name: "Лугано и Лозанна",
+                    c3_desc: "Полное покрытие южного и франкоязычного регионов Швейцарии под ключ.",
                     why_title: "Почему выбирают нас",
                     why_subtitle: "Принципы нашей работы в Швейцарии",
+                    w1_title: "Экономия времени",
+                    w1_desc: "Избавляем вас от просмотра сотен объявлений и пустых звонков.",
+                    w2_title: "Честность и открытость",
+                    w2_desc: "Откровенно рассказываем о плюсах и минусах каждого варианта.",
+                    w3_title: "Безопасность сделки",
+                    w3_desc: "Помогаем избежать дорогостоящих ошибок и скрытых дефектов.",
+                    w4_title: "Индивидуальный подход",
+                    w4_desc: "Учитываем все ваши пожелания и бюджет при подборе авто.",
                     modal_title: "Оставить заявку",
                     modal_subtitle: "Заполните форму, и наш специалист свяжется с вами в ближайшее время.",
                     form_name: "Ваше имя",
@@ -1303,8 +1277,8 @@
                 },
                 ukr: {
                     nav_about: "Про нас",
-                    nav_services: "Калькулятор та Послуги",
-                    nav_cantons: "Комуни та кантони",
+                    nav_services: "Калькулятор",
+                    nav_details: "Послуги",
                     nav_why: "Чому ми",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Залишити заявку",
@@ -1315,32 +1289,70 @@
                     about_main_title: "Про нас",
                     about_main_subtitle: "Ексклюзивний підхід до кожного клієнта",
                     about_quote: "«Ми створюємо не просто рішення — ми формуємо стандарти виняткової <span>переваги</span>».",
-                    about_text_1: "Наша філософія базується на трьох абсолютних принципах: бездоганна репутація, елітарний підхід та абсолютна конфіденційність. Ми об'єднуємо глибоку експертну аналітику, передові технології та естетику розкоші, щоб втілювати в життя проєкти виняткового рівня.",
-                    about_text_2: "Для тих, хто звик вибирати найкраще і не сприймає компромісів, ми відкриваємо двері у світ абсолютного комфорту, статусу та нескінченних можливостей. Ваша довіра — наш головний капітал, ваша перевага — наш незмінний результат.",
-                    services_title: "Калькулятор послуг та вартість",
-                    services_subtitle: "Виберіть необхідні послуги для розрахунку кошторису у Швейцарії та країнах ЄС",
+                    about_text_1: "Наша філософія базується на трьох абсолютних принципах: бездоганна репутація, елітарний підхід та абсолютна конфіденційність. Ми об'єднуємо глибоку експертну аналітику, передові технології та естетику розкоші.",
+                    about_text_2: "Повний супровід клієнта — від першого запиту до отримання ключів, проходження техогляду MFK, оформлення страховки та реєстрації.",
+                    calc_main_title: "Калькулятор та вибір послуг",
+                    calc_main_subtitle: "Зберіть свій пакет послуг для точного розрахунку кошторису у Швейцарії та ЄС",
                     srv_cost: "Вартість:",
-                    srv1_title: "Експертний огляд та діагностика",
-                    srv1_desc: "Виїзд майстра, повна комп'ютерна діагностика, перевірка кузова та ходової частини на місці.",
-                    srv2_title: "Юридична перевірка історії",
-                    srv2_desc: "Аналіз баз даних швейцарських кантонів, перевірка на застави, арешти, штрафи та чесність пробігу.",
-                    srv3_title: "Професійний торг",
-                    srv3_desc: "Аргументоване зниження вартості машини на основі дефектів. Часто окупає вартість послуг.",
-                    srv4_title: "Пакет «Преміум» під ключ",
-                    srv4_desc: "Повний цикл супроводу угоди купівлі-продажу, оформлення контрактів та договорів.",
-                    srv5_title: "Розмитнення та сертифікація",
-                    srv5_desc: "Підготовка документів для швейцарської митниці (form 13.20 A), сплатата мит та проходження MFK.",
-                    srv6_title: "Транспортування лафетом",
-                    srv6_desc: "Дбайлива доставка автомобіля закритим евакуатором або професійним водієм до вашого будинку.",
+                    srv1_title: "Індивідуальний підбір",
+                    srv1_desc: "Пошук найкращих варіантів за вашим ТЗ: бюджет, марка, модель, пробіг та комплектація.",
+                    srv2_title: "Перевірка та огляд (діагностика)",
+                    srv2_desc: "Аналіз історії, перевірка кузова, салону, мотора, підвіски та документів.",
+                    srv3_title: "Переговори та торг",
+                    srv3_desc: "Аргументоване обговорення ціни з продавцем для максимальної знижки.",
+                    srv4_title: "Реєстрація та страховка",
+                    srv4_desc: "Допомога з оформленням оптимальної страховки, номерів та документів у Швейцарії.",
+                    srv5_title: "Підготовка та допомога з MFK",
+                    srv5_desc: "Оцінка стану, усунення недоліків та супровід для успішного проходження MFK.",
+                    srv6_title: "Передпродажна підготовка і фото",
+                    srv6_desc: "Мийка, хімчистка, полірування, опис та професійні фото авто.",
+                    srv7_title: "Доставка або перегін авто",
+                    srv7_desc: "Організація безпечної доставки або перегону машини з іншого кантону чи країни ЄС.",
+                    srv8_title: "Консультації та порівняння",
+                    srv8_desc: "Детальний розбір слабких місць, надійності та вартості обслуговування модельних рядів.",
                     calc_summary_title: "Ваш розрахунок",
                     calc_empty: "Виберіть одну або кілька послуг зліва",
                     calc_total: "Всього:",
                     calc_btn_order: "Оформити вибране",
                     calc_btn_wa: "Обговорити в WhatsApp",
+                    details_title: "Повний перелік послуг автоконсьєржа",
+                    details_subtitle: "Комплексний підхід до кожного етапу володіння автомобілем у Швейцарії",
+                    d1_title: "1. Підбір під ключ",
+                    d1_desc: "Самостійний моніторинг ринку, відбір найкращих пропозицій за вашими параметрами.",
+                    d2_title: "2. Детальна перевірка",
+                    d2_desc: "Аналіз історії, комплектації, оцінка стану та виявлення прихованих дефектів.",
+                    d3_title: "3. Виїзний огляд",
+                    d3_desc: "Особистий огляд кузова, салону, мотора та підвіски з фото- та відеозвітом.",
+                    d4_title: "4. Торг з продавцем",
+                    d4_desc: "Професійні переговори для зниження вартості за рахунок знайдених дефектів.",
+                    d5_title: "5. Підбір страховки",
+                    d5_desc: "Співпраця зі страховими фахівцями для пошуку найкращих умов покриття.",
+                    d6_title: "6. Допомога в продажу",
+                    d6_desc: "Передпродажна підготовка, детейлинг, професійні фото, оголошення та супровід.",
+                    d7_title: "7. Реєстрація та номери",
+                    d7_desc: "Повний супровід у швейцарських інстанціях при отриманні номерних знаків.",
+                    d8_title: "8. Супровід MFK",
+                    d8_desc: "Організація та підготовка машини до проходження обов'язкового швейцарського техогляду.",
+                    d9_title: "9. Постпродажна підтримка",
+                    d9_desc: "Консультації щодо обслуговування, вибору сервісу та подальшої експлуатації.",
                     cantons_title: "Комуни та кантони",
-                    cantons_subtitle: "Топ-15 найгустонаселеніших і найдинамічніших центрів тяжіння капіталу та життя у Швейцарії",
+                    cantons_subtitle: "Працюємо по всій Швейцарії: Цюрих, Женева, Базель, Лозанна та інші регіони",
+                    c1_name: "Цюрих і Женева",
+                    c1_desc: "Головні фінансові та ділові хаби країни з найвищою щільністю преміальних авто.",
+                    c2_name: "Базель і Берн",
+                    c2_desc: "Оперативний виїзд експертів для перевірки та купівлі машин у північних кантонах.",
+                    c3_name: "Лугано і Лозанна",
+                    c3_desc: "Повне покриття південного та франкомовного регіонів Швейцарії під ключ.",
                     why_title: "Чому обирають нас",
                     why_subtitle: "Принципи нашої роботи у Швейцарії",
+                    w1_title: "Економія часу",
+                    w1_desc: "Зберігаємо ваш час від перегляду сотень оголошень та порожніх дзвінків.",
+                    w2_title: "Чесність і відкритість",
+                    w2_desc: "Відверто розповідаємо про плюси та мінуси кожного варіанта.",
+                    w3_title: "Безпека угоди",
+                    w3_desc: "Допомагаємо уникнути дороговартісних помилок та прихованих дефектів.",
+                    w4_title: "Індивідуальний підхід",
+                    w4_desc: "Враховуємо всі ваші побажання та бюджет при підборі авто.",
                     modal_title: "Залишити заявку",
                     modal_subtitle: "Заповніть форму, і наш фахівець зв'яжеться з вами найближчим часом.",
                     form_name: "Ваше ім'я",
@@ -1351,8 +1363,8 @@
                 },
                 de: {
                     nav_about: "Über uns",
-                    nav_services: "Rechner & Preise",
-                    nav_cantons: "Gemeinden & Kantone",
+                    nav_services: "Rechner",
+                    nav_details: "Leistungen",
                     nav_why: "Warum wir",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Anfrage senden",
@@ -1363,32 +1375,70 @@
                     about_main_title: "Über uns",
                     about_main_subtitle: "Exklusiver Ansatz für jeden Kunden",
                     about_quote: "«Wir schaffen nicht nur Lösungen – wir prägen Standards außergewöhnlicher <span>Exzellenz</span>».",
-                    about_text_1: "Unsere Philosophie basiert auf drei absoluten Prinzipien: tadelloser Ruf, elitärer Ansatz und absolute Vertraulichkeit. Wir vereinen tiefe Expertenanalytik, fortschrittliche Technologien und Luxusästhetik.",
-                    about_text_2: "Für diejenigen, die es gewohnt sind, das Beste zu wählen und keine Kompromisse eingehen, öffnen wir die Türen zu einer Welt von absolutem Komfort und Status.",
-                    services_title: "Leistungsrechner & Preise",
-                    services_subtitle: "Wählen Sie die gewünschten Dienstleistungen für Ihre Schätzung in der Schweiz und EU",
+                    about_text_1: "Unsere Philosophie basiert auf drei absoluten Prinzipien: tadelloser Ruf, elitärer Ansatz und absolute Vertraulichkeit. Wir vereinen tiefe Expertenanalytik und Luxusästhetik.",
+                    about_text_2: "Komplette Begleitung des Kunden — von der ersten Anfrage bis zur Schlüsselübergabe, MFK-Prüfung, Versicherung und Zulassung.",
+                    calc_main_title: "Rechner & Leistungsübersicht",
+                    calc_main_subtitle: "Stellen Sie Ihr Dienstleistungspaket für die Schweiz und EU zusammen",
                     srv_cost: "Kosten:",
-                    srv1_title: "Expertenprüfung & Diagnose",
-                    srv1_desc: "Vor-Ort-Termin, vollständige Computerdiagnose, Überprüfung von Karosserie und Fahrwerk.",
-                    srv2_title: "Rechtliche Historienprüfung",
-                    srv2_desc: "Analyse der Schweizer Kantonsdatenbanken, Prüfung auf Pfändungen, Beschlagnahmen und Kilometerstand.",
-                    srv3_title: "Preisverhandlung",
-                    srv3_desc: "Argumentierte Reduzierung des Fahrzeugpreises basierend auf Mängeln.",
-                    srv4_title: "Paket «Premium» Komplett",
-                    srv4_desc: "Kompletter Zyklus der Kaufabwicklung, Verträge und Vereinbarungen.",
-                    srv5_title: "Zoll & Zertifizierung",
-                    srv5_desc: "Vorbereitung von Dokumenten für den Schweizer Zoll (Form 13.20 A), Zölle und MFK.",
-                    srv6_title: "Fahrzeugtransport per Anhänger",
-                    srv6_desc: "Sicherer Transport im geschlossenen Anhänger direkt zu Ihnen nach Hause.",
+                    srv1_title: "Individuelle Suche",
+                    srv1_desc: "Suche nach besten Optionen nach Ihren Parametern: Budget, Marke, Modell, Kilometerstand.",
+                    srv2_title: "Prüfung & Inspektion",
+                    srv2_desc: "Historienanalyse, Prüfung von Karosserie, Innenraum, Motor, Fahrwerk und Unterlagen.",
+                    srv3_title: "Verhandlung & Rabatt",
+                    srv3_desc: "Argumentierte Preisverhandlung mit dem Verkäufer zur Erzielung des besten Preises.",
+                    srv4_title: "Zulassung & Versicherung",
+                    srv4_desc: "Unterstützung bei der Wahl optimaler Versicherungen und Nummernschilder in der Schweiz.",
+                    srv5_title: "MFK-Vorbereitung & Begleitung",
+                    srv5_desc: "Zustandsbewertung, Beseitigung von Mängeln und Begleitung für erfolgreiche MFK-Prüfung.",
+                    srv6_title: "Aufbereitung & Fotoshooting",
+                    srv6_desc: "Wäsche, Reinigung, Polieren, Beschreibung und professionelle Fotos des Autos.",
+                    srv7_title: "Fahrzeugtransport & Überführung",
+                    srv7_desc: "Sicherer Transport oder Überführung des Fahrzeugs aus einem anderen Kanton oder EU-Land.",
+                    srv8_title: "Beratung & Vergleich",
+                    srv8_desc: "Detaillierte Analyse von Schwachstellen, Zuverlässigkeit und Unterhaltskosten.",
                     calc_summary_title: "Ihre Kalkulation",
                     calc_empty: "Wählen Sie links eine oder mehrere Leistungen aus",
                     calc_total: "Gesamtsumme:",
                     calc_btn_order: "Auswahl anfragen",
                     calc_btn_wa: "Über WhatsApp besprechen",
+                    details_title: "Vollständige Liste der Autoconcierge-Leistungen",
+                    details_subtitle: "Umfassender Ansatz für jede Phase des Autobesitzes in der Schweiz",
+                    d1_title: "1. Rundum-Sorglos-Suche",
+                    d1_desc: "Unabhängige Marktbeobachtung, Auswahl der besten Angebote nach Ihren Kriterien.",
+                    d2_title: "2. Detaillierte Prüfung",
+                    d2_desc: "Historienanalyse, Ausstattung, Zustandsbewertung und Erkennung versteckter Mängel.",
+                    d3_title: "3. Vor-Ort-Inspektion",
+                    d3_desc: "Persönliche Inspektion von Karosserie, Innenraum, Motor und Fahrwerk mit Foto-/Videobericht.",
+                    d4_title: "4. Preisverhandlung",
+                    d4_desc: "Professionelle Verhandlungen zur Preissenkung basierend auf festgestellten Mängeln.",
+                    d5_title: "5. Versicherungsberatung",
+                    d5_desc: "Zusammenarbeit mit Versicherungsexperten zur Ermittlung der besten Konditionen.",
+                    d6_title: "6. Verkaufshilfe",
+                    d6_desc: "Verkaufsvorbereitung, Detailing, professionelle Fotos, Inseratserstellung und Begleitung.",
+                    d7_title: "7. Zulassung & Kennzeichen",
+                    d7_desc: "Volle Unterstützung bei Schweizer Behörden für Kennzeichen und Dokumente.",
+                    d8_title: "8. MFK-Begleitung",
+                    d8_desc: "Organisation und Vorbereitung des Autos auf die obligatorische Schweizer MFK-Prüfung.",
+                    d9_title: "9. After-Sales-Support",
+                    d9_desc: "Beratung zu Wartung, Werkstattauswahl und zukünftiger Nutzung des Fahrzeugs.",
                     cantons_title: "Gemeinden & Kantone",
-                    cantons_subtitle: "Die Top-15 bevölkerungsreichsten und dynamischsten Zentren in der Schweiz",
+                    cantons_subtitle: "Wir arbeiten in der gesamten Schweiz: Zürich, Genf, Basel, Lausanne und andere",
+                    c1_name: "Zürich & Genf",
+                    c1_desc: "Die wichtigsten Finanz- und Geschäftszentren der Schweiz mit hoher Luxusautodichte.",
+                    c2_name: "Basel & Bern",
+                    c2_desc: "Schneller Einsatz von Experten für Fahrzeugprüfungen in den nördlichen und zentralen Regionen.",
+                    c3_name: "Lugano & Lausanne",
+                    c3_desc: "Komplette Abdeckung der südlichen und französischsprachigen Regionen der Schweiz.",
                     why_title: "Warum uns wählen",
                     why_subtitle: "Prinzipien unserer Arbeit in der Schweiz",
+                    w1_title: "Zeitersparnis",
+                    w1_desc: "Wir bewahren Sie vor dem Durchsuchen hunderter Inserate und unnötigen Anrufen.",
+                    w2_title: "Ehrlichkeit & Offenheit",
+                    w2_desc: "Wir sprechen offen über Vor- und Nachteile jeder Option.",
+                    w3_title: "Transaktionssicherheit",
+                    w3_desc: "Wir helfen Ihnen, kostspielige Fehler und versteckte Mängel zu vermeiden.",
+                    w4_title: "Individueller Ansatz",
+                    w4_desc: "Wir berücksichtigen all Ihre Wünsche und Ihr Budget bei der Fahrzeugsuche.",
                     modal_title: "Anfrage senden",
                     modal_subtitle: "Füllen Sie das Formular aus, unser Spezialist kontaktiert Sie in Kürze.",
                     form_name: "Ihr Name",
@@ -1399,8 +1449,8 @@
                 },
                 en: {
                     nav_about: "About Us",
-                    nav_services: "Calculator & Services",
-                    nav_cantons: "Cantons",
+                    nav_services: "Calculator",
+                    nav_details: "Services",
                     nav_why: "Why Us",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Leave a Request",
@@ -1411,32 +1461,70 @@
                     about_main_title: "About Us",
                     about_main_subtitle: "Exclusive approach to each client",
                     about_quote: "«We do not just create solutions — we shape standards of exceptional <span>excellence</span>».",
-                    about_text_1: "Our philosophy is based on three absolute principles: flawless reputation, elite approach, and absolute confidentiality.",
-                    about_text_2: "For those who are used to choosing the best and accept no compromises, we open doors to a world of absolute comfort and status.",
-                    services_title: "Services Calculator & Pricing",
-                    services_subtitle: "Select the required services to calculate your estimate in Switzerland and EU",
+                    about_text_1: "Our philosophy is based on three absolute principles: flawless reputation, elite approach, and absolute confidentiality. We combine deep expert analytics and luxury aesthetics.",
+                    about_text_2: "Full client support from the first request to key handover, MFK inspection, insurance setup, and registration.",
+                    calc_main_title: "Services Calculator & Pricing",
+                    calc_main_subtitle: "Build your service package for an accurate estimate in Switzerland and EU",
                     srv_cost: "Cost:",
-                    srv1_title: "Expert Inspection & Diagnostics",
-                    srv1_desc: "Master's visit, full computer diagnostics, body and suspension check on-site.",
-                    srv2_title: "Legal History & Document Check",
-                    srv2_desc: "Analysis of Swiss canton databases, checking for liens, arrests, and mileage authenticity.",
-                    srv3_title: "Professional Price Negotiation",
-                    srv3_desc: "Reasoned vehicle price reduction based on detected defects.",
-                    srv4_title: "Turnkey «Premium» Package",
-                    srv4_desc: "Full cycle of purchase and sale support, contract registration.",
-                    srv5_title: "Customs & Certification in CH",
-                    srv5_desc: "Preparation of documents for Swiss customs (Form 13.20 A), duties, and MFK test.",
-                    srv6_title: "Enclosed Trailer Transport",
-                    srv6_desc: "Safe delivery of the car by closed trailer or professional driver to your home.",
+                    srv1_title: "Individual Car Search",
+                    srv1_desc: "Search for best options based on your specs: budget, brand, model, mileage, and engine.",
+                    srv2_title: "Inspection & Diagnostics",
+                    srv2_desc: "History analysis, body, interior, engine, suspension checks, and master visit.",
+                    srv3_title: "Negotiation & Price Cut",
+                    srv3_desc: "Reasoned price discussions with the seller to get the highest discount.",
+                    srv4_title: "Registration & Insurance",
+                    srv4_desc: "Assistance with optimal insurance setup, license plates, and documents in Switzerland.",
+                    srv5_title: "MFK Inspection Support",
+                    srv5_desc: "Condition assessment, defect elimination, and full support for successful MFK passing.",
+                    srv6_title: "Sale Prep & Photoshoot",
+                    srv6_desc: "Car wash, dry cleaning, polishing, selling description, and professional photos.",
+                    srv7_title: "Vehicle Transport & Delivery",
+                    srv7_desc: "Safe delivery or driving transfer of the car from another canton or EU country.",
+                    srv8_title: "Consultations & Comparison",
+                    srv8_desc: "Detailed breakdown of weak points, reliability, and maintenance costs.",
                     calc_summary_title: "Your Calculation",
                     calc_empty: "Select one or more services on the left",
                     calc_total: "Total:",
                     calc_btn_order: "Request Selected",
                     calc_btn_wa: "Discuss via WhatsApp",
-                    cantons_title: "Cantons",
-                    cantons_subtitle: "Top-15 most populous and dynamic centers of capital and life in Switzerland",
+                    details_title: "Full List of Car Concierge Services",
+                    details_subtitle: "Comprehensive approach to every stage of vehicle ownership in Switzerland",
+                    d1_title: "1. Turnkey Search",
+                    d1_desc: "Independent market monitoring, selecting best offers tailored to your parameters.",
+                    d2_title: "2. Detailed Inspection",
+                    d2_desc: "History analysis, package check, condition assessment, and hidden defect detection.",
+                    d3_title: "3. On-site Assessment",
+                    d3_desc: "Personal check of body, interior, motor, suspension with photo/video reports.",
+                    d4_title: "4. Seller Negotiations",
+                    d4_desc: "Professional negotiations to reduce vehicle price based on discovered flaws.",
+                    d5_title: "5. Insurance Selection",
+                    d5_desc: "Cooperation with insurance specialists to find best coverage conditions.",
+                    d6_title: "6. Sale Assistance",
+                    d6_desc: "Pre-sale detailing, professional photos, ad creation, and transaction support.",
+                    d7_title: "7. Registration & Plates",
+                    d7_desc: "Full assistance in Swiss authorities for license plates and documents.",
+                    d8_title: "8. MFK Support",
+                    d8_desc: "Organization and preparation of the car for mandatory Swiss technical inspection.",
+                    d9_title: "9. Post-Sale Support",
+                    d9_desc: "Consultations on maintenance, service selection, and future car exploitation.",
+                    cantons_title: "Cantons & Regions",
+                    cantons_subtitle: "Operating across Switzerland: Zurich, Geneva, Basel, Lausanne, and other regions",
+                    c1_name: "Zurich & Geneva",
+                    c1_desc: "The main financial and business hubs of the country with highest premium car density.",
+                    c2_name: "Basel & Bern",
+                    c2_desc: "Prompt expert dispatch for car checks and purchases in northern and central cantons.",
+                    c3_name: "Lugano & Lausanne",
+                    c3_desc: "Full coverage of southern and French-speaking regions of Switzerland turnkey.",
                     why_title: "Why Choose Us",
                     why_subtitle: "Principles of our work in Switzerland",
+                    w1_title: "Time Saving",
+                    w1_desc: "Saving you from browsing hundreds of ads and making empty calls.",
+                    w2_title: "Honesty & Openness",
+                    w2_desc: "We openly talk about the pros and cons of each option.",
+                    w3_title: "Transaction Security",
+                    w3_desc: "We help you avoid costly mistakes and hidden defects.",
+                    w4_title: "Individual Approach",
+                    w4_desc: "We consider all your wishes and budget during car selection.",
                     modal_title: "Leave a Request",
                     modal_subtitle: "Fill out the form and our specialist will contact you shortly.",
                     form_name: "Your Name",

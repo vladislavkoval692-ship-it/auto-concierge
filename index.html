@@ -32,24 +32,7 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
-.about-video-wrapper {
-    width: 100%;
-    height: 450px;
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
 
-.about-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    background: transparent;
-    }
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -244,26 +227,72 @@
             font-size: 1.1rem;
         }
 
-        /* Minimalistic Wide About Us Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
-            align-items: center;
+        /* Fullwidth Background Video About Us Section */
+        .about-section {
+            position: relative;
+            overflow: hidden;
+            padding: 130px 0;
+        }
+
+        .about-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .about-bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 25, 0.82);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+        }
+
+        .about-content-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content-wrapper .section-title,
+        .about-content-wrapper .section-subtitle {
+            position: relative;
+            z-index: 2;
         }
 
         .about-text-content {
+            background: rgba(19, 27, 46, 0.7);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 50px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             text-align: left;
         }
 
         .about-text-content blockquote {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-style: italic;
             color: var(--text-main);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             line-height: 1.5;
-            border-left: 3px solid var(--accent);
-            padding-left: 20px;
+            border-left: 4px solid var(--accent);
+            padding-left: 24px;
         }
 
         .about-text-content blockquote span {
@@ -272,33 +301,13 @@
 
         .about-text-content p {
             color: var(--text-muted);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             line-height: 1.8;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .about-text-content p:last-child {
             margin-bottom: 0;
-        }
-
-        /* Абсолютно чистый видео-блок без рамок и фона */
-        .about-video-wrapper {
-            width: 100%;
-            height: 420px;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-        }
-
-        .about-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            background: transparent;
         }
 
         /* Grids */
@@ -644,9 +653,8 @@
             .nav-links {
                 display: none;
             }
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .about-text-content {
+                padding: 30px 20px;
             }
         }
     </style>
@@ -694,30 +702,29 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about">
-        <div class="container-wide">
+    <!-- About Us Section with Fullwidth Background Video -->
+    <section id="about" class="about-section">
+        <div class="about-video-container">
+            <video autoplay muted loop playsinline preload="auto" class="about-bg-video" id="aboutVideo">
+                <source src="158316-816359649.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            <div class="about-overlay"></div>
+        </div>
+        <div class="container about-content-wrapper">
             <h2 class="section-title" data-i18n="about_main_title">О нас</h2>
             <p class="section-subtitle" data-i18n="about_main_subtitle">Эксклюзивный подход к каждому клиенту</p>
             
-            <div class="about-grid">
-                <div class="about-text-content">
-                    <blockquote data-i18n="about_quote">
-                        «Мы создаем не просто решения — мы формируем стандарты исключительного <span>превосходства</span>».
-                    </blockquote>
-                    <p data-i18n="about_text_1">
-                        Наша философия базируется на трех абсолютных принципах: безупречная репутация, элитарный подход и абсолютная конфиденциальность. Мы объединяем глубокую экспертную аналитику, передовые технологии и эстетику роскоши, чтобы воплощать в жизнь проекты исключительного уровня.
-                    </p>
-                    <p data-i18n="about_text_2">
-                        Для тех, кто привык выбирать лучшее и не приемлет компромиссов, мы открываем двери в мир абсолютного комфорта, статуса и бесконечных возможностей. Ваше доверие — наш главный капитал, ваше превосходство — наш неизменный результат.
-                    </p>
-                </div>
-                <div class="about-video-wrapper">
-                    <video autoplay muted loop playsinline preload="auto" class="about-video" id="aboutVideo">
-                        <source src="158316-816359649.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                    </video>
-                </div>
+            <div class="about-text-content">
+                <blockquote data-i18n="about_quote">
+                    «Мы создаем не просто решения — мы формируем стандарты исключительного <span>превосходства</span>».
+                </blockquote>
+                <p data-i18n="about_text_1">
+                    Наша философия базируется на трех абсолютных принципах: безупречная репутация, элитарный подход и абсолютная конфиденциальность. Мы объединяем глубокую экспертную аналитику, передовые технологии и эстетику роскоши, чтобы воплощать в жизнь проекты исключительного уровня.
+                </p>
+                <p data-i18n="about_text_2">
+                    Для тех, кто привык выбирать лучшее и не приемлет компромиссов, мы открываем двери в мир абсолютного комфорта, статуса и бесконечных возможностей. Ваше доверие — наш главный капитал, ваше превосходство — наш неизменный результат.
+                </p>
             </div>
         </div>
     </section>
@@ -962,7 +969,6 @@
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Принудительный запуск видео принудительным методом
             const aboutVideo = document.getElementById('aboutVideo');
             if (aboutVideo) {
                 aboutVideo.muted = true;
@@ -1121,26 +1127,8 @@
                     orderForm.reset();
                     modal.classList.remove('active');
                 });
-        </script>
-    
- <div class="form-group">
-                    <label for="userName" data-i18n="form_name">Ваше имя</label>
-                    <input type="text" id="userName" class="form-control" placeholder="Иван" required>
-                </div>
-                <div class="form-group">
-                    <label for="userPhone" data-i18n="form_phone">Телефон / Мессенджер</label>
-                    <input type="text" id="userPhone" class="form-control" placeholder="+41 XX XXX XX XX" required>
-                </div>
-                <button type="submit" class="btn" data-i18n="form_submit">Отправить заявку</button>
-            </form>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 SWISS CARS. All rights reserved.</p>
-        </div>
-    </footer>
-
+            }
+        });
+    </script>
 </body>
 </html>

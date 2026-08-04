@@ -843,6 +843,10 @@
             border-color: var(--accent);
         }
 
+        select.form-control {
+            cursor: pointer;
+        }
+
         .modal-content .btn {
             width: 100%;
             margin-top: 10px;
@@ -1307,7 +1311,7 @@
                     <input type="text" id="userName" class="form-control" required placeholder="Иван">
                 </div>
                 <div class="form-group">
-                    <label data-i18n="form_phone">Номер телефона / Telegram</label>
+                    <label data-i18n="form_phone">Телефон / Вотсап</label>
                     <input type="text" id="userPhone" class="form-control" required placeholder="+41 ...">
                 </div>
                 <div class="form-group">
@@ -1315,8 +1319,23 @@
                     <input type="email" id="userEmail" class="form-control" required placeholder="example@domain.com">
                 </div>
                 <div class="form-group">
-                    <label data-i18n="form_service">Выбранные услуги (из калькулятора)</label>
-                    <input type="text" id="modalServiceInput" class="form-control" readonly value="Пакет услуг по расчету">
+                    <label data-i18n="form_service">Услуги</label>
+                    <select id="modalServiceInput" class="form-control">
+                        <option value="Индивидуальный расчет">Выберите или оставьте расчет из калькулятора</option>
+                        <option value="Покупка автомобиля под ключ">Покупка автомобиля под ключ</option>
+                        <option value="Проверка и личный осмотр автомобиля">Проверка и личный осмотр автомобиля</option>
+                        <option value="Переговоры с продавцом и торг">Переговоры с продавцом и торг</option>
+                        <option value="Подбор выгодной страховки">Подбор выгодной страховки</option>
+                        <option value="Подготовка к продаже">Подготовка к продаже</option>
+                        <option value="Профессиональная фотосъемка">Профессиональная фотосъемка</option>
+                        <option value="Создание продающего объявления">Создание продающего объявления</option>
+                        <option value="Помощь в продаже автомобиля">Помощь в продаже автомобиля</option>
+                        <option value="Консультации и сравнение">Консультации и сравнение</option>
+                        <option value="Сопровождение при регистрации">Сопровождение при регистрации</option>
+                        <option value="Помощь с MFK (техосмотром)">Помощь с MFK (техосмотром)</option>
+                        <option value="Доставка автомобиля">Доставка автомобиля</option>
+                        <option value="Поддержка после покупки">Поддержка после покупки</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn" id="submitBtn" data-i18n="form_submit">Отправить заявку</button>
             </form>
@@ -1463,7 +1482,10 @@
                     });
 
                     summaryList.innerHTML = summaryHTML;
-                    modalServiceInput.value = serviceNamesForModal.join(', ') + (total > 0 ? ` (Итого: CHF ${total.toLocaleString()})` : '');
+                    // Автоматически выбираем первую услугу из выбранных в калькуляторе или объединяем
+                    if(serviceNamesForModal.length > 0) {
+                        modalServiceInput.value = serviceNamesForModal.join(', ') + (total > 0 ? ` (Итого: CHF ${total.toLocaleString()})` : '');
+                    }
                 } else {
                     summaryItemsContainer.style.display = 'block';
                     summaryList.style.display = 'none';
@@ -1513,9 +1535,9 @@
                     modal_title: "Оставить заявку",
                     modal_subtitle: "Заполните форму, и наш специалист свяжется с вами в ближайшее время.",
                     form_name: "Ваше имя",
-                    form_phone: "Номер телефона / Telegram",
+                    form_phone: "Телефон / Вотсап",
                     form_email: "Электронная почта",
-                    form_service: "Выбранные услуги (из калькулятора)",
+                    form_service: "Услуги",
                     form_submit: "Отправить заявку"
                 },
                 ukr: {
@@ -1549,9 +1571,9 @@
                     modal_title: "Залишити заявку",
                     modal_subtitle: "Заповніть форму, і наш фахівець зв'яжеться з вами найближчим часом.",
                     form_name: "Ваше ім'я",
-                    form_phone: "Номер телефону / Telegram",
+                    form_phone: "Телефон / Вотсап",
                     form_email: "Електронна пошта",
-                    form_service: "Вибрані послуги (з калькулятора)",
+                    form_service: "Послуги",
                     form_submit: "Надіслати заявку"
                 },
                 de: {
@@ -1585,9 +1607,9 @@
                     modal_title: "Anfrage senden",
                     modal_subtitle: "Füllen Sie das Formular aus, wir kontaktieren Sie in Kürze.",
                     form_name: "Ihr Name",
-                    form_phone: "Telefonnummer / Telegram",
+                    form_phone: "Telefon / WhatsApp",
                     form_email: "E-Mail-Adresse",
-                    form_service: "Ausgewählte Leistungen",
+                    form_service: "Leistungen",
                     form_submit: "Anfrage absenden"
                 },
                 en: {
@@ -1621,9 +1643,9 @@
                     modal_title: "Leave a Request",
                     modal_subtitle: "Fill out the form and our specialist will contact you shortly.",
                     form_name: "Your Name",
-                    form_phone: "Phone number / Telegram",
+                    form_phone: "Phone / WhatsApp",
                     form_email: "Email address",
-                    form_service: "Selected services",
+                    form_service: "Services",
                     form_submit: "Submit Request"
                 }
             };
@@ -1671,7 +1693,7 @@
                 });
             }
 
-            // Интеграция отправки данных в Google Таблицу через Google Apps Script
+            // Интеграция отправки данных в Google Таблицу и Telegram
             const orderForm = document.getElementById('orderForm');
             if (orderForm) {
                 orderForm.addEventListener('submit', (e) => {
@@ -1689,7 +1711,7 @@
                         service: modalServiceInput.value
                     };
 
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbl0QiOn8oT7FJtbbYs_v_i7TH6qZ8_T2He41-YduncTULyyEhii1iQp4U2UX0cMUrv/exec';
+                    const scriptURL = 'ТВОЯ_ССЫЛКА_НА_GOOGLE_SCRIPT_ЗДЕСЬ'; // Ваша ссылка на веб-приложение Apps Script
 
                     fetch(scriptURL, {
                         method: 'POST',
@@ -1707,7 +1729,7 @@
                         alert('Произошла ошибка при отправке. Пожалуйста, напишите нам в WhatsApp.');
                     })
                     .finally(() => {
-                        submitBtn.textContent = originText;
+                        submitBtn.textContent = originalText;
                         submitBtn.removeAttribute('disabled');
                     });
                 });

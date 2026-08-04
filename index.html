@@ -561,7 +561,7 @@
         .cantons-section {
             position: relative;
             overflow: hidden;
-            min-height: 600px;
+            min-height: 700px;
             padding: 100px 0;
         }
 
@@ -598,7 +598,7 @@
         .cantons-floating-area {
             position: relative;
             width: 100%;
-            height: 400px;
+            height: 480px;
             overflow: hidden;
             margin-top: 30px;
         }
@@ -608,8 +608,8 @@
             background: rgba(19, 27, 46, 0.85);
             border: 1px solid var(--border);
             border-radius: 14px;
-            padding: 20px;
-            width: 280px;
+            padding: 18px;
+            width: 240px;
             backdrop-filter: blur(8px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             transition: border-color 0.3s ease, transform 0.3s ease;
@@ -623,13 +623,13 @@
         }
 
         .canton-floating-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
             color: var(--text-main);
         }
 
         .canton-floating-card p {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
             line-height: 1.4;
         }
@@ -825,7 +825,7 @@
                 position: static;
             }
             .cantons-floating-area {
-                height: 600px;
+                height: 700px;
             }
         }
 
@@ -1230,20 +1230,68 @@
         </div>
         <div class="container cantons-content-wrapper">
             <h2 class="section-title" data-i18n="cantons_title">Коммуны и кантоны</h2>
-            <p class="section-subtitle" data-i18n="cantons_subtitle">Работаем по всей Швейцарии: Цюрих, Женева, Базель, Лозанна и другие регионы</p>
+            <p class="section-subtitle" data-i18n="cantons_subtitle">Работаем по всей Швейцарии: Цюрих, Берн, Женева и другие регионы</p>
             
             <div class="cantons-floating-area" id="floatingArea">
                 <div class="canton-floating-card">
-                    <h3 data-i18n="c1_name">Цюрих и Женева</h3>
-                    <p data-i18n="c1_desc">Главные финансовые и деловые хабы страны с высочайшей плотностью премиальных авто.</p>
+                    <h3>Цюрих</h3>
+                    <p>Финансовый и деловой центр с высокой плотностью премиальных авто.</p>
                 </div>
                 <div class="canton-floating-card">
-                    <h3 data-i18n="c2_name">Базель и Берн</h3>
-                    <p data-i18n="c2_desc">Оперативный выезд экспертов для проверки и покупки машин в северных и центральных кантонах.</p>
+                    <h3>Берн</h3>
+                    <p>Федеральная столица и ключевой регион авторынка.</p>
                 </div>
                 <div class="canton-floating-card">
-                    <h3 data-i18n="c3_name">Лугано и Лозанна</h3>
-                    <p data-i18n="c3_desc">Полное покрытие южного и франкоязычного регионов Швейцарии под ключ.</p>
+                    <h3>Во</h3>
+                    <p>Динамичный франкоязычный кантон на Женевском озере.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Аргау</h3>
+                    <p>Крупный логистический и торговый центр Швейцарии.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Санкт-Галлен</h3>
+                    <p>Главный экономический центр восточной конфедерации.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Женева</h3>
+                    <p>Международный центр дипломатии, элегантности и роскоши.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Люцерн</h3>
+                    <p>Живописный альпийский центр с развитой инфраструктурой.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Золотурн</h3>
+                    <p>Исторический кантон с выгодным географическим положением.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Тичино</h3>
+                    <p>Солнечный итальянский регион с элитным автопарком.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Базель-Ланд</h3>
+                    <p>Промышленный и транспортный узел на границе с ЕС.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Вале</h3>
+                    <p>Курортный регион с высокими требованиями к полному приводу.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Фрибур</h3>
+                    <p>Двуязычный стабильный регион в сердце Швейцарии.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Тургоу</h3>
+                    <p>Развитый экономический кантон на северо-востоке.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Базель-Штадт</h3>
+                    <p>Культурная столица и центр инновационной элиты.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Швиц</h3>
+                    <p>Историческое сердце Швейцарии с престижными коммунами.</p>
                 </div>
             </div>
         </div>
@@ -1314,17 +1362,15 @@
                 const areaWidth = floatingArea.clientWidth;
                 const areaHeight = floatingArea.clientHeight;
 
-                const cardsData = Array.from(floatingCards).map((card, index) => {
-                    const cardWidth = 280;
-                    const cardHeight = 160;
+                const cardsData = Array.from(floatingCards).map((card) => {
+                    const cardWidth = 240;
+                    const cardHeight = 120;
                     
-                    // Начальные случайные позиции
                     let x = Math.random() * (areaWidth - cardWidth);
                     let y = Math.random() * (areaHeight - cardHeight);
                     
-                    // Случайные скорости и направления
-                    let vx = (Math.random() - 0.5) * 1.2;
-                    let vy = (Math.random() - 0.5) * 1.2;
+                    let vx = (Math.random() - 0.5) * 1.0;
+                    let vy = (Math.random() - 0.5) * 1.0;
 
                     card.style.left = `${x}px`;
                     card.style.top = `${y}px`;
@@ -1340,7 +1386,6 @@
                         item.x += item.vx;
                         item.y += item.vy;
 
-                        // Столкновение со стенами блока
                         if (item.x <= 0) {
                             item.x = 0;
                             item.vx *= -1;
@@ -1491,7 +1536,7 @@
                     calc_total: "Итого:",
                     calc_btn_order: "Оформить выбранное",
                     calc_btn_wa: "Обсудить в WhatsApp",
-                    details_title: "Подробно о наших услугах",
+                    details_title: "Наши услуги",
                     details_subtitle: "Полный спектр решений для вашего автомобиля в Швейцарии",
                     d1_title: "Покупка под ключ",
                     d1_desc: "Помогаем найти автомобиль, который действительно соответствует вашим требованиям и бюджету. Вместо траты недель на просмотр десятков объявлений, мы подберем лучшие варианты.",
@@ -1518,13 +1563,7 @@
                     d12_title: "Постпродажная поддержка",
                     d12_desc: "Мы остаемся на связи и после сделки: консультации по обслуживанию, выбор сервиса, вопросы по страховке и будущей продаже.",
                     cantons_title: "Коммуны и кантоны",
-                    cantons_subtitle: "Работаем по всей Швейцарии: Цюрих, Женева, Базель, Лозанна и другие регионы",
-                    c1_name: "Цюрих и Женева",
-                    c1_desc: "Главные финансовые и деловые хабы страны с высочайшей плотностью премиальных авто.",
-                    c2_name: "Базель и Берн",
-                    c2_desc: "Оперативный выезд экспертов для проверки и покупки машин в северных и центральных кантонах.",
-                    c3_name: "Лугано и Лозанна",
-                    c3_desc: "Полное покрытие южного и франкоязычного регионов Швейцарии под ключ.",
+                    cantons_subtitle: "Работаем по всей Швейцарии: Цюрих, Берн, Женева и другие регионы",
                     modal_title: "Оставить заявку",
                     modal_subtitle: "Заполните форму, и наш специалист свяжется с вами в ближайшее время.",
                     form_name: "Ваше имя",
@@ -1588,38 +1627,8 @@
                     calc_btn_wa: "Обговорити в WhatsApp",
                     details_title: "Наші послуги",
                     details_subtitle: "Повний спектр рішень для вашого автомобіля у Швейцарії",
-                    d1_title: "Покупка під ключ",
-                    d1_desc: "Допомагаємо знайти автомобіль, який дійсно відповідає вашим вимогам і бюджету.",
-                    d2_title: "Індивідуальний підбір",
-                    d2_desc: "Ви розповідаєте про бюджет, марку, модель, рік, пробіг, а ми самостійно шукаємо вигідні пропозиції.",
-                    d3_title: "Перевірка перед покупкою",
-                    d3_desc: "Детальний аналіз історії, оголошень та оцінка адекватності ціни.",
-                    d4_title: "Огляд автомобіля",
-                    d4_desc: "Особистий огляд кузова, салону, мотора з фотозвітом та рекомендаціями.",
-                    d5_title: "Переговори з продавцем",
-                    d5_desc: "Спілкуємося замість вас, обговорюємо торг і допомагаємо домогтися вигідної ціни.",
-                    d6_title: "Підбір страховки",
-                    d6_desc: "Оформлення оптимальної страховки завдяки співпраці з фахівцями сфери.",
-                    d7_title: "Підготовка до продажу",
-                    d7_desc: "Професійна мийка, хімчистка, полірування для росту привабливості авто.",
-                    d8_title: "Фото і оголошення",
-                    d8_desc: "Якісні фото та чіпляючий опис для популярних майданчиків.",
-                    d9_title: "Реєстрація і номери",
-                    d9_desc: "Повний супровід при отриманні номерних знаків та оформленні документів.",
-                    d10_title: "Допомога з MFK",
-                    d10_desc: "Підготовка машини до проходження обов'язкового швейцарського техогляду.",
-                    d11_title: "Доставка автомобіля",
-                    d11_desc: "Організація доставки або перегону авто з іншого кантону.",
-                    d12_title: "Постпродажна підтримка",
-                    d12_desc: "Консультації щодо обслуговування, вибору сервісу та подальшої експлуатації.",
                     cantons_title: "Комуни та кантони",
-                    cantons_subtitle: "Працюємо по всій Швейцарії: Цюрих, Женева, Базель, Лозанна та інші регіони",
-                    c1_name: "Цюрих і Женева",
-                    c1_desc: "Головні фінансові та ділові хаби країни з найвищою щільністю преміальних авто.",
-                    c2_name: "Базель і Берн",
-                    c2_desc: "Оперативний виїзд експертів для перевірки та купівлі машин у північних кантонах.",
-                    c3_name: "Лугано і Лозанна",
-                    c3_desc: "Повне покриття південного та франкомовного регіонів Швейцарії під ключ.",
+                    cantons_subtitle: "Працюємо по всій Швейцарії: Цюрих, Берн, Женева та інші регіони",
                     modal_title: "Залишити заявку",
                     modal_subtitle: "Заповніть форму, і наш фахівець зв'яжеться з вами найближчим часом.",
                     form_name: "Ваше ім'я",
@@ -1683,38 +1692,8 @@
                     calc_btn_wa: "Über WhatsApp besprechen",
                     details_title: "Unsere Leistungen",
                     details_subtitle: "Umfassender Ansatz für jede Phase des Autobesitzes in der Schweiz",
-                    d1_title: "Komplettkauf",
-                    d1_desc: "Wir finden das Auto, das Ihren Anforderungen und Ihrem Budget entspricht.",
-                    d2_title: "Individuelle Suche",
-                    d2_desc: "Wir suchen nach den besten Angeboten auf dem Markt basierend auf Ihren Kriterien.",
-                    d3_title: "Kaufprüfung",
-                    d3_desc: "Detaillierte Analyse der Historie, Inserate und Angemessenheit des Preises.",
-                    d4_title: "Fahrzeuginspektion",
-                    d4_desc: "Persönliche Inspektion mit ausführlichem Bericht und Expertenempfehlungen.",
-                    d5_title: "Verhandlungen",
-                    d5_desc: "Professionelle Verhandlungen zur Erzielung des besten Preises.",
-                    d6_title: "Versicherung",
-                    d6_desc: "Optimalen Versicherungsschutz dank Partnerschaften sichern.",
-                    d7_title: "Verkaufsvorbereitung",
-                    d7_desc: "Aufbereitung und Detailing zur Erhöhung des Verkaufswerts.",
-                    d8_title: "Fotos & Inserat",
-                    d8_desc: "Hochwertige Fotos und verkaufsfördernde Beschreibung erstellen.",
-                    d9_title: "Zulassung",
-                    d9_desc: "Volle Unterstützung bei Schweizer Behörden für Kennzeichen.",
-                    d10_title: "MFK-Hilfe",
-                    d10_desc: "Vorbereitung auf die obligatorische Schweizer MFK-Prüfung.",
-                    d11_title: "Transport",
-                    d11_desc: "Sichere Lieferung des Autos bis zu Ihnen nach Hause.",
-                    d12_title: "After-Sales",
-                    d12_desc: "Wir bleiben auch nach dem Abschluss für Sie da.",
                     cantons_title: "Gemeinden & Kantone",
-                    cantons_subtitle: "Wir arbeiten in der gesamten Schweiz: Zürich, Genf, Basel, Lausanne und andere",
-                    c1_name: "Zürich & Genf",
-                    c1_desc: "Die wichtigsten Finanz- und Geschäftszentren der Schweiz mit hoher Luxusautodichte.",
-                    c2_name: "Basel & Bern",
-                    c2_desc: "Schneller Einsatz von Experten für Fahrzeugprüfungen in den nördlichen und zentralen Regionen.",
-                    c3_name: "Lugano & Lausanne",
-                    c3_desc: "Komplette Abdeckung der südlichen und französischsprachigen Regionen der Schweiz.",
+                    cantons_subtitle: "Wir arbeiten in der gesamten Schweiz: Zürich, Bern, Genf und andere",
                     modal_title: "Anfrage senden",
                     modal_subtitle: "Füllen Sie das Formular aus, wir kontaktieren Sie in Kürze.",
                     form_name: "Ihr Name",
@@ -1778,38 +1757,8 @@
                     calc_btn_wa: "Discuss via WhatsApp",
                     details_title: "Our Services",
                     details_subtitle: "Comprehensive approach to every stage of vehicle ownership in Switzerland",
-                    d1_title: "Turnkey Purchase",
-                    d1_desc: "Helping you find a car that matches your requirements and budget.",
-                    d2_title: "Individual Search",
-                    d2_desc: "Independent market search based on your budget, model, and wishes.",
-                    d3_title: "Pre-Purchase Check",
-                    d3_desc: "Detailed history analysis and price adequacy evaluation.",
-                    d4_title: "Vehicle Inspection",
-                    d4_desc: "Personal check of body, interior, motor with report and recommendations.",
-                    d5_title: "Negotiations",
-                    d5_desc: "Professional talks to achieve the most advantageous price.",
-                    d6_title: "Insurance",
-                    d6_desc: "Finding optimal insurance through partner specialists.",
-                    d7_title: "Sale Prep",
-                    d7_desc: "Detailing and prep to increase car attractiveness and sale value.",
-                    d8_title: "Photos & Ad",
-                    d8_desc: "High-end photos and converting description for popular platforms.",
-                    d9_title: "Registration",
-                    d9_desc: "Full support in Swiss authorities for license plates.",
-                    d10_title: "MFK Support",
-                    d10_desc: "Preparation and escort for passing mandatory technical inspection.",
-                    d11_title: "Delivery",
-                    d11_desc: "Organizing safe delivery to your preferred location.",
-                    d12_title: "Post-Sale Support",
-                    d12_desc: "We stay in touch even after the deal is completed.",
                     cantons_title: "Cantons & Regions",
-                    cantons_subtitle: "Operating across Switzerland: Zurich, Geneva, Basel, Lausanne, and other regions",
-                    c1_name: "Zurich & Geneva",
-                    c1_desc: "The main financial and business hubs of the country with highest premium car density.",
-                    c2_name: "Basel & Bern",
-                    c2_desc: "Prompt expert dispatch for car checks and purchases in northern and central cantons.",
-                    c3_name: "Lugano & Lausanne",
-                    c3_desc: "Full coverage of southern and French-speaking regions of Switzerland turnkey.",
+                    cantons_subtitle: "Operating across Switzerland: Zurich, Bern, Geneva, and other regions",
                     modal_title: "Leave a Request",
                     modal_subtitle: "Fill out the form and our specialist will contact you shortly.",
                     form_name: "Your Name",

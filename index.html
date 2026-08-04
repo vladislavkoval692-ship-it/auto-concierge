@@ -40,7 +40,7 @@
             padding: 0 20px;
         }
 
-        /* Header (Исправлено наложение в мобильной версии, элементы распределены аккуратно) */
+        /* Header */
         header {
             position: fixed;
             top: 0;
@@ -150,7 +150,7 @@
             color: #ffffff;
         }
 
-        /* Hero Section (Увеличено пространство, чтобы текст не наползал на шапку) */
+        /* Hero Section */
         .hero {
             position: relative;
             overflow: hidden;
@@ -222,7 +222,7 @@
             flex-wrap: wrap;
         }
 
-        /* Sections (Просторные отступы) */
+        /* Sections */
         section {
             padding: 80px 0;
             border-bottom: 1px solid var(--border);
@@ -478,7 +478,7 @@
             margin-top: 15px;
         }
 
-        /* Calculator Sidebar (Просторный блок итогов) */
+        /* Calculator Sidebar */
         .calc-summary {
             background: rgba(19, 27, 46, 0.95);
             border: 1px solid var(--border);
@@ -875,7 +875,6 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <div class="container header-content">
             <a href="#" class="logo">SWISS<span>CARS</span></a>
@@ -902,7 +901,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-video-container">
             <video autoplay muted loop playsinline class="hero-video">
@@ -919,7 +917,6 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
     <section id="about" class="about-section">
         <div class="about-video-container">
             <video autoplay muted loop playsinline preload="auto" class="about-bg-video" id="aboutVideo">
@@ -944,7 +941,6 @@
         </div>
     </section>
 
-    <!-- Services Calculator Section -->
     <section id="services" class="services-section">
         <div class="services-video-container">
             <video autoplay muted loop playsinline preload="auto" class="services-bg-video">
@@ -958,7 +954,6 @@
             
             <div class="calc-layout">
                 <div class="calc-services-grid" id="calcServicesGrid">
-                    <!-- Первые 4 видимых карточки -->
                     <div class="calc-card" data-price="950" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ" data-name-de="Auto-Kauf komplett" data-name-en="Turnkey car purchase">
                         <div>
                             <div class="calc-card-header">
@@ -1015,7 +1010,6 @@
                         </div>
                     </div>
 
-                    <!-- Остальные скрытые карточки -->
                     <div class="calc-card hidden-service" data-price="600" data-name-ru="Переговоры с продавцом и торг" data-name-ukr="Переговори з продавцем та торг" data-name-de="Preisverhandlungen mit Verkäufer" data-name-en="Seller negotiations">
                         <div>
                             <div class="calc-card-header">
@@ -1170,13 +1164,11 @@
                         </div>
                     </div>
 
-                    <!-- Кнопка развернуть/свернуть -->
                     <div class="calc-toggle-container">
                         <button type="button" class="btn" id="toggleServicesBtn" data-i18n="btn_more_services" style="padding: 12px 30px;">Показать все услуги (15)</button>
                     </div>
                 </div>
 
-                <!-- Summary Sidebar -->
                 <div class="calc-summary">
                     <h3 data-i18n="calc_summary_title">Ваш расчет</h3>
                     <div id="summaryItemsContainer">
@@ -1198,7 +1190,6 @@
         </div>
     </section>
 
-    <!-- Detailed Services List Section -->
     <section id="details">
         <div class="container">
             <h2 class="section-title" data-i18n="details_title">Наши услуги</h2>
@@ -1257,7 +1248,6 @@
         </div>
     </section>
 
-    <!-- Cantons Section with Video Background and Floating Cards -->
     <section id="cantons" class="cantons-section">
         <div class="cantons-video-container">
             <video autoplay muted loop playsinline preload="auto" class="cantons-bg-video">
@@ -1272,69 +1262,68 @@
             <div class="cantons-floating-area" id="floatingArea">
                 <div class="canton-floating-card">
                     <h3>Цюрих</h3>
-                    <p>Финансовый и деловой центр с высокой плотностью авто.</p>
+                    <p>Финансовый и деловой центр.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Берн</h3>
-                    <p>Федеральная столица и ключевой регион.</p>
+                    <p>Федеральная столица.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Во</h3>
-                    <p>Динамичный франкоязычный кантон на озере.</p>
+                    <p>Кантон на Женевском озере.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Аргау</h3>
-                    <p>Крупный логистический и торговый узел.</p>
+                    <p>Торговый узел страны.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Санкт-Галлен</h3>
-                    <p>Экономический центр восточной конфедерации.</p>
+                    <p>Центр восточной части.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Женева</h3>
-                    <p>Международный центр дипломатии и роскоши.</p>
+                    <p>Дипломатия и роскошь.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Люцерн</h3>
-                    <p>Живописный альпийский культурный центр.</p>
+                    <p>Альпийский культурный центр.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Золотурн</h3>
-                    <p>Исторический кантон в центре страны.</p>
+                    <p>Исторический кантон.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Тичино</h3>
-                    <p>Солнечный итальянский регион под ключ.</p>
+                    <p>Солнечный регион.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Базель-Ланд</h3>
-                    <p>Промышленный узел на границе с ЕС.</p>
+                    <p>Узел на границе с ЕС.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Вале</h3>
-                    <p>Курортный регион с высокими требованиями.</p>
+                    <p>Курортный регион.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Фрибур</h3>
-                    <p>Двуязычный стабильный регион Швейцарии.</p>
+                    <p>Двуязычный регион.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Тургоу</h3>
-                    <p>Развитый экономический кантон на севере.</p>
+                    <p>Кантон на северо-востоке.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Базель-Штадт</h3>
-                    <p>Культурная столица и центр инноваций.</p>
+                    <p>Столица инноваций.</p>
                 </div>
                 <div class="canton-floating-card">
                     <h3>Швиц</h3>
-                    <p>Историческое сердце с престижными зонами.</p>
+                    <p>Сердце Швейцарии.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal Window -->
     <div class="modal-overlay" id="orderModal">
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
@@ -1343,21 +1332,21 @@
             <form id="orderForm">
                 <div class="form-group">
                     <label data-i18n="form_name">Ваше имя</label>
-                    <input type="text" class="form-control" required placeholder="Иван">
+                    <input type="text" id="userName" class="form-control" required placeholder="Иван">
                 </div>
                 <div class="form-group">
                     <label data-i18n="form_phone">Номер телефона / Telegram</label>
-                    <input type="text" class="form-control" required placeholder="+41 ...">
+                    <input type="text" id="userPhone" class="form-control" required placeholder="+41 ...">
                 </div>
                 <div class="form-group">
                     <label data-i18n="form_email">Электронная почта</label>
-                    <input type="email" class="form-control" required placeholder="example@domain.com">
+                    <input type="email" id="userEmail" class="form-control" required placeholder="example@domain.com">
                 </div>
                 <div class="form-group">
                     <label data-i18n="form_service">Выбранные услуги (из калькулятора)</label>
-                    <input type="text" class="form-control" id="modalServiceInput" readonly value="Пакет услуг по расчету">
+                    <input type="text" id="modalServiceInput" class="form-control" readonly value="Пакет услуг по расчету">
                 </div>
-                <button type="submit" class="btn" data-i18n="form_submit">Отправить заявку</button>
+                <button type="submit" class="btn" id="submitBtn" data-i18n="form_submit">Отправить заявку</button>
             </form>
         </div>
     </div>
@@ -1368,7 +1357,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const aboutVideo = document.getElementById('aboutVideo');
@@ -1398,8 +1386,8 @@
             if (floatingArea && floatingCards.length > 0) {
                 const isMobile = window.innerWidth <= 768;
                 const cardsData = Array.from(floatingCards).map((card) => {
-                    const cardWidth = isMobile ? 175 : 210;
-                    const cardHeight = 85;
+                    const cardWidth = isMobile ? 160 : 210;
+                    const cardHeight = 75;
                     
                     const areaWidth = floatingArea.clientWidth;
                     const areaHeight = floatingArea.clientHeight;
@@ -1407,8 +1395,8 @@
                     let x = Math.random() * Math.max(10, areaWidth - cardWidth);
                     let y = Math.random() * Math.max(10, areaHeight - cardHeight);
                     
-                    let vx = (Math.random() - 0.5) * 0.7;
-                    let vy = (Math.random() - 0.5) * 0.7;
+                    let vx = (Math.random() - 0.5) * 0.6;
+                    let vy = (Math.random() - 0.5) * 0.6;
 
                     card.style.left = `${x}px`;
                     card.style.top = `${y}px`;
@@ -1539,36 +1527,6 @@
                     calc_main_subtitle: "Выберите необходимые услуги для расчета стоимости в Швейцарии и странах ЕС",
                     btn_more_services: isExpanded ? "Свернуть услуги" : "Показать все услуги (15)",
                     srv_cost: "Стоимость:",
-                    srv1_title: "Покупка автомобиля под ключ",
-                    srv1_desc: "Поиск авто под ваши требования и бюджет, подбор лучших вариантов без потери времени.",
-                    srv2_title: "Индивидуальный подбор",
-                    srv2_desc: "Учитываем бюджет, марку, модель, год, пробег, комплектацию, тип двигателя и пожелания.",
-                    srv3_title: "Проверка перед покупкой",
-                    srv3_desc: "Анализ истории, объявлений, комплектации, оценка состояния и скрытых недостатков.",
-                    srv4_title: "Личный осмотр автомобиля",
-                    srv4_desc: "Осмотр кузова, салона, мотора, подвески, документов с подробным фотоотчетом.",
-                    srv5_title: "Переговоры с продавцом",
-                    srv5_desc: "Правильные вопросы, уточнение истории, обсуждение торга и выгодной цены.",
-                    srv6_title: "Подбор страховки",
-                    srv6_desc: "Оформление оптимальной страховки с лучшим соотношением цены и покрытия.",
-                    srv7_title: "Подготовка к продаже",
-                    srv7_desc: "Мойка, химчистка, полировка, рекомендации по повышению продажной стоимости.",
-                    srv8_title: "Профессиональная фотосъемка",
-                    srv8_desc: "Качественные фото экстерьера, салона, двигателя, багажника и важных деталей.",
-                    srv9_title: "Создание продающего объявления",
-                    srv9_desc: "Цепляющее описание, честные преимущества и оформление для площадок.",
-                    srv10_title: "Помощь в продаже автомобиля",
-                    srv10_desc: "Консультации, подготовка объявления, рекомендации по цене и сопровождение сделки.",
-                    srv11_title: "Консультации и сравнение",
-                    srv11_desc: "Разбор вариантов по надежности, обслуживанию, слабым местам и вашим задачам.",
-                    srv12_title: "Сопровождение при регистрации",
-                    srv12_desc: "Страховка, помощь с документами и получением номерных знаков в Швейцарии.",
-                    srv13_title: "Помощь с MFK (техосмотром)",
-                    srv13_desc: "Предварительная оценка, устранение недочетов и сопровождение процесса.",
-                    srv14_title: "Доставка автомобиля",
-                    srv14_desc: "Организация доставки или перегона из другого города или кантона.",
-                    srv15_title: "Поддержка после покупки",
-                    srv15_desc: "Консультации по обслуживанию, выбор сервиса, страховка и ремонт в будущем.",
                     calc_summary_title: "Ваш расчет",
                     calc_empty: "Выберите одну или несколько услуг слева",
                     calc_total: "Итого:",
@@ -1604,43 +1562,13 @@
                     calc_main_subtitle: "Виберіть необхідні послуги для розрахунку вартості у Швейцарії та країнах ЄС",
                     btn_more_services: isExpanded ? "Згорнути послуги" : "Показати всі послуги (15)",
                     srv_cost: "Вартість:",
-                    srv1_title: "Купівля автомобіля під ключ",
-                    srv1_desc: "Пошук авто під ваші вимоги та бюджет, підбор найкращих варіантів без втрати часу.",
-                    srv2_title: "Індивідуальний підбір",
-                    srv2_desc: "Враховуємо бюджет, марку, модель, рік, пробіг, комплектацію та тип двигуна.",
-                    srv3_title: "Перевірка перед покупкою",
-                    srv3_desc: "Аналіз історії, оголошень, комплектації, оцінка стану та прихованих недоліків.",
-                    srv4_title: "Особистий огляд автомобіля",
-                    srv4_desc: "Огляд кузова, салону, мотора, підвіски, документів з детальним фотозвітом.",
-                    srv5_title: "Переговори з продавцем",
-                    srv5_desc: "Правильні питання, уточнення історії, обговорення торгу та вигідної ціни.",
-                    srv6_title: "Підбір страховки",
-                    srv6_desc: "Оформлення оптимальної страховки з найкращим співвідношенням ціни та покриття.",
-                    srv7_title: "Підготовка до продажу",
-                    srv7_desc: "Мийка, хімчистка, полірування, рекомендації щодо підвищення вартості продажу.",
-                    srv8_title: "Професійна фотозйомка",
-                    srv8_desc: "Якісні фото екстер'єру, салону, двигуна, багажника та важливих деталей.",
-                    srv9_title: "Створення продаючого оголошення",
-                    srv9_desc: "Чіпляючий опис, чесні переваги та оформлення для майданчиків.",
-                    srv10_title: "Допомога в продажу автомобіля",
-                    srv10_desc: "Консультації, підготовка оголошення, рекомендації щодо ціни та супровід угоди.",
-                    srv11_title: "Консультації та порівняння",
-                    srv11_desc: "Розбір варіантів за надійністю, обслуговуванням, слабкими місцями та вашими завданнями.",
-                    srv12_title: "Супровід при реєстрації",
-                    srv12_desc: "Страховка, допомога з документами та отриманням номерних знаків у Швейцарії.",
-                    srv13_title: "Допомога з MFK (техоглядом)",
-                    srv13_desc: "Попередня оцінка, усунення недоліків та супровід процесу.",
-                    srv14_title: "Доставка автомобіля",
-                    srv14_desc: "Організація доставки або перегону з іншого міста чи кантону.",
-                    srv15_title: "Підтримка після покупки",
-                    srv15_desc: "Консультації з обслуговування, вибір сервісу, страховка та ремонт у майбутньому.",
                     calc_summary_title: "Ваш розрахунок",
                     calc_empty: "Виберіть одну або кілька послуг зліва",
                     calc_total: "Всього:",
                     calc_btn_order: "Оформити вибране",
                     calc_btn_wa: "Обговорити в WhatsApp",
                     details_title: "Наші послуги",
-                    details_subtitle: "Полный спектр рішень для вашого автомобіля у Швейцарії",
+                    details_subtitle: "Повний спектр рішень для вашого автомобіля у Швейцарії",
                     cantons_title: "Комуни та кантони",
                     cantons_subtitle: "Працюємо по всій Швейцарії: Цюрих, Берн, Женева та інші регіони",
                     modal_title: "Залишити заявку",
@@ -1669,36 +1597,6 @@
                     calc_main_subtitle: "Wählen Sie Ihre Dienstleistungen für die Schweiz und EU",
                     btn_more_services: isExpanded ? "Weniger anzeigen" : "Alle Leistungen anzeigen (15)",
                     srv_cost: "Kosten:",
-                    srv1_title: "Auto-Kauf komplett (Schlüsselfertig)",
-                    srv1_desc: "Suche nach Autos nach Ihren Wünschen und Budget, effiziente Auswahl.",
-                    srv2_title: "Individuelle Fahrzeugsuche",
-                    srv2_desc: "Berücksichtigung von Budget, Marke, Modell, Baujahr, Kilometerstand und Motor.",
-                    srv3_title: "Prüfung vor dem Kauf",
-                    srv3_desc: "Historienanalyse, Inserate, Ausstattung, Zustandsbewertung.",
-                    srv4_title: "Fahrzeuginspektion vor Ort",
-                    srv4_desc: "Prüfung von Karosserie, Innenraum, Motor, Fahrwerk und Unterlagen mit Bericht.",
-                    srv5_title: "Verhandlungen mit Verkäufer",
-                    srv5_desc: "Richtige Fragen, Klärung der Historie, Verhandlung für den besten Preis.",
-                    srv6_title: "Versicherungsauswahl",
-                    srv6_desc: "Optimale Versicherung mit bestem Preis-Leistungs-Verhältnis finden.",
-                    srv7_title: "Fahrzeugaufbereitung für Verkauf",
-                    srv7_desc: "Wäsche, chemische Reinigung, Polieren und Tipps zur Wertsteigerung.",
-                    srv8_title: "Professionelles Fotoshooting",
-                    srv8_desc: "Hochwertige Fotos von Exterieur, Interieur, Motorraum und Details.",
-                    srv9_title: "Verkaufsanzeige erstellen",
-                    srv9_desc: "Ansprechende Beschreibung und korrekte Gestaltung für Plattformen.",
-                    srv10_title: "Hilfe beim Autoverkauf",
-                    srv10_desc: "Beratung, Inseratvorbereitung, Preisempfehlungen und Transaktionsbegleitung.",
-                    srv11_title: "Beratung & Vergleich",
-                    srv11_desc: "Analyse von Zuverlässigkeit, Wartung und Schwachstellen.",
-                    srv12_title: "Zulassungsbegleitung",
-                    srv12_desc: "Versicherung, Dokumentenhilfe und Nummernschilder in der Schweiz.",
-                    srv13_title: "Hilfe bei MFK-Prüfung",
-                    srv13_desc: "Zustandsbewertung, Mängelbeseitigung und Begleitung des Prozesses.",
-                    srv14_title: "Fahrzeugtransport",
-                    srv14_desc: "Organisation von Transport oder Überführung aus einem anderen Kanton.",
-                    srv15_title: "Nachkauf-Support",
-                    srv15_desc: "Beratung zu Wartung, Werkstattauswahl, Versicherung und Zukunft.",
                     calc_summary_title: "Ihre Kalkulation",
                     calc_empty: "Wählen Sie links eine oder mehrere Leistungen aus",
                     calc_total: "Gesamtsumme:",
@@ -1734,36 +1632,6 @@
                     calc_main_subtitle: "Select the required services to calculate your estimate in Switzerland and EU",
                     btn_more_services: isExpanded ? "Show less" : "Show all services (15)",
                     srv_cost: "Cost:",
-                    srv1_title: "Turnkey Car Purchase",
-                    srv1_desc: "Search for a car meeting your requirements and budget without wasting time.",
-                    srv2_title: "Individual Car Search",
-                    srv2_desc: "Considering budget, brand, model, year, mileage, trim, and engine options.",
-                    srv3_title: "Pre-Purchase Inspection",
-                    srv3_desc: "History analysis, listings check, trim check, and hidden defect evaluation.",
-                    srv4_title: "On-site Vehicle Inspection",
-                    srv4_desc: "Checking body, interior, engine, suspension, documents with a detailed report.",
-                    srv5_title: "Seller Negotiations",
-                    srv5_desc: "Right questions, history clarification, price and discount discussions.",
-                    srv6_title: "Insurance Selection",
-                    srv6_desc: "Arranging optimal insurance with the best price-to-coverage ratio.",
-                    srv7_title: "Pre-Sale Preparation",
-                    srv7_desc: "Car wash, dry cleaning, polishing, and resale value recommendations.",
-                    srv8_title: "Professional Car Photography",
-                    srv8_desc: "High-quality exterior, interior, engine, and trunk photos.",
-                    srv9_title: "Selling Ad Creation",
-                    srv9_desc: "Catchy description, honest advantages, and platform formatting.",
-                    srv10_title: "Car Selling Assistance",
-                    srv10_desc: "Consultations, ad preparation, pricing advice, and deal support.",
-                    srv11_title: "Consultations & Comparison",
-                    srv11_desc: "Breakdown of reliability, maintenance costs, and weak points.",
-                    srv12_title: "Registration Support",
-                    srv12_desc: "Insurance, document assistance, and license plates in Switzerland.",
-                    srv13_title: "MFK Inspection Support",
-                    srv13_desc: "Condition assessment, defect resolution, and inspection escort.",
-                    srv14_title: "Vehicle Delivery",
-                    srv14_desc: "Organizing delivery or driving transfer from another city or canton.",
-                    srv15_title: "Post-Purchase Support",
-                    srv15_desc: "Maintenance advice, service choice, insurance, and future resale help.",
                     calc_summary_title: "Your Calculation",
                     calc_empty: "Select one or more services on the left",
                     calc_total: "Total:",
@@ -1826,13 +1694,48 @@
                 });
             }
 
+            // Интеграция отправки данных в Google Таблицу через Google Apps Script
             const orderForm = document.getElementById('orderForm');
             if (orderForm) {
                 orderForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    alert('Заявка успешно отправлена! Мы свяжемся с вами.');
-                    orderForm.reset();
-                    modal.classList.remove('active');
+                    
+                    const submitBtn = document.getElementById('submitBtn');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Отправка...';
+                    submitBtn.setAttribute('disabled', 'true');
+
+                    const formData = {
+                        name: document.getElementById('userName').value,
+                        phone: document.getElementById('userPhone').value,
+                        email: document.getElementById('userEmail').value,
+                        service: modalServiceInput.value
+                    };
+
+                    // Вставь сюда свою ссылку на развернутый Google Apps Script (веб-приложение)
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbzI0QiOn8oT7FJtbbYs_v_i7TH6qZ8_T2He41-YduncTULyyEhii1iQp4U2UX0cMUrv/exec';
+
+                   
+
+                    fetch(scriptURL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    })
+                    .then(() => {
+                        alert('Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+                        orderForm.reset();
+                        modal.classList.remove('active');
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        alert('Произошла ошибка при отправке. Пожалуйста, напишите нам в WhatsApp.');
+                    })
+                    .finally(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.removeAttribute('disabled');
+                    });
                 });
             }
         });

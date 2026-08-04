@@ -879,6 +879,7 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <div class="container header-content">
             <a href="#" class="logo">SWISS<span>CARS</span></a>
@@ -905,6 +906,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-video-container">
             <video autoplay muted loop playsinline class="hero-video">
@@ -921,6 +923,7 @@
         </div>
     </section>
 
+    <!-- About Us Section -->
     <section id="about" class="about-section">
         <div class="about-video-container">
             <video autoplay muted loop playsinline preload="auto" class="about-bg-video" id="aboutVideo">
@@ -945,6 +948,7 @@
         </div>
     </section>
 
+    <!-- Services Calculator Section -->
     <section id="services" class="services-section">
         <div class="services-video-container">
             <video autoplay muted loop playsinline preload="auto" class="services-bg-video">
@@ -958,6 +962,7 @@
             
             <div class="calc-layout">
                 <div class="calc-services-grid" id="calcServicesGrid">
+                    <!-- 1. Покупка под ключ -->
                     <div class="calc-card" data-price="950" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ" data-name-de="Auto-Kauf komplett" data-name-en="Turnkey car purchase">
                         <div>
                             <div class="calc-card-header">
@@ -972,6 +977,7 @@
                         </div>
                     </div>
 
+                    <!-- 2. Проверка и осмотр (совмещено: 250 CHF) -->
                     <div class="calc-card" data-price="250" data-name-ru="Проверка и личный осмотр автомобиля" data-name-ukr="Перевірка та особистий огляд автомобіля" data-name-de="Fahrzeugprüfung & Inspektion" data-name-en="Inspection & check">
                         <div>
                             <div class="calc-card-header">
@@ -986,6 +992,7 @@
                         </div>
                     </div>
 
+                    <!-- 3. Переговоры с продавцом -->
                     <div class="calc-card" data-price="70" data-name-ru="Переговоры с продавцом и торг" data-name-ukr="Переговори з продавцем та торг" data-name-de="Preisverhandlungen" data-name-en="Seller negotiations">
                         <div>
                             <div class="calc-card-header">
@@ -1000,6 +1007,7 @@
                         </div>
                     </div>
 
+                    <!-- 4. Подбор страховки -->
                     <div class="calc-card" data-price="200" data-name-ru="Подбор выгодной страховки" data-name-ukr="Підбір вигідної страховки" data-name-de="Versicherungsauswahl" data-name-en="Insurance selection">
                         <div>
                             <div class="calc-card-header">
@@ -1014,6 +1022,7 @@
                         </div>
                     </div>
 
+                    <!-- Остальные скрытые карточки -->
                     <div class="calc-card hidden-service" data-price="450" data-name-ru="Подготовка к продаже" data-name-ukr="Підготовка до продажу" data-name-de="Verkaufsvorbereitung" data-name-en="Sale preparation">
                         <div>
                             <div class="calc-card-header">
@@ -1140,11 +1149,13 @@
                         </div>
                     </div>
 
+                    <!-- Кнопка развернуть/свернуть -->
                     <div class="calc-toggle-container">
                         <button type="button" class="btn" id="toggleServicesBtn" data-i18n="btn_more_services" style="padding: 12px 30px;">Показать все услуги</button>
                     </div>
                 </div>
 
+                <!-- Summary Sidebar -->
                 <div class="calc-summary">
                     <h3 data-i18n="calc_summary_title">Ваш расчет</h3>
                     <div id="summaryItemsContainer">
@@ -1166,6 +1177,7 @@
         </div>
     </section>
 
+    <!-- Detailed Services List Section -->
     <section id="details">
         <div class="container">
             <h2 class="section-title" data-i18n="details_title">Наши услуги</h2>
@@ -1224,6 +1236,7 @@
         </div>
     </section>
 
+    <!-- Cantons Section with Video Background and Floating Cards -->
     <section id="cantons" class="cantons-section">
         <div class="cantons-video-container">
             <video autoplay muted loop playsinline preload="auto" class="cantons-bg-video">
@@ -1300,6 +1313,7 @@
         </div>
     </section>
 
+    <!-- Modal Window -->
     <div class="modal-overlay" id="orderModal">
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
@@ -1348,6 +1362,7 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const aboutVideo = document.getElementById('aboutVideo');
@@ -1482,15 +1497,13 @@
                     });
 
                     summaryList.innerHTML = summaryHTML;
-                    // Автоматически выбираем первую услугу из выбранных в калькуляторе или объединяем
                     if(serviceNamesForModal.length > 0) {
-                        modalServiceInput.value = serviceNamesForModal.join(', ') + (total > 0 ? ` (Итого: CHF ${total.toLocaleString()})` : '');
+                        modalServiceInput.value = serviceNamesForModal[0];
                     }
                 } else {
                     summaryItemsContainer.style.display = 'block';
                     summaryList.style.display = 'none';
                     calcOrderBtn.setAttribute('disabled', 'true');
-                    modalServiceInput.value = 'Индивидуальный расчет';
                 }
 
                 calcTotalPrice.textContent = `CHF ${total.toLocaleString()}`;
@@ -1711,7 +1724,7 @@
                         service: modalServiceInput.value
                     };
 
-                    const scriptURL = 'ТВОЯ_ССЫЛКА_НА_GOOGLE_SCRIPT_ЗДЕСЬ'; // Ваша ссылка на веб-приложение Apps Script
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbyZp71TKlrcZduSfBQ25LTWxTtgoXwRhMAM_IEBLHESzmCxlljMm8L7h4SpQt_-7FiD/exec';
 
                     fetch(scriptURL, {
                         method: 'POST',

@@ -37,16 +37,16 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 16px;
+            padding: 0 20px;
         }
 
-        /* Header */
+        /* Header (Исправлено наложение в мобильной версии, элементы распределены аккуратно) */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(11, 15, 25, 0.9);
+            background: rgba(11, 15, 25, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             z-index: 1000;
@@ -58,15 +58,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 10px;
         }
 
         .logo {
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1rem;
             letter-spacing: 0.5px;
             color: var(--text-main);
             text-decoration: none;
             cursor: pointer;
+            flex-shrink: 0;
         }
 
         .logo span {
@@ -74,17 +76,23 @@
         }
 
         .nav-links {
-            display: flex;
-            gap: 16px;
+            display: none;
+            gap: 20px;
             list-style: none;
             align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .nav-links {
+                display: flex;
+            }
         }
 
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             transition: var(--transition);
         }
 
@@ -96,6 +104,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            flex-wrap: nowrap;
         }
 
         .btn {
@@ -105,7 +114,7 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             transition: var(--transition);
             border: none;
             cursor: pointer;
@@ -117,6 +126,13 @@
             text-align: center;
         }
 
+        @media (min-width: 576px) {
+            .btn {
+                padding: 10px 18px;
+                font-size: 0.85rem;
+            }
+        }
+
         .btn:hover {
             background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent) 100%);
             transform: translateY(-2px);
@@ -126,7 +142,7 @@
             background: #25d366;
             color: #ffffff;
             box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
-            gap: 6px;
+            gap: 5px;
         }
 
         .btn-whatsapp:hover {
@@ -134,13 +150,19 @@
             color: #ffffff;
         }
 
-        /* Hero Section */
+        /* Hero Section (Увеличено пространство, чтобы текст не наползал на шапку) */
         .hero {
             position: relative;
             overflow: hidden;
             background: var(--bg-color);
-            padding: 140px 0 70px;
+            padding: 150px 0 80px;
             text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding: 180px 0 100px;
+            }
         }
 
         .hero-video-container {
@@ -174,9 +196,9 @@
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 7vw, 3.8rem);
+            font-size: clamp(2.1rem, 6vw, 3.8rem);
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             line-height: 1.2;
         }
 
@@ -185,39 +207,45 @@
         }
 
         .hero p {
-            font-size: clamp(0.95rem, 3vw, 1.25rem);
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
             color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 30px;
+            max-width: 750px;
+            margin: 0 auto 40px;
             padding: 0 10px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 12px;
+            gap: 16px;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
         }
 
-        /* Sections */
+        /* Sections (Просторные отступы) */
         section {
-            padding: 70px 0;
+            padding: 80px 0;
             border-bottom: 1px solid var(--border);
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 100px 0;
+            }
         }
 
         .section-title {
             text-align: center;
-            font-size: clamp(1.8rem, 5vw, 2.3rem);
+            font-size: clamp(1.9rem, 4.5vw, 2.3rem);
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
         .section-subtitle {
             text-align: center;
             color: var(--text-muted);
-            margin-bottom: 40px;
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            margin-bottom: 50px;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
             padding: 0 10px;
         }
 
@@ -225,7 +253,7 @@
         .about-section {
             position: relative;
             overflow: hidden;
-            padding: 90px 0;
+            padding: 100px 0;
         }
 
         .about-video-container {
@@ -258,7 +286,7 @@
             z-index: 2;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 16px;
+            padding: 0 20px;
         }
 
         .about-text-content {
@@ -267,16 +295,16 @@
             border-radius: 0;
             padding: 0;
             text-align: left;
-            max-width: 650px;
+            max-width: 700px;
         }
 
         .about-text-content blockquote {
-            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            font-size: clamp(1.3rem, 3.5vw, 1.6rem);
             font-style: italic;
             color: var(--text-main);
-            margin-bottom: 24px;
+            margin-bottom: 30px;
             border-left: 4px solid var(--accent);
-            padding-left: 16px;
+            padding-left: 20px;
             line-height: 1.4;
         }
 
@@ -286,16 +314,16 @@
 
         .about-text-content p {
             color: var(--text-muted);
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-            line-height: 1.7;
-            margin-bottom: 20px;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            line-height: 1.8;
+            margin-bottom: 24px;
         }
 
         /* Calculator Section */
         .services-section {
             position: relative;
             overflow: hidden;
-            padding: 90px 0;
+            padding: 100px 0;
         }
 
         .services-video-container {
@@ -331,7 +359,7 @@
         .calc-layout {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 24px;
+            gap: 30px;
             align-items: start;
         }
 
@@ -344,10 +372,10 @@
         .calc-services-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 16px;
+            gap: 20px;
         }
 
-        @media (min-width: 650px) {
+        @media (min-width: 768px) {
             .calc-services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -356,8 +384,8 @@
         .calc-card {
             background: rgba(19, 27, 46, 0.85);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 14px;
+            padding: 24px;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -379,19 +407,19 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 10px;
-            gap: 10px;
+            margin-bottom: 12px;
+            gap: 12px;
         }
 
         .calc-card h3 {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: var(--text-main);
             font-weight: 600;
         }
 
         .calc-checkbox {
-            width: 22px;
-            height: 22px;
+            width: 24px;
+            height: 24px;
             border: 2px solid var(--border);
             border-radius: 6px;
             display: flex;
@@ -410,14 +438,14 @@
         .calc-card.selected .calc-checkbox::after {
             content: '✓';
             font-weight: 900;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         .calc-card p {
             color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 16px;
-            line-height: 1.4;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
 
         .calc-card-footer {
@@ -425,13 +453,13 @@
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid var(--border);
-            padding-top: 12px;
-            font-size: 0.85rem;
+            padding-top: 15px;
+            font-size: 0.9rem;
             color: var(--text-muted);
         }
 
         .calc-price {
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--accent);
         }
@@ -447,18 +475,18 @@
         .calc-toggle-container {
             grid-column: 1 / -1;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
-        /* Calculator Sidebar */
+        /* Calculator Sidebar (Просторный блок итогов) */
         .calc-summary {
             background: rgba(19, 27, 46, 0.95);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 24px;
+            border-radius: 16px;
+            padding: 28px;
             position: static;
             backdrop-filter: blur(12px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
         @media (min-width: 992px) {
@@ -469,27 +497,27 @@
         }
 
         .calc-summary h3 {
-            font-size: 1.2rem;
-            margin-bottom: 16px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
             color: var(--text-main);
             border-bottom: 1px solid var(--border);
-            padding-bottom: 12px;
+            padding-bottom: 14px;
         }
 
         .summary-items-list {
             list-style: none;
-            margin-bottom: 16px;
-            max-height: 180px;
+            margin-bottom: 20px;
+            max-height: 200px;
             overflow-y: auto;
         }
 
         .summary-items-list li {
             color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 8px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
-            gap: 10px;
+            gap: 12px;
         }
 
         .summary-items-list li span:last-child {
@@ -501,10 +529,10 @@
         .summary-empty {
             color: var(--text-muted);
             font-style: italic;
-            font-size: 0.85rem;
-            margin-bottom: 16px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
             text-align: center;
-            padding: 15px 0;
+            padding: 20px 0;
         }
 
         .summary-total {
@@ -512,14 +540,14 @@
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid var(--border);
-            padding-top: 16px;
-            margin-bottom: 20px;
-            font-size: 1rem;
+            padding-top: 18px;
+            margin-bottom: 24px;
+            font-size: 1.1rem;
             font-weight: 600;
         }
 
         .summary-total-price {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--accent);
             font-weight: 700;
         }
@@ -527,22 +555,23 @@
         .summary-actions {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 14px;
         }
 
         .summary-actions .btn {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
+            font-size: 0.95rem;
         }
 
         /* Grid for details */
         .grid-3 {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 24px;
         }
 
-        @media (min-width: 650px) {
+        @media (min-width: 768px) {
             .grid-3 {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -557,8 +586,8 @@
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
+            border-radius: 14px;
+            padding: 28px;
             transition: var(--transition);
         }
 
@@ -567,23 +596,23 @@
         }
 
         .card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
             color: var(--text-main);
         }
 
         .card p {
             color: var(--text-muted);
-            font-size: 0.88rem;
-            line-height: 1.5;
+            font-size: 0.92rem;
+            line-height: 1.6;
         }
 
         /* Cantons Section with Floating Cards */
         .cantons-section {
             position: relative;
             overflow: hidden;
-            min-height: 600px;
-            padding: 80px 0;
+            min-height: 650px;
+            padding: 100px 0;
         }
 
         .cantons-video-container {
@@ -619,20 +648,20 @@
         .cantons-floating-area {
             position: relative;
             width: 100%;
-            height: 420px;
+            height: 480px;
             overflow: hidden;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .canton-floating-card {
             position: absolute;
-            background: rgba(19, 27, 46, 0.9);
+            background: rgba(19, 27, 46, 0.92);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 14px;
-            width: 220px;
+            padding: 14px 18px;
+            width: 210px;
             backdrop-filter: blur(8px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             transition: border-color 0.3s ease;
             will-change: transform;
         }
@@ -643,7 +672,7 @@
         }
 
         .canton-floating-card h3 {
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin-bottom: 4px;
             color: var(--text-main);
         }
@@ -747,7 +776,7 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 24px;
+            padding: 28px;
             width: 100%;
             max-width: 440px;
             position: relative;
@@ -803,10 +832,10 @@
             background: var(--bg-color);
             border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 10px 14px;
+            padding: 12px 14px;
             color: var(--text-main);
             font-family: inherit;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .form-control:focus {
@@ -816,27 +845,30 @@
 
         .modal-content .btn {
             width: 100%;
-            margin-top: 8px;
-            padding: 12px;
+            margin-top: 10px;
+            padding: 14px;
         }
 
         footer {
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.85rem;
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
             .cantons-floating-area {
-                height: 550px;
+                height: 580px;
             }
             .canton-floating-card {
-                width: 200px;
-                padding: 10px;
+                width: 180px;
+                padding: 10px 12px;
+            }
+            .canton-floating-card h3 {
+                font-size: 0.9rem;
+            }
+            .canton-floating-card p {
+                font-size: 0.72rem;
             }
         }
     </style>
@@ -882,7 +914,7 @@
             <h1 data-i18n="hero_title">Автоконсьерж-сервис <br><span>в Швейцарии</span></h1>
             <p data-i18n="hero_desc">Покупка, проверка, продажа и полное юридическое сопровождение автомобилей под ключ. Без стресса, лишней траты времени и скрытых рисков.</p>
             <div class="hero-buttons">
-                <button class="btn open-modal-btn" style="padding: 12px 24px; font-size: 0.95rem;" data-i18n="hero_btn">Начать подбор</button>
+                <button class="btn open-modal-btn" style="padding: 14px 28px; font-size: 1rem;" data-i18n="hero_btn">Начать подбор</button>
             </div>
         </div>
     </section>
@@ -1366,8 +1398,8 @@
             if (floatingArea && floatingCards.length > 0) {
                 const isMobile = window.innerWidth <= 768;
                 const cardsData = Array.from(floatingCards).map((card) => {
-                    const cardWidth = isMobile ? 190 : 220;
-                    const cardHeight = 90;
+                    const cardWidth = isMobile ? 175 : 210;
+                    const cardHeight = 85;
                     
                     const areaWidth = floatingArea.clientWidth;
                     const areaHeight = floatingArea.clientHeight;
@@ -1375,8 +1407,8 @@
                     let x = Math.random() * Math.max(10, areaWidth - cardWidth);
                     let y = Math.random() * Math.max(10, areaHeight - cardHeight);
                     
-                    let vx = (Math.random() - 0.5) * 0.8;
-                    let vy = (Math.random() - 0.5) * 0.8;
+                    let vx = (Math.random() - 0.5) * 0.7;
+                    let vy = (Math.random() - 0.5) * 0.7;
 
                     card.style.left = `${x}px`;
                     card.style.top = `${y}px`;
@@ -1608,7 +1640,7 @@
                     calc_btn_order: "Оформити вибране",
                     calc_btn_wa: "Обговорити в WhatsApp",
                     details_title: "Наші послуги",
-                    details_subtitle: "Повний спектр рішень для вашого автомобіля у Швейцарії",
+                    details_subtitle: "Полный спектр рішень для вашого автомобіля у Швейцарії",
                     cantons_title: "Комуни та кантони",
                     cantons_subtitle: "Працюємо по всій Швейцарії: Цюрих, Берн, Женева та інші регіони",
                     modal_title: "Залишити заявку",
@@ -1752,7 +1784,6 @@
             };
 
             const langOptions = document.querySelectorAll('.lang-option');
-            langOptions.optionHandler = true;
             langOptions.forEach(option => {
                 option.addEventListener('click', () => {
                     const lang = option.getAttribute('data-lang');

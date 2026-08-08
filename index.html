@@ -40,22 +40,1285 @@
             padding: 0 20px;
         }
 
-        /* Убрал избыточный CSS для экономии места, ОСТАВЬ ВЕСЬ СВОЙ CSS ЗДЕСЬ БЕЗ ИЗМЕНЕНИЙ */
-        /* Сюда вставляешь весь CSS из предыдущей версии от <style> до header */
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+            text-decoration: none;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: none;
+            gap: 20px;
+            list-style: none;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: nowrap;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #b89728 100%);
+            color: #0b0f19;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.78rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            box-shadow: 0 4px 16px var(--accent-glow);
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            .btn {
+                padding: 10px 18px;
+                font-size: 0.85rem;
+            }
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent) 100%);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+            gap: 5px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+            color: #ffffff;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-color);
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding: 180px 0 100px;
+            }
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 25, 0.75);
+            backdrop-filter: blur(2px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.1rem, 6vw, 3.8rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 40px;
+            padding: 0 10px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 100px 0;
+            }
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.9rem, 4.5vw, 2.3rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            padding: 0 10px;
+        }
+
+        /* About Section */
+        .about-section {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+        }
+
+        .about-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .about-bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 25, 0.82);
+            backdrop-filter: blur(3px);
+        }
+
+        .about-content-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about-text-content {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            text-align: left;
+            max-width: 700px;
+        }
+
+        .about-text-content blockquote {
+            font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            line-height: 1.4;
+        }
+
+        .about-text-content blockquote span {
+            color: var(--accent);
+        }
+
+        .about-text-content p {
+            color: var(--text-muted);
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        /* Calculator Section */
+        .services-section {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+        }
+
+        .services-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .services-bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .services-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(4px);
+        }
+
+        .services-content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .calc-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        @media (min-width: 992px) {
+            .calc-layout {
+                grid-template-columns: 1.3fr 0.7fr;
+            }
+        }
+
+        .calc-services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .calc-services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .calc-card {
+            background: rgba(19, 27, 46, 0.85);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .calc-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        .calc-card.selected {
+            border-color: var(--accent);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .calc-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            gap: 12px;
+        }
+
+        .calc-card h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .calc-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-color);
+            flex-shrink: 0;
+        }
+
+        .calc-card.selected .calc-checkbox {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #0b0f19;
+        }
+
+        .calc-card.selected .calc-checkbox::after {
+            content: '✓';
+            font-weight: 900;
+            font-size: 0.9rem;
+        }
+
+        .calc-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .calc-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .calc-price {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .calc-card.hidden-service {
+            display: none;
+        }
+
+        .calc-card.hidden-service.visible {
+            display: flex;
+        }
+
+        .calc-toggle-container {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        /* Calculator Sidebar */
+        .calc-summary {
+            background: rgba(19, 27, 46, 0.95);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            position: static;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (min-width: 992px) {
+            .calc-summary {
+                position: sticky;
+                top: 90px;
+            }
+        }
+
+        .calc-summary h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 14px;
+        }
+
+        .summary-items-list {
+            list-style: none;
+            margin-bottom: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .summary-items-list li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .summary-items-list li span:last-child {
+            color: var(--text-main);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .summary-empty {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border);
+            padding-top: 18px;
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .summary-total-price {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .summary-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .summary-actions .btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 0.95rem;
+        }
+
+        /* Grid for details */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* Cantons Section with Floating Cards */
+        .cantons-section {
+            position: relative;
+            overflow: hidden;
+            min-height: 650px;
+            padding: 100px 0;
+        }
+
+        .cantons-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .cantons-bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cantons-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(4px);
+        }
+
+        .cantons-content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cantons-floating-area {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .canton-floating-card {
+            position: absolute;
+            background: rgba(19, 27, 46, 0.92);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 18px;
+            width: 210px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: border-color 0.3s ease;
+            will-change: transform;
+        }
+
+        .canton-floating-card:hover {
+            border-color: var(--accent);
+            z-index: 10;
+        }
+
+        .canton-floating-card h3 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .canton-floating-card p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: relative;
+        }
+
+        .lang-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 6px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .flag-icon {
+            width: 20px;
+            height: 14px;
+            border-radius: 2px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            display: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            min-width: 140px;
+            z-index: 1500;
+        }
+
+        .lang-switcher.active .lang-dropdown {
+            display: block;
+        }
+
+        .lang-option {
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: inherit;
+            font-weight: 500;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .lang-option:hover {
+            background: rgba(212, 175, 55, 0.12);
+            color: var(--text-main);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            padding: 16px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            width: 100%;
+            max-width: 440px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            transform: translateY(20px);
+            transition: var(--transition);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .modal-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        .modal-subtitle {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 14px;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        select.form-control {
+            cursor: pointer;
+        }
+
+        .modal-content .btn {
+            width: 100%;
+            margin-top: 10px;
+            padding: 14px;
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .cantons-floating-area {
+                height: 580px;
+            }
+            .canton-floating-card {
+                width: 180px;
+                padding: 10px 12px;
+            }
+            .canton-floating-card h3 {
+                font-size: 0.9rem;
+            }
+            .canton-floating-card p {
+                font-size: 0.72rem;
+            }
+        }
         
-        /* Скрытое поле для Honeypot (невидимо для человека, видимо для ботов) */
+        /* Скрытое поле для Honeypot (ловушка для ботов) */
         .bot-trap {
             position: absolute;
             opacity: 0;
             z-index: -1;
             left: -9999px;
         }
-        
-        /* [ВСТАВИТЬ ВЕСЬ ОСТАЛЬНОЙ CSS ИЗ ТВОЕГО ФАЙЛА] */
     </style>
 </head>
 <body>
-    <!-- [ВСТАВИТЬ ВЕСЬ HTML ОТ <header> ДО <section id="cantons"> ВКЛЮЧИТЕЛЬНО БЕЗ ИЗМЕНЕНИЙ] -->
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">SWISS<span>CARS</span></a>
+            <ul class="nav-links">
+                <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
+                <li><a href="#services" data-i18n="nav_services">Rechner</a></li>
+                <li><a href="#details" data-i18n="nav_details">Leistungen</a></li>
+            </ul>
+            <div class="header-right">
+                <a href="https://wa.me/41764795820?text=Hallo,%20ich%20interessiere%20mich%20für%20den%20Autoconcierge-Service%20in%20der%20Schweiz" target="_blank" class="btn btn-whatsapp" data-i18n="btn_whatsapp">WhatsApp</a>
+                <button class="btn open-modal-btn" data-i18n="btn_request">Anfrage</button>
+                <div class="lang-switcher" id="headerLangSwitcher">
+                    <button class="lang-btn" id="headerLangBtn" aria-label="Language menu">
+                        <svg class="flag-icon" viewBox="0 0 640 480"><path fill="#ffce00" d="M0 320h640v160H0z"/><path d="M0 0h640v160H0z"/><path fill="#d00" d="M0 160h640v160H0z"/></svg>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-option" data-lang="de">Deutsch</button>
+                        <button class="lang-option" data-lang="ru">Русский</button>
+                        <button class="lang-option" data-lang="ukr">Українська</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="istockphoto-1304201114-640_adpp_is.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <h1 data-i18n="hero_title">Dein Autoconcierge <br><span>in der Schweiz</span></h1>
+            <p data-i18n="hero_desc">Voller Service beim Autokauf, Check, Verkauf und der gesamten Bürokratie. Smoothe Abwicklung, Null Stress und absolut transparent.</p>
+            <div class="hero-buttons">
+                <button class="btn open-modal-btn" style="padding: 14px 28px; font-size: 1rem;" data-i18n="hero_btn">Loslegen</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="about-video-container">
+            <video autoplay muted loop playsinline preload="auto" class="about-bg-video" id="aboutVideo">
+                <source src="158316-816359649.mp4" type="video/mp4">
+            </video>
+            <div class="about-overlay"></div>
+        </div>
+        <div class="container about-content-wrapper">
+            <h2 class="section-title" style="text-align: left;" data-i18n="about_main_title">Über uns</h2>
+            <p class="section-subtitle" style="text-align: left;" data-i18n="about_main_subtitle">Premium-Ansatz für jeden Deal</p>
+            <div class="about-text-content">
+                <blockquote data-i18n="about_quote">
+                    «Wir liefern nicht nur Standard — wir setzen neue Maßstäbe für kompromisslose <span>Exzellenz</span> im Autohandel.»
+                </blockquote>
+                <p data-i18n="about_text_1">
+                    Unsere DNA basiert auf drei Kernwerten: absoluter Top-Ruf, High-End-Service und 100% Diskretion. Wir kombinieren tiefes Markt-Know-how mit smarter Tech, um deinen Autotraum ohne Kopfschmerzen Realität werden zu lassen.
+                </p>
+                <p data-i18n="about_text_2">
+                    Vollständiger Support von A bis Z — von der Suche in der Schweiz oder EU über den MFK-Check, die passende Versicherung bis hin zur Zulassung auf deinen Namen.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Calculator Section -->
+    <section id="services" class="services-section">
+        <div class="services-video-container">
+            <video autoplay muted loop playsinline preload="auto" class="services-bg-video">
+                <source src="158316-816359649.mp4" type="video/mp4">
+            </video>
+            <div class="services-overlay"></div>
+        </div>
+        <div class="container services-content-wrapper">
+            <h2 class="section-title" data-i18n="calc_main_title">Preis-Kalkulator</h2>
+            <p class="section-subtitle" data-i18n="calc_main_subtitle">Stelle dir deine Wunsch-Leistungen für die Schweiz & EU zusammen</p>
+            
+            <div class="calc-layout">
+                <div class="calc-services-grid" id="calcServicesGrid">
+                    <!-- 1. Покупка под ключ -->
+                    <div class="calc-card" data-price="950" data-name-de="Auto-Kauf komplett (Rundum-Sorglos)" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv1_title">Auto-Kauf komplett (Rundum-Sorglos)</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv1_desc">Full-Service: Wir finden deinen Traumwagen passend zu Budget & Wünschen, checken die Lage und regeln die gesamte Bürokratie inklusive Versicherung.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">CHF 950</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Проверка и осмотр -->
+                    <div class="calc-card" data-price="250" data-name-de="Fahrzeugcheck & Live-Inspektion" data-name-ru="Проверка и личный осмотр автомобиля" data-name-ukr="Перевірка та особистий огляд автомобіля">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv2_title">Fahrzeugcheck & Live-Inspektion</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv2_desc">Hintergrund-Check, Inserat-Analyse & verdeckte Mängel + Vor-Ort-Check von Karosserie, Interieur, Motor & Fahrwerk mit Fotoreport.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">CHF 250</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Переговоры с продавцом -->
+                    <div class="calc-card" data-price="70" data-name-de="Preisverhandlung mit Verkäufer" data-name-ru="Переговоры с продавцом и торг" data-name-ukr="Переговори з продавцем та торг">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv3_title">Preisverhandlung mit Verkäufer</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv3_desc">Wir stellen die richtigen Fragen, klären die Historie und holen den besten Deal für dich raus.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">CHF 70</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. Подбор страховки -->
+                    <div class="calc-card" data-price="200" data-name-de="Versicherungs-Setup" data-name-ru="Подбор выгодной страховки" data-name-ukr="Підбір вигідної страховки">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv4_title">Versicherungs-Setup</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv4_desc">Optimale Police mit Top-Abdeckung und bestem Preis-Leistungs-Verhältnis sichern.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">CHF 200</span>
+                        </div>
+                    </div>
+
+                    <!-- Остальные скрытые карточки -->
+                    <div class="calc-card hidden-service" data-price="450" data-name-de="Aufbereitung für Verkauf" data-name-ru="Подготовка к продаже" data-name-ukr="Підготовка до продажу">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv5_title">Aufbereitung für Verkauf</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv5_desc">Intensivwäsche, Politur & Profi-Innenreinigung für maximalen Wiederverkaufswert (je nach Aufwand).</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">~ CHF 450</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-card hidden-service" data-price="100" data-name-de="Profi-Autofotoshooting" data-name-ru="Профессиональная фотосъемка" data-name-ukr="Професійна фотозйомка">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv6_title">Profi-Autofotoshooting</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv6_desc">Hochwertige Aufnahmen von Exterieur, Interieur, Motorraum und allen wichtigen Details.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">CHF 100</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-card hidden-service" data-price="50" data-name-de="Erstellung Inserat (High-Converting)" data-name-ru="Создание продающего объявления" data-name-ukr="Создание продающего объявления">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv7_title">Erstellung Inserat</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv7_desc">Auffällige Beschreibung, ehrliche Vorteile und perfektes Setup für die Verkaufsplattformen.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">CHF 50</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-card hidden-service" data-price="400" data-name-de="Verkaufs-Support" data-name-ru="Помощь в продаже автомобиля" data-name-ukr="Допомога в продажу автомобіля">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv8_title">Verkaufs-Support</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv8_desc">Beratung, Inserat-Management, Preistipps und Begleitung bis zum erfolgreichen Deal.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">CHF 400</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-card hidden-service" data-price="200" data-name-de="Experten-Beratung & Vergleich" data-name-ru="Консультации и сравнение" data-name-ukr="Консультації та порівняння">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv9_title">Experten-Beratung & Vergleich</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv9_desc">Deep-Dive in Sachen Zuverlässigkeit, Unterhalt, Schwachstellen und deine persönlichen Anforderungen.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">CHF 200</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-card hidden-service" data-price="150" data-name-de="Zulassungs-Service" data-name-ru="Сопровождение при регистрации" data-name-ukr="Супровід при реєстрації">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv10_title">Zulassungs-Service</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv10_desc">Versicherung, Papieranalyse und reibungslose Nummernschilder-Beschaffung in der Schweiz.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">CHF 150</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-card hidden-service" data-price="300" data-name-de="MFK-Prüfungshilfe" data-name-ru="Помощь с MFK (техосмотром)" data-name-ukr="Допомога з техоглядом MFK">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv11_title">MFK-Prüfungshilfe</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv11_desc">Vor-Check, Behebung von Mängeln & Begleitung bei der Motorfahrzeugkontrolle (ab 300 CHF je nach Zustand).</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">ab CHF 300</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-card hidden-service" data-price="0" data-name-de="Fahrzeugtransport / Überführung" data-name-ru="Доставка автомобиля" data-name-ukr="Доставка автомобіля">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv12_title">Fahrzeugtransport</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv12_desc">Organisation des Transports oder der Überführung aus einem anderen Kanton oder Gebiet.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price" data-i18n="srv_indiv">Auf Anfrage</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-card hidden-service" data-price="100" data-name-de="Post-Purchase Support" data-name-ru="Поддержка после покупки" data-name-ukr="Підтримка після покупки">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv13_title">Post-Purchase Support</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv13_desc">Tipps zum Unterhalt, Werkstatt-Empfehlungen und Support für zukünftige Reparaturen.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">CHF 100</span>
+                        </div>
+                    </div>
+
+                    <!-- Кнопка развернуть/свернуть -->
+                    <div class="calc-toggle-container">
+                        <button type="button" class="btn" id="toggleServicesBtn" data-i18n="btn_more_services" style="padding: 12px 30px;">Alle Leistungen anzeigen</button>
+                    </div>
+                </div>
+
+                <!-- Summary Sidebar -->
+                <div class="calc-summary">
+                    <h3 data-i18n="calc_summary_title">Deine Auswahl</h3>
+                    <div id="summaryItemsContainer">
+                        <p class="summary-empty" data-i18n="calc_empty">Wähle links eine oder mehrere Optionen aus</p>
+                    </div>
+                    <ul class="summary-items-list" id="summaryList" style="display: none;"></ul>
+                    
+                    <div class="summary-total">
+                        <span data-i18n="calc_total">Total:</span>
+                        <span class="summary-total-price" id="calcTotalPrice">CHF 0</span>
+                    </div>
+
+                    <div class="summary-actions">
+                        <button class="btn open-modal-btn" id="calcOrderBtn" data-i18n="calc_btn_order" disabled>Auswahl anfragen</button>
+                        <a href="https://wa.me/41764795820?text=Hallo,%20ich%20habe%20eine%20Kalkulation%20auf%20der%20Website%20erstellt" target="_blank" class="btn btn-whatsapp" data-i18n="calc_btn_wa">Via WhatsApp besprechen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services List Section -->
+    <section id="details">
+        <div class="container">
+            <h2 class="section-title" data-i18n="details_title">Unsere Leistungen</h2>
+            <p class="section-subtitle" data-i18n="details_subtitle">Das komplette Setup für deinen fahrbaren Untersatz in der Schweiz</p>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h3 data-i18n="d1_title">Auto-Kauf komplett</h3>
+                    <p data-i18n="d1_desc">Wir finden das perfekt auf dich abgestimmte Auto, regeln Versicherungen und übernehmen die gesamte Bürokratie.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d2_title">Check & Inspektion</h3>
+                    <p data-i18n="d2_desc">Historien-Analyse, Aufdeckung versteckter Macken plus Vor-Ort-Check von Motor, Fahrwerk & Karosserie mit Bildmaterial.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d3_title">Verhandlungs-Pro</h3>
+                    <p data-i18n="d3_desc">Wir stellen clevere Fragen, checken die Background-Story und verhandeln den besten Kurs für dich heraus.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d4_title">Versicherungs-Match</h3>
+                    <p data-i18n="d4_desc">Faire Policen mit optimaler Abdeckung und starkem Preis-Leistungs-Verhältnis für deinen Seelenfrieden.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d5_title">Verkaufs-Prep</h3>
+                    <p data-i18n="d5_desc">Wasch-Programm, Politur, Detail-Clean-Up und Tipps für einen schnelleren Abverkauf zum Höchstpreis.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d6_title">Profi-Shooting</h3>
+                    <p data-i18n="d6_desc">Starke Aufnahmen von Exterieur, Interieur und allen Key-Features deines Fahrzeugs.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d7_title">Top-Inserat</h3>
+                    <p data-i18n="d7_desc">Auffälliger Text, ehrliche USPs und sauberes Setup für die gängigen Online-Marktplätze.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d8_title">Verkaufs-Assistenz</h3>
+                    <p data-i18n="d8_desc">Komplette Begleitung beim Verkaufsprozess von A bis Z mit professioneller Preiskalkulation.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d9_title">Know-how & Compare</h3>
+                    <p data-i18n="d9_desc">Unabhängiger Check verschiedener Modelle nach Zuverlässigkeit, Schwachstellen und Alltagstauglichkeit.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d10_title">Zulassungs-Express</h3>
+                    <p data-i18n="d10_desc">Papierkram, Versicherung und Schilder-Abholung stressfrei in der Schweiz abwickeln.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d11_title">MFK-Ready</h3>
+                    <p data-i18n="d11_desc">Vorbereitung auf die Motorfahrzeugkontrolle, Beseitigung von Mängeln und reibungsloser Ablauf.</p>
+                </div>
+                <div class="card">
+                    <h3 data-i18n="d12_title">Transport & Support</h3>
+                    <p data-i18n="d12_desc">Überführung aus anderen Kantonen + langfristiger Support bei Servicefragen und Wartung.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cantons Section with Video Background and Floating Cards -->
+    <section id="cantons" class="cantons-section">
+        <div class="cantons-video-container">
+            <video autoplay muted loop playsinline preload="auto" class="cantons-bg-video">
+                <source src="367131.mp4" type="video/mp4">
+            </video>
+            <div class="cantons-overlay"></div>
+        </div>
+        <div class="container cantons-content-wrapper">
+            <h2 class="section-title" data-i18n="cantons_title">Regionen & Kantone</h2>
+            <p class="section-subtitle" data-i18n="cantons_subtitle">Schweizweit für dich am Start: Zürich, Bern, Genf & Co.</p>
+            
+            <div class="cantons-floating-area" id="floatingArea">
+                <div class="canton-floating-card">
+                    <h3>Zürich</h3>
+                    <p>Finanz- und Business-Hub.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Bern</h3>
+                    <p>Die Bundeshauptstadt.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Waadt</h3>
+                    <p>Am wunderschönen Genfersee.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Aargau</h3>
+                    <p>Zentrale Verkehrsdrehscheibe.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>St. Gallen</h3>
+                    <p>Zentrum der Ostschweiz.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Genf</h3>
+                    <p>Diplomatie und Luxus.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Luzern</h3>
+                    <p>Alpiner Kultur-Hotspot.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Solothurn</h3>
+                    <p>Historisches Zentrum.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Tessin</h3>
+                    <p>Die sonnige Südseite.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Basel-Landschaft</h3>
+                    <p>Grenznaher Logistik-Spot.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Wallis</h3>
+                    <p>Berg- und Kurregion.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Freiburg</h3>
+                    <p>Zweisprachiges Herz.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Thurgau</h3>
+                    <p>Im Nordosten daheim.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Basel-Stadt</h3>
+                    <p>Innovation & Kultur.</p>
+                </div>
+                <div class="canton-floating-card">
+                    <h3>Schwyz</h3>
+                    <p>Das Kernland der Schweiz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Modal Window -->
     <div class="modal-overlay" id="orderModal">
@@ -65,7 +1328,7 @@
             <p class="modal-subtitle" data-i18n="modal_subtitle">Fülle kurz das Formular aus – wir melden uns ASAP bei dir.</p>
             <form id="orderForm">
                 
-                <!-- Honeypot: Ловушка для ботов -->
+                <!-- Honeypot: Ловушка для спам-ботов -->
                 <div class="bot-trap" aria-hidden="true">
                     <label>Please leave this field empty</label>
                     <input type="text" id="honeyField" name="honey_trap" tabindex="-1" autocomplete="off">
@@ -116,9 +1379,311 @@
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // [ВСТАВИТЬ СЮДА ВСЮ ЛОГИКУ ВИДЕО, ПЕРЕВОДОВ И АНИМАЦИИ КАНТОНОВ БЕЗ ИЗМЕНЕНИЙ]
+            const aboutVideo = document.getElementById('aboutVideo');
+            if (aboutVideo) {
+                aboutVideo.muted = true;
+                aboutVideo.play().catch(e => console.log("Auto-play prevented:", e));
+            }
 
-            // Интеграция отправки данных (ЗАЩИЩЕННАЯ ВЕРСИЯ)
+            const switcher = document.getElementById('headerLangSwitcher');
+            const langBtn = document.getElementById('headerLangBtn');
+
+            if (langBtn && switcher) {
+                langBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    switcher.classList.toggle('active');
+                });
+
+                document.addEventListener('click', () => {
+                    switcher.classList.remove('active');
+                });
+            }
+
+            // Интерактивное хаотичное движение карточек кантонов
+            const floatingArea = document.getElementById('floatingArea');
+            const floatingCards = document.querySelectorAll('.canton-floating-card');
+
+            if (floatingArea && floatingCards.length > 0) {
+                const isMobile = window.innerWidth <= 768;
+                const cardsData = Array.from(floatingCards).map((card) => {
+                    const cardWidth = isMobile ? 160 : 210;
+                    const cardHeight = 75;
+                    
+                    const areaWidth = floatingArea.clientWidth;
+                    const areaHeight = floatingArea.clientHeight;
+
+                    let x = Math.random() * Math.max(10, areaWidth - cardWidth);
+                    let y = Math.random() * Math.max(10, areaHeight - cardHeight);
+                    
+                    let vx = (Math.random() - 0.5) * 0.6;
+                    let vy = (Math.random() - 0.5) * 0.6;
+
+                    card.style.left = `${x}px`;
+                    card.style.top = `${y}px`;
+
+                    return { el: card, x, y, vx, vy, width: cardWidth, height: cardHeight };
+                });
+
+                function animateFloating() {
+                    const currentWidth = floatingArea.clientWidth;
+                    const currentHeight = floatingArea.clientHeight;
+
+                    cardsData.forEach(item => {
+                        item.x += item.vx;
+                        item.y += item.vy;
+
+                        if (item.x <= 0) {
+                            item.x = 0;
+                            item.vx *= -1;
+                        } else if (item.x + item.width >= currentWidth) {
+                            item.x = currentWidth - item.width;
+                            item.vx *= -1;
+                        }
+
+                        if (item.y <= 0) {
+                            item.y = 0;
+                            item.vy *= -1;
+                        } else if (item.y + item.height >= currentHeight) {
+                            item.y = currentHeight - item.height;
+                            item.vy *= -1;
+                        }
+
+                        item.el.style.left = `${item.x}px`;
+                        item.el.style.top = `${item.y}px`;
+                    });
+
+                    requestAnimationFrame(animateFloating);
+                }
+
+                requestAnimationFrame(animateFloating);
+            }
+
+            let currentLang = 'de';
+            const calcCards = document.querySelectorAll('.calc-card');
+            const summaryList = document.getElementById('summaryList');
+            const summaryItemsContainer = document.getElementById('summaryItemsContainer');
+            const calcTotalPrice = document.getElementById('calcTotalPrice');
+            const calcOrderBtn = document.getElementById('calcOrderBtn');
+            const modalServiceInput = document.getElementById('modalServiceInput');
+            const toggleServicesBtn = document.getElementById('toggleServicesBtn');
+            const hiddenServices = document.querySelectorAll('.calc-card.hidden-service');
+
+            let isExpanded = false;
+
+            if (toggleServicesBtn) {
+                toggleServicesBtn.addEventListener('click', () => {
+                    isExpanded = !isExpanded;
+                    hiddenServices.forEach(card => {
+                        card.classList.toggle('visible', isExpanded);
+                    });
+
+                    const btnTexts = {
+                        de: { show: "Alle Leistungen anzeigen", hide: "Weniger anzeigen" },
+                        ru: { show: "Показать все услуги", hide: "Свернуть услуги" },
+                        ukr: { show: "Показати всі послуги", hide: "Згорнути послуги" }
+                    };
+
+                    const langSet = btnTexts[currentLang] || btnTexts.de;
+                    toggleServicesBtn.textContent = isExpanded ? langSet.hide : langSet.show;
+                });
+            }
+
+            function updateCalculator() {
+                const selectedCards = document.querySelectorAll('.calc-card.selected');
+                let total = 0;
+                let summaryHTML = '';
+                let serviceNamesForModal = [];
+
+                if (selectedCards.length > 0) {
+                    summaryItemsContainer.style.display = 'none';
+                    summaryList.style.display = 'block';
+                    calcOrderBtn.removeAttribute('disabled');
+
+                    selectedCards.forEach(card => {
+                        const price = parseInt(card.getAttribute('data-price')) || 0;
+                        const name = card.getAttribute(`data-name-${currentLang}`) || card.getAttribute('data-name-de');
+                        total += price;
+                        serviceNamesForModal.push(name);
+
+                        const priceText = price > 0 ? `CHF ${price.toLocaleString()}` : (currentLang === 'de' ? 'Auf Anfrage' : 'По запросу');
+                        summaryHTML += `<li><span>${name}</span><span>${priceText}</span></li>`;
+                    });
+
+                    summaryList.innerHTML = summaryHTML;
+                    if(serviceNamesForModal.length > 0) {
+                        modalServiceInput.value = serviceNamesForModal[0];
+                    }
+                } else {
+                    summaryItemsContainer.style.display = 'block';
+                    summaryList.style.display = 'none';
+                    calcOrderBtn.setAttribute('disabled', 'true');
+                }
+
+                calcTotalPrice.textContent = `CHF ${total.toLocaleString()}`;
+            }
+
+            calcCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('selected');
+                    updateCalculator();
+                });
+            });
+
+            const translations = {
+                de: {
+                    nav_about: "Über uns",
+                    nav_services: "Rechner",
+                    nav_details: "Leistungen",
+                    btn_whatsapp: "WhatsApp",
+                    btn_request: "Anfrage",
+                    hero_title: "Dein Autoconcierge <br><span>in der Schweiz</span>",
+                    hero_desc: "Voller Service beim Autokauf, Check, Verkauf und der gesamten Bürokratie. Smoothe Abwicklung, Null Stress und absolut transparent.",
+                    hero_btn: "Loslegen",
+                    about_main_title: "Über uns",
+                    about_main_subtitle: "Premium-Ansatz für jeden Deal",
+                    about_quote: "«Wir liefern nicht nur Standard — wir setzen neue Maßstäbe für kompromisslose <span>Exzellenz</span> im Autohandel.»",
+                    about_text_1: "Unsere DNA basiert auf drei Kernwerten: absoluter Top-Ruf, High-End-Service und 100% Diskretion. Wir kombinieren tiefes Markt-Know-how mit smarter Tech, um deinen Autotraum ohne Kopfschmerzen Realität werden zu lassen.",
+                    about_text_2: "Vollständiger Support von A bis Z — von der Suche in der Schweiz oder EU über den MFK-Check, die passende Versicherung bis hin zur Zulassung auf deinen Namen.",
+                    calc_main_title: "Preis-Kalkulator",
+                    calc_main_subtitle: "Stelle dir deine Wunsch-Leistungen für die Schweiz & EU zusammen",
+                    btn_more_services: isExpanded ? "Weniger anzeigen" : "Alle Leistungen anzeigen",
+                    srv_cost: "Kosten:",
+                    srv_indiv: "Auf Anfrage",
+                    calc_summary_title: "Deine Auswahl",
+                    calc_empty: "Wähle links eine oder mehrere Optionen aus",
+                    calc_total: "Total:",
+                    calc_btn_order: "Auswahl anfragen",
+                    calc_btn_wa: "Via WhatsApp besprechen",
+                    details_title: "Unsere Leistungen",
+                    details_subtitle: "Das komplette Setup für deinen fahrbaren Untersatz in der Schweiz",
+                    cantons_title: "Regionen & Kantone",
+                    cantons_subtitle: "Schweizweit für dich am Start: Zürich, Bern, Genf & Co.",
+                    modal_title: "Anfrage absenden",
+                    modal_subtitle: "Fülle kurz das Formular aus – wir melden uns ASAP bei dir.",
+                    form_name: "Dein Name",
+                    form_phone: "Telefon / WhatsApp",
+                    form_email: "E-Mail-Adresse",
+                    form_service: "Leistungen",
+                    form_submit: "Jetzt anfragen"
+                },
+                ru: {
+                    nav_about: "О нас",
+                    nav_services: "Калькулятор",
+                    nav_details: "Услуги",
+                    btn_whatsapp: "WhatsApp",
+                    btn_request: "Заявка",
+                    hero_title: "Твой автоконсьерж <br><span>в Швейцарии</span>",
+                    hero_desc: "Полный фарш по покупке, проверке, продаже и всей бумажной волоките. Никакого стресса, всё четко и по делу.",
+                    hero_btn: "Стартануть",
+                    about_main_title: "О нас",
+                    about_main_subtitle: "Индивидуальный подход к каждому",
+                    about_quote: "«Мы не просто делаем свою работу — мы задаем планку абсолютного <span>превосходства</span>».",
+                    about_text_1: "Наша философия проста: безупречная репутация, люкс-сервис и полная конфиденциальность. Объединяем экспертный опыт и технологии.",
+                    about_text_2: "Полное сопровождение — от поиска тачки в Швейцарии или ЕС до ключей, страховки, MFK и номеров.",
+                    calc_main_title: "Калькулятор",
+                    calc_main_subtitle: "Собери свой пакет услуг для Швейцарии и ЕС",
+                    btn_more_services: isExpanded ? "Свернуть" : "Показать все услуги",
+                    srv_cost: "Стоимость:",
+                    srv_indiv: "По запросу",
+                    calc_summary_title: "Твой расчет",
+                    calc_empty: "Выбери услуги слева",
+                    calc_total: "Итого:",
+                    calc_btn_order: "Оформить выбор",
+                    calc_btn_wa: "Обсудить в WhatsApp",
+                    details_title: "Услуги",
+                    details_subtitle: "Полный спектр решений для твоего авто",
+                    cantons_title: "Кантоны и регионы",
+                    cantons_subtitle: "Работаем по всей Швейцарии: Цюрих, Берн, Женева и др.",
+                    modal_title: "Оставить заявку",
+                    modal_subtitle: "Заполни форму, и мы свяжемся с тобой в ближайшее время.",
+                    form_name: "Твое имя",
+                    form_phone: "Телефон / WhatsApp",
+                    form_email: "Электронная почта",
+                    form_service: "Услуги",
+                    form_submit: "Отправить заявку"
+                },
+                ukr: {
+                    nav_about: "Про нас",
+                    nav_services: "Калькулятор",
+                    nav_details: "Послуги",
+                    btn_whatsapp: "WhatsApp",
+                    btn_request: "Заявка",
+                    hero_title: "Твій автоконсьєрж <br><span>у Швейцарії</span>",
+                    hero_desc: "Повний фарш по покупці, перевірці, продажу та паперовій тяганині. Жодного стресу, все чітко та по ділу.",
+                    hero_btn: "Стартанути",
+                    about_main_title: "Про нас",
+                    about_main_subtitle: "Індивідуальний підхід до кожного",
+                    about_quote: "«Ми не просто робимо свою роботу — ми задаємо планку абсолютної <span>переваги</span>».",
+                    about_text_1: "Наша філософія проста: бездоганна репутація, люкс-сервіс та повна конфіденційність. Об'єднуємо експертний досвід та технології.",
+                    about_text_2: "Повний супровід — від пошуку тачки у Швейцарії чи ЄС до ключів, страховки, MFK та номерів.",
+                    calc_main_title: "Калькулятор",
+                    calc_main_subtitle: "Збери свій пакет послуг для Швейцарії та ЄС",
+                    btn_more_services: isExpanded ? "Згорнути" : "Показати всі послуги",
+                    srv_cost: "Вартість:",
+                    srv_indiv: "За запитом",
+                    calc_summary_title: "Твій розрахунок",
+                    calc_empty: "Вибери послуги зліва",
+                    calc_total: "Всього:",
+                    calc_btn_order: "Оформити вибір",
+                    calc_btn_wa: "Обговорити в WhatsApp",
+                    details_title: "Послуги",
+                    details_subtitle: "Повний спектр рішень для твого авто",
+                    cantons_title: "Кантони та регіони",
+                    cantons_subtitle: "Працюємо по всій Швейцарії: Цюрих, Берн, Женева тощо",
+                    modal_title: "Залишити заявку",
+                    modal_subtitle: "Заповни форму, і ми зв'яжемося з тобою найближчим часом.",
+                    form_name: "Твоє ім'я",
+                    form_phone: "Телефон / WhatsApp",
+                    form_email: "Електронна пошта",
+                    form_service: "Послуги",
+                    form_submit: "Надіслати заявку"
+                }
+            };
+
+            const langOptions = document.querySelectorAll('.lang-option');
+            langOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const lang = option.getAttribute('data-lang');
+                    currentLang = lang;
+                    const dict = translations[lang];
+                    if (!dict) return;
+
+                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                        const key = el.getAttribute('data-i18n');
+                        if (dict[key]) {
+                            el.innerHTML = dict[key];
+                        }
+                    });
+
+                    switcher.classList.remove('active');
+                    updateCalculator();
+                });
+            });
+
+            const modal = document.getElementById('orderModal');
+            const openModalBtns = document.querySelectorAll('.open-modal-btn');
+            const closeModalBtn = document.getElementById('modalClose');
+
+            openModalBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (modal) modal.classList.add('active');
+                });
+            });
+
+            if (closeModalBtn && modal) {
+                closeModalBtn.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                });
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    e.target === modal && modal.classList.remove('active');
+                });
+            }
+
+            // ИНТЕГРАЦИЯ ОТПРАВКИ ДАННЫХ (ЗАЩИЩЕННАЯ ВЕРСИЯ)
             const orderForm = document.getElementById('orderForm');
             
             // Жесткий список разрешенных услуг для валидации на клиенте

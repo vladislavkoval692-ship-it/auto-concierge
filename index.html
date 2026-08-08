@@ -875,6 +875,14 @@
                 font-size: 0.72rem;
             }
         }
+
+        /* HONEYPOT CSS: Скрываем ловушку от пользователя */
+        .bot-trap {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
@@ -976,7 +984,7 @@
                         </div>
                     </div>
 
-                    <!-- 2. Проверка и осмотр (совмещено: 250 CHF) -->
+                    <!-- 2. Проверка и осмотр -->
                     <div class="calc-card" data-price="250" data-name-de="Fahrzeugcheck & Live-Inspektion" data-name-ru="Проверка и личный осмотр автомобиля" data-name-ukr="Перевірка та особистий огляд автомобіля">
                         <div>
                             <div class="calc-card-header">
@@ -1042,7 +1050,7 @@
                                 <h3 data-i18n="srv6_title">Profi-Autofotoshooting</h3>
                                 <div class="calc-checkbox"></div>
                             </div>
-                            <p data-i18n="srv6_desc">Hochwertige Aufnahmen von Exterieur, Interieur, Motorraum und allen wichtigen Details.</p>
+                            <p data-i18n="srv6_desc">Hochwertige Aufnahmen von Exterieur, Interieur, Motorraum und allen важных деталей.</p>
                         </div>
                         <div class="calc-card-footer">
                             <span data-i18n="srv_cost">Kosten:</span>
@@ -1319,6 +1327,13 @@
             <h3 class="modal-title" data-i18n="modal_title">Anfrage absenden</h3>
             <p class="modal-subtitle" data-i18n="modal_subtitle">Fülle kurz das Formular aus – wir melden uns ASAP bei dir.</p>
             <form id="orderForm">
+                
+                <!-- HONEYPOT: Защита от спам-ботов -->
+                <div class="bot-trap" aria-hidden="true">
+                    <label>Please leave this field empty / Пожалуйста, оставьте это поле пустым</label>
+                    <input type="text" id="honeyField" name="honeyField" tabindex="-1" autocomplete="off">
+                </div>
+
                 <div class="form-group">
                     <label data-i18n="form_name">Dein Name</label>
                     <input type="text" id="userName" class="form-control" required placeholder="Max Mustermann">
@@ -1384,7 +1399,7 @@
                 });
             }
 
-            // Интерактивное хаотичное движение карточек кантонов
+            // Интерактивное хаотичное движение карточек кантонов (Оптимизировано)
             const floatingArea = document.getElementById('floatingArea');
             const floatingCards = document.querySelectorAll('.canton-floating-card');
 
@@ -1410,40 +1425,45 @@
                 });
 
                 function animateFloating() {
-                    const currentWidth = floatingArea.clientWidth;
-                    const currentHeight = floatingArea.clientHeight;
+                    // Оптимизация: не анимировать, если вкладка не активна (экономит батарею)
+                    if (!document.hidden) {
+                        const currentWidth = floatingArea.clientWidth;
+                        const currentHeight = floatingArea.clientHeight;
 
-                    cardsData.forEach(item => {
-                        item.x += item.vx;
-                        item.y += item.vy;
+                        cardsData.forEach(item => {
+                            item.x += item.vx;
+                            item.y += item.vy;
 
-                        if (item.x <= 0) {
-                            item.x = 0;
-                            item.vx *= -1;
-                        } else if (item.x + item.width >= currentWidth) {
-                            item.x = currentWidth - item.width;
-                            item.vx *= -1;
-                        }
+                            if (item.x <= 0) {
+                                item.x = 0;
+                                item.vx *= -1;
+                            } else if (item.x + item.width >= currentWidth) {
+                                item.x = currentWidth - item.width;
+                                item.vx *= -1;
+                            }
 
-                        if (item.y <= 0) {
-                            item.y = 0;
-                            item.vy *= -1;
-                        } else if (item.y + item.height >= currentHeight) {
-                            item.y = currentHeight - item.height;
-                            item.vy *= -1;
-                        }
+                            if (item.y <= 0) {
+                                item.y = 0;
+                                item.vy *= -1;
+                            } else if (item.y + item.height >= currentHeight) {
+                                item.y = currentHeight - item.height;
+                                item.vy *= -1;
+                            }
 
-                        item.el.style.left = `${item.x}px`;
-                        item.el.style.top = `${item.y}px`;
-                    });
-
+                            item.el.style.left = `${item.x}px`;
+                            item.el.style.top = `${item.y}px`;
+                        });
+                    }
                     requestAnimationFrame(animateFloating);
                 }
 
                 requestAnimationFrame(animateFloating);
             }
 
-            let currentLang = 'de';
+            // Инициализация языка с сохранением в localStorage
+            const savedLang = localStorage.getItem('swisscars_lang') || 'de';
+            let currentLang = savedLang;
+            
             const calcCards = document.querySelectorAll('.calc-card');
             const summaryList = document.getElementById('summaryList');
             const summaryItemsContainer = document.getElementById('summaryItemsContainer');
@@ -1454,65 +1474,6 @@
             const hiddenServices = document.querySelectorAll('.calc-card.hidden-service');
 
             let isExpanded = false;
-
-            if (toggleServicesBtn) {
-                toggleServicesBtn.addEventListener('click', () => {
-                    isExpanded = !isExpanded;
-                    hiddenServices.forEach(card => {
-                        card.classList.toggle('visible', isExpanded);
-                    });
-
-                    const btnTexts = {
-                        de: { show: "Alle Leistungen anzeigen", hide: "Weniger anzeigen" },
-                        ru: { show: "Показать все услуги", hide: "Свернуть список" },
-                        ukr: { show: "Показати всі послуги", hide: "Згорнути список" }
-                    };
-
-                    const langSet = btnTexts[currentLang] || btnTexts.de;
-                    toggleServicesBtn.textContent = isExpanded ? langSet.hide : langSet.show;
-                });
-            }
-
-            function updateCalculator() {
-                const selectedCards = document.querySelectorAll('.calc-card.selected');
-                let total = 0;
-                let summaryHTML = '';
-                let serviceNamesForModal = [];
-
-                if (selectedCards.length > 0) {
-                    summaryItemsContainer.style.display = 'none';
-                    summaryList.style.display = 'block';
-                    calcOrderBtn.removeAttribute('disabled');
-
-                    selectedCards.forEach(card => {
-                        const price = parseInt(card.getAttribute('data-price')) || 0;
-                        const name = card.getAttribute(`data-name-${currentLang}`) || card.getAttribute('data-name-de');
-                        total += price;
-                        serviceNamesForModal.push(name);
-
-                        const priceText = price > 0 ? `CHF ${price.toLocaleString()}` : (currentLang === 'de' ? 'Auf Anfrage' : 'По запросу');
-                        summaryHTML += `<li><span>${name}</span><span>${priceText}</span></li>`;
-                    });
-
-                    summaryList.innerHTML = summaryHTML;
-                    if(serviceNamesForModal.length > 0) {
-                        modalServiceInput.value = serviceNamesForModal[0];
-                    }
-                } else {
-                    summaryItemsContainer.style.display = 'block';
-                    summaryList.style.display = 'none';
-                    calcOrderBtn.setAttribute('disabled', 'true');
-                }
-
-                calcTotalPrice.textContent = `CHF ${total.toLocaleString()}`;
-            }
-
-            calcCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    card.classList.toggle('selected');
-                    updateCalculator();
-                });
-            });
 
             const translations = {
                 de: {
@@ -1740,7 +1701,7 @@
                     calc_main_subtitle: "Сформуйте індивідуальний пакет необхідних послуг для вашого автомобіля",
                     btn_more_services: isExpanded ? "Згорнути список" : "Показати всі послуги",
                     srv1_title: "Купівля автомобіля під ключ",
-                    srv1_desc: "Пошук авто під ваші вимоги та бюджет, підбор найкращих варіантів без втрати часу, а також допомога в оформленні страховки та всієї бюрократії.",
+                    srv1_desc: "Пошук авто під ваші вимоги та бюджет, підбір найкращих варіантів без втрати часу, а також допомога в оформленні страховки та всієї бюрократії.",
                     srv2_title: "Перевірка та особистий огляд автомобіля",
                     srv2_desc: "Аналіз історії, оголошень, комплектації, прихованих недоліків + особистий огляд кузова, салону, мотора, підвіски з фотозвітом.",
                     srv3_title: "Переговори з продавцем та торг",
@@ -1816,7 +1777,7 @@
                     c_bs: "Столиця інновацій.",
                     c_sz: "Серце Швейцарії.",
                     modal_title: "Оформлення заявки",
-                    modal_subtitle: "Заполните форму, и наш персональный специалист свяжется с вами в ближайшее время.",
+                    modal_subtitle: "Заповніть форму, і наш персональний фахівець зв'яжеться з вами найближчим часом.",
                     form_name: "Ваше ім'я",
                     form_phone: "Телефон / WhatsApp",
                     form_email: "Електронна пошта",
@@ -1826,22 +1787,90 @@
                 }
             };
 
+            // Функция применения языка
+            function setLanguage(lang) {
+                const dict = translations[lang];
+                if (!dict) return;
+                
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (dict[key]) {
+                        el.innerHTML = dict[key];
+                    }
+                });
+                
+                updateCalculator();
+            }
+
+            // Устанавливаем язык при загрузке
+            setLanguage(currentLang);
+
             const langOptions = document.querySelectorAll('.lang-option');
             langOptions.forEach(option => {
                 option.addEventListener('click', () => {
                     const lang = option.getAttribute('data-lang');
                     currentLang = lang;
-                    const dict = translations[lang];
-                    if (!dict) return;
+                    localStorage.setItem('swisscars_lang', lang); // Сохраняем выбор
+                    setLanguage(lang);
+                    switcher.classList.remove('active');
+                });
+            });
 
-                    document.querySelectorAll('[data-i18n]').forEach(el => {
-                        const key = el.getAttribute('data-i18n');
-                        if (dict[key]) {
-                            el.innerHTML = dict[key];
-                        }
+            if (toggleServicesBtn) {
+                toggleServicesBtn.addEventListener('click', () => {
+                    isExpanded = !isExpanded;
+                    hiddenServices.forEach(card => {
+                        card.classList.toggle('visible', isExpanded);
                     });
 
-                    switcher.classList.remove('active');
+                    const btnTexts = {
+                        de: { show: "Alle Leistungen anzeigen", hide: "Weniger anzeigen" },
+                        ru: { show: "Показать все услуги", hide: "Свернуть список" },
+                        ukr: { show: "Показати всі послуги", hide: "Згорнути список" }
+                    };
+
+                    const langSet = btnTexts[currentLang] || btnTexts.de;
+                    toggleServicesBtn.textContent = isExpanded ? langSet.hide : langSet.show;
+                });
+            }
+
+            function updateCalculator() {
+                const selectedCards = document.querySelectorAll('.calc-card.selected');
+                let total = 0;
+                let summaryHTML = '';
+                let serviceNamesForModal = [];
+
+                if (selectedCards.length > 0) {
+                    summaryItemsContainer.style.display = 'none';
+                    summaryList.style.display = 'block';
+                    calcOrderBtn.removeAttribute('disabled');
+
+                    selectedCards.forEach(card => {
+                        const price = parseInt(card.getAttribute('data-price')) || 0;
+                        const name = card.getAttribute(`data-name-${currentLang}`) || card.getAttribute('data-name-de');
+                        total += price;
+                        serviceNamesForModal.push(name);
+
+                        const priceText = price > 0 ? `CHF ${price.toLocaleString()}` : (currentLang === 'de' ? 'Auf Anfrage' : 'По запросу');
+                        summaryHTML += `<li><span>${name}</span><span>${priceText}</span></li>`;
+                    });
+
+                    summaryList.innerHTML = summaryHTML;
+                    if(serviceNamesForModal.length > 0) {
+                        modalServiceInput.value = serviceNamesForModal[0];
+                    }
+                } else {
+                    summaryItemsContainer.style.display = 'block';
+                    summaryList.style.display = 'none';
+                    calcOrderBtn.setAttribute('disabled', 'true');
+                }
+
+                calcTotalPrice.textContent = `CHF ${total.toLocaleString()}`;
+            }
+
+            calcCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('selected');
                     updateCalculator();
                 });
             });
@@ -1869,39 +1898,86 @@
                 });
             }
 
-            // Интеграция отправки данных в Google Таблицу и Telegram
+            // БЕЗОПАСНАЯ ОТПРАВКА ФОРМЫ (ЗАЩИТА ОТ СПАМА, ИНЪЕКЦИЙ И БОТОВ)
             const orderForm = document.getElementById('orderForm');
+            
+            // Список разрешенных услуг
+            const validServices = [
+                "Individuelles Setup",
+                "Auto-Kauf komplett (Rundum-Sorglos)",
+                "Fahrzeugcheck & Live-Inspektion",
+                "Preisverhandlung mit Verkäufer",
+                "Versicherungs-Setup",
+                "Aufbereitung für Verkauf",
+                "Profi-Autofotoshooting",
+                "Erstellung Inserat",
+                "Verkaufs-Support",
+                "Experten-Beratung & Vergleich",
+                "Zulassungs-Service",
+                "MFK-Prüfungshilfe",
+                "Fahrzeugtransport",
+                "Post-Purchase Support"
+            ];
+
+            // Функция санитизации данных (предотвращает Formula Injection)
+            const sanitizeInput = (str) => {
+                const trimmed = str.trim();
+                return /^[=+\-@]/.test(trimmed) ? "'" + trimmed : trimmed;
+            };
+
             if (orderForm) {
                 orderForm.addEventListener('submit', (e) => {
                     e.preventDefault();
                     
+                    // 1. Проверка Honeypot (ловушки для ботов)
+                    const honeyTrap = document.getElementById('honeyField').value;
+                    if (honeyTrap !== "") {
+                        console.warn("Bot submission detected.");
+                        orderForm.reset();
+                        document.getElementById('orderModal').classList.remove('active');
+                        return; // Блокируем отправку
+                    }
+
+                    // 2. Валидация выпадающего списка
+                    const selectedService = document.getElementById('modalServiceInput').value;
+                    if (!validServices.includes(selectedService)) {
+                        alert("Manipulated data detected. Please select a valid service.");
+                        return;
+                    }
+
                     const submitBtn = document.getElementById('submitBtn');
                     const originalText = submitBtn.textContent;
                     submitBtn.textContent = currentLang === 'de' ? 'Senden...' : (currentLang === 'ukr' ? 'Надсилання...' : 'Отправка...');
                     submitBtn.setAttribute('disabled', 'true');
 
-                    const formData = {
-                        name: document.getElementById('userName').value,
-                        phone: document.getElementById('userPhone').value,
-                        email: document.getElementById('userEmail').value,
-                        service: modalServiceInput.value
-                    };
+                    // 3. Используем URLSearchParams для корректной работы с no-cors
+                    const formData = new URLSearchParams();
+                    formData.append('name', sanitizeInput(document.getElementById('userName').value));
+                    formData.append('phone', sanitizeInput(document.getElementById('userPhone').value));
+                    formData.append('email', sanitizeInput(document.getElementById('userEmail').value));
+                    formData.append('service', selectedService);
+                    
+                    // Токен безопасности для сервера
+                    formData.append('source', 'swisscars_web_2026'); 
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbyZp71TKlrcZduSfBQ25LTWxTtgoXwRhMAM_IEBLHESzmCxlljMm8L7h4SpQt_-7FiD/exec';
 
                     fetch(scriptURL, {
                         method: 'POST',
                         mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(formData)
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: formData.toString()
                     })
                     .then(() => {
+                        // Поскольку no-cors всегда возвращает opaque response, успех гарантирован только если нет ошибок сети
                         alert(currentLang === 'de' ? 'Anfrage erfolgreich gesendet! Wir melden uns in Kürze.' : (currentLang === 'ukr' ? 'Заявку успішно надіслано! Ми зв\'яжемося з вами найближчим часом.' : 'Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.'));
                         orderForm.reset();
                         modal.classList.remove('active');
                     })
                     .catch(error => {
-                        console.error('Error!', error.message);
+                        console.error('Network Error:', error);
                         alert(currentLang === 'de' ? 'Fehler beim Senden. Bitte schreibe uns auf WhatsApp.' : (currentLang === 'ukr' ? 'Сталася помилка під час надсилання. Будь ласка, напишіть нам у WhatsApp.' : 'Произошла ошибка при отправке. Пожалуйста, напишите нам в WhatsApp.'));
                     })
                     .finally(() => {

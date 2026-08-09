@@ -875,14 +875,6 @@
                 font-size: 0.72rem;
             }
         }
-
-        /* HONEYPOT CSS: Скрываем ловушку от пользователя */
-        .bot-trap {
-            position: absolute;
-            left: -9999px;
-            opacity: 0;
-            z-index: -1;
-        }
     </style>
 </head>
 <body>
@@ -946,7 +938,7 @@
                     «Wir liefern nicht nur Standard — wir setzen neue Maßstäbe für kompromisslose <span>Exzellenz</span> im Autohandel.»
                 </blockquote>
                 <p data-i18n="about_text_1">
-                    Unsere DNA basiert auf drei Kernwerten: absoluter Top-Ruf, High-End-Service und 100% Diskretion. Wir kombinieren tiefes Markt-Know-how mit smarter Tech, um deinen Autotraum ohne Kopfschmerzen Realität werden zu lassen.
+                    Wir sparen Ihre Zeit, befreien Sie von unnötiger Bürokratie und helfen, automobile Fragen schnell und unkompliziert zu lösen. Sie erhalten einen zuverlässigen Partner, der weiß, wie der gesamte Prozess in der Schweiz organisiert wird.
                 </p>
                 <p data-i18n="about_text_2">
                     Vollständiger Support von A bis Z — von der Suche in der Schweiz oder EU über den MFK-Check, die passende Versicherung bis hin zur Zulassung auf deinen Namen.
@@ -969,6 +961,7 @@
             
             <div class="calc-layout">
                 <div class="calc-services-grid" id="calcServicesGrid">
+                    
                     <!-- 1. Покупка под ключ -->
                     <div class="calc-card" data-price="950" data-name-de="Auto-Kauf komplett (Rundum-Sorglos)" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ">
                         <div>
@@ -999,7 +992,22 @@
                         </div>
                     </div>
 
-                    <!-- 3. Переговоры с продавцом -->
+                    <!-- 3. Помощь в продаже автомобиля (ПЕРЕНЕСЕНО СЮДА) -->
+                    <div class="calc-card" data-price="400" data-name-de="Verkaufs-Support" data-name-ru="Помощь в продаже автомобиля" data-name-ukr="Допомога в продажу автомобіля">
+                        <div>
+                            <div class="calc-card-header">
+                                <h3 data-i18n="srv8_title">Verkaufs-Support</h3>
+                                <div class="calc-checkbox"></div>
+                            </div>
+                            <p data-i18n="srv8_desc">Alles, was für einen schnellen und profitablen Verkauf erforderlich ist: professionelles Fotoshooting, Vorbereitung der Anzeige, Preisschätzung, Veröffentlichung und Transaktionsbegleitung.</p>
+                        </div>
+                        <div class="calc-card-footer">
+                            <span data-i18n="srv_cost">Kosten:</span>
+                            <span class="calc-price">CHF 400</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. Переговоры с продавцом -->
                     <div class="calc-card" data-price="70" data-name-de="Preisverhandlung mit Verkäufer" data-name-ru="Переговоры с продавцом и торг" data-name-ukr="Переговори з продавцем та торг">
                         <div>
                             <div class="calc-card-header">
@@ -1014,7 +1022,7 @@
                         </div>
                     </div>
 
-                    <!-- 4. Подбор страховки -->
+                    <!-- 5. Подбор страховки -->
                     <div class="calc-card" data-price="200" data-name-de="Versicherungs-Setup" data-name-ru="Подбор выгодной страховки" data-name-ukr="Підбір вигідної страховки">
                         <div>
                             <div class="calc-card-header">
@@ -1029,7 +1037,7 @@
                         </div>
                     </div>
 
-                    <!-- Остальные скрытые карточки -->
+                    <!-- Скрытые карточки (начинаются отсюда) -->
                     <div class="calc-card hidden-service" data-price="450" data-name-de="Aufbereitung für Verkauf" data-name-ru="Подготовка к продаже" data-name-ukr="Підготовка до продажу">
                         <div>
                             <div class="calc-card-header">
@@ -1050,7 +1058,7 @@
                                 <h3 data-i18n="srv6_title">Profi-Autofotoshooting</h3>
                                 <div class="calc-checkbox"></div>
                             </div>
-                            <p data-i18n="srv6_desc">Hochwertige Aufnahmen von Exterieur, Interieur, Motorraum und allen важных деталей.</p>
+                            <p data-i18n="srv6_desc">Hochwertige Aufnahmen von Exterieur, Interieur, Motorraum und allen wichtigen Details.</p>
                         </div>
                         <div class="calc-card-footer">
                             <span data-i18n="srv_cost">Kosten:</span>
@@ -1069,20 +1077,6 @@
                         <div class="calc-card-footer">
                             <span data-i18n="srv_cost">Kosten:</span>
                             <span class="calc-price">CHF 50</span>
-                        </div>
-                    </div>
-
-                    <div class="calc-card hidden-service" data-price="400" data-name-de="Verkaufs-Support" data-name-ru="Помощь в продаже автомобиля" data-name-ukr="Допомога в продажу автомобіля">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv8_title">Verkaufs-Support</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv8_desc">Beratung, Inserat-Management, Preistipps und Begleitung bis zum erfolgreichen Deal.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price">CHF 400</span>
                         </div>
                     </div>
 
@@ -1352,12 +1346,12 @@
                         <option value="Individuelles Setup" data-i18n="opt_default">Wähle eine Option oder übernehme den Rechner</option>
                         <option value="Auto-Kauf komplett (Rundum-Sorglos)" data-i18n="srv1_title">Auto-Kauf komplett (Rundum-Sorglos)</option>
                         <option value="Fahrzeugcheck & Live-Inspektion" data-i18n="srv2_title">Fahrzeugcheck & Live-Inspektion</option>
+                        <option value="Verkaufs-Support" data-i18n="srv8_title">Verkaufs-Support</option>
                         <option value="Preisverhandlung mit Verkäufer" data-i18n="srv3_title">Preisverhandlung mit Verkäufer</option>
                         <option value="Versicherungs-Setup" data-i18n="srv4_title">Versicherungs-Setup</option>
                         <option value="Aufbereitung für Verkauf" data-i18n="srv5_title">Aufbereitung für Verkauf</option>
                         <option value="Profi-Autofotoshooting" data-i18n="srv6_title">Profi-Autofotoshooting</option>
                         <option value="Erstellung Inserat" data-i18n="srv7_title">Erstellung Inserat</option>
-                        <option value="Verkaufs-Support" data-i18n="srv8_title">Verkaufs-Support</option>
                         <option value="Experten-Beratung & Vergleich" data-i18n="srv9_title">Experten-Beratung & Vergleich</option>
                         <option value="Zulassungs-Service" data-i18n="srv10_title">Zulassungs-Service</option>
                         <option value="MFK-Prüfungshilfe" data-i18n="srv11_title">MFK-Prüfungshilfe</option>
@@ -1425,7 +1419,6 @@
                 });
 
                 function animateFloating() {
-                    // Оптимизация: не анимировать, если вкладка не активна (экономит батарею)
                     if (!document.hidden) {
                         const currentWidth = floatingArea.clientWidth;
                         const currentHeight = floatingArea.clientHeight;
@@ -1486,10 +1479,10 @@
                     hero_title: "Dein Autoconcierge <br><span>in der Schweiz</span>",
                     hero_desc: "Voller Service beim Autokauf, Check, Verkauf und der gesamten Bürokratie. Smoothe Abwicklung, Null Stress und absolut transparent.",
                     hero_btn: "Loslegen",
-                    about_main_title: "Über uns",
+                    about_main_title: "Warum wir?",
                     about_main_subtitle: "Premium-Ansatz für jeden Deal",
                     about_quote: "«Wir liefern nicht nur Standard — wir setzen neue Maßstäbe für kompromisslose <span>Exzellenz</span> im Autohandel.»",
-                    about_text_1: "Unsere DNA basiert auf drei Kernwerten: absoluter Top-Ruf, High-End-Service und 100% Diskretion. Wir kombinieren tiefes Markt-Know-how mit smarter Tech, um deinen Autotraum ohne Kopfschmerzen Realität werden zu lassen.",
+                    about_text_1: "Wir sparen Ihre Zeit, befreien Sie von unnötiger Bürokratie und helfen, automobile Fragen schnell und unkompliziert zu lösen. Sie erhalten einen zuverlässigen Partner, der weiß, wie der gesamte Prozess in der Schweiz organisiert wird.",
                     about_text_2: "Vollständiger Support von A bis Z — von der Suche in der Schweiz oder EU über den MFK-Check, die passende Versicherung bis hin zur Zulassung auf deinen Namen.",
                     calc_main_title: "Preis-Kalkulator",
                     calc_main_subtitle: "Stelle dir deine Wunsch-Leistungen für die Schweiz & EU zusammen",
@@ -1509,7 +1502,7 @@
                     srv7_title: "Erstellung Inserat",
                     srv7_desc: "Auffällige Beschreibung, ehrliche Vorteile und perfektes Setup für die Verkaufsplattformen.",
                     srv8_title: "Verkaufs-Support",
-                    srv8_desc: "Beratung, Inserat-Management, Preistipps und Begleitung bis zum erfolgreichen Deal.",
+                    srv8_desc: "Alles, was für einen schnellen und profitablen Verkauf erforderlich ist: professionelles Fotoshooting, Vorbereitung der Anzeige, Preisschätzung, Veröffentlichung und Transaktionsbegleitung.",
                     srv9_title: "Experten-Beratung & Vergleich",
                     srv9_desc: "Deep-Dive in Sachen Zuverlässigkeit, Unterhalt, Schwachstellen und deine persönlichen Anforderungen.",
                     srv10_title: "Zulassungs-Service",
@@ -1589,10 +1582,10 @@
                     hero_title: "Премиальный автоконсьерж <br><span>в Швейцарии</span>",
                     hero_desc: "Полный комплекс услуг: экспертный подбор, детальная диагностика, продажа и полное юридическое сопровождение. Безупречный сервис и абсолютная конфиденциальность.",
                     hero_btn: "Начать подбор",
-                    about_main_title: "О компании",
+                    about_main_title: "Почему выбирают нас",
                     about_main_subtitle: "Эксклюзивный подход к каждому клиенту",
                     about_quote: "«Мы формируем высокие стандарты безупречного сервиса и исключительного качества в сфере автоконсьержа».",
-                    about_text_1: "Наша философия базируется на трех неизменных принципах: безупречная деловая репутация, экспертный подход и абсолютная конфиденциальность. Мы объединяем глубокую аналитику рынка и современные технологии для реализации задач любой сложности.",
+                    about_text_1: "Мы экономим ваше время, избавляем от лишней бюрократии и помогаем решать автомобильные вопросы быстро и без лишних хлопот. Вы получаете одного надёжного партнёра, который знает, как организовать весь процесс в Швейцарии.",
                     about_text_2: "Комплексное сопровождение сделок — от экспертного поиска автомобиля в Швейцарии и странах ЕС до получения ключей, прохождения техосмотра MFK, оформления страхования и официальной регистрации.",
                     calc_main_title: "Калькулятор услуг",
                     calc_main_subtitle: "Сформируйте индивидуальный пакет необходимых услуг для вашего автомобиля",
@@ -1612,7 +1605,7 @@
                     srv7_title: "Создание продающего объявления",
                     srv7_desc: "Цепляющее описание, честные преимущества и оформление для площадок.",
                     srv8_title: "Помощь в продаже автомобиля",
-                    srv8_desc: "Консультации, подготовка объявления, рекомендации по цене и сопровождение сделки.",
+                    srv8_desc: "Всё необходимое для быстрой и выгодной продажи: профессиональная фотосъёмка, подготовка объявления, оценка цены, публикация и сопровождение сделки.",
                     srv9_title: "Консультации и экспертное сравнение",
                     srv9_desc: "Разбор вариантов по надежности, обслуживанию, слабым местам и вашим задачам.",
                     srv10_title: "Сопровождение при регистрации",
@@ -1672,7 +1665,7 @@
                     c_fr: "Двуязычный регион.",
                     c_tg: "Кантон на северо-востоке.",
                     c_bs: "Столица инноваций.",
-                    c_sz: "Сердце Швейцарии.",
+                    c_sz: "Серце Швейцарии.",
                     modal_title: "Оформление заявки",
                     modal_subtitle: "Заполните форму, и наш персональный специалист свяжется с вами в ближайшее время.",
                     form_name: "Ваше имя",
@@ -1692,10 +1685,10 @@
                     hero_title: "Преміальний автоконсьєрж <br><span>у Швейцарії</span>",
                     hero_desc: "Повний комплекс послуг: експертний підбір, детальна діагностика, продаж та повний юридичний супровід. Бездоганний сервіс та абсолютна конфіденційність.",
                     hero_btn: "Почати підбір",
-                    about_main_title: "Про компанію",
+                    about_main_title: "Чому обирають нас",
                     about_main_subtitle: "Ексклюзивний підхід до кожного клієнта",
                     about_quote: "«Ми формуємо високі стандарти бездоганного сервісу та виняткової якості у сфері автоконсьєржу».",
-                    about_text_1: "Наша філософія базується на трьох незмінних принципах: бездоганна ділова репутація, експертний підхід та абсолютна конфіденційність. Ми об'єднуємо глибоку аналітику ринку та сучасні технології для реалізації завдань будь-якої складності.",
+                    about_text_1: "Ми економимо ваш час, позбавляємо від зайвої бюрократії та допомагаємо вирішувати автомобільні питання швидко і без зайвих клопотів. Ви отримуєте одного надійного партнера, який знає, як організувати весь процес у Швейцарії.",
                     about_text_2: "Комплексний супровід угод — від експертного пошуку автомобіля у Швейцарії та країнах ЄС до отримання ключів, проходження техогляду MFK, оформлення страхування та офіційної реєстрації.",
                     calc_main_title: "Калькулятор послуг",
                     calc_main_subtitle: "Сформуйте індивідуальний пакет необхідних послуг для вашого автомобіля",
@@ -1715,7 +1708,7 @@
                     srv7_title: "Створення продаючого оголошення",
                     srv7_desc: "Чіпляючий опис, чесні переваги та оформлення для майданчиків.",
                     srv8_title: "Допомога в продажу автомобіля",
-                    srv8_desc: "Консультації, підготовка оголошення, рекомендації щодо ціни та супровід угоди.",
+                    srv8_desc: "Все необхідне для швидкого та вигідного продажу: професійна фотозйомка, підготовка оголошення, оцінка вартості, публікація та супровід угоди.",
                     srv9_title: "Консультації та експертне порівняння",
                     srv9_desc: "Розбір варіантів за надійністю, обслуговуванням, слабкими місцями та вашими завданнями.",
                     srv10_title: "Супровід при реєстрації",
@@ -1906,12 +1899,12 @@
                 "Individuelles Setup",
                 "Auto-Kauf komplett (Rundum-Sorglos)",
                 "Fahrzeugcheck & Live-Inspektion",
+                "Verkaufs-Support",
                 "Preisverhandlung mit Verkäufer",
                 "Versicherungs-Setup",
                 "Aufbereitung für Verkauf",
                 "Profi-Autofotoshooting",
                 "Erstellung Inserat",
-                "Verkaufs-Support",
                 "Experten-Beratung & Vergleich",
                 "Zulassungs-Service",
                 "MFK-Prüfungshilfe",
@@ -1940,10 +1933,6 @@
 
                     // 2. Валидация выпадающего списка
                     const selectedService = document.getElementById('modalServiceInput').value;
-                    if (!validServices.includes(selectedService)) {
-                        alert("Manipulated data detected. Please select a valid service.");
-                        return;
-                    }
 
                     const submitBtn = document.getElementById('submitBtn');
                     const originalText = submitBtn.textContent;

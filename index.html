@@ -295,8 +295,21 @@
             border-radius: 0;
             padding: 0;
             text-align: left;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 700px;
+        }
+
+        .about-text-content blockquote {
+            font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            line-height: 1.4;
+        }
+
+        .about-text-content blockquote span {
+            color: var(--accent);
         }
 
         .about-text-content p {
@@ -304,7 +317,6 @@
             font-size: clamp(1rem, 2vw, 1.1rem);
             line-height: 1.8;
             margin-bottom: 24px;
-            text-align: center;
         }
 
         /* Calculator Section */
@@ -930,8 +942,14 @@
             <h2 class="section-title" style="text-align: left;" data-i18n="about_main_title">Warum wir?</h2>
             <p class="section-subtitle" style="text-align: left;" data-i18n="about_main_subtitle">Premium-Ansatz für jeden Deal</p>
             <div class="about-text-content">
+                <blockquote data-i18n="about_quote">
+                    «Wir liefern nicht nur Standard — wir setzen neue Maßstäbe für kompromisslose <span>Exzellenz</span> im Autohandel.»
+                </blockquote>
                 <p data-i18n="about_text_1">
                     Wir sparen Ihre Zeit, befreien Sie von unnötiger Bürokratie und helfen, automobile Fragen schnell und unkompliziert zu lösen. Sie erhalten einen zuverlässigen Partner, der weiß, wie der gesamte Prozess in der Schweiz organisiert wird.
+                </p>
+                <p data-i18n="about_text_2">
+                    Vollständiger Support von A bis Z — von der Suche in der Schweiz oder EU über den MFK-Check, die passende Versicherung bis hin zur Zulassung auf deinen Namen.
                 </p>
             </div>
         </div>
@@ -1012,7 +1030,8 @@
                         </div>
                     </div>
 
-                    <!-- СКРЫТЫЕ КАРТОЧКИ (в том числе страховка) -->
+                    <!-- Скрытые карточки (начинаются отсюда) -->
+                    <!-- 5. Подбор страховки (СКРЫТО) -->
                     <div class="calc-card hidden-service" data-price="200" data-name-de="Versicherungs-Setup" data-name-ru="Подбор выгодной страховки" data-name-ukr="Підбір вигідної страховки">
                         <div>
                             <div class="calc-card-header">
@@ -1886,7 +1905,7 @@
             // Список разрешенных услуг
             const validServices = [
                 "Individuelles Setup",
-                "Auto-Kauf komplett (Rundum-Sorglos)",
+                "Auto-Kauf komplett",
                 "Verkaufs-Support",
                 "Fahrzeugcheck & Live-Inspektion",
                 "Preisverhandlung mit Verkäufer",

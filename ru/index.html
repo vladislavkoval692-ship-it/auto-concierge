@@ -67,6 +67,36 @@
     }
     </script>
 
+    <!-- SEO: FAQ Schema для захвата поисковой выдачи Google (Русский) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Могу ли я как иностранец купить машину в Швейцарии?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, иностранцы с действующим видом на жительство (пермит B, C или L) могут без проблем покупать и ставить на учет автомобили в Швейцарии. Мы берем на себя всю бюрократию."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Что включает в себя услуга автоконсьержа?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Наш сервис «под ключ» включает в себя поиск автомобиля, выездную техническую проверку, переговоры о цене, оформление страховки, помощь с MFK и регистрацию. Вы получаете готовый автомобиль."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Как проходит MFK (техосмотр в Швейцарии)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Мы полностью подготавливаем автомобиль, устраняем выявленные недостатки и сопровождаем процесс проверки в дорожном ведомстве, чтобы машина гарантированно прошла MFK с первого раза."
+        }
+      }]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -1007,7 +1037,7 @@
                 <p class="section-subtitle" style="text-align: left;" data-i18n="about_main_subtitle">Premium-Ansatz für jeden Deal</p>
                 <div class="about-text-content">
                     <blockquote data-i18n="about_quote">
-                        «Wir liefern nicht nur Standard — wir setzen neue Maßstäbe für kompromisslose <span>Exzellenz</span> im Autohandel.»
+                        «Мы формируем высокие стандарты безупречного сервиса и исключительного качества в сфере автоконсьержа.»
                     </blockquote>
                     <p data-i18n="about_text_1">
                         Wir sparen Ihre Zeit, befreien Sie von unnötiger Bürokratie und helfen, automobile Fragen schnell und unkompliziert zu lösen. Sie erhalten einen zuverlässigen Partner, der weiß, wie der gesamte Prozess in der Schweiz organisiert wird.
@@ -1203,7 +1233,7 @@
                             </div>
                         </div>
 
-                        <div class="calc-card hidden-service" data-price="100" data-name-de="Post-Purchase Support" data-name-ru="Поддержка после покупки" data-name-ukr="Підтримка після покупки" role="button" aria-pressed="false" tabindex="0">
+                        <div class="calc-card hidden-service" data-price="100" data-name-de="Post-Purchase Support" data-name-ru="Поддержка после покупки" data-name-ukr="Підтримка после покупки" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
                                     <h3 data-i18n="srv13_title">Post-Purchase Support</h3>
@@ -1822,7 +1852,7 @@
                     d12_title: "Доставка та підтримка",
                     d12_desc: "Організація доставки або перегону авто з іншого кантону + післяпродажні консультації з обслуговування.",
                     cantons_title: "Регіони та кантони",
-                    cantons_subtitle: "Оперативна робота по всій території Швейцарії: Цюрих, Берн, Женева та інші регіони",
+                    cantons_subtitle: "Оперативная робота по всій території Швейцарії: Цюрих, Берн, Женева та інші регіони",
                     c_zh: "Фінансовий та діловий центр.",
                     c_be: "Федеральна столиця.",
                     c_vd: "Кантон на Женевському озері.",
@@ -2019,7 +2049,7 @@
                     formData.append('phone', sanitizeInput(document.getElementById('userPhone').value));
                     formData.append('email', sanitizeInput(document.getElementById('userEmail').value));
                     formData.append('service', selectedService);
-                    formData.append('source', 'swisscars_web_2026_seo_ru'); 
+                    formData.append('source', 'swisscars_web_2026_seo_ru_faq'); 
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbyZp71TKlrcZduSfBQ25LTWxTtgoXwRhMAM_IEBLHESzmCxlljMm8L7h4SpQt_-7FiD/exec';
 

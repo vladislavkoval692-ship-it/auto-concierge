@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
+    <!-- Политика безопасности контента (CSP) для защиты от XSS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://script.google.com; img-src 'self' data:;">
+    
     <title data-i18n="meta_title">Autoconcierge-Service in der Schweiz — Premium Fahrzeugkauf, Verkauf & Rundum-Betreuung</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -1031,7 +1034,7 @@
                         </div>
                     </div>
 
-                    <!-- СКРЫТЫЕ КАРТОЧКИ (в том числе страховка) -->
+                    <!-- СКРЫТЫЕ КАРТОЧКИ -->
                     <div class="calc-card hidden-service" data-price="200" data-name-de="Versicherungs-Setup" data-name-ru="Подбор выгодной страховки" data-name-ukr="Підбір вигідної страховки">
                         <div>
                             <div class="calc-card-header">
@@ -1122,10 +1125,11 @@
                                 <h3 data-i18n="srv11_title">MFK-Prüfungshilfe</h3>
                                 <div class="calc-checkbox"></div>
                             </div>
-                            <p data-i18n="srv11_desc">Vor-Check, Behebung von Mängeln & Begleitung bei der Motorfahrzeugkontrolle (ab 300 CHF je nach Zustand).</p>
+                            <p data-i18n="srv11_desc">Vor-Check, Behebung von Mängeln & Begleitung bei der Motorfahrzeugkontrolle.</p>
                         </div>
                         <div class="calc-card-footer">
                             <span data-i18n="srv_cost">Kosten:</span>
+                            <!-- ЗДЕСЬ УБРАНО СЛОВО "ab" -->
                             <span class="calc-price">CHF 300</span>
                         </div>
                     </div>
@@ -1342,7 +1346,8 @@
                 </div>
                 <div class="form-group">
                     <label data-i18n="form_phone">Telefon / WhatsApp</label>
-                    <input type="text" id="userPhone" class="form-control" required placeholder="+41 ...">
+                    <!-- Базовая валидация для номера телефона (только цифры, пробелы, +, -, ()) -->
+                    <input type="text" id="userPhone" class="form-control" required placeholder="+41 ..." pattern="^[0-9+\-\s()]*$">
                 </div>
                 <div class="form-group">
                     <label data-i18n="form_email">E-Mail-Adresse</label>
@@ -1516,7 +1521,7 @@
                     srv10_title: "Zulassungs-Service",
                     srv10_desc: "Versicherung, Papieranalyse und reibungslose Nummernschilder-Beschaffung in der Schweiz.",
                     srv11_title: "MFK-Prüfungshilfe",
-                    srv11_desc: "Vor-Check, Behebung von Mängeln & Begleitung bei der Motorfahrzeugkontrolle (ab 300 CHF je nach Zustand).",
+                    srv11_desc: "Vor-Check, Behebung von Mängeln & Begleitung bei der Motorfahrzeugkontrolle.",
                     srv12_title: "Fahrzeugtransport",
                     srv12_desc: "Organisation des Transports oder der Überführung aus einem anderen Kanton oder Gebiet.",
                     srv13_title: "Post-Purchase Support",
@@ -1619,7 +1624,7 @@
                     srv10_title: "Сопровождение при регистрации",
                     srv10_desc: "Страховка, помощь с документами и получением номерных знаков в Швейцарии.",
                     srv11_title: "Помощь с техосмотром MFK",
-                    srv11_desc: "Предварительная оценка, устранение недочетов и сопровождение процесса (от 300 CHF в зависимости от состояния авто).",
+                    srv11_desc: "Предварительная оценка, устранение недочетов и сопровождение процесса.",
                     srv12_title: "Доставка и перегон автомобиля",
                     srv12_desc: "Организация доставки или перегона из другого города или кантона (расчет индивидуально).",
                     srv13_title: "Поддержка после покупки",
@@ -1722,7 +1727,7 @@
                     srv10_title: "Супровід при реєстрації",
                     srv10_desc: "Страховка, допомога з документами та отриманням номерних знаків у Швейцарії.",
                     srv11_title: "Допомога з техоглядом MFK",
-                    srv11_desc: "Попередня оцінка, усунення недоліків та супровід процесу (від 300 CHF залежно від стану авто).",
+                    srv11_desc: "Попередня оцінка, усунення недоліків та супровід процесу.",
                     srv12_title: "Доставка та перегін автомобіля",
                     srv12_desc: "Організація доставки або перегону з іншого міста чи кантону (розрахунок індивідуально).",
                     srv13_title: "Підтримка після покупки",
@@ -1772,7 +1777,7 @@
                     c_so: "Історичний кантон.",
                     c_ti: "Сонячний регіон.",
                     c_bl: "Вузол на кордоні з ЄС.",
-                    c_vs: "Курортный регіон.",
+                    c_vs: "Курортний регіон.",
                     c_fr: "Двомовний регіон.",
                     c_tg: "Кантон на північному сході.",
                     c_bs: "Столиця інновацій.",
@@ -1899,28 +1904,13 @@
                 });
             }
 
-            // БЕЗОПАСНАЯ ОТПРАВКА ФОРМЫ (ЗАЩИТА ОТ СПАМА, ИНЪЕКЦИЙ И БОТОВ)
+            // БЕЗОПАСНАЯ ОТПРАВКА ФОРМЫ (ЗАЩИТА ОТ СПАМА И ИНЪЕКЦИЙ)
             const orderForm = document.getElementById('orderForm');
             
-            // Список разрешенных услуг
-            const validServices = [
-                "Individuelles Setup",
-                "Auto-Kauf komplett",
-                "Verkaufs-Support",
-                "Fahrzeugcheck & Live-Inspektion",
-                "Preisverhandlung mit Verkäufer",
-                "Versicherungs-Setup",
-                "Aufbereitung für Verkauf",
-                "Profi-Autofotoshooting",
-                "Erstellung Inserat",
-                "Experten-Beratung & Vergleich",
-                "Zulassungs-Service",
-                "MFK-Prüfungshilfe",
-                "Fahrzeugtransport",
-                "Post-Purchase Support"
-            ];
+            // Защита: ограничение частоты отправок на клиенте (Rate Limiting)
+            let isSubmitting = false;
 
-            // Функция санитизации данных (предотвращает Formula Injection)
+            // Функция санитизации данных (предотвращает Formula Injection в Google Sheets)
             const sanitizeInput = (str) => {
                 const trimmed = str.trim();
                 return /^[=+\-@]/.test(trimmed) ? "'" + trimmed : trimmed;
@@ -1929,6 +1919,15 @@
             if (orderForm) {
                 orderForm.addEventListener('submit', (e) => {
                     e.preventDefault();
+
+                    // Блокировка повторной отправки
+                    if (isSubmitting) return;
+                    
+                    const lastSubmitTime = localStorage.getItem('lastSubmitTime');
+                    if (lastSubmitTime && (Date.now() - lastSubmitTime < 60000)) {
+                        alert(currentLang === 'de' ? 'Bitte warten Sie eine Minute vor der nächsten Anfrage.' : (currentLang === 'ukr' ? 'Будь ласка, зачекайте хвилину перед наступним запитом.' : 'Пожалуйста, подождите минуту перед следующей отправкой.'));
+                        return;
+                    }
                     
                     // 1. Проверка Honeypot (ловушки для ботов)
                     const honeyTrap = document.getElementById('honeyField').value;
@@ -1936,26 +1935,25 @@
                         console.warn("Bot submission detected.");
                         orderForm.reset();
                         document.getElementById('orderModal').classList.remove('active');
-                        return; // Блокируем отправку
+                        return; // Тихая блокировка
                     }
 
-                    // 2. Валидация выпадающего списка
+                    // 2. Сбор данных
                     const selectedService = document.getElementById('modalServiceInput').value;
-
                     const submitBtn = document.getElementById('submitBtn');
                     const originalText = submitBtn.textContent;
+
+                    isSubmitting = true;
                     submitBtn.textContent = currentLang === 'de' ? 'Senden...' : (currentLang === 'ukr' ? 'Надсилання...' : 'Отправка...');
                     submitBtn.setAttribute('disabled', 'true');
 
-                    // 3. Используем URLSearchParams для корректной работы с no-cors
+                    // 3. Формирование безопасного запроса
                     const formData = new URLSearchParams();
                     formData.append('name', sanitizeInput(document.getElementById('userName').value));
                     formData.append('phone', sanitizeInput(document.getElementById('userPhone').value));
                     formData.append('email', sanitizeInput(document.getElementById('userEmail').value));
                     formData.append('service', selectedService);
-                    
-                    // Токен безопасности для сервера
-                    formData.append('source', 'swisscars_web_2026'); 
+                    formData.append('source', 'swisscars_web_2026'); // Токен источника
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbyZp71TKlrcZduSfBQ25LTWxTtgoXwRhMAM_IEBLHESzmCxlljMm8L7h4SpQt_-7FiD/exec';
 
@@ -1968,16 +1966,17 @@
                         body: formData.toString()
                     })
                     .then(() => {
-                        // Поскольку no-cors всегда возвращает opaque response, успех гарантирован только если нет ошибок сети
+                        localStorage.setItem('lastSubmitTime', Date.now()); // Запись времени последней отправки
                         alert(currentLang === 'de' ? 'Anfrage erfolgreich gesendet! Wir melden uns in Kürze.' : (currentLang === 'ukr' ? 'Заявку успішно надіслано! Ми зв\'яжемося з вами найближчим часом.' : 'Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.'));
                         orderForm.reset();
-                        modal.classList.remove('active');
+                        document.getElementById('orderModal').classList.remove('active');
                     })
                     .catch(error => {
                         console.error('Network Error:', error);
                         alert(currentLang === 'de' ? 'Fehler beim Senden. Bitte schreibe uns auf WhatsApp.' : (currentLang === 'ukr' ? 'Сталася помилка під час надсилання. Будь ласка, напишіть нам у WhatsApp.' : 'Произошла ошибка при отправке. Пожалуйста, напишите нам в WhatsApp.'));
                     })
                     .finally(() => {
+                        isSubmitting = false;
                         submitBtn.textContent = originalText;
                         submitBtn.removeAttribute('disabled');
                     });

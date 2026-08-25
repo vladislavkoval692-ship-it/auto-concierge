@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- SEO: Schema.org (JSON-LD) Microdata -->
+    <!-- SEO: Schema.org (JSON-LD) AutomotiveBusiness -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -64,6 +64,36 @@
       "sameAs": [
         "https://swisscars-concierge.ch/"
       ]
+    }
+    </script>
+
+    <!-- SEO: FAQ Schema для захвата поисковой выдачи Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Kann ich als Ausländer in der Schweiz ein Auto kaufen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, Ausländer mit einem gültigen Aufenthaltsausweis (B, C oder L) können in der Schweiz problemlos ein Auto kaufen und einlösen. Wir übernehmen die komplette Bürokratie für Sie."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Was beinhaltet der Autoconcierge-Service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unser Full-Service umfasst die Fahrzeugsuche, Vor-Ort-Inspektion, Preisverhandlung, Versicherungsabwicklung, MFK-Prüfung und die Zulassung. Sie erhalten das fertige Auto schlüsselfertig."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Wie läuft die MFK (Motorfahrzeugkontrolle) ab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wir bereiten das Fahrzeug komplett vor, beheben Mängel und begleiten die Prüfung beim Strassenverkehrsamt, damit das Auto die MFK beim ersten Mal besteht."
+        }
+      }]
     }
     </script>
 
@@ -1125,7 +1155,7 @@
                                     <h3 data-i18n="srv6_title">Profi-Autofotoshooting</h3>
                                     <div class="calc-checkbox" aria-hidden="true"></div>
                                 </div>
-                                <p data-i18n="srv6_desc">Hochwertige Aufnahmen von Exterieur, Interieur, Motorraum und allen важных деталей.</p>
+                                <p data-i18n="srv6_desc">Hochwertige Aufnahmen von Exterieur, Interieur, Motorraum und allen wichtigen Details.</p>
                             </div>
                             <div class="calc-card-footer">
                                 <span data-i18n="srv_cost">Kosten:</span>
@@ -1716,7 +1746,7 @@
                     d11_title: "Помощь с MFK",
                     d11_desc: "Предварительная оценка состояния, устранение недочетов и сопровождение процесса прохождения техосмотра.",
                     d12_title: "Доставка и поддержка",
-                    d12_desc: "Организация доставки или перегона авто из другого кантона + постпродажные консультации по обслуживанию.",
+                    d12_desc: "Организация доставки или перегона авто из другого кантону + постпродажные консультации по обслуживанию.",
                     cantons_title: "Регионы и кантоны",
                     cantons_subtitle: "Оперативная работа по всей территории Швейцарии: Цюрих, Берн, Женева и другие регионы",
                     c_zh: "Финансовый и деловой центр.",
@@ -1821,7 +1851,7 @@
                     d12_title: "Доставка та підтримка",
                     d12_desc: "Організація доставки або перегону авто з іншого кантону + післяпродажні консультації з обслуговування.",
                     cantons_title: "Регіони та кантони",
-                    cantons_subtitle: "Оперативная робота по всій території Швейцарії: Цюрих, Берн, Женева та інші регіони",
+                    cantons_subtitle: "Оперативна робота по всій території Швейцарії: Цюрих, Берн, Женева та інші регіони",
                     c_zh: "Фінансовий та діловий центр.",
                     c_be: "Федеральна столиця.",
                     c_vd: "Кантон на Женевському озері.",
@@ -1873,9 +1903,17 @@
             langOptions.forEach(option => {
                 option.addEventListener('click', () => {
                     const lang = option.getAttribute('data-lang');
-                    currentLang = lang;
                     localStorage.setItem('swisscars_lang', lang);
-                    setLanguage(lang);
+                    
+                    // SEO Переадресация на физические папки
+                    if (lang === 'de') {
+                        window.location.href = '/';
+                    } else if (lang === 'ru') {
+                        window.location.href = '/ru/';
+                    } else if (lang === 'ukr') {
+                        window.location.href = '/ukr/';
+                    }
+                    
                     switcher.classList.remove('active');
                 });
             });

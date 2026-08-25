@@ -67,6 +67,36 @@
     }
     </script>
 
+    <!-- SEO: FAQ Schema для захвата поисковой выдачи Google (Украинский) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Чи можу я як іноземець купити авто в Швейцарії?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Так, іноземці з дійсним дозволом на проживання (перміт B, C або L) можуть без проблем купувати та ставити на облік автомобілі в Швейцарії. Ми беремо на себе всю бюрократію."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Що включає послуга автоконсьєржа?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Наш сервіс «під ключ» включає пошук автомобіля, виїзну технічну перевірку, переговори щодо ціни, оформлення страховки, допомогу з MFK та реєстрацію. Ви отримуєте готовий автомобіль."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Як проходить MFK (техогляд у Швейцарії)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ми повністю готуємо автомобіль, усуваємо виявлені недоліки та супроводжуємо процес перевірки в дорожньому відомстві, щоб машина гарантовано пройшла MFK з першого разу."
+        }
+      }]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -1007,7 +1037,7 @@
                 <p class="section-subtitle" style="text-align: left;" data-i18n="about_main_subtitle">Premium-Ansatz für jeden Deal</p>
                 <div class="about-text-content">
                     <blockquote data-i18n="about_quote">
-                        «Wir liefern nicht nur Standard — wir setzen neue Maßstäbe für kompromisslose <span>Exzellenz</span> im Autohandel.»
+                        «Ми формуємо високі стандарти бездоганного сервісу та виняткової якості у сфері автоконсьєржу.»
                     </blockquote>
                     <p data-i18n="about_text_1">
                         Wir sparen Ihre Zeit, befreien Sie von unnötiger Bürokratie und helfen, automobile Fragen schnell und unkompliziert zu lösen. Sie erhalten einen zuverlässigen Partner, der weiß, wie der gesamte Prozess in der Schweiz organisiert wird.
@@ -1824,7 +1854,7 @@
                     cantons_title: "Регіони та кантони",
                     cantons_subtitle: "Оперативна робота по всій території Швейцарії: Цюрих, Берн, Женева та інші регіони",
                     c_zh: "Фінансовий та діловий центр.",
-                    c_be: "Федеральна столица.",
+                    c_be: "Федеральна столиця.",
                     c_vd: "Кантон на Женевському озері.",
                     c_ag: "Торговий вузол країни.",
                     c_sg: "Центр східної частини.",
@@ -2019,7 +2049,7 @@
                     formData.append('phone', sanitizeInput(document.getElementById('userPhone').value));
                     formData.append('email', sanitizeInput(document.getElementById('userEmail').value));
                     formData.append('service', selectedService);
-                    formData.append('source', 'swisscars_web_2026_seo_ukr'); 
+                    formData.append('source', 'swisscars_web_2026_seo_ukr_faq'); 
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbyZp71TKlrcZduSfBQ25LTWxTtgoXwRhMAM_IEBLHESzmCxlljMm8L7h4SpQt_-7FiD/exec';
 

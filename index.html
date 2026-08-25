@@ -4,11 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
-    <!-- Политика безопасности контента (CSP) для защиты от XSS -->
+    
+    <!-- SEO: Основные мета-теги -->
+    <title data-i18n="meta_title">Autoconcierge-Service in der Schweiz — Premium Fahrzeugkauf, Verkauf & Rundum-Betreuung</title>
+    <meta name="description" content="Premium Autoconcierge in der Schweiz. Full-Service beim Autokauf, Fahrzeugcheck (MFK), Verkauf und der gesamten Bürokratie. Stressfrei und transparent.">
+    <meta name="keywords" content="Autoconcierge Schweiz, Auto kaufen Schweiz, MFK-Prüfungshilfe, Autoinspektion, Autoexport, Autoverkauf Support">
+    <meta name="author" content="SWISS CARS">
+    <meta name="robots" content="index, follow">
+    
+    <!-- SEO: Каноническая ссылка -->
+    <link rel="canonical" href="https://swisscars-concierge.ch/">
+    
+    <!-- SEO: Мультиязычность (hreflang) -->
+    <link rel="alternate" hreflang="de-CH" href="https://swisscars-concierge.ch/" />
+    <link rel="alternate" hreflang="x-default" href="https://swisscars-concierge.ch/" />
+
+    <!-- SEO: Open Graph (Facebook, Telegram, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swisscars-concierge.ch/">
+    <meta property="og:title" content="Dein Premium Autoconcierge in der Schweiz">
+    <meta property="og:description" content="Voller Service beim Autokauf, Check, Verkauf und Bürokratie. Wir sparen deine Zeit und übernehmen die komplette Abwicklung.">
+    <meta property="og:image" content="https://swisscars-concierge.ch/og-image.jpg">
+    <meta property="og:site_name" content="SWISS CARS Concierge">
+
+    <!-- SEO: Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://swisscars-concierge.ch/">
+    <meta name="twitter:title" content="Dein Premium Autoconcierge in der Schweiz">
+    <meta name="twitter:description" content="Voller Service beim Autokauf, Check, Verkauf und Bürokratie. Wir sparen deine Zeit.">
+    <meta name="twitter:image" content="https://swisscars-concierge.ch/og-image.jpg">
+
+    <!-- Политика безопасности контента (CSP) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://script.google.com; img-src 'self' data:;">
     
-    <title data-i18n="meta_title">Autoconcierge-Service in der Schweiz — Premium Fahrzeugkauf, Verkauf & Rundum-Betreuung</title>
+    <!-- SEO: Preconnect для ускорения загрузки -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- SEO: Schema.org (JSON-LD) Microdata -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutomotiveBusiness",
+      "name": "SWISS CARS",
+      "image": "https://swisscars-concierge.ch/og-image.jpg",
+      "@id": "https://swisscars-concierge.ch/",
+      "url": "https://swisscars-concierge.ch/",
+      "telephone": "+41764795820",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CH"
+      },
+      "areaServed": "Switzerland",
+      "description": "Premium Autoconcierge-Service in der Schweiz. Fahrzeugkauf, Verkauf, Inspektion und Zulassungsservice.",
+      "sameAs": [
+        "https://swisscars-concierge.ch/"
+      ]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -611,7 +667,7 @@
             line-height: 1.6;
         }
 
-        /* Cantons Section with Floating Cards */
+        /* Cantons Section */
         .cantons-section {
             position: relative;
             overflow: hidden;
@@ -880,7 +936,6 @@
             }
         }
 
-        /* HONEYPOT CSS: Скрываем ловушку от пользователя */
         .bot-trap {
             position: absolute;
             left: -9999px;
@@ -894,23 +949,25 @@
     <!-- Header -->
     <header>
         <div class="container header-content">
-            <a href="#" class="logo">SWISS<span>CARS</span></a>
-            <ul class="nav-links">
-                <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
-                <li><a href="#services" data-i18n="nav_services">Rechner</a></li>
-                <li><a href="#details" data-i18n="nav_details">Leistungen</a></li>
-            </ul>
+            <a href="#" class="logo" aria-label="Zurück zur Startseite">SWISS<span>CARS</span></a>
+            <nav aria-label="Hauptnavigation">
+                <ul class="nav-links">
+                    <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
+                    <li><a href="#services" data-i18n="nav_services">Rechner</a></li>
+                    <li><a href="#details" data-i18n="nav_details">Leistungen</a></li>
+                </ul>
+            </nav>
             <div class="header-right">
-                <a href="https://wa.me/41764795820?text=Hallo,%20ich%20interessiere%20mich%20für%20den%20Autoconcierge-Service%20in%20der%20Schweiz" target="_blank" class="btn btn-whatsapp" data-i18n="btn_whatsapp">WhatsApp</a>
-                <button class="btn open-modal-btn" data-i18n="btn_request">Anfrage</button>
+                <a href="https://wa.me/41764795820?text=Hallo,%20ich%20interessiere%20mich%20für%20den%20Autoconcierge-Service%20in%20der%20Schweiz" target="_blank" class="btn btn-whatsapp" data-i18n="btn_whatsapp" rel="noopener noreferrer">WhatsApp</a>
+                <button class="btn open-modal-btn" data-i18n="btn_request" aria-label="Anfrage Formular öffnen">Anfrage</button>
                 <div class="lang-switcher" id="headerLangSwitcher">
-                    <button class="lang-btn" id="headerLangBtn" aria-label="Language menu">
-                        <svg class="flag-icon" viewBox="0 0 640 480"><path fill="#ffce00" d="M0 320h640v160H0z"/><path d="M0 0h640v160H0z"/><path fill="#d00" d="M0 160h640v160H0z"/></svg>
+                    <button class="lang-btn" id="headerLangBtn" aria-label="Sprache wählen" aria-haspopup="true" aria-expanded="false">
+                        <svg class="flag-icon" viewBox="0 0 640 480" aria-hidden="true"><path fill="#ffce00" d="M0 320h640v160H0z"/><path d="M0 0h640v160H0z"/><path fill="#d00" d="M0 160h640v160H0z"/></svg>
                     </button>
-                    <div class="lang-dropdown">
-                        <button class="lang-option" data-lang="de">Deutsch</button>
-                        <button class="lang-option" data-lang="ru">Русский</button>
-                        <button class="lang-option" data-lang="ukr">Українська</button>
+                    <div class="lang-dropdown" role="menu">
+                        <button class="lang-option" data-lang="de" role="menuitem">Deutsch</button>
+                        <button class="lang-option" data-lang="ru" role="menuitem">Русский</button>
+                        <button class="lang-option" data-lang="ukr" role="menuitem">Українська</button>
                     </div>
                 </div>
             </div>
@@ -918,443 +975,439 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-video-container">
-            <video autoplay muted loop playsinline class="hero-video">
-                <source src="istockphoto-1304201114-640_adpp_is.mp4" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="container hero-content">
-            <h1 data-i18n="hero_title">Dein Autoconcierge <br><span>in der Schweiz</span></h1>
-            <p data-i18n="hero_desc">Voller Service beim Autokauf, Check, Verkauf und der gesamten Bürokratie. Smoothe Abwicklung, Null Stress und absolut transparent.</p>
-            <div class="hero-buttons">
-                <button class="btn open-modal-btn" style="padding: 14px 28px; font-size: 1rem;" data-i18n="hero_btn">Loslegen</button>
+    <main>
+        <section class="hero">
+            <div class="hero-video-container">
+                <video autoplay muted loop playsinline class="hero-video" aria-hidden="true" title="Hintergrundvideo Luxusautos Schweiz">
+                    <source src="istockphoto-1304201114-640_adpp_is.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="about-section">
-        <div class="about-video-container">
-            <video autoplay muted loop playsinline preload="auto" class="about-bg-video" id="aboutVideo">
-                <source src="158316-816359649.mp4" type="video/mp4">
-            </video>
-            <div class="about-overlay"></div>
-        </div>
-        <div class="container about-content-wrapper">
-            <h2 class="section-title" style="text-align: left;" data-i18n="about_main_title">Warum wir?</h2>
-            <p class="section-subtitle" style="text-align: left;" data-i18n="about_main_subtitle">Premium-Ansatz für jeden Deal</p>
-            <div class="about-text-content">
-                <blockquote data-i18n="about_quote">
-                    «Wir liefern nicht nur Standard — wir setzen neue Maßstäbe für kompromisslose <span>Exzellenz</span> im Autohandel.»
-                </blockquote>
-                <p data-i18n="about_text_1">
-                    Wir sparen Ihre Zeit, befreien Sie von unnötiger Bürokratie und helfen, automobile Fragen schnell und unkompliziert zu lösen. Sie erhalten einen zuverlässigen Partner, der weiß, wie der gesamte Prozess in der Schweiz organisiert wird.
-                </p>
-                <p data-i18n="about_text_2">
-                    Vollständiger Support von A bis Z — von der Suche in der Schweiz oder EU über den MFK-Check, die passende Versicherung bis hin zur Zulassung auf deinen Namen.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Calculator Section -->
-    <section id="services" class="services-section">
-        <div class="services-video-container">
-            <video autoplay muted loop playsinline preload="auto" class="services-bg-video">
-                <source src="158316-816359649.mp4" type="video/mp4">
-            </video>
-            <div class="services-overlay"></div>
-        </div>
-        <div class="container services-content-wrapper">
-            <h2 class="section-title" data-i18n="calc_main_title">Preis-Kalkulator</h2>
-            <p class="section-subtitle" data-i18n="calc_main_subtitle">Stelle dir deine Wunsch-Leistungen für die Schweiz & EU zusammen</p>
-            
-            <div class="calc-layout">
-                <div class="calc-services-grid" id="calcServicesGrid">
-                    
-                    <!-- 1. Покупка под ключ -->
-                    <div class="calc-card" data-price="950" data-name-de="Auto-Kauf komplett" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv1_title">Auto-Kauf komplett</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv1_desc">Full-Service: Wir finden deinen Traumwagen passend zu Budget & Wünschen, checken die Lage und regeln die gesamte Bürokratie inklusive Versicherung.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price">CHF 950</span>
-                        </div>
-                    </div>
-
-                    <!-- 2. Помощь в продаже автомобиля -->
-                    <div class="calc-card" data-price="400" data-name-de="Verkaufs-Support" data-name-ru="Помощь в продаже автомобиля" data-name-ukr="Допомога в продажу автомобіля">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv8_title">Verkaufs-Support</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv8_desc">Alles, was für einen schnellen und profitablen Verkauf erforderlich ist: professionelles Fotoshooting, Vorbereitung der Anzeige, Preisschätzung, Veröffentlichung und Transaktionsbegleitung.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price">CHF 400</span>
-                        </div>
-                    </div>
-
-                    <!-- 3. Проверка и осмотр -->
-                    <div class="calc-card" data-price="250" data-name-de="Fahrzeugcheck & Live-Inspektion" data-name-ru="Проверка и личный осмотр автомобиля" data-name-ukr="Перевірка та особистий огляд автомобіля">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv2_title">Fahrzeugcheck & Live-Inspektion</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv2_desc">Hintergrund-Check, Inserat-Analyse & verdeckte Mängel + Vor-Ort-Check von Karosserie, Interieur, Motor & Fahrwerk mit Fotoreport.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price">CHF 250</span>
-                        </div>
-                    </div>
-
-                    <!-- 4. Переговоры с продавцом -->
-                    <div class="calc-card" data-price="70" data-name-de="Preisverhandlung mit Verkäufer" data-name-ru="Переговоры с продавцом и торг" data-name-ukr="Переговори з продавцем та торг">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv3_title">Preisverhandlung mit Verkäufer</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv3_desc">Wir stellen die richtigen Fragen, klären die Historie und holen den besten Deal für dich raus.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price">CHF 70</span>
-                        </div>
-                    </div>
-
-                    <!-- СКРЫТЫЕ КАРТОЧКИ -->
-                    <div class="calc-card hidden-service" data-price="200" data-name-de="Versicherungs-Setup" data-name-ru="Подбор выгодной страховки" data-name-ukr="Підбір вигідної страховки">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv4_title">Versicherungs-Setup</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv4_desc">Optimale Police mit Top-Abdeckung und bestem Preis-Leistungs-Verhältnis sichern.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price">CHF 200</span>
-                        </div>
-                    </div>
-
-                    <div class="calc-card hidden-service" data-price="450" data-name-de="Aufbereitung für Verkauf" data-name-ru="Подготовка к продаже" data-name-ukr="Підготовка до продажу">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv5_title">Aufbereitung für Verkauf</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv5_desc">Intensivwäsche, Politur & Profi-Innenreinigung für maximalen Wiederverkaufswert (je nach Aufwand).</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price">~ CHF 450</span>
-                        </div>
-                    </div>
-
-                    <div class="calc-card hidden-service" data-price="100" data-name-de="Profi-Autofotoshooting" data-name-ru="Профессиональная фотосъемка" data-name-ukr="Професійна фотозйомка">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv6_title">Profi-Autofotoshooting</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv6_desc">Hochwertige Aufnahmen von Exterieur, Interieur, Motorraum und allen wichtigen Details.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price">CHF 100</span>
-                        </div>
-                    </div>
-
-                    <div class="calc-card hidden-service" data-price="50" data-name-de="Erstellung Inserat" data-name-ru="Создание продающего объявления" data-name-ukr="Створення продаючого оголошення">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv7_title">Erstellung Inserat</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv7_desc">Auffällige Beschreibung, ehrliche Vorteile und perfektes Setup für die Verkaufsplattformen.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price">CHF 50</span>
-                        </div>
-                    </div>
-
-                    <div class="calc-card hidden-service" data-price="200" data-name-de="Experten-Beratung & Vergleich" data-name-ru="Консультации и экспертное сравнение" data-name-ukr="Консультації та експертне порівняння">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv9_title">Experten-Beratung & Vergleich</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv9_desc">Deep-Dive in Sachen Zuverlässigkeit, Unterhalt, Schwachstellen und deine persönlichen Anforderungen.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price">CHF 200</span>
-                        </div>
-                    </div>
-
-                    <div class="calc-card hidden-service" data-price="150" data-name-de="Zulassungs-Service" data-name-ru="Сопровождение при регистрации" data-name-ukr="Супровід при реєстрації">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv10_title">Zulassungs-Service</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv10_desc">Versicherung, Papieranalyse und reibungslose Nummernschilder-Beschaffung in der Schweiz.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price">CHF 150</span>
-                        </div>
-                    </div>
-
-                    <div class="calc-card hidden-service" data-price="300" data-name-de="MFK-Prüfungshilfe" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv11_title">MFK-Prüfungshilfe</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv11_desc">Vor-Check, Behebung von Mängeln & Begleitung bei der Motorfahrzeugkontrolle.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <!-- ЗДЕСЬ УБРАНО СЛОВО "ab" -->
-                            <span class="calc-price">CHF 300</span>
-                        </div>
-                    </div>
-
-                    <div class="calc-card hidden-service" data-price="0" data-name-de="Fahrzeugtransport" data-name-ru="Доставка и перегон автомобиля" data-name-ukr="Доставка та перегін автомобіля">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv12_title">Fahrzeugtransport</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv12_desc">Organisation des Transports oder der Überführung aus einem anderen Kanton oder Gebiet.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price" data-i18n="srv_indiv">Auf Anfrage</span>
-                        </div>
-                    </div>
-
-                    <div class="calc-card hidden-service" data-price="100" data-name-de="Post-Purchase Support" data-name-ru="Поддержка после покупки" data-name-ukr="Підтримка після покупки">
-                        <div>
-                            <div class="calc-card-header">
-                                <h3 data-i18n="srv13_title">Post-Purchase Support</h3>
-                                <div class="calc-checkbox"></div>
-                            </div>
-                            <p data-i18n="srv13_desc">Tipps zum Unterhalt, Werkstatt-Empfehlungen und Support für zukünftige Reparaturen.</p>
-                        </div>
-                        <div class="calc-card-footer">
-                            <span data-i18n="srv_cost">Kosten:</span>
-                            <span class="calc-price">CHF 100</span>
-                        </div>
-                    </div>
-
-                    <!-- Кнопка развернуть/свернуть -->
-                    <div class="calc-toggle-container">
-                        <button type="button" class="btn" id="toggleServicesBtn" data-i18n="btn_more_services" style="padding: 12px 30px;">Alle Leistungen anzeigen</button>
-                    </div>
-                </div>
-
-                <!-- Summary Sidebar -->
-                <div class="calc-summary">
-                    <h3 data-i18n="calc_summary_title">Deine Auswahl</h3>
-                    <div id="summaryItemsContainer">
-                        <p class="summary-empty" data-i18n="calc_empty">Wähle links eine oder mehrere Optionen aus</p>
-                    </div>
-                    <ul class="summary-items-list" id="summaryList" style="display: none;"></ul>
-                    
-                    <div class="summary-total">
-                        <span data-i18n="calc_total">Total:</span>
-                        <span class="summary-total-price" id="calcTotalPrice">CHF 0</span>
-                    </div>
-
-                    <div class="summary-actions">
-                        <button class="btn open-modal-btn" id="calcOrderBtn" data-i18n="calc_btn_order" disabled>Auswahl anfragen</button>
-                        <a href="https://wa.me/41764795820?text=Hallo,%20ich%20habe%20eine%20Kalkulation%20auf%20der%20Website%20erstellt" target="_blank" class="btn btn-whatsapp" data-i18n="calc_btn_wa">Via WhatsApp besprechen</a>
-                    </div>
+            <div class="container hero-content">
+                <h1 data-i18n="hero_title">Dein Autoconcierge <br><span>in der Schweiz</span></h1>
+                <p data-i18n="hero_desc">Voller Service beim Autokauf, Check, Verkauf und der gesamten Bürokratie. Smoothe Abwicklung, Null Stress und absolut transparent.</p>
+                <div class="hero-buttons">
+                    <button class="btn open-modal-btn" style="padding: 14px 28px; font-size: 1rem;" data-i18n="hero_btn" aria-label="Kostenlos anfragen">Loslegen</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Detailed Services List Section -->
-    <section id="details">
-        <div class="container">
-            <h2 class="section-title" data-i18n="details_title">Unsere Leistungen</h2>
-            <p class="section-subtitle" data-i18n="details_subtitle">Das komplette Setup für deinen fahrbaren Untersatz in der Schweiz</p>
-
-            <div class="grid-3">
-                <div class="card">
-                    <h3 data-i18n="d1_title">Auto-Kauf komplett</h3>
-                    <p data-i18n="d1_desc">Wir finden das perfekt auf dich abgestimmte Auto, regeln Versicherungen und übernehmen die gesamte Bürokratie.</p>
-                </div>
-                <div class="card">
-                    <h3 data-i18n="d2_title">Check & Inspektion</h3>
-                    <p data-i18n="d2_desc">Historien-Analyse, Aufdeckung versteckter Macken plus Vor-Ort-Check von Motor, Fahrwerk & Karosserie mit Bildmaterial.</p>
-                </div>
-                <div class="card">
-                    <h3 data-i18n="d3_title">Verhandlungs-Pro</h3>
-                    <p data-i18n="d3_desc">Wir stellen clevere Fragen, checken die Background-Story und verhandeln den besten Kurs für dich heraus.</p>
-                </div>
-                <div class="card">
-                    <h3 data-i18n="d4_title">Versicherungs-Match</h3>
-                    <p data-i18n="d4_desc">Faire Policen mit optimaler Abdeckung und starkem Preis-Leistungs-Verhältnis für deinen Seelenfrieden.</p>
-                </div>
-                <div class="card">
-                    <h3 data-i18n="d5_title">Verkaufs-Prep</h3>
-                    <p data-i18n="d5_desc">Wasch-Programm, Politur, Detail-Clean-Up und Tipps für einen schnelleren Abverkauf zum Höchstpreis.</p>
-                </div>
-                <div class="card">
-                    <h3 data-i18n="d6_title">Profi-Shooting</h3>
-                    <p data-i18n="d6_desc">Starke Aufnahmen von Exterieur, Interieur und allen Key-Features deines Fahrzeugs.</p>
-                </div>
-                <div class="card">
-                    <h3 data-i18n="d7_title">Top-Inserat</h3>
-                    <p data-i18n="d7_desc">Auffälliger Text, ehrliche USPs und sauberes Setup für die gängigen Online-Marktplätze.</p>
-                </div>
-                <div class="card">
-                    <h3 data-i18n="d8_title">Verkaufs-Assistenz</h3>
-                    <p data-i18n="d8_desc">Komplette Begleitung beim Verkaufsprozess von A bis Z mit professioneller Preiskalkulation.</p>
-                </div>
-                <div class="card">
-                    <h3 data-i18n="d9_title">Know-how & Compare</h3>
-                    <p data-i18n="d9_desc">Unabhängiger Check verschiedener Modelle nach Zuverlässigkeit, Schwachstellen und Alltagstauglichkeit.</p>
-                </div>
-                <div class="card">
-                    <h3 data-i18n="d10_title">Zulassungs-Express</h3>
-                    <p data-i18n="d10_desc">Papierkram, Versicherung und Schilder-Abholung stressfrei in der Schweiz abwickeln.</p>
-                </div>
-                <div class="card">
-                    <h3 data-i18n="d11_title">MFK-Ready</h3>
-                    <p data-i18n="d11_desc">Vorbereitung auf die Motorfahrzeugkontrolle, Beseitigung von Mängeln und reibungsloser Ablauf.</p>
-                </div>
-                <div class="card">
-                    <h3 data-i18n="d12_title">Transport & Support</h3>
-                    <p data-i18n="d12_desc">Überführung aus anderen Kantonen + langfristiger Support bei Servicefragen und Wartung.</p>
+        <!-- About Us Section -->
+        <section id="about" class="about-section">
+            <div class="about-video-container">
+                <video autoplay muted loop playsinline preload="auto" class="about-bg-video" id="aboutVideo" aria-hidden="true">
+                    <source src="158316-816359649.mp4" type="video/mp4">
+                </video>
+                <div class="about-overlay"></div>
+            </div>
+            <div class="container about-content-wrapper">
+                <h2 class="section-title" style="text-align: left;" data-i18n="about_main_title">Warum wir?</h2>
+                <p class="section-subtitle" style="text-align: left;" data-i18n="about_main_subtitle">Premium-Ansatz für jeden Deal</p>
+                <div class="about-text-content">
+                    <blockquote data-i18n="about_quote">
+                        «Wir liefern nicht nur Standard — wir setzen neue Maßstäbe für kompromisslose <span>Exzellenz</span> im Autohandel.»
+                    </blockquote>
+                    <p data-i18n="about_text_1">
+                        Wir sparen Ihre Zeit, befreien Sie von unnötiger Bürokratie und helfen, automobile Fragen schnell und unkompliziert zu lösen. Sie erhalten einen zuverlässigen Partner, der weiß, wie der gesamte Prozess in der Schweiz organisiert wird.
+                    </p>
+                    <p data-i18n="about_text_2">
+                        Vollständiger Support von A bis Z — von der Suche in der Schweiz oder EU über den MFK-Check, die passende Versicherung bis hin zur Zulassung auf deinen Namen.
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Cantons Section with Video Background and Floating Cards -->
-    <section id="cantons" class="cantons-section">
-        <div class="cantons-video-container">
-            <video autoplay muted loop playsinline preload="auto" class="cantons-bg-video">
-                <source src="367131.mp4" type="video/mp4">
-            </video>
-            <div class="cantons-overlay"></div>
-        </div>
-        <div class="container cantons-content-wrapper">
-            <h2 class="section-title" data-i18n="cantons_title">Regionen & Kantone</h2>
-            <p class="section-subtitle" data-i18n="cantons_subtitle">Schweizweit für dich am Start: Zürich, Bern, Genf & Co.</p>
-            
-            <div class="cantons-floating-area" id="floatingArea">
-                <div class="canton-floating-card">
-                    <h3>Zürich</h3>
-                    <p data-i18n="c_zh">Finanz- und Business-Hub.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Bern</h3>
-                    <p data-i18n="c_be">Die Bundeshauptstadt.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Waadt</h3>
-                    <p data-i18n="c_vd">Am wunderschönen Genfersee.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Aargau</h3>
-                    <p data-i18n="c_ag">Zentrale Verkehrsdrehscheibe.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>St. Gallen</h3>
-                    <p data-i18n="c_sg">Zentrum der Ostschweiz.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Genf</h3>
-                    <p data-i18n="c_ge">Diplomatie und Luxus.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Luzern</h3>
-                    <p data-i18n="c_lu">Alpiner Kultur-Hotspot.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Solothurn</h3>
-                    <p data-i18n="c_so">Historisches Zentrum.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Tessin</h3>
-                    <p data-i18n="c_ti">Die sonnige Südseite.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Basel-Landschaft</h3>
-                    <p data-i18n="c_bl">Grenznaher Logistik-Spot.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Wallis</h3>
-                    <p data-i18n="c_vs">Berg- und Kurregion.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Freiburg</h3>
-                    <p data-i18n="c_fr">Zweisprachiges Herz.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Thurgau</h3>
-                    <p data-i18n="c_tg">Im Nordosten daheim.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Basel-Stadt</h3>
-                    <p data-i18n="c_bs">Innovation & Kultur.</p>
-                </div>
-                <div class="canton-floating-card">
-                    <h3>Schwyz</h3>
-                    <p data-i18n="c_sz">Das Kernland der Schweiz.</p>
+        <!-- Services Calculator Section -->
+        <section id="services" class="services-section">
+            <div class="services-video-container">
+                <video autoplay muted loop playsinline preload="auto" class="services-bg-video" aria-hidden="true">
+                    <source src="158316-816359649.mp4" type="video/mp4">
+                </video>
+                <div class="services-overlay"></div>
+            </div>
+            <div class="container services-content-wrapper">
+                <h2 class="section-title" data-i18n="calc_main_title">Preis-Kalkulator</h2>
+                <p class="section-subtitle" data-i18n="calc_main_subtitle">Stelle dir deine Wunsch-Leistungen für die Schweiz & EU zusammen</p>
+                
+                <div class="calc-layout">
+                    <div class="calc-services-grid" id="calcServicesGrid">
+                        
+                        <div class="calc-card" data-price="950" data-name-de="Auto-Kauf komplett" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv1_title">Auto-Kauf komplett</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv1_desc">Full-Service: Wir finden deinen Traumwagen passend zu Budget & Wünschen, checken die Lage und regeln die gesamte Bürokratie inklusive Versicherung.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 950</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card" data-price="400" data-name-de="Verkaufs-Support" data-name-ru="Помощь в продаже автомобиля" data-name-ukr="Допомога в продажу автомобіля" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv8_title">Verkaufs-Support</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv8_desc">Alles, was für einen schnellen und profitablen Verkauf erforderlich ist: professionelles Fotoshooting, Vorbereitung der Anzeige, Preisschätzung, Veröffentlichung und Transaktionsbegleitung.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 400</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card" data-price="250" data-name-de="Fahrzeugcheck & Live-Inspektion" data-name-ru="Проверка и личный осмотр автомобиля" data-name-ukr="Перевірка та особистий огляд автомобіля" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv2_title">Fahrzeugcheck & Live-Inspektion</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv2_desc">Hintergrund-Check, Inserat-Analyse & verdeckte Mängel + Vor-Ort-Check von Karosserie, Interieur, Motor & Fahrwerk mit Fotoreport.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 250</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card" data-price="70" data-name-de="Preisverhandlung mit Verkäufer" data-name-ru="Переговоры с продавцом и торг" data-name-ukr="Переговори з продавцем та торг" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv3_title">Preisverhandlung mit Verkäufer</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv3_desc">Wir stellen die richtigen Fragen, klären die Historie und holen den besten Deal für dich raus.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 70</span>
+                            </div>
+                        </div>
+
+                        <!-- СКРЫТЫЕ КАРТОЧКИ -->
+                        <div class="calc-card hidden-service" data-price="200" data-name-de="Versicherungs-Setup" data-name-ru="Подбор выгодной страховки" data-name-ukr="Підбір вигідної страховки" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv4_title">Versicherungs-Setup</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv4_desc">Optimale Police mit Top-Abdeckung und bestem Preis-Leistungs-Verhältnis sichern.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 200</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="450" data-name-de="Aufbereitung für Verkauf" data-name-ru="Подготовка к продаже" data-name-ukr="Підготовка до продажу" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv5_title">Aufbereitung für Verkauf</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv5_desc">Intensivwäsche, Politur & Profi-Innenreinigung für maximalen Wiederverkaufswert (je nach Aufwand).</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">~ CHF 450</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="100" data-name-de="Profi-Autofotoshooting" data-name-ru="Профессиональная фотосъемка" data-name-ukr="Професійна фотозйомка" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv6_title">Profi-Autofotoshooting</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv6_desc">Hochwertige Aufnahmen von Exterieur, Interieur, Motorraum und allen wichtigen Details.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 100</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="50" data-name-de="Erstellung Inserat" data-name-ru="Создание продающего объявления" data-name-ukr="Створення продаючого оголошення" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv7_title">Erstellung Inserat</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv7_desc">Auffällige Beschreibung, ehrliche Vorteile und perfektes Setup für die Verkaufsplattformen.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 50</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="200" data-name-de="Experten-Beratung & Vergleich" data-name-ru="Консультации и экспертное сравнение" data-name-ukr="Консультації та експертне порівняння" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv9_title">Experten-Beratung & Vergleich</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv9_desc">Deep-Dive in Sachen Zuverlässigkeit, Unterhalt, Schwachstellen und deine persönlichen Anforderungen.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 200</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="150" data-name-de="Zulassungs-Service" data-name-ru="Сопровождение при регистрации" data-name-ukr="Супровід при реєстрації" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv10_title">Zulassungs-Service</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv10_desc">Versicherung, Papieranalyse und reibungslose Nummernschilder-Beschaffung in der Schweiz.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 150</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="300" data-name-de="MFK-Prüfungshilfe" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv11_title">MFK-Prüfungshilfe</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv11_desc">Vor-Check, Behebung von Mängeln & Begleitung bei der Motorfahrzeugkontrolle.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 300</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="0" data-name-de="Fahrzeugtransport" data-name-ru="Доставка и перегон автомобиля" data-name-ukr="Доставка та перегін автомобіля" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv12_title">Fahrzeugtransport</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv12_desc">Organisation des Transports oder der Überführung aus einem anderen Kanton oder Gebiet.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price" data-i18n="srv_indiv">Auf Anfrage</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="100" data-name-de="Post-Purchase Support" data-name-ru="Поддержка после покупки" data-name-ukr="Підтримка після покупки" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv13_title">Post-Purchase Support</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv13_desc">Tipps zum Unterhalt, Werkstatt-Empfehlungen und Support für zukünftige Reparaturen.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 100</span>
+                            </div>
+                        </div>
+
+                        <!-- Кнопка развернуть/свернуть -->
+                        <div class="calc-toggle-container">
+                            <button type="button" class="btn" id="toggleServicesBtn" data-i18n="btn_more_services" style="padding: 12px 30px;">Alle Leistungen anzeigen</button>
+                        </div>
+                    </div>
+
+                    <!-- Summary Sidebar -->
+                    <aside class="calc-summary" aria-label="Warenkorb Zusammenfassung">
+                        <h3 data-i18n="calc_summary_title">Deine Auswahl</h3>
+                        <div id="summaryItemsContainer">
+                            <p class="summary-empty" data-i18n="calc_empty">Wähle links eine oder mehrere Optionen aus</p>
+                        </div>
+                        <ul class="summary-items-list" id="summaryList" style="display: none;"></ul>
+                        
+                        <div class="summary-total">
+                            <span data-i18n="calc_total">Total:</span>
+                            <span class="summary-total-price" id="calcTotalPrice">CHF 0</span>
+                        </div>
+
+                        <div class="summary-actions">
+                            <button class="btn open-modal-btn" id="calcOrderBtn" data-i18n="calc_btn_order" disabled aria-label="Kalkulation anfragen">Auswahl anfragen</button>
+                            <a href="https://wa.me/41764795820?text=Hallo,%20ich%20habe%20eine%20Kalkulation%20auf%20der%20Website%20erstellt" target="_blank" class="btn btn-whatsapp" data-i18n="calc_btn_wa" rel="noopener noreferrer">Via WhatsApp besprechen</a>
+                        </div>
+                    </aside>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Detailed Services List Section -->
+        <section id="details">
+            <div class="container">
+                <h2 class="section-title" data-i18n="details_title">Unsere Leistungen</h2>
+                <p class="section-subtitle" data-i18n="details_subtitle">Das komplette Setup für deinen fahrbaren Untersatz in der Schweiz</p>
+
+                <div class="grid-3">
+                    <article class="card">
+                        <h3 data-i18n="d1_title">Auto-Kauf komplett</h3>
+                        <p data-i18n="d1_desc">Wir finden das perfekt auf dich abgestimmte Auto, regeln Versicherungen und übernehmen die gesamte Bürokratie.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d2_title">Check & Inspektion</h3>
+                        <p data-i18n="d2_desc">Historien-Analyse, Aufdeckung versteckter Macken plus Vor-Ort-Check von Motor, Fahrwerk & Karosserie mit Bildmaterial.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d3_title">Verhandlungs-Pro</h3>
+                        <p data-i18n="d3_desc">Wir stellen clevere Fragen, checken die Background-Story und verhandeln den besten Kurs für dich heraus.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d4_title">Versicherungs-Match</h3>
+                        <p data-i18n="d4_desc">Faire Policen mit optimaler Abdeckung und starkem Preis-Leistungs-Verhältnis für deinen Seelenfrieden.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d5_title">Verkaufs-Prep</h3>
+                        <p data-i18n="d5_desc">Wasch-Programm, Politur, Detail-Clean-Up und Tipps für einen schnelleren Abverkauf zum Höchstpreis.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d6_title">Profi-Shooting</h3>
+                        <p data-i18n="d6_desc">Starke Aufnahmen von Exterieur, Interieur und allen Key-Features deines Fahrzeugs.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d7_title">Top-Inserat</h3>
+                        <p data-i18n="d7_desc">Auffälliger Text, ehrliche USPs und sauberes Setup für die gängigen Online-Marktplätze.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d8_title">Verkaufs-Assistenz</h3>
+                        <p data-i18n="d8_desc">Komplette Begleitung beim Verkaufsprozess von A bis Z mit professioneller Preiskalkulation.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d9_title">Know-how & Compare</h3>
+                        <p data-i18n="d9_desc">Unabhängiger Check verschiedener Modelle nach Zuverlässigkeit, Schwachstellen und Alltagstauglichkeit.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d10_title">Zulassungs-Express</h3>
+                        <p data-i18n="d10_desc">Papierkram, Versicherung und Schilder-Abholung stressfrei in der Schweiz abwickeln.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d11_title">MFK-Ready</h3>
+                        <p data-i18n="d11_desc">Vorbereitung auf die Motorfahrzeugkontrolle, Beseitigung von Mängeln und reibungsloser Ablauf.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d12_title">Transport & Support</h3>
+                        <p data-i18n="d12_desc">Überführung aus anderen Kantonen + langfristiger Support bei Servicefragen und Wartung.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cantons Section -->
+        <section id="cantons" class="cantons-section">
+            <div class="cantons-video-container">
+                <video autoplay muted loop playsinline preload="auto" class="cantons-bg-video" aria-hidden="true">
+                    <source src="367131.mp4" type="video/mp4">
+                </video>
+                <div class="cantons-overlay"></div>
+            </div>
+            <div class="container cantons-content-wrapper">
+                <h2 class="section-title" data-i18n="cantons_title">Regionen & Kantone</h2>
+                <p class="section-subtitle" data-i18n="cantons_subtitle">Schweizweit für dich am Start: Zürich, Bern, Genf & Co.</p>
+                
+                <div class="cantons-floating-area" id="floatingArea" aria-hidden="true">
+                    <div class="canton-floating-card">
+                        <h3>Zürich</h3>
+                        <p data-i18n="c_zh">Finanz- und Business-Hub.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Bern</h3>
+                        <p data-i18n="c_be">Die Bundeshauptstadt.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Waadt</h3>
+                        <p data-i18n="c_vd">Am wunderschönen Genfersee.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Aargau</h3>
+                        <p data-i18n="c_ag">Zentrale Verkehrsdrehscheibe.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>St. Gallen</h3>
+                        <p data-i18n="c_sg">Zentrum der Ostschweiz.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Genf</h3>
+                        <p data-i18n="c_ge">Diplomatie und Luxus.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Luzern</h3>
+                        <p data-i18n="c_lu">Alpiner Kultur-Hotspot.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Solothurn</h3>
+                        <p data-i18n="c_so">Historisches Zentrum.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Tessin</h3>
+                        <p data-i18n="c_ti">Die sonnige Südseite.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Basel-Landschaft</h3>
+                        <p data-i18n="c_bl">Grenznaher Logistik-Spot.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Wallis</h3>
+                        <p data-i18n="c_vs">Berg- und Kurregion.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Freiburg</h3>
+                        <p data-i18n="c_fr">Zweisprachiges Herz.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Thurgau</h3>
+                        <p data-i18n="c_tg">Im Nordosten daheim.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Basel-Stadt</h3>
+                        <p data-i18n="c_bs">Innovation & Kultur.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Schwyz</h3>
+                        <p data-i18n="c_sz">Das Kernland der Schweiz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Modal Window -->
-    <div class="modal-overlay" id="orderModal">
+    <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <h3 class="modal-title" data-i18n="modal_title">Anfrage absenden</h3>
+            <button class="modal-close" id="modalClose" aria-label="Schließen">&times;</button>
+            <h3 class="modal-title" id="modalTitle" data-i18n="modal_title">Anfrage absenden</h3>
             <p class="modal-subtitle" data-i18n="modal_subtitle">Fülle kurz das Formular aus – wir melden uns ASAP bei dir.</p>
             <form id="orderForm">
                 
-                <!-- HONEYPOT: Защита от спам-ботов -->
+                <!-- HONEYPOT -->
                 <div class="bot-trap" aria-hidden="true">
-                    <label>Please leave this field empty / Пожалуйста, оставьте это поле пустым</label>
+                    <label>Please leave this field empty</label>
                     <input type="text" id="honeyField" name="honeyField" tabindex="-1" autocomplete="off">
                 </div>
 
                 <div class="form-group">
-                    <label data-i18n="form_name">Dein Name</label>
+                    <label for="userName" data-i18n="form_name">Dein Name</label>
                     <input type="text" id="userName" class="form-control" required placeholder="Max Mustermann">
                 </div>
                 <div class="form-group">
-                    <label data-i18n="form_phone">Telefon / WhatsApp</label>
-                    <!-- Базовая валидация для номера телефона (только цифры, пробелы, +, -, ()) -->
-                    <input type="text" id="userPhone" class="form-control" required placeholder="+41 ..." pattern="^[0-9+\-\s()]*$">
+                    <label for="userPhone" data-i18n="form_phone">Telefon / WhatsApp</label>
+                    <input type="tel" id="userPhone" class="form-control" required placeholder="+41 ..." pattern="^[0-9+\-\s()]*$">
                 </div>
                 <div class="form-group">
-                    <label data-i18n="form_email">E-Mail-Adresse</label>
+                    <label for="userEmail" data-i18n="form_email">E-Mail-Adresse</label>
                     <input type="email" id="userEmail" class="form-control" required placeholder="beispiel@domain.ch">
                 </div>
                 <div class="form-group">
-                    <label data-i18n="form_service">Leistungen</label>
+                    <label for="modalServiceInput" data-i18n="form_service">Leistungen</label>
                     <select id="modalServiceInput" class="form-control">
                         <option value="Individuelles Setup" data-i18n="opt_default">Wähle eine Option oder übernehme den Rechner</option>
                         <option value="Auto-Kauf komplett" data-i18n="srv1_title">Auto-Kauf komplett</option>
@@ -1383,7 +1436,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const aboutVideo = document.getElementById('aboutVideo');
@@ -1399,14 +1451,16 @@
                 langBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     switcher.classList.toggle('active');
+                    const expanded = switcher.classList.contains('active');
+                    langBtn.setAttribute('aria-expanded', expanded);
                 });
 
                 document.addEventListener('click', () => {
                     switcher.classList.remove('active');
+                    langBtn.setAttribute('aria-expanded', 'false');
                 });
             }
 
-            // Интерактивное хаотичное движение карточек кантонов (Оптимизировано)
             const floatingArea = document.getElementById('floatingArea');
             const floatingCards = document.querySelectorAll('.canton-floating-card');
 
@@ -1466,7 +1520,6 @@
                 requestAnimationFrame(animateFloating);
             }
 
-            // Инициализация языка с сохранением в localStorage
             const savedLang = localStorage.getItem('swisscars_lang') || 'de';
             let currentLang = savedLang;
             
@@ -1777,7 +1830,7 @@
                     c_so: "Історичний кантон.",
                     c_ti: "Сонячний регіон.",
                     c_bl: "Вузол на кордоні з ЄС.",
-                    c_vs: "Курортний регіон.",
+                    c_vs: "Курортный регіон.",
                     c_fr: "Двомовний регіон.",
                     c_tg: "Кантон на північному сході.",
                     c_bs: "Столиця інновацій.",
@@ -1793,7 +1846,6 @@
                 }
             };
 
-            // Функция применения языка
             function setLanguage(lang) {
                 const dict = translations[lang];
                 if (!dict) return;
@@ -1801,14 +1853,18 @@
                 document.querySelectorAll('[data-i18n]').forEach(el => {
                     const key = el.getAttribute('data-i18n');
                     if (dict[key]) {
-                        el.innerHTML = dict[key];
+                        if (el.tagName === 'TITLE') {
+                            document.title = dict[key];
+                        } else {
+                            el.innerHTML = dict[key];
+                        }
                     }
                 });
                 
+                document.documentElement.lang = lang;
                 updateCalculator();
             }
 
-            // Устанавливаем язык при загрузке
             setLanguage(currentLang);
 
             const langOptions = document.querySelectorAll('.lang-option');
@@ -1816,7 +1872,7 @@
                 option.addEventListener('click', () => {
                     const lang = option.getAttribute('data-lang');
                     currentLang = lang;
-                    localStorage.setItem('swisscars_lang', lang); // Сохраняем выбор
+                    localStorage.setItem('swisscars_lang', lang);
                     setLanguage(lang);
                     switcher.classList.remove('active');
                 });
@@ -1876,8 +1932,16 @@
 
             calcCards.forEach(card => {
                 card.addEventListener('click', () => {
-                    card.classList.toggle('selected');
+                    const isSelected = card.classList.toggle('selected');
+                    card.setAttribute('aria-pressed', isSelected);
                     updateCalculator();
+                });
+                
+                card.addEventListener('keydown', (e) => {
+                    if(e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        card.click();
+                    }
                 });
             });
 
@@ -1904,13 +1968,9 @@
                 });
             }
 
-            // БЕЗОПАСНАЯ ОТПРАВКА ФОРМЫ (ЗАЩИТА ОТ СПАМА И ИНЪЕКЦИЙ)
             const orderForm = document.getElementById('orderForm');
-            
-            // Защита: ограничение частоты отправок на клиенте (Rate Limiting)
             let isSubmitting = false;
 
-            // Функция санитизации данных (предотвращает Formula Injection в Google Sheets)
             const sanitizeInput = (str) => {
                 const trimmed = str.trim();
                 return /^[=+\-@]/.test(trimmed) ? "'" + trimmed : trimmed;
@@ -1920,7 +1980,6 @@
                 orderForm.addEventListener('submit', (e) => {
                     e.preventDefault();
 
-                    // Блокировка повторной отправки
                     if (isSubmitting) return;
                     
                     const lastSubmitTime = localStorage.getItem('lastSubmitTime');
@@ -1929,16 +1988,13 @@
                         return;
                     }
                     
-                    // 1. Проверка Honeypot (ловушки для ботов)
                     const honeyTrap = document.getElementById('honeyField').value;
                     if (honeyTrap !== "") {
-                        console.warn("Bot submission detected.");
                         orderForm.reset();
                         document.getElementById('orderModal').classList.remove('active');
-                        return; // Тихая блокировка
+                        return; 
                     }
 
-                    // 2. Сбор данных
                     const selectedService = document.getElementById('modalServiceInput').value;
                     const submitBtn = document.getElementById('submitBtn');
                     const originalText = submitBtn.textContent;
@@ -1947,13 +2003,12 @@
                     submitBtn.textContent = currentLang === 'de' ? 'Senden...' : (currentLang === 'ukr' ? 'Надсилання...' : 'Отправка...');
                     submitBtn.setAttribute('disabled', 'true');
 
-                    // 3. Формирование безопасного запроса
                     const formData = new URLSearchParams();
                     formData.append('name', sanitizeInput(document.getElementById('userName').value));
                     formData.append('phone', sanitizeInput(document.getElementById('userPhone').value));
                     formData.append('email', sanitizeInput(document.getElementById('userEmail').value));
                     formData.append('service', selectedService);
-                    formData.append('source', 'swisscars_web_2026'); // Токен источника
+                    formData.append('source', 'swisscars_web_2026_seo'); 
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbyZp71TKlrcZduSfBQ25LTWxTtgoXwRhMAM_IEBLHESzmCxlljMm8L7h4SpQt_-7FiD/exec';
 
@@ -1966,7 +2021,7 @@
                         body: formData.toString()
                     })
                     .then(() => {
-                        localStorage.setItem('lastSubmitTime', Date.now()); // Запись времени последней отправки
+                        localStorage.setItem('lastSubmitTime', Date.now()); 
                         alert(currentLang === 'de' ? 'Anfrage erfolgreich gesendet! Wir melden uns in Kürze.' : (currentLang === 'ukr' ? 'Заявку успішно надіслано! Ми зв\'яжемося з вами найближчим часом.' : 'Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.'));
                         orderForm.reset();
                         document.getElementById('orderModal').classList.remove('active');

@@ -117,13 +117,16 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
         .container {
@@ -1328,7 +1331,7 @@
                             </div>
                         </div>
 
-                        <div class="calc-card hidden-service" data-price="100" data-name-de="Kundenservice nach dem Kauf" data-name-ru="Поддержка после покупки" data-name-ukr="Підтримка після покупки" role="button" aria-pressed="false" tabindex="0">
+                        <div class="calc-card hidden-service" data-price="100" data-name-de="Kundenservice nach dem Kauf" data-name-ru="Поддержка после покупки" data-name-ukr="Підтримка после покупки" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
                                     <h3 data-i18n="srv13_title">Kundenservice nach dem Kauf</h3>
@@ -1344,7 +1347,7 @@
 
                         <!-- Кнопка развернуть/свернуть -->
                         <div class="calc-toggle-container">
-                            <button type="button" class="btn" id="toggleServicesBtn" data-i18n="btn_more_services" style="padding: 12px 30px;">Alle Leistungen anzeigen</button>
+                            <button type="button" class="btn" id="toggleServicesBtn" style="padding: 12px 30px;">Alle Leistungen anzeigen</button>
                         </div>
                     </div>
 
@@ -1517,7 +1520,7 @@
                 
                 <!-- HONEYPOT -->
                 <div class="bot-trap" aria-hidden="true">
-                    <label>Please leave this field empty</label>
+                    <label for="honeyField">Please leave this field empty</label>
                     <input type="text" id="honeyField" name="honeyField" tabindex="-1" autocomplete="off">
                 </div>
 
@@ -1694,7 +1697,6 @@
                     about_text_2: "Vollständiger Support von A bis Z — von der Suche in der Schweiz oder EU über den MFK-Check, die passende Versicherung bis hin zur Zulassung auf Ihren Namen.",
                     calc_main_title: "Preis-Kalkulator",
                     calc_main_subtitle: "Stellen Sie sich Ihre Wunsch-Leistungen zusammen",
-                    btn_more_services: isExpanded ? "Weniger anzeigen" : "Alle Leistungen anzeigen",
                     srv1_title: "Rundum-Sorglos Autokauf",
                     srv1_desc: "Full-Service: Wir finden Ihren Traumwagen passend zu Budget und Wünschen, prüfen das Angebot und regeln die gesamte Bürokratie inklusive Versicherung.",
                     srv8_title: "Verkaufs-Support",
@@ -1797,7 +1799,6 @@
                     about_text_2: "Комплексное сопровождение сделок — от экспертного поиска автомобиля в Швейцарии и странах ЕС до получения ключей, прохождения техосмотра MFK, оформления страхования и официальной регистрации.",
                     calc_main_title: "Калькулятор услуг",
                     calc_main_subtitle: "Сформируйте индивидуальный пакет необходимых услуг для вашего автомобиля",
-                    btn_more_services: isExpanded ? "Свернуть список" : "Показать все услуги",
                     srv1_title: "Покупка автомобиля под ключ",
                     srv1_desc: "Поиск авто под ваши требования и бюджет, подбор лучших вариантов без потери времени, а также помощь в оформлении страховки и всей бюрократии.",
                     srv8_title: "Помощь в продаже автомобиля",
@@ -1856,7 +1857,7 @@
                     d11_title: "Помощь с MFK",
                     d11_desc: "Предварительная оценка состояния, устранение недочетов и сопровождение процесса прохождения техосмотра.",
                     d12_title: "Доставка и поддержка",
-                    d12_desc: "Организация доставки или перегона авто из другого кантона + постпродажные консультации по обслуживанию.",
+                    d12_desc: "Организация доставки или перегона авто из другого кантону + постпродажные консультации по обслуживанию.",
                     cantons_title: "Регионы и кантоны",
                     cantons_subtitle: "Оперативная работа по всей территории Швейцарии: Цюрих, Берн, Женева и другие регионы",
                     c_zh: "Финансовый и деловой центр.",
@@ -1865,7 +1866,7 @@
                     c_ag: "Торговый узел страны.",
                     c_sg: "Центр восточной части.",
                     c_ge: "Дипломатия и роскошь.",
-                    c_lu: "Альпийский культурный центр.",
+                    c_lu: "Альпийский культурний центр.",
                     c_so: "Исторический кантон.",
                     c_ti: "Солнечный регион.",
                     c_bl: "Узел на границе с ЕС.",
@@ -1900,7 +1901,6 @@
                     about_text_2: "Комплексний супровід угод — від експертного пошуку автомобіля у Швейцарії та країнах ЄС до отримання ключів, проходження техогляду MFK, оформлення страхування та офіційної реєстрації.",
                     calc_main_title: "Калькулятор послуг",
                     calc_main_subtitle: "Сформуйте індивідуальний пакет необхідних послуг для вашого автомобіля",
-                    btn_more_services: isExpanded ? "Згорнути список" : "Показати всі послуги",
                     srv1_title: "Купівля автомобіля під ключ",
                     srv1_desc: "Пошук авто під ваші вимоги та бюджет, підбір найкращих варіантів без втрати часу, а також допомога в оформленні страховки та всієї бюрократии.",
                     srv8_title: "Допомога в продажу автомобіля",
@@ -2004,6 +2004,18 @@
                 });
                 
                 document.documentElement.lang = lang;
+                
+                // Перевод кнопки скрытых сервисов (чтобы она не слетала при переключении языка)
+                if (toggleServicesBtn) {
+                    const btnTexts = {
+                        de: { show: "Alle Leistungen anzeigen", hide: "Weniger anzeigen" },
+                        ru: { show: "Показать все услуги", hide: "Свернуть список" },
+                        ukr: { show: "Показати всі послуги", hide: "Згорнути список" }
+                    };
+                    const langSet = btnTexts[lang] || btnTexts.de;
+                    toggleServicesBtn.textContent = isExpanded ? langSet.hide : langSet.show;
+                }
+
                 updateCalculator();
             }
 
@@ -2051,6 +2063,7 @@
                 let total = 0;
                 let summaryHTML = '';
                 let serviceNamesForModal = [];
+                const langDict = translations[currentLang] || translations.de;
 
                 if (selectedCards.length > 0) {
                     summaryItemsContainer.style.display = 'none';
@@ -2063,7 +2076,8 @@
                         total += price;
                         serviceNamesForModal.push(name);
 
-                        const priceText = price > 0 ? `CHF ${price.toLocaleString()}` : (currentLang === 'de' ? 'Auf Anfrage' : 'По запросу');
+                        // Правильная подстановка "По запросу" из словаря
+                        const priceText = price > 0 ? `CHF ${price.toLocaleString()}` : langDict['srv_indiv'];
                         summaryHTML += `<li><span>${name}</span><span>${priceText}</span></li>`;
                     });
 

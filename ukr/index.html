@@ -566,7 +566,7 @@
         .mobile-menu-brand span { font-size: 1.25rem; font-weight: 700; color: #ffffff; letter-spacing: 0.5px; }
         .mobile-menu-brand span b { color: #d4af37; }
 
-        .mobile-nav-links { list-style: none; display: flex; flex-direction: column; gap: 22px; padding: 0; margin: 0; }
+        .mobile-nav-links { list-style: none; display: flex; flex-direction: column; gap: 22px; padding: 0; margin: 0 0 35px 0; }
         .mobile-nav-links a { color: #f8fafc; font-size: 1.25rem; font-weight: 600; text-decoration: none; transition: color 0.2s; }
         .mobile-nav-links a:hover { color: #d4af37; }
 
@@ -657,20 +657,8 @@
                 <li><a href="#about" class="menu-item-link" data-i18n="nav_about">О нас</a></li>
                 <li><a href="#contact" class="menu-item-link" data-i18n="nav_contact">Контакты</a></li>
             </ul>
-        </div>
 
-        <div class="mobile-menu-bottom">
-            
-            <!-- Выпадающий список языков для мобильного -->
-            <div style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 28px;">
-                <span class="mobile-phone-label" data-i18n="form_language">Sprache / Язык</span>
-                <select id="mobileLangSelect" class="mobile-lang-select">
-                    <option value="de">Deutsch (DE)</option>
-                    <option value="ru">Русский (RU)</option>
-                    <option value="ukr">Українська (UKR)</option>
-                </select>
-            </div>
-            
+            <!-- Контакты перенесены сразу под ссылки меню -->
             <div style="display: flex; flex-direction: column; gap: 16px;">
                 <!-- Телефон -->
                 <div style="display: flex; flex-direction: column; gap: 4px;">
@@ -683,6 +671,18 @@
                     <span class="mobile-phone-label" data-i18n="form_email">E-Mail-Adresse</span>
                     <a href="mailto:swisscars.concierge.ch@gmail.com" class="mobile-phone-number" style="font-size: 0.95rem; word-break: break-all;">swisscars.concierge.ch@gmail.com</a>
                 </div>
+            </div>
+        </div>
+
+        <div class="mobile-menu-bottom">
+            <!-- Выпадающий список языков для мобильного -->
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+                <span class="mobile-phone-label" data-i18n="form_language">Sprache / Язык</span>
+                <select id="mobileLangSelect" class="mobile-lang-select">
+                    <option value="de">Deutsch (DE)</option>
+                    <option value="ru">Русский (RU)</option>
+                    <option value="ukr">Українська (UKR)</option>
+                </select>
             </div>
         </div>
     </div>
@@ -1495,7 +1495,7 @@
                     d11_desc: "Предварительная оценка состояния, устранение недочетов и сопровождение процесса прохождения техосмотра.",
                     d12_title: "Доставка и поддержка",
                     d12_desc: "Организация доставки или перегона авто из другого кантону + постпродажные консультации по обслуживанию.",
-                    cantons_title: "Регионы и кантоны",
+                    cantons_title: "Регионы и кантони",
                     cantons_subtitle: "Оперативная работа по всей территории Швейцарии: Цюрих, Берн, Женева и другие регионы",
                     c_zh: "Финансовый и деловой центр.",
                     c_be: "Федеральная столица.",

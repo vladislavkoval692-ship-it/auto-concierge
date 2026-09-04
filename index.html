@@ -1067,62 +1067,68 @@
             opacity: 0;
             z-index: -1;
         }
-   /* --- Кнопка "Гамбургер" (три полоски) --- */
-.hamburger-btn { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; }
-.hamburger-btn span { display: block; width: 100%; height: 2px; background-color: var(--text-main, #ffffff); border-radius: 2px; transition: all 0.3s ease; }
 
-/* --- Мобильное выпадающее меню --- */
-.mobile-menu-overlay { position: fixed; top: 0; right: -100%; width: 100%; max-width: 380px; height: 100vh; background: #0b0f19; border-left: 1px solid #1e293b; z-index: 2000; padding: 30px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: right 0.35s ease-in-out; box-shadow: -10px 0 30px rgba(0,0,0,0.6); }
-.mobile-menu-overlay.active { right: 0; }
-.mobile-menu-close { align-self: flex-end; background: none; border: none; color: #94a3b8; font-size: 32px; cursor: pointer; line-height: 1; padding: 0 4px; }
-.mobile-menu-close:hover { color: #ffffff; }
+        /* --- Кнопка "Гамбургер" и мобильное меню --- */
+        .hamburger-btn { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; margin-left: 10px; }
+        .hamburger-btn span { display: block; width: 100%; height: 2px; background-color: var(--text-main); border-radius: 2px; transition: all 0.3s ease; }
 
-.mobile-menu-brand { display: flex; align-items: center; gap: 12px; margin: 20px 0 35px; text-decoration: none; }
-.mobile-menu-brand img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; border: 1px solid rgba(212, 175, 55, 0.4); }
-.mobile-menu-brand span { font-size: 1.25rem; font-weight: 700; color: #ffffff; letter-spacing: 0.5px; }
-.mobile-menu-brand span b { color: #d4af37; }
+        .mobile-menu-overlay { position: fixed; top: 0; right: -100%; width: 100%; max-width: 320px; height: 100vh; background: #0b0f19; border-left: 1px solid #1e293b; z-index: 2000; padding: 30px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: right 0.35s ease-in-out; box-shadow: -10px 0 30px rgba(0,0,0,0.6); }
+        .mobile-menu-overlay.active { right: 0; }
+        .mobile-menu-close { align-self: flex-end; background: none; border: none; color: #94a3b8; font-size: 32px; cursor: pointer; line-height: 1; padding: 0 4px; }
+        .mobile-menu-close:hover { color: #ffffff; }
 
-.mobile-nav-links { list-style: none; display: flex; flex-direction: column; gap: 22px; padding: 0; margin: 0; }
-.mobile-nav-links a { color: #f8fafc; font-size: 1.25rem; font-weight: 600; text-decoration: none; transition: color 0.2s; }
-.mobile-nav-links a:hover { color: #d4af37; }
+        .mobile-menu-brand { display: flex; align-items: center; gap: 12px; margin: 20px 0 35px; text-decoration: none; }
+        .mobile-menu-brand img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; border: 1px solid rgba(212, 175, 55, 0.4); }
+        .mobile-menu-brand span { font-size: 1.25rem; font-weight: 700; color: #ffffff; letter-spacing: 0.5px; }
+        .mobile-menu-brand span b { color: #d4af37; }
 
-.mobile-menu-bottom { margin-top: auto; padding-top: 30px; border-top: 1px solid #1e293b; }
-.mobile-lang-switch { font-size: 0.95rem; font-weight: 700; margin-bottom: 24px; color: #94a3b8; }
-.mobile-lang-switch a { color: #f8fafc; text-decoration: none; margin: 0 6px; }
-.mobile-lang-switch a.active { color: #d4af37; }
-.mobile-phone-block { display: flex; flex-direction: column; gap: 6px; }
-.mobile-phone-label { font-size: 0.85rem; color: #94a3b8; }
-.mobile-phone-number { color: #ffffff; font-size: 1.15rem; font-weight: 700; text-decoration: none; }
-.mobile-phone-number:hover { color: #d4af37; }
+        .mobile-nav-links { list-style: none; display: flex; flex-direction: column; gap: 22px; padding: 0; margin: 0; }
+        .mobile-nav-links a { color: #f8fafc; font-size: 1.25rem; font-weight: 600; text-decoration: none; transition: color 0.2s; }
+        .mobile-nav-links a:hover { color: #d4af37; }
 
-/* Отображение кнопки только на смартфонах */
-@media (max-width: 768px) {
-    .hamburger-btn { display: flex; }
-}
+        .mobile-menu-bottom { margin-top: auto; padding-top: 30px; border-top: 1px solid #1e293b; }
+        .mobile-lang-switch { font-size: 0.95rem; font-weight: 700; margin-bottom: 24px; color: #94a3b8; }
+        .mobile-lang-switch a { color: #f8fafc; text-decoration: none; margin: 0 6px; cursor: pointer; }
+        .mobile-lang-switch a.active, .mobile-lang-switch a:hover { color: #d4af37; }
+        
+        .mobile-phone-block { display: flex; flex-direction: column; gap: 6px; }
+        .mobile-phone-label { font-size: 0.85rem; color: #94a3b8; }
+        .mobile-phone-number { color: #ffffff; font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+        .mobile-phone-number:hover { color: #d4af37; }
+
+        /* Отображение кнопки только на смартфонах/планшетах */
+        @media (max-width: 991px) {
+            .nav-links, .btn-whatsapp, .open-modal-btn, .lang-switcher { display: none !important; }
+            .header-phone { display: block; font-size: 1rem; }
+            .hamburger-btn { display: flex; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header (Шапка) -->
     <header>
         <div class="container header-content">
-            <a href="#" class="logo" aria-label="Zurück zur Startseite">SWISS<span>CARS</span></a>
+            <a href="/" class="logo" aria-label="Zurück zur Startseite">SWISS<span>CARS</span></a>
+            
             <nav aria-label="Hauptnavigation">
+                <!-- Обычное меню для компьютеров -->
                 <ul class="nav-links">
                     <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
                     <li><a href="#services" data-i18n="nav_services">Rechner</a></li>
                     <li><a href="#details" data-i18n="nav_details">Leistungen</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
                 </ul>
             </nav>
+            
             <div class="header-right">
-                <!-- Прямой контакт в шапке -->
                 <a href="tel:+41764795820" class="header-phone">+41 76 479 58 20</a>
                 
                 <a href="https://wa.me/41764795820?text=Guten%20Tag,%20ich%20interessiere%20mich%20für%20den%20Autoconcierge-Service%20in%20der%20Schweiz" target="_blank" class="btn btn-whatsapp" data-i18n="btn_whatsapp" rel="noopener noreferrer">WhatsApp</a>
                 <button class="btn open-modal-btn" data-i18n="btn_request" aria-label="Anfrage Formular öffnen">Anfrage</button>
                 
+                <!-- Переключатель языков (для компьютеров) -->
                 <div class="lang-switcher" id="headerLangSwitcher">
-                    <!-- Заменили флаг на текст DE -->
                     <button class="lang-btn" id="headerLangBtn" aria-label="Sprache wählen" aria-haspopup="true" aria-expanded="false">
                         DE
                     </button>
@@ -1132,15 +1138,53 @@
                         <button class="lang-option" data-lang="ukr" role="menuitem">UKR - Українська</button>
                     </div>
                 </div>
+
+                <!-- Кнопка с тремя полосками (для мобильных) -->
+                <button class="hamburger-btn" id="openMenuBtn" aria-label="Menü öffnen">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- ВЫЕЗЖАЮЩЕЕ МОБИЛЬНОЕ МЕНЮ -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div>
+            <!-- Крестик закрытия -->
+            <button class="mobile-menu-close" id="closeMenuBtn" aria-label="Menü schließen">&times;</button>
+            
+            <!-- Логотип/эмблема -->
+            <a href="/" class="mobile-menu-brand">
+                <img src="/favicon.png" alt="SWISS CARS">
+                <span>SWISS<b>CARS</b></span>
+            </a>
+
+            <!-- Пункты меню: Услуги, О нас, Контакты -->
+            <ul class="mobile-nav-links">
+                <li><a href="#details" class="menu-item-link" data-i18n="nav_details">Услуги</a></li>
+                <li><a href="#about" class="menu-item-link" data-i18n="nav_about">О нас</a></li>
+                <li><a href="#contact" class="menu-item-link" data-i18n="nav_contact">Контакты</a></li>
+            </ul>
+        </div>
+
+        <!-- Языки и телефон -->
+        <div class="mobile-menu-bottom">
+            <div class="mobile-lang-switch">
+                <a class="lang-option" data-lang="de">DE</a> | 
+                <a class="lang-option" data-lang="ru">RU</a> | 
+                <a class="lang-option" data-lang="ukr">UKR</a>
+            </div>
+            <div class="mobile-phone-block">
+                <span class="mobile-phone-label" data-i18n="form_phone">Telefon / WhatsApp</span>
+                <a href="tel:+41764795820" class="mobile-phone-number">+41 76 479 58 20</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <main>
         <section class="hero">
             <div class="hero-video-container">
-                <!-- Напоминание: Заменить сток (iStock) на лицензионное или свое видео без водяных знаков -->
                 <video autoplay muted loop playsinline class="hero-video" aria-hidden="true" title="Hintergrundvideo Luxusautos Schweiz">
                     <source src="istockphoto-1304201114-640_adpp_is.mp4" type="video/mp4">
                 </video>
@@ -1195,7 +1239,6 @@
                 <div class="calc-layout">
                     <div class="calc-services-grid" id="calcServicesGrid">
                         
-                        <!-- Обновлены названия услуг -->
                         <div class="calc-card" data-price="950" data-name-de="Rundum-Sorglos Autokauf" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
@@ -1595,7 +1638,7 @@
     </div>
 
     <!-- Юридический блок в подвале (Footer) -->
-    <footer>
+    <footer id="contact">
         <div class="container footer-grid">
             <div class="footer-col">
                 <h4>SWISS CARS Concierge</h4>
@@ -1616,7 +1659,7 @@
         </div>
     </footer>
 
-    <!-- ПОЛНЫЙ СЛОВАРЬ (DE, RU, UKR) -->
+    <!-- ПОЛНЫЙ СЛОВАРЬ И СКРИПТЫ (DE, RU, UKR) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const aboutVideo = document.getElementById('aboutVideo');
@@ -1641,6 +1684,35 @@
                     langBtn.setAttribute('aria-expanded', 'false');
                 });
             }
+
+            // Инициализация выпадающего меню (Burger Menu)
+            const openBtn = document.getElementById('openMenuBtn');
+            const closeBtn = document.getElementById('closeMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuLinks = document.querySelectorAll('.menu-item-link');
+
+            if (openBtn && mobileMenu) {
+                openBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (closeBtn && mobileMenu) {
+                closeBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu) {
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
 
             const floatingArea = document.getElementById('floatingArea');
             const floatingCards = document.querySelectorAll('.canton-floating-card');
@@ -1700,7 +1772,7 @@
             }
 
             const savedLang = localStorage.getItem('swisscars_lang') || 'de';
-            let currentLang = 'de'; // Принудительно DE для этого URL
+            let currentLang = 'de'; 
             
             const calcCards = document.querySelectorAll('.calc-card');
             const summaryList = document.getElementById('summaryList');
@@ -1719,6 +1791,7 @@
                     nav_about: "Über uns",
                     nav_services: "Rechner",
                     nav_details: "Leistungen",
+                    nav_contact: "Kontakt",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Anfrage",
                     hero_title: "Ihr Autoconcierge <br><span>in der Schweiz</span>",
@@ -1821,6 +1894,7 @@
                     nav_about: "О компании",
                     nav_services: "Калькулятор",
                     nav_details: "Услуги",
+                    nav_contact: "Контакты",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Оставить заявку",
                     hero_title: "Премиальный автоконсьерж <br><span>в Швейцарии</span>",
@@ -1923,6 +1997,7 @@
                     nav_about: "Про компанію",
                     nav_services: "Калькулятор",
                     nav_details: "Послуги",
+                    nav_contact: "Контакти",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Залишити заявку",
                     hero_title: "Преміальний автоконсьєрж <br><span>у Швейцарії</span>",
@@ -2039,7 +2114,6 @@
                 
                 document.documentElement.lang = lang;
                 
-                // Перевод кнопки скрытых сервисов (чтобы она не слетала при переключении языка)
                 if (toggleServicesBtn) {
                     const btnTexts = {
                         de: { show: "Alle Leistungen anzeigen", hide: "Weniger anzeigen" },
@@ -2057,11 +2131,11 @@
 
             const langOptions = document.querySelectorAll('.lang-option');
             langOptions.forEach(option => {
-                option.addEventListener('click', () => {
+                option.addEventListener('click', (e) => {
+                    e.preventDefault();
                     const lang = option.getAttribute('data-lang');
                     localStorage.setItem('swisscars_lang', lang);
                     
-                    // SEO Переадресация на физические папки
                     if (lang === 'de') {
                         window.location.href = '/';
                     } else if (lang === 'ru') {
@@ -2070,7 +2144,7 @@
                         window.location.href = '/ukr/';
                     }
                     
-                    switcher.classList.remove('active');
+                    if (switcher) switcher.classList.remove('active');
                 });
             });
 
@@ -2110,7 +2184,6 @@
                         total += price;
                         serviceNamesForModal.push(name);
 
-                        // Правильная подстановка "По запросу" из словаря
                         const priceText = price > 0 ? `CHF ${price.toLocaleString()}` : langDict['srv_indiv'];
                         summaryHTML += `<li><span>${name}</span><span>${priceText}</span></li>`;
                     });

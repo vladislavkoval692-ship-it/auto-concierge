@@ -69,36 +69,6 @@
     }
     </script>
 
-    <!-- SEO: FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "Kann ich als Ausländer in der Schweiz ein Auto kaufen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja, Ausländer mit einem gültigen Aufenthaltsausweis (B, C oder L) können in der Schweiz problemlos ein Auto kaufen und einlösen. Wir übernehmen die komplette Bürokratie für Sie."
-        }
-      }, {
-        "@type": "Question",
-        "name": "Was beinhaltet der Autoconcierge-Service?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Unser Full-Service umfasst die Fahrzeugsuche, Vor-Ort-Inspektion, Preisverhandlung, Versicherungsabwicklung, MFK-Prüfung und die Zulassung. Sie erhalten das fertige Auto schlüsselfertig."
-        }
-      }, {
-        "@type": "Question",
-        "name": "Wie läuft die MFK (Motorfahrzeugkontrolle) ab?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Wir bereiten das Fahrzeug komplett vor, beheben Mängel und begleiten die Prüfung beim Strassenverkehrsamt, damit das Auto die MFK beim ersten Mal besteht."
-        }
-      }]
-    }
-    </script>
-
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -471,7 +441,7 @@
         .summary-actions { display: flex; flex-direction: column; gap: 14px; }
         .summary-actions .btn { width: 100%; padding: 14px; font-size: 0.95rem; }
 
-        /* Grid for details */
+        /* Grid for details & reviews */
         .grid-3 { display: grid; grid-template-columns: 1fr; gap: 24px; }
         @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 992px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
@@ -480,6 +450,14 @@
         .card:hover { border-color: var(--accent); }
         .card h3 { font-size: 1.2rem; margin-bottom: 12px; color: var(--text-main); }
         .card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
+
+        /* Reviews CTA Card */
+        .review-cta-card {
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            text-align: center; border: 2px dashed var(--border); background: transparent;
+        }
+        .review-cta-card:hover { border-color: var(--accent); background: rgba(212, 175, 55, 0.05); }
+        .review-star { color: var(--accent); font-size: 1.3rem; margin-bottom: 15px; letter-spacing: 2px; }
 
         /* Cantons Section */
         .cantons-section { position: relative; overflow: hidden; min-height: 650px; padding: 100px 0; }
@@ -572,18 +550,9 @@
 
         .mobile-menu-bottom { margin-top: auto; padding-top: 30px; border-top: 1px solid #1e293b; }
         
-        /* Стили для мобильного селектора языков */
         .mobile-lang-select {
-            width: 100%;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 10px 14px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            outline: none;
-            cursor: pointer;
+            width: 100%; background: var(--card-bg); border: 1px solid var(--border); color: var(--text-main);
+            padding: 10px 14px; border-radius: 8px; font-size: 1rem; font-family: inherit; outline: none; cursor: pointer;
         }
         .mobile-lang-select:focus { border-color: var(--accent); }
 
@@ -591,7 +560,6 @@
         .mobile-phone-number { color: #ffffff; font-size: 1.15rem; font-weight: 700; text-decoration: none; display: inline-block; }
         .mobile-phone-number:hover { color: #d4af37; }
 
-        /* Жесткое скрытие элементов на мобильных экранах */
         @media (max-width: 991px) {
             .nav-links, .btn-whatsapp, .open-modal-btn, .lang-switcher { display: none !important; }
             .header-phone { display: block; font-size: 1rem; }
@@ -601,7 +569,7 @@
 </head>
 <body>
 
-    <!-- Header (Шапка) -->
+    <!-- Header -->
     <header>
         <div class="container header-content">
             <a href="/" class="logo" aria-label="Zurück zur Startseite">SWISS<span>CARS</span></a>
@@ -611,6 +579,7 @@
                     <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
                     <li><a href="#services" data-i18n="nav_services">Rechner</a></li>
                     <li><a href="#details" data-i18n="nav_details">Leistungen</a></li>
+                    <li><a href="#reviews" data-i18n="nav_reviews">Bewertungen</a></li>
                     <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
                 </ul>
             </nav>
@@ -621,11 +590,8 @@
                 <a href="https://wa.me/41764795820?text=Guten%20Tag,%20ich%20interessiere%20mich%20für%20den%20Autoconcierge-Service%20in%20der%20Schweiz" target="_blank" class="btn btn-whatsapp" data-i18n="btn_whatsapp" rel="noopener noreferrer">WhatsApp</a>
                 <button class="btn open-modal-btn" data-i18n="btn_request" aria-label="Anfrage Formular öffnen">Anfrage</button>
                 
-                <!-- Переключатель языков (для ПК) -->
                 <div class="lang-switcher" id="headerLangSwitcher">
-                    <button class="lang-btn" id="headerLangBtn" aria-label="Sprache wählen" aria-haspopup="true" aria-expanded="false">
-                        DE
-                    </button>
+                    <button class="lang-btn" id="headerLangBtn" aria-label="Sprache wählen" aria-haspopup="true" aria-expanded="false">DE</button>
                     <div class="lang-dropdown" role="menu">
                         <button class="lang-option" data-lang="de" role="menuitem">DE - Deutsch</button>
                         <button class="lang-option" data-lang="ru" role="menuitem">RU - Русский</button>
@@ -633,7 +599,6 @@
                     </div>
                 </div>
 
-                <!-- Бургер (для мобильных) -->
                 <button class="hamburger-btn" id="openMenuBtn" aria-label="Menü öffnen">
                     <span></span><span></span><span></span>
                 </button>
@@ -655,18 +620,16 @@
             <ul class="mobile-nav-links">
                 <li><a href="#details" class="menu-item-link" data-i18n="nav_details">Услуги</a></li>
                 <li><a href="#about" class="menu-item-link" data-i18n="nav_about">О нас</a></li>
+                <li><a href="#reviews" class="menu-item-link" data-i18n="nav_reviews">Отзывы</a></li>
                 <li><a href="#contact" class="menu-item-link" data-i18n="nav_contact">Контакты</a></li>
             </ul>
 
             <!-- Контакты перенесены сразу под ссылки меню -->
             <div style="display: flex; flex-direction: column; gap: 16px;">
-                <!-- Телефон -->
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                     <span class="mobile-phone-label" data-i18n="form_phone">Telefon / WhatsApp</span>
                     <a href="tel:+41764795820" class="mobile-phone-number">+41 76 479 58 20</a>
                 </div>
-                
-                <!-- Почта -->
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                     <span class="mobile-phone-label" data-i18n="form_email">E-Mail-Adresse</span>
                     <a href="mailto:swisscars.concierge.ch@gmail.com" class="mobile-phone-number" style="font-size: 0.95rem; word-break: break-all;">swisscars.concierge.ch@gmail.com</a>
@@ -675,7 +638,6 @@
         </div>
 
         <div class="mobile-menu-bottom">
-            <!-- Выпадающий список языков для мобильного -->
             <div style="display: flex; flex-direction: column; gap: 4px;">
                 <span class="mobile-phone-label" data-i18n="form_language">Sprache / Язык</span>
                 <select id="mobileLangSelect" class="mobile-lang-select">
@@ -687,8 +649,8 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
     <main>
+        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-video-container">
                 <video autoplay muted loop playsinline class="hero-video" aria-hidden="true" title="Hintergrundvideo Luxusautos Schweiz">
@@ -1015,6 +977,36 @@
             </div>
         </section>
 
+        <!-- Reviews Section -->
+        <section id="reviews" style="background: var(--bg-color);">
+            <div class="container">
+                <h2 class="section-title" data-i18n="reviews_title">Kundenstimmen</h2>
+                <p class="section-subtitle" data-i18n="reviews_subtitle">Was unsere Kunden über uns sagen</p>
+
+                <div class="grid-3">
+                    <!-- CTA Card: Оставить отзыв -->
+                    <article class="card review-cta-card">
+                        <h3 style="margin-bottom: 20px; color: var(--text-muted); font-size: 1.1rem;" data-i18n="review_leave_text">Waren Sie zufrieden?</h3>
+                        <a href="https://wa.me/41764795820?text=Ich%20möchte%20eine%20Bewertung%20hinterlassen" target="_blank" class="btn btn-whatsapp" data-i18n="review_leave_btn" rel="noopener noreferrer" style="width: 100%; justify-content: center;">Bewertung hinterlassen</a>
+                    </article>
+
+                    <!-- Sample Review 1 -->
+                    <article class="card">
+                        <div class="review-star">★★★★★</div>
+                        <p data-i18n="review_1_text">«Top Service! Alles lief reibungslos von der Suche bis zur Zulassung. Sehr transparent und ehrlich.»</p>
+                        <h4 style="margin-top: 20px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_1_name">— Alexander M.</h4>
+                    </article>
+
+                    <!-- Sample Review 2 -->
+                    <article class="card">
+                        <div class="review-star">★★★★★</div>
+                        <p data-i18n="review_2_text">«Dank SWISS CARS habe ich viel Zeit und Nerven gespart. Professionelle Verhandlung und schnelle Abwicklung.»</p>
+                        <h4 style="margin-top: 20px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_2_name">— Elena K.</h4>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <!-- Cantons Section -->
         <section id="cantons" class="cantons-section">
             <div class="cantons-video-container">
@@ -1319,6 +1311,7 @@
                     nav_about: "Über uns",
                     nav_services: "Rechner",
                     nav_details: "Leistungen",
+                    nav_reviews: "Bewertungen",
                     nav_contact: "Kontakt",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Anfrage",
@@ -1391,6 +1384,14 @@
                     d11_desc: "Vorbereitung auf die Motorfahrzeugkontrolle, Beseitigung von Mängeln und reibungsloser Ablauf.",
                     d12_title: "Transport und Support",
                     d12_desc: "Überführung aus anderen Kantonen sowie langfristiger Support bei Servicefragen und Wartung.",
+                    reviews_title: "Kundenstimmen",
+                    reviews_subtitle: "Was unsere Kunden über uns sagen",
+                    review_leave_text: "Waren Sie zufrieden?",
+                    review_leave_btn: "Bewertung hinterlassen",
+                    review_1_text: "«Top Service! Alles lief reibungslos von der Suche bis zur Zulassung. Sehr transparent und ehrlich.»",
+                    review_1_name: "— Alexander M.",
+                    review_2_text: "«Dank SWISS CARS habe ich viel Zeit und Nerven gespart. Professionelle Verhandlung und schnelle Abwicklung.»",
+                    review_2_name: "— Elena K.",
                     cantons_title: "Regionen und Kantone",
                     cantons_subtitle: "Schweizweit für Sie vor Ort: Zürich, Bern, Genf und weitere.",
                     c_zh: "Finanz- und Business-Hub.",
@@ -1423,6 +1424,7 @@
                     nav_about: "О компании",
                     nav_services: "Калькулятор",
                     nav_details: "Услуги",
+                    nav_reviews: "Отзывы",
                     nav_contact: "Контакты",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Оставить заявку",
@@ -1495,7 +1497,15 @@
                     d11_desc: "Предварительная оценка состояния, устранение недочетов и сопровождение процесса прохождения техосмотра.",
                     d12_title: "Доставка и поддержка",
                     d12_desc: "Организация доставки или перегона авто из другого кантону + постпродажные консультации по обслуживанию.",
-                    cantons_title: "Регионы и кантони",
+                    reviews_title: "Отзывы клиентов",
+                    reviews_subtitle: "Что говорят о нашей работе",
+                    review_leave_text: "Остались довольны нашей работой?",
+                    review_leave_btn: "Оставить отзыв",
+                    review_1_text: "«Отличный сервис! Всё прошло гладко от поиска до регистрации авто. Прозрачно и честно.»",
+                    review_1_name: "— Александр М.",
+                    review_2_text: "«Сэкономили кучу времени и нервов. Профессиональный торг и быстрая постановка на учет. Рекомендую!»",
+                    review_2_name: "— Елена К.",
+                    cantons_title: "Регионы и кантоны",
                     cantons_subtitle: "Оперативная работа по всей территории Швейцарии: Цюрих, Берн, Женева и другие регионы",
                     c_zh: "Финансовый и деловой центр.",
                     c_be: "Федеральная столица.",
@@ -1527,6 +1537,7 @@
                     nav_about: "Про компанію",
                     nav_services: "Калькулятор",
                     nav_details: "Послуги",
+                    nav_reviews: "Відгуки",
                     nav_contact: "Контакти",
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Залишити заявку",
@@ -1599,6 +1610,14 @@
                     d11_desc: "Попередня оцінка стану, усунення недоліків та супровід процесу проходження техогляду.",
                     d12_title: "Доставка та підтримка",
                     d12_desc: "Організація доставки або перегону авто з іншого кантону + післяпродажні консультації з обслуговування.",
+                    reviews_title: "Відгуки клієнтів",
+                    reviews_subtitle: "Що кажуть про нашу роботу",
+                    review_leave_text: "Залишилися задоволені нашою роботою?",
+                    review_leave_btn: "Залишити відгук",
+                    review_1_text: "«Відмінний сервіс! Все пройшло гладко від пошуку до реєстрації авто. Прозоро і чесно.»",
+                    review_1_name: "— Олександр М.",
+                    review_2_text: "«Зекономили купу часу і нервів. Професійний торг і швидка постановка на облік. Рекомендую!»",
+                    review_2_name: "— Олена К.",
                     cantons_title: "Регіони та кантони",
                     cantons_subtitle: "Оперативна робота по всій території Швейцарії: Цюрих, Берн, Женева та інші регіони",
                     c_zh: "Фінансовий та діловий центр.",

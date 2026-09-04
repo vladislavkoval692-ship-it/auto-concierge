@@ -1067,6 +1067,38 @@
             opacity: 0;
             z-index: -1;
         }
+   /* --- Кнопка "Гамбургер" (три полоски) --- */
+.hamburger-btn { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; }
+.hamburger-btn span { display: block; width: 100%; height: 2px; background-color: var(--text-main, #ffffff); border-radius: 2px; transition: all 0.3s ease; }
+
+/* --- Мобильное выпадающее меню --- */
+.mobile-menu-overlay { position: fixed; top: 0; right: -100%; width: 100%; max-width: 380px; height: 100vh; background: #0b0f19; border-left: 1px solid #1e293b; z-index: 2000; padding: 30px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: right 0.35s ease-in-out; box-shadow: -10px 0 30px rgba(0,0,0,0.6); }
+.mobile-menu-overlay.active { right: 0; }
+.mobile-menu-close { align-self: flex-end; background: none; border: none; color: #94a3b8; font-size: 32px; cursor: pointer; line-height: 1; padding: 0 4px; }
+.mobile-menu-close:hover { color: #ffffff; }
+
+.mobile-menu-brand { display: flex; align-items: center; gap: 12px; margin: 20px 0 35px; text-decoration: none; }
+.mobile-menu-brand img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; border: 1px solid rgba(212, 175, 55, 0.4); }
+.mobile-menu-brand span { font-size: 1.25rem; font-weight: 700; color: #ffffff; letter-spacing: 0.5px; }
+.mobile-menu-brand span b { color: #d4af37; }
+
+.mobile-nav-links { list-style: none; display: flex; flex-direction: column; gap: 22px; padding: 0; margin: 0; }
+.mobile-nav-links a { color: #f8fafc; font-size: 1.25rem; font-weight: 600; text-decoration: none; transition: color 0.2s; }
+.mobile-nav-links a:hover { color: #d4af37; }
+
+.mobile-menu-bottom { margin-top: auto; padding-top: 30px; border-top: 1px solid #1e293b; }
+.mobile-lang-switch { font-size: 0.95rem; font-weight: 700; margin-bottom: 24px; color: #94a3b8; }
+.mobile-lang-switch a { color: #f8fafc; text-decoration: none; margin: 0 6px; }
+.mobile-lang-switch a.active { color: #d4af37; }
+.mobile-phone-block { display: flex; flex-direction: column; gap: 6px; }
+.mobile-phone-label { font-size: 0.85rem; color: #94a3b8; }
+.mobile-phone-number { color: #ffffff; font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+.mobile-phone-number:hover { color: #d4af37; }
+
+/* Отображение кнопки только на смартфонах */
+@media (max-width: 768px) {
+    .hamburger-btn { display: flex; }
+}
     </style>
 </head>
 <body>

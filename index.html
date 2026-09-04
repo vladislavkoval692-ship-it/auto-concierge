@@ -119,9 +119,7 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -168,9 +166,7 @@
             flex-shrink: 0;
         }
 
-        .logo span {
-            color: var(--accent);
-        }
+        .logo span { color: var(--accent); }
 
         .nav-links {
             display: none;
@@ -180,9 +176,7 @@
         }
 
         @media (min-width: 992px) {
-            .nav-links {
-                display: flex;
-            }
+            .nav-links { display: flex; }
         }
 
         .nav-links a {
@@ -193,9 +187,7 @@
             transition: var(--transition);
         }
 
-        .nav-links a:hover {
-            color: var(--text-main);
-        }
+        .nav-links a:hover { color: var(--text-main); }
 
         .header-right {
             display: flex;
@@ -204,7 +196,6 @@
             flex-wrap: nowrap;
         }
 
-        /* Phone in Header */
         .header-phone {
             display: none;
             color: var(--text-main);
@@ -215,14 +206,10 @@
             transition: var(--transition);
         }
         
-        .header-phone:hover {
-            color: var(--accent);
-        }
+        .header-phone:hover { color: var(--accent); }
 
         @media (min-width: 1024px) {
-            .header-phone {
-                display: block;
-            }
+            .header-phone { display: block; }
         }
 
         .btn {
@@ -245,10 +232,7 @@
         }
 
         @media (min-width: 576px) {
-            .btn {
-                padding: 10px 18px;
-                font-size: 0.85rem;
-            }
+            .btn { padding: 10px 18px; font-size: 0.85rem; }
         }
 
         .btn:hover {
@@ -263,15 +247,10 @@
             gap: 5px;
         }
 
-        .btn-whatsapp:hover {
-            background: #20ba5a;
-            color: #ffffff;
-        }
+        .btn-whatsapp:hover { background: #20ba5a; color: #ffffff; }
 
-        /* Text Language Switcher */
-        .lang-switcher {
-            position: relative;
-        }
+        /* Desktop Language Switcher */
+        .lang-switcher { position: relative; }
 
         .lang-btn {
             background: var(--card-bg);
@@ -289,10 +268,7 @@
             letter-spacing: 0.5px;
         }
 
-        .lang-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
+        .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
 
         .lang-dropdown {
             position: absolute;
@@ -308,9 +284,7 @@
             z-index: 1500;
         }
 
-        .lang-switcher.active .lang-dropdown {
-            display: block;
-        }
+        .lang-switcher.active .lang-dropdown { display: block; }
 
         .lang-option {
             padding: 12px 16px;
@@ -344,9 +318,7 @@
         }
 
         @media (min-width: 768px) {
-            .hero {
-                padding: 180px 0 100px;
-            }
+            .hero { padding: 180px 0 100px; }
         }
 
         .hero-video-container {
@@ -358,11 +330,7 @@
             z-index: 1;
         }
 
-        .hero-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .hero-video { width: 100%; height: 100%; object-fit: cover; }
 
         .hero-overlay {
             position: absolute;
@@ -374,10 +342,7 @@
             backdrop-filter: blur(2px);
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
+        .hero-content { position: relative; z-index: 2; }
 
         .hero h1 {
             font-size: clamp(2.1rem, 6vw, 3.8rem);
@@ -386,9 +351,7 @@
             line-height: 1.2;
         }
 
-        .hero h1 span {
-            color: var(--accent);
-        }
+        .hero h1 span { color: var(--accent); }
 
         .hero p {
             font-size: clamp(1rem, 2.5vw, 1.25rem);
@@ -407,16 +370,9 @@
         }
 
         /* Sections */
-        section {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--border);
-        }
+        section { padding: 80px 0; border-bottom: 1px solid var(--border); }
 
-        @media (min-width: 768px) {
-            section {
-                padding: 100px 0;
-            }
-        }
+        @media (min-width: 768px) { section { padding: 100px 0; } }
 
         .section-title {
             text-align: center;
@@ -434,53 +390,12 @@
         }
 
         /* About Section */
-        .about-section {
-            position: relative;
-            overflow: hidden;
-            padding: 100px 0;
-        }
-
-        .about-video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .about-bg-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .about-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(11, 15, 25, 0.82);
-            backdrop-filter: blur(3px);
-        }
-
-        .about-content-wrapper {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .about-text-content {
-            background: transparent;
-            border: none;
-            border-radius: 0;
-            padding: 0;
-            text-align: left;
-            max-width: 700px;
-        }
+        .about-section { position: relative; overflow: hidden; padding: 100px 0; }
+        .about-video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .about-bg-video { width: 100%; height: 100%; object-fit: cover; }
+        .about-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.82); backdrop-filter: blur(3px); }
+        .about-content-wrapper { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .about-text-content { background: transparent; border: none; border-radius: 0; padding: 0; text-align: left; max-width: 700px; }
 
         .about-text-content blockquote {
             font-size: clamp(1.3rem, 3.5vw, 1.6rem);
@@ -492,78 +407,20 @@
             line-height: 1.4;
         }
 
-        .about-text-content blockquote span {
-            color: var(--accent);
-        }
-
-        .about-text-content p {
-            color: var(--text-muted);
-            font-size: clamp(1rem, 2vw, 1.1rem);
-            line-height: 1.8;
-            margin-bottom: 24px;
-        }
+        .about-text-content blockquote span { color: var(--accent); }
+        .about-text-content p { color: var(--text-muted); font-size: clamp(1rem, 2vw, 1.1rem); line-height: 1.8; margin-bottom: 24px; }
 
         /* Calculator Section */
-        .services-section {
-            position: relative;
-            overflow: hidden;
-            padding: 100px 0;
-        }
+        .services-section { position: relative; overflow: hidden; padding: 100px 0; }
+        .services-video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .services-bg-video { width: 100%; height: 100%; object-fit: cover; }
+        .services-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(4px); }
+        .services-content-wrapper { position: relative; z-index: 2; }
 
-        .services-video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .services-bg-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .services-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(4px);
-        }
-
-        .services-content-wrapper {
-            position: relative;
-            z-index: 2;
-        }
-
-        .calc-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            align-items: start;
-        }
-
-        @media (min-width: 992px) {
-            .calc-layout {
-                grid-template-columns: 1.3fr 0.7fr;
-            }
-        }
-
-        .calc-services-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        @media (min-width: 768px) {
-            .calc-services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+        .calc-layout { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start; }
+        @media (min-width: 992px) { .calc-layout { grid-template-columns: 1.3fr 0.7fr; } }
+        .calc-services-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        @media (min-width: 768px) { .calc-services-grid { grid-template-columns: repeat(2, 1fr); } }
 
         .calc-card {
             background: rgba(19, 27, 46, 0.85);
@@ -578,89 +435,20 @@
             backdrop-filter: blur(10px);
         }
 
-        .calc-card:hover {
-            border-color: rgba(212, 175, 55, 0.5);
-        }
-
-        .calc-card.selected {
-            border-color: var(--accent);
-            background: rgba(212, 175, 55, 0.1);
-        }
-
-        .calc-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 12px;
-            gap: 12px;
-        }
-
-        .calc-card h3 {
-            font-size: 1.1rem;
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        .calc-checkbox {
-            width: 24px;
-            height: 24px;
-            border: 2px solid var(--border);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-color);
-            flex-shrink: 0;
-        }
-
-        .calc-card.selected .calc-checkbox {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: #0b0f19;
-        }
-
-        .calc-card.selected .calc-checkbox::after {
-            content: '✓';
-            font-weight: 900;
-            font-size: 0.9rem;
-        }
-
-        .calc-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .calc-card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--border);
-            padding-top: 15px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .calc-price {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        .calc-card.hidden-service {
-            display: none;
-        }
-
-        .calc-card.hidden-service.visible {
-            display: flex;
-        }
-
-        .calc-toggle-container {
-            grid-column: 1 / -1;
-            text-align: center;
-            margin-top: 15px;
-        }
+        .calc-card:hover { border-color: rgba(212, 175, 55, 0.5); }
+        .calc-card.selected { border-color: var(--accent); background: rgba(212, 175, 55, 0.1); }
+        .calc-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 12px; }
+        .calc-card h3 { font-size: 1.1rem; color: var(--text-main); font-weight: 600; }
+        
+        .calc-checkbox { width: 24px; height: 24px; border: 2px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; background: var(--bg-color); flex-shrink: 0; }
+        .calc-card.selected .calc-checkbox { background: var(--accent); border-color: var(--accent); color: #0b0f19; }
+        .calc-card.selected .calc-checkbox::after { content: '✓'; font-weight: 900; font-size: 0.9rem; }
+        .calc-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; }
+        .calc-card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 15px; font-size: 0.9rem; color: var(--text-muted); }
+        .calc-price { font-size: 1.15rem; font-weight: 700; color: var(--accent); }
+        .calc-card.hidden-service { display: none; }
+        .calc-card.hidden-service.visible { display: flex; }
+        .calc-toggle-container { grid-column: 1 / -1; text-align: center; margin-top: 15px; }
 
         /* Calculator Sidebar */
         .calc-summary {
@@ -672,171 +460,35 @@
             backdrop-filter: blur(12px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
-
-        @media (min-width: 992px) {
-            .calc-summary {
-                position: sticky;
-                top: 90px;
-            }
-        }
-
-        .calc-summary h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--text-main);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 14px;
-        }
-
-        .summary-items-list {
-            list-style: none;
-            margin-bottom: 20px;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-
-        .summary-items-list li {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            gap: 12px;
-        }
-
-        .summary-items-list li span:last-child {
-            color: var(--text-main);
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .summary-empty {
-            color: var(--text-muted);
-            font-style: italic;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        .summary-total {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--border);
-            padding-top: 18px;
-            margin-bottom: 24px;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .summary-total-price {
-            font-size: 1.5rem;
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .summary-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .summary-actions .btn {
-            width: 100%;
-            padding: 14px;
-            font-size: 0.95rem;
-        }
+        @media (min-width: 992px) { .calc-summary { position: sticky; top: 90px; } }
+        .calc-summary h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+        .summary-items-list { list-style: none; margin-bottom: 20px; max-height: 200px; overflow-y: auto; }
+        .summary-items-list li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; display: flex; justify-content: space-between; gap: 12px; }
+        .summary-items-list li span:last-child { color: var(--text-main); font-weight: 600; white-space: nowrap; }
+        .summary-empty { color: var(--text-muted); font-style: italic; font-size: 0.9rem; margin-bottom: 20px; text-align: center; padding: 20px 0; }
+        .summary-total { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 18px; margin-bottom: 24px; font-size: 1.1rem; font-weight: 600; }
+        .summary-total-price { font-size: 1.5rem; color: var(--accent); font-weight: 700; }
+        .summary-actions { display: flex; flex-direction: column; gap: 14px; }
+        .summary-actions .btn { width: 100%; padding: 14px; font-size: 0.95rem; }
 
         /* Grid for details */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-
-        @media (min-width: 768px) {
-            .grid-3 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 992px) {
-            .grid-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 28px;
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            border-color: var(--accent);
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            color: var(--text-main);
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            line-height: 1.6;
-        }
+        .grid-3 { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 992px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+        
+        .card { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: var(--transition); }
+        .card:hover { border-color: var(--accent); }
+        .card h3 { font-size: 1.2rem; margin-bottom: 12px; color: var(--text-main); }
+        .card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
 
         /* Cantons Section */
-        .cantons-section {
-            position: relative;
-            overflow: hidden;
-            min-height: 650px;
-            padding: 100px 0;
-        }
-
-        .cantons-video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .cantons-bg-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .cantons-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(4px);
-        }
-
-        .cantons-content-wrapper {
-            position: relative;
-            z-index: 2;
-        }
-
-        .cantons-floating-area {
-            position: relative;
-            width: 100%;
-            height: 480px;
-            overflow: hidden;
-            margin-top: 30px;
-        }
-
+        .cantons-section { position: relative; overflow: hidden; min-height: 650px; padding: 100px 0; }
+        .cantons-video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .cantons-bg-video { width: 100%; height: 100%; object-fit: cover; }
+        .cantons-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(4px); }
+        .cantons-content-wrapper { position: relative; z-index: 2; }
+        .cantons-floating-area { position: relative; width: 100%; height: 480px; overflow: hidden; margin-top: 30px; }
+        
         .canton-floating-card {
             position: absolute;
             background: rgba(19, 27, 46, 0.92);
@@ -849,226 +501,58 @@
             transition: border-color 0.3s ease;
             will-change: transform;
         }
-
-        .canton-floating-card:hover {
-            border-color: var(--accent);
-            z-index: 10;
-        }
-
-        .canton-floating-card h3 {
-            font-size: 1rem;
-            margin-bottom: 4px;
-            color: var(--text-main);
-        }
-
-        .canton-floating-card p {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            line-height: 1.3;
-        }
+        .canton-floating-card:hover { border-color: var(--accent); z-index: 10; }
+        .canton-floating-card h3 { font-size: 1rem; margin-bottom: 4px; color: var(--text-main); }
+        .canton-floating-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.3; }
 
         /* Modal */
         .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(8px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            padding: 16px;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(8px);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 2000; opacity: 0; visibility: hidden; transition: var(--transition); padding: 16px;
         }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
+        .modal-overlay.active { opacity: 1; visibility: visible; }
         .modal-content {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 28px;
-            width: 100%;
-            max-width: 440px;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            transform: translateY(20px);
-            transition: var(--transition);
-            max-height: 90vh;
-            overflow-y: auto;
+            background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 28px;
+            width: 100%; max-width: 440px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            transform: translateY(20px); transition: var(--transition); max-height: 90vh; overflow-y: auto;
         }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--text-muted); font-size: 1.4rem; cursor: pointer; }
+        .modal-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; color: var(--text-main); }
+        .modal-subtitle { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px; }
+        
+        .form-group { margin-bottom: 14px; text-align: left; }
+        .form-group label { display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; }
+        .form-control { width: 100%; background: var(--bg-color); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; color: var(--text-main); font-family: inherit; font-size: 0.95rem; }
+        .form-control:focus { outline: none; border-color: var(--accent); }
+        select.form-control { cursor: pointer; }
+        .modal-content .btn { width: 100%; margin-top: 10px; padding: 14px; }
 
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 1.4rem;
-            cursor: pointer;
-        }
-
-        .modal-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: var(--text-main);
-        }
-
-        .modal-subtitle {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 14px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 4px;
-        }
-
-        .form-control {
-            width: 100%;
-            background: var(--bg-color);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 12px 14px;
-            color: var(--text-main);
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        select.form-control {
-            cursor: pointer;
-        }
-
-        .modal-content .btn {
-            width: 100%;
-            margin-top: 10px;
-            padding: 14px;
-        }
-
-        /* Юридический блок в футере (Impressum & Trust) */
-        footer {
-            background-color: var(--card-bg);
-            border-top: 1px solid var(--border);
-            padding: 60px 0 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        @media (min-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .footer-col h4 {
-            color: var(--text-main);
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .footer-col p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-col a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-col a:hover {
-            color: var(--accent);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
+        /* Footer */
+        footer { background-color: var(--card-bg); border-top: 1px solid var(--border); padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 40px; }
+        @media (min-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+        .footer-col h4 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 20px; font-weight: 600; }
+        .footer-col p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .footer-col a { color: var(--text-muted); text-decoration: none; transition: var(--transition); }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; }
 
         @media (max-width: 768px) {
-            .cantons-floating-area {
-                height: 580px;
-            }
-            .canton-floating-card {
-                width: 180px;
-                padding: 10px 12px;
-            }
-            .canton-floating-card h3 {
-                font-size: 0.9rem;
-            }
-            .canton-floating-card p {
-                font-size: 0.72rem;
-            }
+            .cantons-floating-area { height: 580px; }
+            .canton-floating-card { width: 180px; padding: 10px 12px; }
+            .canton-floating-card h3 { font-size: 0.9rem; }
+            .canton-floating-card p { font-size: 0.72rem; }
         }
+        .bot-trap { position: absolute; left: -9999px; opacity: 0; z-index: -1; }
 
-        .bot-trap {
-            position: absolute;
-            left: -9999px;
-            opacity: 0;
-            z-index: -1;
-        }
-
-        /* --- Кнопка "Гамбургер" и мобильное меню --- */
+        /* --- Мобильное меню и Бургер --- */
         .hamburger-btn { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; margin-left: 10px; }
         .hamburger-btn span { display: block; width: 100%; height: 2px; background-color: var(--text-main); border-radius: 2px; transition: all 0.3s ease; }
 
@@ -1087,15 +571,27 @@
         .mobile-nav-links a:hover { color: #d4af37; }
 
         .mobile-menu-bottom { margin-top: auto; padding-top: 30px; border-top: 1px solid #1e293b; }
-        .mobile-lang-switch { font-size: 0.95rem; font-weight: 700; margin-bottom: 24px; color: #94a3b8; }
-        .mobile-lang-switch a { color: #f8fafc; text-decoration: none; margin: 0 6px; cursor: pointer; }
-        .mobile-lang-switch a.active, .mobile-lang-switch a:hover { color: #d4af37; }
         
+        /* Стили для мобильного селектора языков */
+        .mobile-lang-select {
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+            cursor: pointer;
+        }
+        .mobile-lang-select:focus { border-color: var(--accent); }
+
         .mobile-phone-label { font-size: 0.85rem; color: #94a3b8; }
         .mobile-phone-number { color: #ffffff; font-size: 1.15rem; font-weight: 700; text-decoration: none; display: inline-block; }
         .mobile-phone-number:hover { color: #d4af37; }
 
-        /* Отображение кнопки только на смартфонах/планшетах */
+        /* Жесткое скрытие элементов на мобильных экранах */
         @media (max-width: 991px) {
             .nav-links, .btn-whatsapp, .open-modal-btn, .lang-switcher { display: none !important; }
             .header-phone { display: block; font-size: 1rem; }
@@ -1111,7 +607,6 @@
             <a href="/" class="logo" aria-label="Zurück zur Startseite">SWISS<span>CARS</span></a>
             
             <nav aria-label="Hauptnavigation">
-                <!-- Обычное меню для компьютеров -->
                 <ul class="nav-links">
                     <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
                     <li><a href="#services" data-i18n="nav_services">Rechner</a></li>
@@ -1126,7 +621,7 @@
                 <a href="https://wa.me/41764795820?text=Guten%20Tag,%20ich%20interessiere%20mich%20für%20den%20Autoconcierge-Service%20in%20der%20Schweiz" target="_blank" class="btn btn-whatsapp" data-i18n="btn_whatsapp" rel="noopener noreferrer">WhatsApp</a>
                 <button class="btn open-modal-btn" data-i18n="btn_request" aria-label="Anfrage Formular öffnen">Anfrage</button>
                 
-                <!-- Переключатель языков (для компьютеров) -->
+                <!-- Переключатель языков (для ПК) -->
                 <div class="lang-switcher" id="headerLangSwitcher">
                     <button class="lang-btn" id="headerLangBtn" aria-label="Sprache wählen" aria-haspopup="true" aria-expanded="false">
                         DE
@@ -1138,7 +633,7 @@
                     </div>
                 </div>
 
-                <!-- Кнопка с тремя полосками (для мобильных) -->
+                <!-- Бургер (для мобильных) -->
                 <button class="hamburger-btn" id="openMenuBtn" aria-label="Menü öffnen">
                     <span></span><span></span><span></span>
                 </button>
@@ -1149,16 +644,14 @@
     <!-- ВЫЕЗЖАЮЩЕЕ МОБИЛЬНОЕ МЕНЮ -->
     <div class="mobile-menu-overlay" id="mobileMenu">
         <div>
-            <!-- Крестик закрытия -->
             <button class="mobile-menu-close" id="closeMenuBtn" aria-label="Menü schließen">&times;</button>
             
-            <!-- Логотип/эмблема -->
             <a href="/" class="mobile-menu-brand">
                 <img src="/favicon.png" alt="SWISS CARS">
                 <span>SWISS<b>CARS</b></span>
             </a>
 
-            <!-- Пункты меню: Услуги, О нас, Контакты -->
+            <!-- Навигация -->
             <ul class="mobile-nav-links">
                 <li><a href="#details" class="menu-item-link" data-i18n="nav_details">Услуги</a></li>
                 <li><a href="#about" class="menu-item-link" data-i18n="nav_about">О нас</a></li>
@@ -1166,22 +659,26 @@
             </ul>
         </div>
 
-        <!-- Языки и Контакты (Телефон + Почта) -->
         <div class="mobile-menu-bottom">
-            <div class="mobile-lang-switch">
-                <a class="lang-option" data-lang="de">DE</a> | 
-                <a class="lang-option" data-lang="ru">RU</a> | 
-                <a class="lang-option" data-lang="ukr">UKR</a>
+            
+            <!-- Выпадающий список языков для мобильного -->
+            <div style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 28px;">
+                <span class="mobile-phone-label" data-i18n="form_language">Sprache / Язык</span>
+                <select id="mobileLangSelect" class="mobile-lang-select">
+                    <option value="de">Deutsch (DE)</option>
+                    <option value="ru">Русский (RU)</option>
+                    <option value="ukr">Українська (UKR)</option>
+                </select>
             </div>
             
             <div style="display: flex; flex-direction: column; gap: 16px;">
-                <!-- Блок с телефоном -->
+                <!-- Телефон -->
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                     <span class="mobile-phone-label" data-i18n="form_phone">Telefon / WhatsApp</span>
                     <a href="tel:+41764795820" class="mobile-phone-number">+41 76 479 58 20</a>
                 </div>
                 
-                <!-- Блок с почтой -->
+                <!-- Почта -->
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                     <span class="mobile-phone-label" data-i18n="form_email">E-Mail-Adresse</span>
                     <a href="mailto:swisscars.concierge.ch@gmail.com" class="mobile-phone-number" style="font-size: 0.95rem; word-break: break-all;">swisscars.concierge.ch@gmail.com</a>
@@ -1677,10 +1174,21 @@
                 aboutVideo.play().catch(e => console.log("Auto-play prevented:", e));
             }
 
+            // Определение текущего языка по URL папки
+            let currentLang = 'de'; 
+            if (window.location.pathname.includes('/ru/')) {
+                currentLang = 'ru';
+            } else if (window.location.pathname.includes('/ukr/')) {
+                currentLang = 'ukr';
+            }
+
             const switcher = document.getElementById('headerLangSwitcher');
             const langBtn = document.getElementById('headerLangBtn');
 
-            if (langBtn && switcher) {
+            // Установка текста в кнопке для десктопа
+            const desktopLangBtnText = { 'de': 'DE', 'ru': 'RU', 'ukr': 'UKR' };
+            if (langBtn) {
+                langBtn.textContent = desktopLangBtnText[currentLang];
                 langBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     switcher.classList.toggle('active');
@@ -1691,6 +1199,20 @@
                 document.addEventListener('click', () => {
                     switcher.classList.remove('active');
                     langBtn.setAttribute('aria-expanded', 'false');
+                });
+            }
+
+            // Мобильный селектор языков (Dropdown)
+            const mobileLangSelect = document.getElementById('mobileLangSelect');
+            if (mobileLangSelect) {
+                mobileLangSelect.value = currentLang; // Ставим актуальный язык
+                mobileLangSelect.addEventListener('change', (e) => {
+                    const lang = e.target.value;
+                    localStorage.setItem('swisscars_lang', lang);
+                    
+                    if (lang === 'de') window.location.href = '/';
+                    else if (lang === 'ru') window.location.href = '/ru/';
+                    else if (lang === 'ukr') window.location.href = '/ukr/';
                 });
             }
 
@@ -1779,9 +1301,6 @@
 
                 requestAnimationFrame(animateFloating);
             }
-
-            const savedLang = localStorage.getItem('swisscars_lang') || 'de';
-            let currentLang = 'de'; 
             
             const calcCards = document.querySelectorAll('.calc-card');
             const summaryList = document.getElementById('summaryList');
@@ -1894,6 +1413,7 @@
                     form_name: "Ihr Name",
                     form_phone: "Telefon / WhatsApp",
                     form_email: "E-Mail-Adresse",
+                    form_language: "Sprache / Язык",
                     form_service: "Leistungen",
                     opt_default: "Wählen Sie eine Option oder übernehmen Sie den Rechner",
                     form_submit: "Jetzt anfragen"
@@ -1997,6 +1517,7 @@
                     form_name: "Ваше имя",
                     form_phone: "Телефон / WhatsApp",
                     form_email: "Электронная почта",
+                    form_language: "Sprache / Язык",
                     form_service: "Выбранная услуга",
                     opt_default: "Выберите или оставьте расчет из калькулятора",
                     form_submit: "Отправить заявку"
@@ -2100,6 +1621,7 @@
                     form_name: "Ваше ім'я",
                     form_phone: "Телефон / WhatsApp",
                     form_email: "Електронна пошта",
+                    form_language: "Sprache / Язык",
                     form_service: "Вибрана послуга",
                     opt_default: "Виберіть або залиште розрахунок з калькулятора",
                     form_submit: "Надіслати заявку"
@@ -2138,20 +1660,17 @@
 
             setLanguage(currentLang);
 
-            const langOptions = document.querySelectorAll('.lang-option');
+            // Обработка кликов для десктопного переключателя
+            const langOptions = document.querySelectorAll('.lang-dropdown .lang-option');
             langOptions.forEach(option => {
                 option.addEventListener('click', (e) => {
                     e.preventDefault();
                     const lang = option.getAttribute('data-lang');
                     localStorage.setItem('swisscars_lang', lang);
                     
-                    if (lang === 'de') {
-                        window.location.href = '/';
-                    } else if (lang === 'ru') {
-                        window.location.href = '/ru/';
-                    } else if (lang === 'ukr') {
-                        window.location.href = '/ukr/';
-                    }
+                    if (lang === 'de') window.location.href = '/';
+                    else if (lang === 'ru') window.location.href = '/ru/';
+                    else if (lang === 'ukr') window.location.href = '/ukr/';
                     
                     if (switcher) switcher.classList.remove('active');
                 });

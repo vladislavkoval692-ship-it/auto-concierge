@@ -1072,7 +1072,7 @@
         .hamburger-btn { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; margin-left: 10px; }
         .hamburger-btn span { display: block; width: 100%; height: 2px; background-color: var(--text-main); border-radius: 2px; transition: all 0.3s ease; }
 
-        .mobile-menu-overlay { position: fixed; top: 0; right: -100%; width: 100%; max-width: 320px; height: 100vh; background: #0b0f19; border-left: 1px solid #1e293b; z-index: 2000; padding: 30px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: right 0.35s ease-in-out; box-shadow: -10px 0 30px rgba(0,0,0,0.6); }
+        .mobile-menu-overlay { position: fixed; top: 0; right: -100%; width: 100%; max-width: 320px; height: 100vh; background: #0b0f19; border-left: 1px solid #1e293b; z-index: 2000; padding: 30px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: right 0.35s ease-in-out; box-shadow: -10px 0 30px rgba(0,0,0,0.6); overflow-y: auto; }
         .mobile-menu-overlay.active { right: 0; }
         .mobile-menu-close { align-self: flex-end; background: none; border: none; color: #94a3b8; font-size: 32px; cursor: pointer; line-height: 1; padding: 0 4px; }
         .mobile-menu-close:hover { color: #ffffff; }
@@ -1091,9 +1091,8 @@
         .mobile-lang-switch a { color: #f8fafc; text-decoration: none; margin: 0 6px; cursor: pointer; }
         .mobile-lang-switch a.active, .mobile-lang-switch a:hover { color: #d4af37; }
         
-        .mobile-phone-block { display: flex; flex-direction: column; gap: 6px; }
         .mobile-phone-label { font-size: 0.85rem; color: #94a3b8; }
-        .mobile-phone-number { color: #ffffff; font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+        .mobile-phone-number { color: #ffffff; font-size: 1.15rem; font-weight: 700; text-decoration: none; display: inline-block; }
         .mobile-phone-number:hover { color: #d4af37; }
 
         /* Отображение кнопки только на смартфонах/планшетах */
@@ -1167,16 +1166,26 @@
             </ul>
         </div>
 
-        <!-- Языки и телефон -->
+        <!-- Языки и Контакты (Телефон + Почта) -->
         <div class="mobile-menu-bottom">
             <div class="mobile-lang-switch">
                 <a class="lang-option" data-lang="de">DE</a> | 
                 <a class="lang-option" data-lang="ru">RU</a> | 
                 <a class="lang-option" data-lang="ukr">UKR</a>
             </div>
-            <div class="mobile-phone-block">
-                <span class="mobile-phone-label" data-i18n="form_phone">Telefon / WhatsApp</span>
-                <a href="tel:+41764795820" class="mobile-phone-number">+41 76 479 58 20</a>
+            
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <!-- Блок с телефоном -->
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <span class="mobile-phone-label" data-i18n="form_phone">Telefon / WhatsApp</span>
+                    <a href="tel:+41764795820" class="mobile-phone-number">+41 76 479 58 20</a>
+                </div>
+                
+                <!-- Блок с почтой -->
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <span class="mobile-phone-label" data-i18n="form_email">E-Mail-Adresse</span>
+                    <a href="mailto:swisscars.concierge.ch@gmail.com" class="mobile-phone-number" style="font-size: 0.95rem; word-break: break-all;">swisscars.concierge.ch@gmail.com</a>
+                </div>
             </div>
         </div>
     </div>

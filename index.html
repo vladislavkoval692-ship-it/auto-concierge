@@ -56,7 +56,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- SEO: Schema.org (JSON-LD) AutomotiveBusiness с новым адресом -->
+    <!-- SEO: Schema.org (JSON-LD) AutomotiveBusiness с актуальным адресом -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -676,7 +676,6 @@
                     <span class="mobile-phone-label" data-i18n="form_email">E-Mail-Adresse</span>
                     <a href="mailto:swisscars.concierge.ch@gmail.com" class="mobile-phone-number" style="font-size: 0.95rem; word-break: break-all;">swisscars.concierge.ch@gmail.com</a>
                 </div>
-                <!-- Добавлен адрес в мобильное меню -->
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                     <span class="mobile-phone-label" data-i18n="form_address">Adresse</span>
                     <span class="mobile-phone-number" style="font-size: 0.95rem;">Treuackerstrasse 13, 9000 St. Gallen, Schweiz</span>
@@ -739,7 +738,7 @@
             </div>
         </section>
 
-        <!-- Services Calculator Section -->
+        <!-- Services Calculator Section (ОБНОВЛЕНЫ ЦЕНЫ ПО ТЗ) -->
         <section id="services" class="services-section">
             <div class="services-video-container">
                 <video autoplay muted loop playsinline preload="none" class="services-bg-video" aria-hidden="true">
@@ -754,7 +753,8 @@
                 <div class="calc-layout">
                     <div class="calc-services-grid" id="calcServicesGrid">
                         
-                        <div class="calc-card" data-price="950" data-name-de="Rundum-Sorglos Autokauf" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ" role="button" aria-pressed="false" tabindex="0">
+                        <!-- 1. Покупка авто под ключ: от CHF 450 -->
+                        <div class="calc-card" data-price="450" data-from="true" data-name-de="Rundum-Sorglos Autokauf" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
                                     <h3 data-i18n="srv1_title">Rundum-Sorglos Autokauf</h3>
@@ -764,11 +764,12 @@
                             </div>
                             <div class="calc-card-footer">
                                 <span data-i18n="srv_cost">Kosten:</span>
-                                <span class="calc-price">CHF 950</span>
+                                <span class="calc-price"><span class="price-from-label" data-i18n="srv_from">ab </span>CHF 450</span>
                             </div>
                         </div>
 
-                        <div class="calc-card" data-price="400" data-name-de="Verkaufs-Support" data-name-ru="Помощь в продаже автомобиля" data-name-ukr="Допомога в продажу автомобіля" role="button" aria-pressed="false" tabindex="0">
+                        <!-- 2. Помощь в продаже: от CHF 250 -->
+                        <div class="calc-card" data-price="250" data-from="true" data-name-de="Verkaufs-Support" data-name-ru="Помощь в продаже автомобиля" data-name-ukr="Допомога в продажу автомобіля" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
                                     <h3 data-i18n="srv8_title">Verkaufs-Support</h3>
@@ -778,11 +779,12 @@
                             </div>
                             <div class="calc-card-footer">
                                 <span data-i18n="srv_cost">Kosten:</span>
-                                <span class="calc-price">CHF 400</span>
+                                <span class="calc-price"><span class="price-from-label" data-i18n="srv_from">ab </span>CHF 250</span>
                             </div>
                         </div>
 
-                        <div class="calc-card" data-price="250" data-name-de="Fahrzeugcheck und Live-Inspektion" data-name-ru="Проверка и личный осмотр автомобиля" data-name-ukr="Перевірка та особистий огляд автомобіля" role="button" aria-pressed="false" tabindex="0">
+                        <!-- 3. Проверка и осмотр: от CHF 150 -->
+                        <div class="calc-card" data-price="150" data-from="true" data-name-de="Fahrzeugcheck und Live-Inspektion" data-name-ru="Проверка и личный осмотр автомобиля" data-name-ukr="Перевірка та особистий огляд автомобіля" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
                                     <h3 data-i18n="srv2_title">Fahrzeugcheck und Live-Inspektion</h3>
@@ -792,7 +794,7 @@
                             </div>
                             <div class="calc-card-footer">
                                 <span data-i18n="srv_cost">Kosten:</span>
-                                <span class="calc-price">CHF 250</span>
+                                <span class="calc-price"><span class="price-from-label" data-i18n="srv_from">ab </span>CHF 150</span>
                             </div>
                         </div>
 
@@ -895,7 +897,8 @@
                             </div>
                         </div>
 
-                        <div class="calc-card hidden-service" data-price="300" data-name-de="MFK-Vorbereitung" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK" role="button" aria-pressed="false" tabindex="0">
+                        <!-- 4. Техосмотр MFK: по запросу (data-price="0") -->
+                        <div class="calc-card hidden-service" data-price="0" data-name-de="MFK-Vorbereitung" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
                                     <h3 data-i18n="srv11_title">MFK-Vorbereitung</h3>
@@ -905,7 +908,7 @@
                             </div>
                             <div class="calc-card-footer">
                                 <span data-i18n="srv_cost">Kosten:</span>
-                                <span class="calc-price">CHF 300</span>
+                                <span class="calc-price" data-i18n="srv_indiv">Auf Anfrage</span>
                             </div>
                         </div>
 
@@ -1031,20 +1034,17 @@
                 <p class="section-subtitle" data-i18n="reviews_subtitle">Was unsere Kunden über uns sagen</p>
 
                 <div class="grid-3">
-                    <!-- CTA Card: Оставить отзыв -->
                     <article class="card review-cta-card">
                         <h3 style="margin-bottom: 20px; color: var(--text-muted); font-size: 1.1rem;" data-i18n="review_leave_text">Waren Sie zufrieden?</h3>
                         <a href="https://wa.me/41764795820?text=Ich%20möchte%20eine%20Bewertung%20hinterlassen" target="_blank" class="btn btn-whatsapp" data-i18n="review_leave_btn" rel="noopener noreferrer" style="width: 100%; justify-content: center;">Bewertung hinterlassen</a>
                     </article>
 
-                    <!-- Sample Review 1 -->
                     <article class="card">
                         <div class="review-star">★★★★★</div>
                         <p data-i18n="review_1_text">«Top Service! Alles lief reibungslos von der Suche bis zur Zulassung. Sehr transparent und ehrlich.»</p>
                         <h4 style="margin-top: 20px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_1_name">— Alexander M.</h4>
                     </article>
 
-                    <!-- Sample Review 2 -->
                     <article class="card">
                         <div class="review-star">★★★★★</div>
                         <p data-i18n="review_2_text">«Dank SWISS CARS habe ich viel Zeit und Nerven gespart. Professionelle Verhandlung und schnelle Abwicklung.»</p>
@@ -1252,7 +1252,7 @@
             // Мобильный селектор языков (Dropdown)
             const mobileLangSelect = document.getElementById('mobileLangSelect');
             if (mobileLangSelect) {
-                mobileLangSelect.value = currentLang; // Ставим актуальный язык
+                mobileLangSelect.value = currentLang;
                 mobileLangSelect.addEventListener('change', (e) => {
                     const lang = e.target.value;
                     localStorage.setItem('swisscars_lang', lang);
@@ -1407,6 +1407,7 @@
                     srv13_title: "Kundenservice nach dem Kauf",
                     srv13_desc: "Tipps zum Unterhalt, Werkstatt-Empfehlungen und Support für zukünftige Reparaturen.",
                     srv_cost: "Kosten:",
+                    srv_from: "ab ",
                     srv_indiv: "Auf Anfrage",
                     calc_summary_title: "Ihre Auswahl",
                     calc_empty: "Wählen Sie links eine oder mehrere Optionen aus",
@@ -1521,6 +1522,7 @@
                     srv13_title: "Поддержка после покупки",
                     srv13_desc: "Консультации по обслуживанию, выбор сервиса, страховка и ремонт в будущем.",
                     srv_cost: "Стоимость:",
+                    srv_from: "от ",
                     srv_indiv: "По запросу",
                     calc_summary_title: "Ваш расчет",
                     calc_empty: "Выберите одну или несколько услуг из списка слева",
@@ -1577,7 +1579,7 @@
                     c_fr: "Двуязычный регион.",
                     c_tg: "Кантон на северо-востоке.",
                     c_bs: "Столица инноваций.",
-                    c_sz: "Серце Швейцарии.",
+                    c_sz: "Сердце Швейцарии.",
                     modal_title: "Оформление заявки",
                     modal_subtitle: "Заполните форму, и наш персональный специалист свяжется с вами в ближайшее время.",
                     form_name: "Ваше имя",
@@ -1635,6 +1637,7 @@
                     srv13_title: "Підтримка після покупки",
                     srv13_desc: "Консультації з обслуговування, вибір сервісу, страховка та ремонт у майбутньому.",
                     srv_cost: "Вартість:",
+                    srv_from: "від ",
                     srv_indiv: "За запитом",
                     calc_summary_title: "Ваш розрахунок",
                     calc_empty: "Виберіть одну або кілька послуг зі списку зліва",
@@ -1776,6 +1779,7 @@
                 let total = 0;
                 let summaryHTML = '';
                 let serviceNamesForModal = [];
+                let hasFromService = false;
                 const langDict = translations[currentLang] || translations.de;
 
                 if (selectedCards.length > 0) {
@@ -1785,11 +1789,15 @@
 
                     selectedCards.forEach(card => {
                         const price = parseInt(card.getAttribute('data-price')) || 0;
+                        const isFrom = card.getAttribute('data-from') === 'true';
+                        if (isFrom) hasFromService = true;
+                        
                         const name = card.getAttribute(`data-name-${currentLang}`) || card.getAttribute('data-name-de');
                         total += price;
                         serviceNamesForModal.push(name);
 
-                        const priceText = price > 0 ? `CHF ${price.toLocaleString()}` : langDict['srv_indiv'];
+                        const fromPrefix = isFrom ? (langDict['srv_from'] || 'ab ') : '';
+                        const priceText = price > 0 ? `${fromPrefix}CHF ${price.toLocaleString()}` : langDict['srv_indiv'];
                         summaryHTML += `<li><span>${name}</span><span>${priceText}</span></li>`;
                     });
 
@@ -1803,7 +1811,8 @@
                     calcOrderBtn.setAttribute('disabled', 'true');
                 }
 
-                calcTotalPrice.textContent = `CHF ${total.toLocaleString()}`;
+                const totalPrefix = (hasFromService && total > 0) ? (langDict['srv_from'] || 'ab ') : '';
+                calcTotalPrice.textContent = `${totalPrefix}CHF ${total.toLocaleString()}`;
             }
 
             calcCards.forEach(card => {

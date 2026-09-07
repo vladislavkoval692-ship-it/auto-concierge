@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="de" translate="no">
 <head>
-    <link rel="icon" href="/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="/favicon.png">
+    <!-- Иконки для поисковиков (Google), вкладок ПК и Safari (iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://swisscars-concierge.ch/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://swisscars-concierge.ch/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://swisscars-concierge.ch/favicon.png">
+    <link rel="icon" href="https://swisscars-concierge.ch/favicon.png" type="image/png">
+    
+    <!-- Мета-теги для показа миниатюры сайта в результатах поиска Google -->
+    <meta name="thumbnail" content="https://swisscars-concierge.ch/favicon.png">
+    <meta itemprop="image" content="https://swisscars-concierge.ch/favicon.png">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
@@ -39,14 +47,14 @@
     <meta name="twitter:image" content="https://swisscars-concierge.ch/og-image.jpg">
 
     <!-- Политика безопасности контента (CSP) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://script.google.com; img-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://script.google.com; img-src 'self' data:; frame-src 'self' https://maps.google.com https://www.google.com;">
     
     <!-- SEO: Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- SEO: Schema.org (JSON-LD) AutomotiveBusiness -->
+    <!-- SEO: Schema.org (JSON-LD) AutomotiveBusiness с новым адресом -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -59,6 +67,9 @@
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Treuackerstrasse 13",
+        "addressLocality": "St. Gallen",
+        "postalCode": "9000",
         "addressCountry": "CH"
       },
       "areaServed": "Switzerland",
@@ -66,6 +77,36 @@
       "sameAs": [
         "https://swisscars-concierge.ch/"
       ]
+    }
+    </script>
+
+    <!-- SEO: FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Kann ich als Ausländer in der Schweiz ein Auto kaufen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, Ausländer mit einem gültigen Aufenthaltsausweis (B, C oder L) können in der Schweiz problemlos ein Auto kaufen und einlösen. Wir übernehmen die komplette Bürokratie für Sie."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Was beinhaltet der Autoconcierge-Service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unser Full-Service umfasst die Fahrzeugsuche, Vor-Ort-Inspektion, Preisverhandlung, Versicherungsabwicklung, MFK-Prüfung und die Zulassung. Sie erhalten das fertige Auto schlüsselfertig."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Wie läuft die MFK (Motorfahrzeugkontrolle) ab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wir bereiten das Fahrzeug komplett vor, beheben Mängel und begleiten die Prüfung beim Strassenverkehrsamt, damit das Auto die MFK beim ersten Mal besteht."
+        }
+      }]
     }
     </script>
 
@@ -508,7 +549,7 @@
         select.form-control { cursor: pointer; }
         .modal-content .btn { width: 100%; margin-top: 10px; padding: 14px; }
 
-        /* Footer */
+        /* Footer & Map Block */
         footer { background-color: var(--card-bg); border-top: 1px solid var(--border); padding: 60px 0 30px; }
         .footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 40px; }
         @media (min-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
@@ -624,7 +665,6 @@
                 <li><a href="#contact" class="menu-item-link" data-i18n="nav_contact">Контакты</a></li>
             </ul>
 
-            <!-- Контакты перенесены сразу под ссылки меню -->
             <div style="display: flex; flex-direction: column; gap: 16px;">
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                     <span class="mobile-phone-label" data-i18n="form_phone">Telefon / WhatsApp</span>
@@ -1135,21 +1175,29 @@
         </div>
     </div>
 
-    <!-- Юридический блок в подвале (Footer) -->
+    <!-- Юридический блок в подвале (Footer) и Карта -->
     <footer id="contact">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h4>SWISS CARS Concierge</h4>
-                <p>Kanton Zürich, Schweiz</p>
-                <p><a href="tel:+41764795820">+41 76 479 58 20</a></p>
-                <p><a href="mailto:info@swisscars-concierge.ch">info@swisscars-concierge.ch</a></p>
+        <div class="container">
+            
+            <!-- Карта Google Maps из ТЗ -->
+            <div style="margin-bottom: 40px; border-radius: 14px; overflow: hidden; border: 1px solid var(--border);">
+                <iframe src="https://maps.google.com/maps?q=Treuackerstrasse%2013,%209000%20St.%20Gallen&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="footer-col">
-                <h4>Rechtliches</h4>
-                <ul class="footer-links">
-                    <li><a href="#impressum">Impressum</a></li>
-                    <li><a href="#datenschutz">Datenschutzerklärung</a></li>
-                </ul>
+            
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>SWISS CARS Concierge</h4>
+                    <p>Treuackerstrasse 13, 9000 St. Gallen, Schweiz</p>
+                    <p><a href="tel:+41764795820">+41 76 479 58 20</a></p>
+                    <p><a href="mailto:info@swisscars-concierge.ch">info@swisscars-concierge.ch</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Rechtliches</h4>
+                    <ul class="footer-links">
+                        <li><a href="#impressum">Impressum</a></li>
+                        <li><a href="#datenschutz">Datenschutzerklärung</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="container footer-bottom">

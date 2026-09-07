@@ -13,10 +13,6 @@
     <!-- Мета-теги для показа миниатюры сайта в результатах поиска Google -->
     <meta name="thumbnail" content="https://swisscars-concierge.ch/favicon.png?v=2">
     <meta itemprop="image" content="https://swisscars-concierge.ch/favicon.png?v=2">
-    
-    <!-- Мета-теги для показа миниатюры сайта в результатах поиска Google -->
-    <meta name="thumbnail" content="https://swisscars-concierge.ch/favicon.png">
-    <meta itemprop="image" content="https://swisscars-concierge.ch/favicon.png">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -681,9 +677,10 @@
                     <span class="mobile-phone-label" data-i18n="form_email">E-Mail-Adresse</span>
                     <a href="mailto:swisscars.concierge.ch@gmail.com" class="mobile-phone-number" style="font-size: 0.95rem; word-break: break-all;">swisscars.concierge.ch@gmail.com</a>
                 </div>
+                <!-- Кликабельный адрес с переходом в Google Maps -->
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                     <span class="mobile-phone-label" data-i18n="form_address">Adresse</span>
-                    <span class="mobile-phone-number" style="font-size: 0.95rem;">Treuackerstrasse 13, 9000 St. Gallen, Schweiz</span>
+                    <a href="https://maps.google.com/maps?q=Treuackerstrasse+13,+9000+St.+Gallen,+Schweiz" target="_blank" rel="noopener noreferrer" class="mobile-phone-number" style="font-size: 0.95rem;">Treuackerstrasse 13, 9000 St. Gallen, Schweiz</a>
                 </div>
             </div>
         </div>
@@ -743,7 +740,7 @@
             </div>
         </section>
 
-        <!-- Services Calculator Section (ОБНОВЛЕНЫ ЦЕНЫ ПО ТЗ) -->
+        <!-- Services Calculator Section -->
         <section id="services" class="services-section">
             <div class="services-video-container">
                 <video autoplay muted loop playsinline preload="none" class="services-bg-video" aria-hidden="true">
@@ -758,7 +755,6 @@
                 <div class="calc-layout">
                     <div class="calc-services-grid" id="calcServicesGrid">
                         
-                        <!-- 1. Покупка авто под ключ: от CHF 450 -->
                         <div class="calc-card" data-price="450" data-from="true" data-name-de="Rundum-Sorglos Autokauf" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
@@ -773,7 +769,6 @@
                             </div>
                         </div>
 
-                        <!-- 2. Помощь в продаже: от CHF 250 -->
                         <div class="calc-card" data-price="250" data-from="true" data-name-de="Verkaufs-Support" data-name-ru="Помощь в продаже автомобиля" data-name-ukr="Допомога в продажу автомобіля" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
@@ -788,7 +783,6 @@
                             </div>
                         </div>
 
-                        <!-- 3. Проверка и осмотр: от CHF 150 -->
                         <div class="calc-card" data-price="150" data-from="true" data-name-de="Fahrzeugcheck und Live-Inspektion" data-name-ru="Проверка и личный осмотр автомобиля" data-name-ukr="Перевірка та особистий огляд автомобіля" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
@@ -902,7 +896,6 @@
                             </div>
                         </div>
 
-                        <!-- 4. Техосмотр MFK: по запросу (data-price="0") -->
                         <div class="calc-card hidden-service" data-price="0" data-name-de="MFK-Vorbereitung" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
@@ -1039,17 +1032,20 @@
                 <p class="section-subtitle" data-i18n="reviews_subtitle">Was unsere Kunden über uns sagen</p>
 
                 <div class="grid-3">
+                    <!-- CTA Card: Оставить отзыв -->
                     <article class="card review-cta-card">
                         <h3 style="margin-bottom: 20px; color: var(--text-muted); font-size: 1.1rem;" data-i18n="review_leave_text">Waren Sie zufrieden?</h3>
                         <a href="https://wa.me/41764795820?text=Ich%20möchte%20eine%20Bewertung%20hinterlassen" target="_blank" class="btn btn-whatsapp" data-i18n="review_leave_btn" rel="noopener noreferrer" style="width: 100%; justify-content: center;">Bewertung hinterlassen</a>
                     </article>
 
+                    <!-- Sample Review 1 -->
                     <article class="card">
                         <div class="review-star">★★★★★</div>
                         <p data-i18n="review_1_text">«Top Service! Alles lief reibungslos von der Suche bis zur Zulassung. Sehr transparent und ehrlich.»</p>
                         <h4 style="margin-top: 20px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_1_name">— Alexander M.</h4>
                     </article>
 
+                    <!-- Sample Review 2 -->
                     <article class="card">
                         <div class="review-star">★★★★★</div>
                         <p data-i18n="review_2_text">«Dank SWISS CARS habe ich viel Zeit und Nerven gespart. Professionelle Verhandlung und schnelle Abwicklung.»</p>
@@ -1257,7 +1253,7 @@
             // Мобильный селектор языков (Dropdown)
             const mobileLangSelect = document.getElementById('mobileLangSelect');
             if (mobileLangSelect) {
-                mobileLangSelect.value = currentLang;
+                mobileLangSelect.value = currentLang; // Ставим актуальный язык
                 mobileLangSelect.addEventListener('change', (e) => {
                     const lang = e.target.value;
                     localStorage.setItem('swisscars_lang', lang);

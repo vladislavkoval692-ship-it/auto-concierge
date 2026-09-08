@@ -909,13 +909,29 @@
                             </div>
                         </div>
 
-                        <div class="calc-card hidden-service" data-price="0" data-name-de="MFK-Vorbereitung" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK" role="button" aria-pressed="false" tabindex="0">
+                        <!-- Измененная карточка 1: MFK-Vorbereitung (стала Behebung von Mängeln für MFK) -->
+                        <div class="calc-card hidden-service" data-price="200" data-name-de="Behebung von Mängeln für MFK" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
-                                    <h3 data-i18n="srv11_title">MFK-Vorbereitung</h3>
+                                    <h3 data-i18n="srv11_title">Behebung von Mängeln für MFK</h3>
                                     <div class="calc-checkbox" aria-hidden="true"></div>
                                 </div>
                                 <p data-i18n="srv11_desc">Vor-Check, Behebung von Mängeln und Begleitung bei der Motorfahrzeugkontrolle.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 200</span>
+                            </div>
+                        </div>
+
+                        <!-- НОВАЯ карточка 2: Behebung von Mängeln (MFK) -->
+                        <div class="calc-card hidden-service" data-price="0" data-name-de="Behebung von Mängeln (MFK)" data-name-ru="Устранение неисправностей (MFK)" data-name-ukr="Усунення несправностей (MFK)" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv14_title">Behebung von Mängeln (MFK)</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv14_desc">Wir beheben alle festgestellten Mängel vor oder nach der MFK und bereiten Ihr Fahrzeug optimal für die Prüfung vor. Von kleineren Reparaturen bis zur vollständigen Vorbereitung – wir kümmern uns um alles.</p>
                             </div>
                             <div class="calc-card-footer">
                                 <span data-i18n="srv_cost">Kosten:</span>
@@ -973,7 +989,6 @@
                         <div class="summary-actions">
                             <button class="btn open-modal-btn" id="calcOrderBtn" disabled aria-label="Kalkulation anfragen" data-i18n="calc_btn_order">Auswahl anfragen</button>
                             <a href="https://wa.me/41764795820?text=Guten%20Tag,%20ich%20habe%20eine%20Kalkulation%20auf%20der%20Website%20erstellt" target="_blank" class="btn btn-whatsapp" data-i18n="calc_btn_wa" rel="noopener noreferrer">Via WhatsApp besprechen</a>
-                            <!-- Новая кнопка 연락 / Контакт -->
                             <button type="button" class="btn open-modal-btn" data-i18n="calc_btn_contact" style="background: transparent; border: 1px solid var(--border); color: var(--text-main); margin-top: 5px;">Kontaktieren Sie uns</button>
                         </div>
                     </aside>
@@ -1029,12 +1044,16 @@
                         <p data-i18n="d10_desc">Papierkram, Versicherung und Schilder-Abholung stressfrei in der Schweiz abwickeln.</p>
                     </article>
                     <article class="card">
-                        <h3 data-i18n="d11_title">MFK-Vorbereitung</h3>
+                        <h3 data-i18n="d11_title">Behebung von Mängeln für MFK</h3>
                         <p data-i18n="d11_desc">Vorbereitung auf die Motorfahrzeugkontrolle, Beseitigung von Mängeln und reibungsloser Ablauf.</p>
                     </article>
                     <article class="card">
                         <h3 data-i18n="d12_title">Transport und Support</h3>
                         <p data-i18n="d12_desc">Überführung aus anderen Kantonen sowie langfristiger Support bei Servicefragen und Wartung.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d13_title">Behebung von Mängeln (MFK)</h3>
+                        <p data-i18n="d13_desc">Wir beheben alle festgestellten Mängel vor oder nach der MFK und bereiten Ihr Fahrzeug optimal für die Prüfung vor.</p>
                     </article>
                 </div>
             </div>
@@ -1047,24 +1066,58 @@
                 <p class="section-subtitle" data-i18n="reviews_subtitle">Was unsere Kunden über uns sagen</p>
 
                 <div class="grid-3">
-                    <!-- CTA Card: Оставить отзыв -->
+                    
+                    <!-- CTA Card: Оставить отзыв в Google -->
                     <article class="card review-cta-card">
                         <h3 style="margin-bottom: 20px; color: var(--text-muted); font-size: 1.1rem;" data-i18n="review_leave_text">Waren Sie zufrieden?</h3>
-                        <a href="https://wa.me/41764795820?text=Ich%20möchte%20eine%20Bewertung%20hinterlassen" target="_blank" class="btn btn-whatsapp" data-i18n="review_leave_btn" rel="noopener noreferrer" style="width: 100%; justify-content: center;">Bewertung hinterlassen</a>
+                        <a href="https://maps.app.goo.gl/rsFYBUkemmzfVMMR7?g_st=it" target="_blank" class="btn btn-whatsapp" data-i18n="review_leave_btn" rel="noopener noreferrer" style="width: 100%; justify-content: center; background: #ffffff; color: #0b0f19;">Auf Google bewerten</a>
                     </article>
 
-                    <!-- Sample Review 1 -->
+                    <!-- Google Review 1 -->
+                    <article class="card" style="position: relative;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <div class="review-star">★★★★★</div>
+                            <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                        <p data-i18n="review_g1_text">«Sehr professionelle Beratung und reibungslose Abwicklung. Kann ich nur weiterempfehlen!»</p>
+                        <h4 style="margin-top: 15px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_g1_name">Michael K.</h4>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);" data-i18n="review_google">Google Rezension</span>
+                    </article>
+
+                    <!-- Site Review 1 -->
                     <article class="card">
                         <div class="review-star">★★★★★</div>
                         <p data-i18n="review_1_text">«Top Service! Alles lief reibungslos von der Suche bis zur Zulassung. Sehr transparent und ehrlich.»</p>
-                        <h4 style="margin-top: 20px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_1_name">— Alexander M.</h4>
+                        <h4 style="margin-top: 15px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_1_name">— Alexander M.</h4>
                     </article>
 
-                    <!-- Sample Review 2 -->
+                    <!-- Google Review 2 -->
+                    <article class="card" style="position: relative;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <div class="review-star">★★★★★</div>
+                            <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                        <p data-i18n="review_g2_text">«Top Service beim Autokauf! Alles wurde transparent kommuniziert und die MFK war kein Problem.»</p>
+                        <h4 style="margin-top: 15px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_g2_name">Stefan W.</h4>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);" data-i18n="review_google">Google Rezension</span>
+                    </article>
+
+                    <!-- Site Review 2 -->
                     <article class="card">
                         <div class="review-star">★★★★★</div>
                         <p data-i18n="review_2_text">«Dank SWISS CARS habe ich viel Zeit und Nerven gespart. Professionelle Verhandlung und schnelle Abwicklung.»</p>
-                        <h4 style="margin-top: 20px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_2_name">— Elena K.</h4>
+                        <h4 style="margin-top: 15px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_2_name">— Elena K.</h4>
+                    </article>
+                    
+                    <!-- Google Review 3 -->
+                    <article class="card" style="position: relative;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <div class="review-star">★★★★★</div>
+                            <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                        <p data-i18n="review_g3_text">«Hat mir viel Zeit und Stress erspart. Sehr kompetenter Concierge-Service in St. Gallen.»</p>
+                        <h4 style="margin-top: 15px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_g3_name">David R.</h4>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);" data-i18n="review_google">Google Rezension</span>
                     </article>
                 </div>
             </div>
@@ -1188,7 +1241,8 @@
                         <option value="Inseraterstellung" data-i18n="srv7_title">Inseraterstellung</option>
                         <option value="Experten-Beratung und Vergleich" data-i18n="srv9_title">Experten-Beratung und Vergleich</option>
                         <option value="Zulassungs-Service" data-i18n="srv10_title">Zulassungs-Service</option>
-                        <option value="MFK-Vorbereitung" data-i18n="srv11_title">MFK-Vorbereitung</option>
+                        <option value="Behebung von Mängeln für MFK" data-i18n="srv11_title">Behebung von Mängeln für MFK</option>
+                        <option value="Behebung von Mängeln (MFK)" data-i18n="srv14_title">Behebung von Mängeln (MFK)</option>
                         <option value="Fahrzeugtransport" data-i18n="srv12_title">Fahrzeugtransport</option>
                         <option value="Kundenservice nach dem Kauf" data-i18n="srv13_title">Kundenservice nach dem Kauf</option>
                     </select>
@@ -1417,8 +1471,10 @@
                     srv9_desc: "Deep-Dive in Sachen Zuverlässigkeit, Unterhalt, Schwachstellen und Ihre persönlichen Anforderungen.",
                     srv10_title: "Zulassungs-Service",
                     srv10_desc: "Versicherung, Dokumentenprüfung und reibungslose Einlösung der Kontrollschilder in der Schweiz.",
-                    srv11_title: "MFK-Vorbereitung",
+                    srv11_title: "Behebung von Mängeln für MFK",
                     srv11_desc: "Vor-Check, Behebung von Mängeln und Begleitung bei der Motorfahrzeugkontrolle.",
+                    srv14_title: "Behebung von Mängeln (MFK)",
+                    srv14_desc: "Wir beheben alle festgestellten Mängel vor oder nach der MFK und bereiten Ihr Fahrzeug optimal für die Prüfung vor. Von kleineren Reparaturen bis zur vollständigen Vorbereitung – wir kümmern uns um alles.",
                     srv12_title: "Fahrzeugtransport",
                     srv12_desc: "Organisation des Transports oder der Überführung aus einem anderen Kanton oder Gebiet.",
                     srv13_title: "Kundenservice nach dem Kauf",
@@ -1454,18 +1510,27 @@
                     d9_desc: "Unabhängiger Check verschiedener Modelle nach Zuverlässigkeit, Schwachstellen und Alltagstauglichkeit.",
                     d10_title: "Zulassungs-Express",
                     d10_desc: "Papierkram, Versicherung und Schilder-Abholung stressfrei in der Schweiz abwickeln.",
-                    d11_title: "MFK-Vorbereitung",
+                    d11_title: "Behebung von Mängeln für MFK",
                     d11_desc: "Vorbereitung auf die Motorfahrzeugkontrolle, Beseitigung von Mängeln und reibungsloser Ablauf.",
                     d12_title: "Transport und Support",
                     d12_desc: "Überführung aus anderen Kantonen sowie langfristiger Support bei Servicefragen und Wartung.",
+                    d13_title: "Behebung von Mängeln (MFK)",
+                    d13_desc: "Wir beheben alle festgestellten Mängel vor oder nach der MFK und bereiten Ihr Fahrzeug optimal für die Prüfung vor.",
                     reviews_title: "Kundenstimmen",
                     reviews_subtitle: "Was unsere Kunden über uns sagen",
                     review_leave_text: "Waren Sie zufrieden?",
-                    review_leave_btn: "Bewertung hinterlassen",
+                    review_leave_btn: "Auf Google bewerten",
                     review_1_text: "«Top Service! Alles lief reibungslos von der Suche bis zur Zulassung. Sehr transparent und ehrlich.»",
                     review_1_name: "— Alexander M.",
                     review_2_text: "«Dank SWISS CARS habe ich viel Zeit und Nerven gespart. Professionelle Verhandlung und schnelle Abwicklung.»",
                     review_2_name: "— Elena K.",
+                    review_g1_text: "«Sehr professionelle Beratung und reibungslose Abwicklung. Kann ich nur weiterempfehlen!»",
+                    review_g1_name: "Michael K.",
+                    review_g2_text: "«Top Service beim Autokauf! Alles wurde transparent kommuniziert und die MFK war kein Problem.»",
+                    review_g2_name: "Stefan W.",
+                    review_g3_text: "«Hat mir viel Zeit und Stress erspart. Sehr kompetenter Concierge-Service in St. Gallen.»",
+                    review_g3_name: "David R.",
+                    review_google: "Google Rezension",
                     cantons_title: "Regionen und Kantone",
                     cantons_subtitle: "Schweizweit für Sie vor Ort: Zürich, Bern, Genf und weitere.",
                     c_zh: "Finanz- und Business-Hub.",
@@ -1535,6 +1600,8 @@
                     srv10_desc: "Страховка, проверка документов и беспроблемное получение номерных знаков в Швейцарии.",
                     srv11_title: "Помощь с техосмотром MFK",
                     srv11_desc: "Предварительная оценка, устранение недочетов и сопровождение процесса.",
+                    srv14_title: "Устранение неисправностей (MFK)",
+                    srv14_desc: "Мы устраняем все выявленные неисправности до или после MFK и оптимально готовим ваш автомобиль к техосмотру. От мелкого ремонта до полной подготовки — мы берем все на себя.",
                     srv12_title: "Доставка и перегон автомобиля",
                     srv12_desc: "Организация доставки или перегона из другого города или кантона (расчет индивидуально).",
                     srv13_title: "Поддержка после покупки",
@@ -1574,14 +1641,23 @@
                     d11_desc: "Предварительная оценка состояния, устранение недочетов и сопровождение процесса прохождения техосмотра.",
                     d12_title: "Доставка и поддержка",
                     d12_desc: "Организация доставки или перегона авто из другого кантону + постпродажные консультации по обслуживанию.",
+                    d13_title: "Устранение неисправностей (MFK)",
+                    d13_desc: "Мы устраняем все выявленные неисправности до или после MFK и оптимально готовим ваш автомобиль к техосмотру.",
                     reviews_title: "Отзывы клиентов",
                     reviews_subtitle: "Что говорят о нашей работе",
                     review_leave_text: "Остались довольны нашей работой?",
-                    review_leave_btn: "Оставить отзыв",
+                    review_leave_btn: "Оценить в Google",
                     review_1_text: "«Отличный сервис! Всё прошло гладко от поиска до регистрации авто. Прозрачно и честно.»",
                     review_1_name: "— Александр М.",
                     review_2_text: "«Сэкономили кучу времени и нервов. Профессиональный торг и быстрая постановка на учет. Рекомендую!»",
                     review_2_name: "— Елена К.",
+                    review_g1_text: "«Очень профессиональная консультация и гладкое оформление. Могу только порекомендовать!»",
+                    review_g1_name: "Михаэль К.",
+                    review_g2_text: "«Топ сервис при покупке авто! Всё было прозрачно, и техосмотр MFK прошли без проблем.»",
+                    review_g2_name: "Штефан В.",
+                    review_g3_text: "«Сэкономили мне кучу времени и нервов. Очень компетентный консьерж-сервис в Санкт-Галлене.»",
+                    review_g3_name: "Давид Р.",
+                    review_google: "Отзыв из Google",
                     cantons_title: "Регионы и кантоны",
                     cantons_subtitle: "Оперативная работа по всей территории Швейцарии: Цюрих, Берн, Женева и другие регионы",
                     c_zh: "Финансовый и деловой центр.",
@@ -1651,6 +1727,8 @@
                     srv10_desc: "Страховка, перевірка документів та безпроблемне отримання номерних знаків у Швейцарії.",
                     srv11_title: "Допомога з техоглядом MFK",
                     srv11_desc: "Попередня оцінка, усунення недоліків та супровід процесу.",
+                    srv14_title: "Усунення несправностей (MFK)",
+                    srv14_desc: "Ми усуваємо всі виявлені несправності до або після MFK та оптимально готуємо ваш автомобіль до техогляду. Від дрібного ремонту до повної підготовки — ми беремо все на себе.",
                     srv12_title: "Доставка та перегін автомобіля",
                     srv12_desc: "Організація доставки або перегону з іншого міста чи кантону (розрахунок індивідуально).",
                     srv13_title: "Підтримка після покупки",
@@ -1671,7 +1749,7 @@
                     d2_title: "Перевірка та огляд",
                     d2_desc: "Аналіз історії, оголошень, комплектації та прихованих дефектів, а також особистий огляд кузова, салону, мотора, підвіски з докладним фотозвітом.",
                     d3_title: "Переговори з продавцем",
-                    d3_desc: "Ставимо правильні питання, уточнюємо історію автомобіля, обговореємо торг і допомагаємо домогтися максимально вигідної ціни.",
+                    d3_desc: "Ставимо правильні питання, уточнюємо історію автомобіля, обговорюємо торг і допомагаємо домогтися максимально вигідної ціни.",
                     d4_title: "Підбір страховки",
                     d4_desc: "Оформлення оптимальної страховки з найкращим співвідношенням ціни та покриття для вашого спокою.",
                     d5_title: "Підготовка до продажу",
@@ -1690,14 +1768,23 @@
                     d11_desc: "Попередня оцінка стану, усунення недоліків та супровід процесу проходження техогляду.",
                     d12_title: "Доставка та підтримка",
                     d12_desc: "Організація доставки або перегону авто з іншого кантону + післяпродажні консультації з обслуговування.",
+                    d13_title: "Усунення несправностей (MFK)",
+                    d13_desc: "Ми усуваємо всі виявлені несправності до або після MFK та оптимально готуємо ваш автомобіль до техогляду.",
                     reviews_title: "Відгуки клієнтів",
                     reviews_subtitle: "Що кажуть про нашу роботу",
                     review_leave_text: "Залишилися задоволені нашою роботою?",
-                    review_leave_btn: "Залишити відгук",
+                    review_leave_btn: "Оцінити в Google",
                     review_1_text: "«Відмінний сервіс! Все пройшло гладко від пошуку до реєстрації авто. Прозоро і чесно.»",
                     review_1_name: "— Олександр М.",
                     review_2_text: "«Зекономили купу часу і нервів. Професійний торг і швидка постановка на облік. Рекомендую!»",
                     review_2_name: "— Олена К.",
+                    review_g1_text: "«Дуже професійна консультація та безпроблемне оформлення. Можу тільки порекомендувати!»",
+                    review_g1_name: "Міхаель К.",
+                    review_g2_text: "«Топ сервіс при покупці авто! Все було прозоро, і техогляд MFK пройшли без проблем.»",
+                    review_g2_name: "Штефан В.",
+                    review_g3_text: "«Зекономили мені купу часу і нервів. Дуже компетентний консьєрж-сервіс в Санкт-Галлені.»",
+                    review_g3_name: "Давід Р.",
+                    review_google: "Відгук з Google",
                     cantons_title: "Регіони та кантони",
                     cantons_subtitle: "Оперативна робота по всій території Швейцарії: Цюрих, Берн, Женева та інші регіони",
                     c_zh: "Фінансовий та діловий центр.",

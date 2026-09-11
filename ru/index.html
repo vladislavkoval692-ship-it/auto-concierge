@@ -60,7 +60,7 @@
     <meta name="twitter:image" content="https://swisscars-concierge.ch/og-image.jpg">
 
     <!-- Политика безопасности контента (CSP) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://script.google.com; img-src 'self' data:; frame-src 'self' https://maps.google.com https://www.google.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://script.google.com https://www.google-analytics.com https://region1.google-analytics.com; img-src 'self' data: https://www.google-analytics.com; frame-src 'self' https://maps.google.com https://www.google.com;">
     
     <!-- SEO: Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -920,7 +920,7 @@
                             </div>
                         </div>
 
-                        <!-- Измененная карточка 1: MFK-Vorbereitung -->
+                        <!-- Карточка 1: MFK-Vorbereitung -->
                         <div class="calc-card hidden-service" data-price="200" data-name-de="MFK-Vorbereitung" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
@@ -1304,6 +1304,20 @@
                 aboutVideo.play().catch(e => console.log("Auto-play prevented:", e));
             }
 
+            let currentCalculatedTotal = 0;
+
+            // Отслеживание кликов по ссылкам WhatsApp в Google Аналитике
+            document.querySelectorAll('a[href*="wa.me"]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'whatsapp_click', {
+                            'event_category': 'lead',
+                            'event_label': btn.getAttribute('data-i18n') || btn.className || 'whatsapp'
+                        });
+                    }
+                });
+            });
+
             // Определение текущего языка по URL папки
             let currentLang = 'de'; 
             if (window.location.pathname.includes('/ru/')) {
@@ -1661,7 +1675,7 @@
                     review_leave_btn: "Оценить в Google",
                     review_1_text: "«Отличный сервис! Всё прошло гладко от поиска до регистрации авто. Прозрачно и честно.»",
                     review_1_name: "— Александр М.",
-                    review_2_text: "«Сэкономили кучу времени и нервов. Профессиональный торг и быстрая постановка на учет. Рекомендую!»",
+                    review_2_text: "«Зекономили купу времени и нервов. Профессиональный торг и быстрая постановка на учет. Рекомендую!»",
                     review_2_name: "— Елена К.",
                     review_g1_text: "«Очень профессиональная консультация и гладкое оформление. Могу только порекомендовать!»",
                     review_g1_name: "Михаэль К.",
@@ -1673,7 +1687,7 @@
                     cantons_title: "Регионы и кантоны",
                     cantons_subtitle: "Оперативная работа по всей территории Швейцарии: Цюрих, Берн, Женева и другие регионы",
                     c_zh: "Финансовый и деловой центр.",
-                    c_be: "Федеральная столица.",
+                    c_be: "Федеральна столица.",
                     c_vd: "Кантон на Женевском озере.",
                     c_ag: "Торговый узел страны.",
                     c_sg: "Центр восточной части.",
@@ -1930,6 +1944,7 @@
                     calcOrderBtn.setAttribute('disabled', 'true');
                 }
 
+                currentCalculatedTotal = total;
                 const totalPrefix = (hasFromService && total > 0) ? (langDict['srv_from'] || 'ab ') : '';
                 calcTotalPrice.textContent = `${totalPrefix}CHF ${total.toLocaleString()}`;
             }
@@ -2026,6 +2041,17 @@
                     })
                     .then(() => {
                         localStorage.setItem('lastSubmitTime', Date.now()); 
+                        
+                        // Отслеживание отправки формы в Google Аналитике
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'generate_lead', {
+                                'event_category': 'form',
+                                'service_type': selectedService,
+                                'value': currentCalculatedTotal,
+                                'currency': 'CHF'
+                            });
+                        }
+
                         alert(currentLang === 'de' ? 'Anfrage erfolgreich gesendet! Wir melden uns umgehend bei Ihnen.' : (currentLang === 'ukr' ? 'Заявку успішно надіслано! Ми зв\'яжемося з вами найближчим часом.' : 'Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.'));
                         orderForm.reset();
                         document.getElementById('orderModal').classList.remove('active');

@@ -1,90 +1,123 @@
 <!DOCTYPE html>
-<html lang="ru" translate="no">
+<html lang="de" translate="no">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYG4G70F89"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-DYG4G70F89');
+    </script>
+
+    <!-- Иконки для поисковиков (Google), вкладок ПК, Android и Safari (iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://swisscars-concierge.ch/favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://swisscars-concierge.ch/favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://swisscars-concierge.ch/favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="48x48" href="https://swisscars-concierge.ch/favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://swisscars-concierge.ch/favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://swisscars-concierge.ch/favicon.png?v=2">
+    <link rel="icon" href="https://swisscars-concierge.ch/favicon.png?v=2" type="image/png">
+    
+    <!-- Мета-теги для показа миниатюры сайта в результатах поиска Google -->
+    <meta name="thumbnail" content="https://swisscars-concierge.ch/favicon.png?v=2">
+    <meta itemprop="image" content="https://swisscars-concierge.ch/favicon.png?v=2">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
     
-    <!-- SEO: Локальные мета-теги (Женева) -->
-    <title>Автоконсьерж и автоподбор в Женеве — Проверка и покупка авто | SWISS CARS</title>
-    <meta name="description" content="Ищете авто в Женеве? Премиальный автоконсьерж: экспертный подбор, выездная проверка, помощь с MFK в кантоне Женева и регистрация под ключ.">
-    <meta name="keywords" content="Автоконсьерж Женева, автоподбор Женева, купить авто Женева, проверка авто Женева, MFK Geneva, автоэксперт Женева">
+    <!-- SEO: Основные мета-теги -->
+    <title data-i18n="meta_title">Autoconcierge-Service in der Schweiz — Premium Fahrzeugkauf, Verkauf und Rundum-Betreuung</title>
+    <meta name="description" content="Premium Autoconcierge in der Schweiz. Full-Service beim Autokauf, Fahrzeugcheck (MFK), Verkauf und der gesamten Bürokratie. Stressfrei und transparent.">
+    <meta name="keywords" content="Autoconcierge Schweiz, Auto kaufen Schweiz, MFK-Prüfungshilfe, Autoinspektion, Autoexport, Autoverkauf Support">
     <meta name="author" content="SWISS CARS">
     <meta name="robots" content="index, follow">
     
     <!-- SEO: Каноническая ссылка -->
-    <link rel="canonical" href="https://swisscars-concierge.ch/ru/geneva/">
+    <link rel="canonical" href="https://swisscars-concierge.ch/">
+    
+    <!-- SEO: Мультиязычность (hreflang) -->
+    <link rel="alternate" hreflang="de-CH" href="https://swisscars-concierge.ch/" />
+    <link rel="alternate" hreflang="ru-CH" href="https://swisscars-concierge.ch/ru/" />
+    <link rel="alternate" hreflang="uk-CH" href="https://swisscars-concierge.ch/ukr/" />
+    <link rel="alternate" hreflang="x-default" href="https://swisscars-concierge.ch/" />
 
-    <!-- SEO: Open Graph (Facebook, Telegram, WhatsApp) -->
+    <!-- SEO: Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://swisscars-concierge.ch/ru/geneva/">
-    <meta property="og:title" content="Премиальный автоконсьерж в Женеве">
-    <meta property="og:description" content="Полный комплекс услуг при покупке, проверке и продаже авто в Женеве. Экономим ваше время и берем всю бюрократию на себя.">
+    <meta property="og:url" content="https://swisscars-concierge.ch/">
+    <meta property="og:title" content="Ihr Premium Autoconcierge in der Schweiz">
+    <meta property="og:description" content="Voller Service beim Autokauf, Check und Verkauf inklusive der gesamten Bürokratie. Wir sparen Ihre Zeit.">
     <meta property="og:image" content="https://swisscars-concierge.ch/og-image.jpg">
     <meta property="og:site_name" content="SWISS CARS Concierge">
 
     <!-- SEO: Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://swisscars-concierge.ch/ru/geneva/">
-    <meta name="twitter:title" content="Премиальный автоконсьерж в Женеве">
-    <meta name="twitter:description" content="Полный комплекс услуг при покупке, проверке и продаже авто в Женеве.">
+    <meta name="twitter:url" content="https://swisscars-concierge.ch/">
+    <meta name="twitter:title" content="Ihr Premium Autoconcierge in der Schweiz">
+    <meta name="twitter:description" content="Voller Service beim Autokauf, Check und Verkauf in der Schweiz.">
     <meta name="twitter:image" content="https://swisscars-concierge.ch/og-image.jpg">
 
     <!-- Политика безопасности контента (CSP) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://script.google.com; img-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://script.google.com; img-src 'self' data:; frame-src 'self' https://maps.google.com https://www.google.com;">
     
     <!-- SEO: Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- SEO: Schema.org LocalBusiness для Женевы -->
+    <!-- SEO: Schema.org (JSON-LD) AutomotiveBusiness с актуальным адресом -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "AutomotiveBusiness",
-      "name": "SWISS CARS Geneva",
+      "name": "SWISS CARS",
       "image": "https://swisscars-concierge.ch/og-image.jpg",
-      "@id": "https://swisscars-concierge.ch/ru/geneva/",
-      "url": "https://swisscars-concierge.ch/ru/geneva/",
+      "@id": "https://swisscars-concierge.ch/",
+      "url": "https://swisscars-concierge.ch/",
       "telephone": "+41764795820",
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Geneva",
-        "addressRegion": "GE",
+        "streetAddress": "Treuackerstrasse 13",
+        "addressLocality": "St. Gallen",
+        "postalCode": "9000",
         "addressCountry": "CH"
       },
-      "areaServed": "Geneva",
-      "description": "Локальный автоконсьерж-сервис в Женеве. Выездная диагностика, помощь в покупке и прохождение MFK."
+      "areaServed": "Switzerland",
+      "description": "Premium Autoconcierge-Service in der Schweiz. Fahrzeugkauf, Verkauf, Inspektion und Zulassungsservice.",
+      "sameAs": [
+        "https://swisscars-concierge.ch/"
+      ]
     }
     </script>
 
-    <!-- SEO: Локальный FAQ Schema -->
+    <!-- SEO: FAQ Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
-        "name": "Вы помогаете с прохождением MFK в кантоне Женева?",
+        "name": "Kann ich als Ausländer in der Schweiz ein Auto kaufen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Да, мы полностью готовим автомобиль, устраняем технические недочеты и сопровождаем процесс проверки в женевском Office cantonal des véhicules (OCAV), чтобы вы прошли MFK с первого раза."
+          "text": "Ja, Ausländer mit einem gültigen Aufenthaltsausweis (B, C oder L) können in der Schweiz problemlos ein Auto kaufen und einlösen. Wir übernehmen die komplette Bürokratie für Sie."
         }
       }, {
         "@type": "Question",
-        "name": "Могу ли я заказать выездную проверку авто в Женеве?",
+        "name": "Was beinhaltet der Autoconcierge-Service?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Конечно. Наш эксперт оперативно выезжает в любую точку Женевы и окрестностей (включая соседние кантоны Во и Невшатель) для проведения полной технической инспекции."
+          "text": "Unser Full-Service umfasst die Fahrzeugsuche, Vor-Ort-Inspektion, Preisverhandlung, Versicherungsabwicklung, MFK-Prüfung und die Zulassung. Sie erhalten das fertige Auto schlüsselfertig."
         }
       }, {
         "@type": "Question",
-        "name": "Как купить машину в Женеве без знания французского?",
+        "name": "Wie läuft die MFK (Motorfahrzeugkontrolle) ab?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Наш сервис «под ключ» решает эту проблему. Мы берем на себя переговоры с франкоязычными продавцами, торг, проверку документов и оформление страховки."
+          "text": "Wir bereiten das Fahrzeug komplett vor, beheben Mängel und begleiten die Prüfung beim Strassenverkehrsamt, damit das Auto die MFK beim ersten Mal besteht."
         }
       }]
     }
@@ -102,63 +135,355 @@
             --border: #1e293b;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        header { position: fixed; top: 0; left: 0; width: 100%; background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 1000; border-bottom: 1px solid var(--border); padding: 12px 0; }
-        .header-content { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-        .logo { font-weight: 700; font-size: 1rem; letter-spacing: 0.5px; color: var(--text-main); text-decoration: none; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+            text-decoration: none;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
         .logo span { color: var(--accent); }
-        .nav-links { display: none; gap: 20px; list-style: none; align-items: center; }
-        @media (min-width: 992px) { .nav-links { display: flex; } }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: var(--transition); }
+
+        .nav-links {
+            display: none;
+            gap: 20px;
+            list-style: none;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .nav-links { display: flex; }
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
         .nav-links a:hover { color: var(--text-main); }
-        .header-right { display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; }
-        .btn { background: linear-gradient(135deg, var(--accent) 0%, #b89728 100%); color: #0b0f19; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.78rem; transition: var(--transition); border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px var(--accent-glow); }
-        @media (min-width: 576px) { .btn { padding: 10px 18px; font-size: 0.85rem; } }
-        .btn:hover { background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent) 100%); transform: translateY(-2px); }
-        .btn-whatsapp { background: #25d366; color: #ffffff; box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3); gap: 5px; }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: nowrap;
+        }
+
+        .header-phone {
+            display: none;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-right: 5px;
+            transition: var(--transition);
+        }
+        
+        .header-phone:hover { color: var(--accent); }
+
+        @media (min-width: 1024px) {
+            .header-phone { display: block; }
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #b89728 100%);
+            color: #0b0f19;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.78rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            box-shadow: 0 4px 16px var(--accent-glow);
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            .btn { padding: 10px 18px; font-size: 0.85rem; }
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent) 100%);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+            gap: 5px;
+        }
+
         .btn-whatsapp:hover { background: #20ba5a; color: #ffffff; }
-        .hero { position: relative; overflow: hidden; background: var(--bg-color); padding: 150px 0 80px; text-align: center; }
-        @media (min-width: 768px) { .hero { padding: 180px 0 100px; } }
-        .hero-video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+
+        /* Desktop Language Switcher */
+        .lang-switcher { position: relative; }
+
+        .lang-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .lang-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            display: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            min-width: 140px;
+            z-index: 1500;
+        }
+
+        .lang-switcher.active .lang-dropdown { display: block; }
+
+        .lang-option {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: inherit;
+            font-weight: 500;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: var(--transition);
+        }
+
+        .lang-option:hover {
+            background: rgba(212, 175, 55, 0.12);
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-color);
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero { padding: 180px 0 100px; }
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
         .hero-video { width: 100%; height: 100%; object-fit: cover; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.75); backdrop-filter: blur(2px); }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 15, 25, 0.75);
+            backdrop-filter: blur(2px);
+        }
+
         .hero-content { position: relative; z-index: 2; }
-        .hero h1 { font-size: clamp(2.1rem, 6vw, 3.8rem); font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
+
+        .hero h1 {
+            font-size: clamp(2.1rem, 6vw, 3.8rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
         .hero h1 span { color: var(--accent); }
-        .hero p { font-size: clamp(1rem, 2.5vw, 1.25rem); color: var(--text-muted); max-width: 750px; margin: 0 auto 40px; padding: 0 10px; }
-        .hero-buttons { display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap; }
+
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 40px;
+            padding: 0 10px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
         section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+
         @media (min-width: 768px) { section { padding: 100px 0; } }
-        .section-title { text-align: center; font-size: clamp(1.9rem, 4.5vw, 2.3rem); font-weight: 700; margin-bottom: 16px; }
-        .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 50px; font-size: clamp(0.95rem, 2vw, 1.1rem); padding: 0 10px; }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.9rem, 4.5vw, 2.3rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            padding: 0 10px;
+        }
+
+        /* About Section */
         .about-section { position: relative; overflow: hidden; padding: 100px 0; }
-        .about-video-container, .services-video-container, .cantons-video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-        .about-bg-video, .services-bg-video, .cantons-bg-video { width: 100%; height: 100%; object-fit: cover; }
-        .about-overlay, .services-overlay, .cantons-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.82); backdrop-filter: blur(3px); }
-        .about-content-wrapper, .services-content-wrapper, .cantons-content-wrapper { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .about-text-content { background: transparent; border: none; padding: 0; text-align: left; max-width: 700px; }
-        .about-text-content blockquote { font-size: clamp(1.3rem, 3.5vw, 1.6rem); font-style: italic; color: var(--text-main); margin-bottom: 30px; border-left: 4px solid var(--accent); padding-left: 20px; line-height: 1.4; }
+        .about-video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .about-bg-video { width: 100%; height: 100%; object-fit: cover; }
+        .about-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.82); backdrop-filter: blur(3px); }
+        .about-content-wrapper { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .about-text-content { background: transparent; border: none; border-radius: 0; padding: 0; text-align: left; max-width: 700px; }
+
+        .about-text-content blockquote {
+            font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            line-height: 1.4;
+        }
+
         .about-text-content blockquote span { color: var(--accent); }
         .about-text-content p { color: var(--text-muted); font-size: clamp(1rem, 2vw, 1.1rem); line-height: 1.8; margin-bottom: 24px; }
+
+        /* Calculator Section */
         .services-section { position: relative; overflow: hidden; padding: 100px 0; }
+        .services-video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .services-bg-video { width: 100%; height: 100%; object-fit: cover; }
+        .services-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(4px); }
+        .services-content-wrapper { position: relative; z-index: 2; }
+
         .calc-layout { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start; }
         @media (min-width: 992px) { .calc-layout { grid-template-columns: 1.3fr 0.7fr; } }
         .calc-services-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         @media (min-width: 768px) { .calc-services-grid { grid-template-columns: repeat(2, 1fr); } }
-        .calc-card { background: rgba(19, 27, 46, 0.85); border: 1px solid var(--border); border-radius: 14px; padding: 24px; transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; backdrop-filter: blur(10px); }
+
+        .calc-card {
+            background: rgba(19, 27, 46, 0.85);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
         .calc-card:hover { border-color: rgba(212, 175, 55, 0.5); }
         .calc-card.selected { border-color: var(--accent); background: rgba(212, 175, 55, 0.1); }
         .calc-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 12px; }
         .calc-card h3 { font-size: 1.1rem; color: var(--text-main); font-weight: 600; }
+        
         .calc-checkbox { width: 24px; height: 24px; border: 2px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; background: var(--bg-color); flex-shrink: 0; }
         .calc-card.selected .calc-checkbox { background: var(--accent); border-color: var(--accent); color: #0b0f19; }
         .calc-card.selected .calc-checkbox::after { content: '✓'; font-weight: 900; font-size: 0.9rem; }
         .calc-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; }
         .calc-card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 15px; font-size: 0.9rem; color: var(--text-muted); }
         .calc-price { font-size: 1.15rem; font-weight: 700; color: var(--accent); }
-        .calc-summary { background: rgba(19, 27, 46, 0.95); border: 1px solid var(--border); border-radius: 16px; padding: 28px; position: static; backdrop-filter: blur(12px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); }
+        .calc-card.hidden-service { display: none; }
+        .calc-card.hidden-service.visible { display: flex; }
+        .calc-toggle-container { grid-column: 1 / -1; text-align: center; margin-top: 15px; }
+
+        /* Calculator Sidebar */
+        .calc-summary {
+            background: rgba(19, 27, 46, 0.95);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            position: static;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
         @media (min-width: 992px) { .calc-summary { position: sticky; top: 90px; } }
         .calc-summary h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 14px; }
         .summary-items-list { list-style: none; margin-bottom: 20px; max-height: 200px; overflow-y: auto; }
@@ -169,27 +494,137 @@
         .summary-total-price { font-size: 1.5rem; color: var(--accent); font-weight: 700; }
         .summary-actions { display: flex; flex-direction: column; gap: 14px; }
         .summary-actions .btn { width: 100%; padding: 14px; font-size: 0.95rem; }
-        .lang-switcher { position: relative; }
-        .lang-btn { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-main); padding: 6px 10px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-        .flag-icon { width: 20px; height: 14px; border-radius: 2px; object-fit: cover; display: block; }
-        .lang-dropdown { position: absolute; top: calc(100% + 8px); right: 0; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: none; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); min-width: 140px; z-index: 1500; }
-        .lang-switcher.active .lang-dropdown { display: block; }
-        .lang-option { padding: 10px 14px; display: flex; align-items: center; gap: 10px; cursor: pointer; color: var(--text-muted); font-size: 0.85rem; font-family: inherit; font-weight: 500; background: none; border: none; width: 100%; text-align: left; }
-        .lang-option:hover { background: rgba(212, 175, 55, 0.12); color: var(--text-main); }
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden; transition: var(--transition); padding: 16px; }
+
+        /* Grid for details & reviews */
+        .grid-3 { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 992px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+        
+        .card { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: var(--transition); }
+        .card:hover { border-color: var(--accent); }
+        .card h3 { font-size: 1.2rem; margin-bottom: 12px; color: var(--text-main); }
+        .card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
+
+        /* Reviews CTA Card */
+        .review-cta-card {
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            text-align: center; border: 2px dashed var(--border); background: transparent;
+        }
+        .review-cta-card:hover { border-color: var(--accent); background: rgba(212, 175, 55, 0.05); }
+        .review-star { color: var(--accent); font-size: 1.3rem; margin-bottom: 15px; letter-spacing: 2px; }
+
+        /* Cantons Section */
+        .cantons-section { position: relative; overflow: hidden; min-height: 650px; padding: 100px 0; }
+        .cantons-video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .cantons-bg-video { width: 100%; height: 100%; object-fit: cover; }
+        .cantons-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(4px); }
+        .cantons-content-wrapper { position: relative; z-index: 2; }
+        .cantons-floating-area { position: relative; width: 100%; height: 480px; overflow: hidden; margin-top: 30px; }
+        
+        .canton-floating-card {
+            position: absolute;
+            background: rgba(19, 27, 46, 0.92);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 18px;
+            width: 210px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: border-color 0.3s ease;
+            will-change: transform;
+        }
+        .canton-floating-card:hover { border-color: var(--accent); z-index: 10; }
+        .canton-floating-card h3 { font-size: 1rem; margin-bottom: 4px; color: var(--text-main); }
+        .canton-floating-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.3; }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(8px);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 2000; opacity: 0; visibility: hidden; transition: var(--transition); padding: 16px;
+        }
         .modal-overlay.active { opacity: 1; visibility: visible; }
-        .modal-content { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 100%; max-width: 440px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.6); transform: translateY(20px); transition: var(--transition); max-height: 90vh; overflow-y: auto; }
+        .modal-content {
+            background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 28px;
+            width: 100%; max-width: 440px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            transform: translateY(20px); transition: var(--transition); max-height: 90vh; overflow-y: auto;
+        }
         .modal-overlay.active .modal-content { transform: translateY(0); }
         .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--text-muted); font-size: 1.4rem; cursor: pointer; }
         .modal-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; color: var(--text-main); }
         .modal-subtitle { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px; }
+        
         .form-group { margin-bottom: 14px; text-align: left; }
         .form-group label { display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; }
         .form-control { width: 100%; background: var(--bg-color); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; color: var(--text-main); font-family: inherit; font-size: 0.95rem; }
         .form-control:focus { outline: none; border-color: var(--accent); }
+        select.form-control { cursor: pointer; }
         .modal-content .btn { width: 100%; margin-top: 10px; padding: 14px; }
-        footer { padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
+
+        /* Footer & Map Block */
+        footer { background-color: var(--card-bg); border-top: 1px solid var(--border); padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 40px; }
+        @media (min-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+        .footer-col h4 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 20px; font-weight: 600; }
+        .footer-col p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .footer-col a { color: var(--text-muted); text-decoration: none; transition: var(--transition); }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            .cantons-floating-area { height: 580px; }
+            .canton-floating-card { width: 180px; padding: 10px 12px; }
+            .canton-floating-card h3 { font-size: 0.9rem; }
+            .canton-floating-card p { font-size: 0.72rem; }
+        }
         .bot-trap { position: absolute; left: -9999px; opacity: 0; z-index: -1; }
+
+        /* --- Мобильное меню и Бургер --- */
+        .hamburger-btn { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; margin-left: 10px; }
+        .hamburger-btn span { display: block; width: 100%; height: 2px; background-color: var(--text-main); border-radius: 2px; transition: all 0.3s ease; }
+
+        .mobile-menu-overlay { position: fixed; top: 0; right: -100%; width: 100%; max-width: 320px; height: 100vh; background: #0b0f19; border-left: 1px solid #1e293b; z-index: 2000; padding: 30px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: right 0.35s ease-in-out; box-shadow: -10px 0 30px rgba(0,0,0,0.6); overflow-y: auto; }
+        .mobile-menu-overlay.active { right: 0; }
+        .mobile-menu-close { align-self: flex-end; background: none; border: none; color: #94a3b8; font-size: 32px; cursor: pointer; line-height: 1; padding: 0 4px; }
+        .mobile-menu-close:hover { color: #ffffff; }
+
+        .mobile-menu-brand { display: flex; align-items: center; gap: 12px; margin: 20px 0 35px; text-decoration: none; }
+        .mobile-menu-brand img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; border: 1px solid rgba(212, 175, 55, 0.4); }
+        .mobile-menu-brand span { font-size: 1.25rem; font-weight: 700; color: #ffffff; letter-spacing: 0.5px; }
+        .mobile-menu-brand span b { color: #d4af37; }
+
+        .mobile-nav-links { list-style: none; display: flex; flex-direction: column; gap: 22px; padding: 0; margin: 0 0 35px 0; }
+        .mobile-nav-links a { color: #f8fafc; font-size: 1.25rem; font-weight: 600; text-decoration: none; transition: color 0.2s; }
+        .mobile-nav-links a:hover { color: #d4af37; }
+
+        .mobile-menu-bottom { margin-top: auto; padding-top: 30px; border-top: 1px solid #1e293b; }
+        
+        .mobile-lang-select {
+            width: 100%; background: var(--card-bg); border: 1px solid var(--border); color: var(--text-main);
+            padding: 10px 14px; border-radius: 8px; font-size: 1rem; font-family: inherit; outline: none; cursor: pointer;
+        }
+        .mobile-lang-select:focus { border-color: var(--accent); }
+
+        .mobile-phone-label { font-size: 0.85rem; color: #94a3b8; }
+        .mobile-phone-number { color: #ffffff; font-size: 1.15rem; font-weight: 700; text-decoration: none; display: inline-block; }
+        .mobile-phone-number:hover { color: #d4af37; }
+
+        /* Иконка WhatsApp для мобильных устройств */
+        .mobile-wa-btn { display: none; text-decoration: none; align-items: center; justify-content: center; }
+        .mobile-wa-btn svg { width: 30px; height: 30px; fill: #25d366; transition: transform 0.2s ease; }
+        .mobile-wa-btn:active svg { transform: scale(0.95); }
+
+        @media (max-width: 991px) {
+            .nav-links, .btn-whatsapp, .open-modal-btn, .lang-switcher { display: none !important; }
+            .header-phone { display: none !important; } /* Прячем номер на мобильном */
+            .mobile-wa-btn { display: flex !important; margin-right: 10px; } /* Показываем иконку WhatsApp */
+            .hamburger-btn { display: flex; }
+        }
     </style>
 </head>
 <body>
@@ -197,65 +632,132 @@
     <!-- Header -->
     <header>
         <div class="container header-content">
-            <a href="https://swisscars-concierge.ch/ru/" class="logo">SWISS<span>CARS</span></a>
-            <nav>
+            <a href="/" class="logo" aria-label="Zurück zur Startseite">SWISS<span>CARS</span></a>
+            
+            <nav aria-label="Hauptnavigation">
                 <ul class="nav-links">
-                    <li><a href="#about">О нас (Женева)</a></li>
-                    <li><a href="#services">Калькулятор Женева</a></li>
+                    <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
+                    <li><a href="#services" data-i18n="nav_services">Rechner</a></li>
+                    <li><a href="#details" data-i18n="nav_details">Leistungen</a></li>
+                    <li><a href="#reviews" data-i18n="nav_reviews">Bewertungen</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
                 </ul>
             </nav>
+            
             <div class="header-right">
-                <a href="https://wa.me/41764795820?text=Здравствуйте,%20интересует%20автоконсьерж%20в%20Женеве" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-                <button class="btn open-modal-btn">Оставить заявку</button>
+                <a href="tel:+41764795820" class="header-phone">+41 76 479 58 20</a>
+                
+                <!-- Новая иконка WhatsApp (показывается только на мобильных) -->
+                <a href="https://wa.me/41764795820?text=Guten%20Tag,%20ich%20interessiere%20mich%20für%20den%20Autoconcierge-Service%20in%20der%20Schweiz" target="_blank" class="mobile-wa-btn" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                    </svg>
+                </a>
+                
+                <a href="https://wa.me/41764795820?text=Guten%20Tag,%20ich%20interessiere%20mich%20für%20den%20Autoconcierge-Service%20in%20der%20Schweiz" target="_blank" class="btn btn-whatsapp" data-i18n="btn_whatsapp" rel="noopener noreferrer">WhatsApp</a>
+                <button class="btn open-modal-btn" data-i18n="btn_request" aria-label="Anfrage Formular öffnen">Anfrage</button>
+                
                 <div class="lang-switcher" id="headerLangSwitcher">
-                    <button class="lang-btn" id="headerLangBtn">
-                        <svg class="flag-icon" viewBox="0 0 640 480"><path fill="#ffce00" d="M0 320h640v160H0z"/><path d="M0 0h640v160H0z"/><path fill="#d00" d="M0 160h640v160H0z"/></svg>
-                    </button>
-                    <div class="lang-dropdown">
-                        <button class="lang-option" data-url="https://swisscars-concierge.ch/">Deutsch</button>
-                        <button class="lang-option" data-url="https://swisscars-concierge.ch/ru/">Русский (Общий)</button>
-                        <button class="lang-option" data-url="https://swisscars-concierge.ch/ukr/">Українська</button>
+                    <button class="lang-btn" id="headerLangBtn" aria-label="Sprache wählen" aria-haspopup="true" aria-expanded="false">DE</button>
+                    <div class="lang-dropdown" role="menu">
+                        <button class="lang-option" data-lang="de" role="menuitem">DE - Deutsch</button>
+                        <button class="lang-option" data-lang="ru" role="menuitem">RU - Русский</button>
+                        <button class="lang-option" data-lang="ukr" role="menuitem">UKR - Українська</button>
                     </div>
                 </div>
+
+                <button class="hamburger-btn" id="openMenuBtn" aria-label="Menü öffnen">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ВЫЕЗЖАЮЩЕЕ МОБИЛЬНОЕ МЕНЮ -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div>
+            <button class="mobile-menu-close" id="closeMenuBtn" aria-label="Menü schließen">&times;</button>
+            
+            <a href="/" class="mobile-menu-brand">
+                <img src="/favicon.png" alt="SWISS CARS">
+                <span>SWISS<b>CARS</b></span>
+            </a>
+
+            <!-- Навигация -->
+            <ul class="mobile-nav-links">
+                <li><a href="#details" class="menu-item-link" data-i18n="nav_details">Услуги</a></li>
+                <li><a href="#about" class="menu-item-link" data-i18n="nav_about">О нас</a></li>
+                <li><a href="#reviews" class="menu-item-link" data-i18n="nav_reviews">Отзывы</a></li>
+                <li><a href="#contact" class="menu-item-link" data-i18n="nav_contact">Контакты</a></li>
+            </ul>
+
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <span class="mobile-phone-label" data-i18n="form_phone">Telefon / WhatsApp</span>
+                    <a href="tel:+41764795820" class="mobile-phone-number">+41 76 479 58 20</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <span class="mobile-phone-label" data-i18n="form_email">E-Mail-Adresse</span>
+                    <a href="mailto:info@swisscars-concierge.ch" class="mobile-phone-number" style="font-size: 0.95rem; word-break: break-all;">info@swisscars-concierge.ch</a>
+                </div>
+                <!-- Кликабельный адрес с переходом в Google Maps (Профиль компании) -->
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <span class="mobile-phone-label" data-i18n="form_address">Adresse</span>
+                    <a href="https://maps.app.goo.gl/rsFYBUkemmzfVMMR7?g_st=it" target="_blank" rel="noopener noreferrer" class="mobile-phone-number" style="font-size: 0.95rem; display: inline-block;">Treuackerstrasse 13, 9000 St. Gallen, Schweiz</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-menu-bottom">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+                <span class="mobile-phone-label" data-i18n="form_language">Sprache / Язык</span>
+                <select id="mobileLangSelect" class="mobile-lang-select">
+                    <option value="de">Deutsch (DE)</option>
+                    <option value="ru">Русский (RU)</option>
+                    <option value="ukr">Українська (UKR)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
     <main>
+        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-video-container">
-                <video autoplay muted loop playsinline class="hero-video">
-                    <source src="../../istockphoto-1304201114-640_adpp_is.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline class="hero-video" aria-hidden="true" title="Hintergrundvideo Luxusautos Schweiz">
+                    <source src="158316-816359649.mp4" type="video/mp4">
                 </video>
                 <div class="hero-overlay"></div>
             </div>
             <div class="container hero-content">
-                <h1>Премиальный автоконсьерж <br><span>в Женеве</span></h1>
-                <p>Полный комплекс услуг в кантоне Женева: локальный поиск, выездная диагностика, переговоры на французском языке и регистрация автомобиля.</p>
+                <h1 data-i18n="hero_title">Ihr Autoconcierge <br><span>in der Schweiz</span></h1>
+                <p data-i18n="hero_desc">Voller Service beim Autokauf, Verkauf und Fahrzeugcheck inklusive der gesamten Bürokratie. Reibungslose Abwicklung, kein Stress und absolut transparent.</p>
                 <div class="hero-buttons">
-                    <button class="btn open-modal-btn" style="padding: 14px 28px; font-size: 1rem;">Начать подбор в Женеве</button>
+                    <button class="btn open-modal-btn" style="padding: 14px 28px; font-size: 1rem;" data-i18n="hero_btn" aria-label="Kostenlos anfragen">Loslegen</button>
                 </div>
             </div>
         </section>
 
-        <!-- About Us Section -->
+        <!-- About Us Section (Обновлено по ТЗ, без EU) -->
         <section id="about" class="about-section">
             <div class="about-video-container">
-                <video autoplay muted loop playsinline preload="none" class="about-bg-video">
-                    <source src="../../158316-816359649.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline preload="none" class="about-bg-video" id="aboutVideo" aria-hidden="true">
+                    <source src="158316-816359649.mp4" type="video/mp4">
                 </video>
                 <div class="about-overlay"></div>
             </div>
             <div class="container about-content-wrapper">
-                <h2 class="section-title" style="text-align: left;">Местный подход</h2>
-                <p class="section-subtitle" style="text-align: left;">Работаем быстро и на результат</p>
+                <h2 class="section-title" style="text-align: left;" data-i18n="about_main_title">Warum wir?</h2>
+                <p class="section-subtitle" style="text-align: left;" data-i18n="about_main_subtitle">Ihr Partner für den Autokauf und -verkauf</p>
                 <div class="about-text-content">
-                    <blockquote>
-                        «Мы знаем рынок <span>Женевы</span> изнутри. Берем на себя все переговоры, проверки и бюрократию во франкоязычных регионах.»
+                    <blockquote data-i18n="about_quote">
+                        «Wir machen den Autokauf einfach, sicher und stressfrei.»
                     </blockquote>
-                    <p>
-                        Покупка автомобиля в Швейцарии для экспата может стать испытанием из-за языкового барьера. Мы экономим ваше время, лично выезжаем на осмотр авто в пределах Женевы и ближайших кантонов, общаемся с продавцами и забираем бумажную рутину на себя.
+                    <p data-i18n="about_text_1">
+                        Wir sparen Ihre Zeit und übernehmen die komplette Bürokratie für Sie. Egal ob Sie ein Auto suchen oder verkaufen möchten — wir kümmern uns um den gesamten Prozess in der Schweiz.
+                    </p>
+                    <p data-i18n="about_text_2">
+                        <strong>Unser Service von A bis Z:</strong> Wir finden das passende Fahrzeug in der Schweiz, prüfen es gründlich (MFK-Check), regeln die Versicherung und melden das Auto direkt auf Ihren Namen an.
                     </p>
                 </div>
             </div>
@@ -264,155 +766,1140 @@
         <!-- Services Calculator Section -->
         <section id="services" class="services-section">
             <div class="services-video-container">
-                <video autoplay muted loop playsinline preload="none" class="services-bg-video">
-                    <source src="../../158316-816359649.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline preload="none" class="services-bg-video" aria-hidden="true">
+                    <source src="158316-816359649.mp4" type="video/mp4">
                 </video>
                 <div class="services-overlay"></div>
             </div>
             <div class="container services-content-wrapper">
-                <h2 class="section-title">Калькулятор услуг в Женеве</h2>
-                <p class="section-subtitle">Соберите свой пакет услуг с прозрачными ценами</p>
+                <h2 class="section-title" data-i18n="calc_main_title">Preis-Kalkulator</h2>
+                <p class="section-subtitle" data-i18n="calc_main_subtitle">Stellen Sie sich Ihre Wunsch-Leistungen zusammen</p>
                 
                 <div class="calc-layout">
                     <div class="calc-services-grid" id="calcServicesGrid">
                         
-                        <div class="calc-card" data-price="950" data-name="Покупка автомобиля под ключ">
+                        <div class="calc-card" data-price="450" data-from="true" data-name-de="Rundum-Sorglos Autokauf" data-name-ru="Покупка автомобиля под ключ" data-name-ukr="Купівля автомобіля під ключ" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
-                                    <h3>Покупка под ключ в Женеве</h3>
-                                    <div class="calc-checkbox"></div>
+                                    <h3 data-i18n="srv1_title">Rundum-Sorglos Autokauf</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
                                 </div>
-                                <p>Поиск идеального авто, осмотр, проверка истории и оформление под ключ без вашего участия.</p>
+                                <p data-i18n="srv1_desc">Full-Service: Wir finden Ihren Traumwagen passend zu Budget und Wünschen, prüfen das Angebot und regeln die gesamte Bürokratie inklusive Versicherung.</p>
                             </div>
                             <div class="calc-card-footer">
-                                <span>Стоимость:</span>
-                                <span class="calc-price">CHF 950</span>
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price"><span class="price-from-label" data-i18n="srv_from">ab </span>CHF 450</span>
                             </div>
                         </div>
 
-                        <div class="calc-card" data-price="250" data-name="Выездная проверка авто (Женева)">
+                        <div class="calc-card" data-price="250" data-from="true" data-name-de="Verkaufs-Support" data-name-ru="Помощь в продаже автомобиля" data-name-ukr="Допомога в продажу автомобіля" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
-                                    <h3>Выездная диагностика (Женева)</h3>
-                                    <div class="calc-checkbox"></div>
+                                    <h3 data-i18n="srv8_title">Verkaufs-Support</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
                                 </div>
-                                <p>Личный выезд эксперта к продавцу, проверка кузова, мотора, электроники + детальный фотоотчет.</p>
+                                <p data-i18n="srv8_desc">Alles, was für einen schnellen und profitablen Verkauf erforderlich ist: professionelles Fotoshooting, Vorbereitung der Anzeige, Preisschätzung, Veröffentlichung und Transaktionsbegleitung.</p>
                             </div>
                             <div class="calc-card-footer">
-                                <span>Стоимость:</span>
-                                <span class="calc-price">CHF 250</span>
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price"><span class="price-from-label" data-i18n="srv_from">ab </span>CHF 250</span>
                             </div>
                         </div>
 
-                        <div class="calc-card" data-price="300" data-name="Помощь с техосмотром MFK">
+                        <div class="calc-card" data-price="150" data-from="true" data-name-de="Fahrzeugcheck und Live-Inspektion" data-name-ru="Проверка и личный осмотр автомобиля" data-name-ukr="Перевірка та особистий огляд автомобіля" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
-                                    <h3>Помощь с техосмотром MFK</h3>
-                                    <div class="calc-checkbox"></div>
+                                    <h3 data-i18n="srv2_title">Fahrzeugcheck und Live-Inspektion</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
                                 </div>
-                                <p>Подготовка авто, устранение недочетов и сопровождение в дорожное ведомство (OCAV Женева).</p>
+                                <p data-i18n="srv2_desc">Hintergrund-Check, Inserat-Analyse und verdeckte Mängel + Vor-Ort-Check von Karosserie, Interieur, Motor und Fahrwerk mit Fotoreport.</p>
                             </div>
                             <div class="calc-card-footer">
-                                <span>Стоимость:</span>
-                                <span class="calc-price">CHF 300</span>
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price"><span class="price-from-label" data-i18n="srv_from">ab </span>CHF 150</span>
                             </div>
                         </div>
 
-                        <div class="calc-card" data-price="150" data-name="Сопровождение при регистрации">
+                        <div class="calc-card" data-price="70" data-name-de="Professionelle Preisverhandlung" data-name-ru="Переговоры с продавцом и торг" data-name-ukr="Переговори з продавцем та торг" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
-                                    <h3>Регистрация авто (OCAV)</h3>
-                                    <div class="calc-checkbox"></div>
+                                    <h3 data-i18n="srv3_title">Professionelle Preisverhandlung</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
                                 </div>
-                                <p>Оформление страховки и получение номерных знаков кантона GE без очередей и стресса.</p>
+                                <p data-i18n="srv3_desc">Wir stellen gezielte Fragen, prüfen die Vorgeschichte und verhandeln das beste Angebot für Sie heraus.</p>
                             </div>
                             <div class="calc-card-footer">
-                                <span>Стоимость:</span>
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 70</span>
+                            </div>
+                        </div>
+
+                        <!-- СКРЫТЫЕ КАРТОЧКИ -->
+                        <div class="calc-card hidden-service" data-price="200" data-name-de="Optimaler Versicherungsschutz" data-name-ru="Подбор выгодной страховки" data-name-ukr="Підбір вигідної страховки" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv4_title">Optimaler Versicherungsschutz</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv4_desc">Optimale Police mit Top-Abdeckung und bestem Preis-Leistungs-Verhältnis sichern.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 200</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="450" data-name-de="Fahrzeugaufbereitung" data-name-ru="Подготовка к продаже" data-name-ukr="Підготовка до продажу" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv5_title">Fahrzeugaufbereitung</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv5_desc">Intensivwäsche, Politur und Profi-Innenreinigung für maximalen Wiederverkaufswert (je nach Aufwand).</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">~ CHF 450</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="100" data-name-de="Profi-Autofotoshooting" data-name-ru="Профессиональная фотосъемка" data-name-ukr="Професійна фотозйомка" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv6_title">Profi-Autofotoshooting</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv6_desc">Hochwertige Aufnahmen von Exterieur, Interieur, Motorraum und allen wichtigen Details.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 100</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="50" data-name-de="Inseraterstellung" data-name-ru="Создание продающего объявления" data-name-ukr="Створення продаючого оголошення" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv7_title">Inseraterstellung</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv7_desc">Auffällige Beschreibung, ehrliche Vorteile und perfektes Setup für die Verkaufsplattformen.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 50</span>
+                            </div>
+                        </div>
+
+                        <!-- Описание заменено по ТЗ -->
+                        <div class="calc-card hidden-service" data-price="200" data-name-de="Experten-Beratung und Vergleich" data-name-ru="Консультации и экспертное сравнение" data-name-ukr="Консультації та експертне порівняння" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv9_title">Experten-Beratung und Vergleich</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv9_desc">Umfassender Check von Zuverlässigkeit, Unterhaltskosten, Schwachstellen und Ihren persönlichen Anforderungen.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 200</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="150" data-name-de="Zulassungs-Service" data-name-ru="Сопровождение при регистрации" data-name-ukr="Супровід при реєстрації" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv10_title">Zulassungs-Service</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv10_desc">Versicherung, Dokumentenprüfung und reibungslose Einlösung der Kontrollschilder in der Schweiz.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
                                 <span class="calc-price">CHF 150</span>
                             </div>
                         </div>
 
+                        <!-- Измененная карточка 1: MFK-Vorbereitung -->
+                        <div class="calc-card hidden-service" data-price="200" data-name-de="MFK-Vorbereitung" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv11_title">MFK-Vorbereitung</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv11_desc">Vor-Check und Begleitung bei der Motorfahrzeugkontrolle.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 200</span>
+                            </div>
+                        </div>
+
+                        <!-- Карточка 2: Behebung von Mängeln (MFK) -->
+                        <div class="calc-card hidden-service" data-price="0" data-name-de="Behebung von Mängeln (MFK)" data-name-ru="Устранение неисправностей (MFK)" data-name-ukr="Усунення несправностей (MFK)" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv14_title">Behebung von Mängeln (MFK)</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv14_desc">Wir beheben alle festgestellten Mängel vor oder nach der MFK und bereiten Ihr Fahrzeug optimal für die Prüfung vor. Von kleineren Reparaturen bis zur vollständigen Vorbereitung – wir kümmern uns um alles.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price" data-i18n="srv_indiv">Auf Anfrage</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="0" data-name-de="Fahrzeugtransport" data-name-ru="Доставка и перегон автомобиля" data-name-ukr="Доставка та перегін автомобіля" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv12_title">Fahrzeugtransport</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv12_desc">Organisation des Transports oder der Überführung aus einem anderen Kanton oder Gebiet.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price" data-i18n="srv_indiv">Auf Anfrage</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card hidden-service" data-price="100" data-name-de="Kundenservice nach dem Kauf" data-name-ru="Поддержка после покупки" data-name-ukr="Підтримка после покупки" role="button" aria-pressed="false" tabindex="0">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3 data-i18n="srv13_title">Kundenservice nach dem Kauf</h3>
+                                    <div class="calc-checkbox" aria-hidden="true"></div>
+                                </div>
+                                <p data-i18n="srv13_desc">Tipps zum Unterhalt, Werkstatt-Empfehlungen und Support für zukünftige Reparaturen.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span data-i18n="srv_cost">Kosten:</span>
+                                <span class="calc-price">CHF 100</span>
+                            </div>
+                        </div>
+
+                        <!-- Кнопка развернуть/свернуть -->
+                        <div class="calc-toggle-container">
+                            <button type="button" class="btn" id="toggleServicesBtn" style="padding: 12px 30px;">Alle Leistungen anzeigen</button>
+                        </div>
                     </div>
 
                     <!-- Summary Sidebar -->
-                    <aside class="calc-summary">
-                        <h3>Ваш расчет</h3>
+                    <aside class="calc-summary" aria-label="Warenkorb Zusammenfassung">
+                        <h3 data-i18n="calc_summary_title">Ihre Auswahl</h3>
                         <div id="summaryItemsContainer">
-                            <p class="summary-empty">Выберите услугу слева</p>
+                            <p class="summary-empty" data-i18n="calc_empty">Wählen Sie links eine oder mehrere Optionen aus</p>
                         </div>
                         <ul class="summary-items-list" id="summaryList" style="display: none;"></ul>
                         
                         <div class="summary-total">
-                            <span>Итого:</span>
+                            <span data-i18n="calc_total">Total:</span>
                             <span class="summary-total-price" id="calcTotalPrice">CHF 0</span>
                         </div>
 
                         <div class="summary-actions">
-                            <button class="btn open-modal-btn" id="calcOrderBtn" disabled>Запросить расчет</button>
-                            <a href="https://wa.me/41764795820?text=Здравствуйте,%20меня%20интересует%20расчет%20услуг%20в%20Женеве" target="_blank" class="btn btn-whatsapp">Обсудить в WhatsApp</a>
+                            <button class="btn open-modal-btn" id="calcOrderBtn" disabled aria-label="Kalkulation anfragen" data-i18n="calc_btn_order">Auswahl anfragen</button>
+                            <a href="https://wa.me/41764795820?text=Guten%20Tag,%20ich%20habe%20eine%20Kalkulation%20auf%20der%20Website%20erstellt" target="_blank" class="btn btn-whatsapp" data-i18n="calc_btn_wa" rel="noopener noreferrer">Via WhatsApp besprechen</a>
+                            <!-- Новая кнопка 연락 / Контакт -->
+                            <button type="button" class="btn open-modal-btn" data-i18n="calc_btn_contact" style="background: transparent; border: 1px solid var(--border); color: var(--text-main); margin-top: 5px;">Kontaktieren Sie uns</button>
                         </div>
                     </aside>
                 </div>
             </div>
         </section>
 
+        <!-- Detailed Services List Section -->
+        <section id="details">
+            <div class="container">
+                <h2 class="section-title" data-i18n="details_title">Unsere Leistungen</h2>
+                <p class="section-subtitle" data-i18n="details_subtitle">Das komplette Setup für Ihren fahrbaren Untersatz in der Schweiz</p>
+
+                <div class="grid-3">
+                    <article class="card">
+                        <h3 data-i18n="d1_title">Rundum-Sorglos Autokauf</h3>
+                        <p data-i18n="d1_desc">Wir finden das perfekt auf Sie abgestimmte Auto, regeln Versicherungen und übernehmen die gesamte Bürokratie.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d2_title">Prüfung und Inspektion</h3>
+                        <p data-i18n="d2_desc">Historien-Analyse, Aufdeckung versteckter Macken plus Vor-Ort-Check von Motor, Fahrwerk und Karosserie mit Bildmaterial.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d3_title">Professionelle Preisverhandlung</h3>
+                        <p data-i18n="d3_desc">Wir stellen clevere Fragen, prüfen die Background-Story und verhandeln das beste Angebot für Sie heraus.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d4_title">Optimaler Versicherungsschutz</h3>
+                        <p data-i18n="d4_desc">Faire Policen mit optimaler Abdeckung und starkem Preis-Leistungs-Verhältnis für Ihren Seelenfrieden.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d5_title">Fahrzeugaufbereitung</h3>
+                        <p data-i18n="d5_desc">Wasch-Programm, Politur, Detail-Clean-Up und Tipps für einen schnelleren Abverkauf zum Höchstpreis.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d6_title">Profi-Shooting</h3>
+                        <p data-i18n="d6_desc">Starke Aufnahmen von Exterieur, Interieur und allen Key-Features Ihres Fahrzeugs.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d7_title">Inseraterstellung</h3>
+                        <p data-i18n="d7_desc">Auffälliger Text, ehrliche Vorteile und sauberes Setup für die gängigen Online-Marktplätze.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d8_title">Verkaufs-Assistenz</h3>
+                        <p data-i18n="d8_desc">Komplette Begleitung beim Verkaufsprozess von A bis Z mit professioneller Preiskalkulation.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d9_title">Expertenwissen und Vergleich</h3>
+                        <p data-i18n="d9_desc">Unabhängiger Check verschiedener Modelle nach Zuverlässigkeit, Schwachstellen und Alltagstauglichkeit.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d10_title">Zulassungs-Express</h3>
+                        <p data-i18n="d10_desc">Papierkram, Versicherung und Schilder-Abholung stressfrei in der Schweiz abwickeln.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d11_title">MFK-Vorbereitung</h3>
+                        <p data-i18n="d11_desc">Vorbereitung auf die Motorfahrzeugkontrolle und reibungsloser Ablauf.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d12_title">Transport und Support</h3>
+                        <p data-i18n="d12_desc">Überführung aus anderen Kantonen sowie langfristiger Support bei Servicefragen und Wartung.</p>
+                    </article>
+                    <article class="card">
+                        <h3 data-i18n="d13_title">Behebung von Mängeln (MFK)</h3>
+                        <p data-i18n="d13_desc">Wir beheben alle festgestellten Mängel vor oder nach der MFK und bereiten Ihr Fahrzeug optimal für die Prüfung vor.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" style="background: var(--bg-color);">
+            <div class="container">
+                <h2 class="section-title" data-i18n="reviews_title">Kundenstimmen</h2>
+                <p class="section-subtitle" data-i18n="reviews_subtitle">Was unsere Kunden über uns sagen</p>
+
+                <div class="grid-3">
+                    
+                    <!-- CTA Card: Оставить отзыв в Google -->
+                    <article class="card review-cta-card">
+                        <h3 style="margin-bottom: 20px; color: var(--text-muted); font-size: 1.1rem;" data-i18n="review_leave_text">Waren Sie zufrieden?</h3>
+                        <a href="https://maps.app.goo.gl/rsFYBUkemmzfVMMR7?g_st=it" target="_blank" class="btn btn-whatsapp" data-i18n="review_leave_btn" rel="noopener noreferrer" style="width: 100%; justify-content: center; background: #ffffff; color: #0b0f19;">Auf Google bewerten</a>
+                    </article>
+
+                    <!-- Google Review 1 -->
+                    <article class="card" style="position: relative;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <div class="review-star">★★★★★</div>
+                            <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                        <p data-i18n="review_g1_text">«Sehr professionelle Beratung und reibungslose Abwicklung. Kann ich nur weiterempfehlen!»</p>
+                        <h4 style="margin-top: 15px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_g1_name">Michael K.</h4>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);" data-i18n="review_google">Google Rezension</span>
+                    </article>
+
+                    <!-- Site Review 1 -->
+                    <article class="card">
+                        <div class="review-star">★★★★★</div>
+                        <p data-i18n="review_1_text">«Top Service! Alles lief reibungslos von der Suche bis zur Zulassung. Sehr transparent und ehrlich.»</p>
+                        <h4 style="margin-top: 15px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_1_name">— Alexander M.</h4>
+                    </article>
+
+                    <!-- Google Review 2 -->
+                    <article class="card" style="position: relative;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <div class="review-star">★★★★★</div>
+                            <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                        <p data-i18n="review_g2_text">«Top Service beim Autokauf! Alles wurde transparent kommuniziert und die MFK war kein Problem.»</p>
+                        <h4 style="margin-top: 15px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_g2_name">Stefan W.</h4>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);" data-i18n="review_google">Google Rezension</span>
+                    </article>
+
+                    <!-- Site Review 2 -->
+                    <article class="card">
+                        <div class="review-star">★★★★★</div>
+                        <p data-i18n="review_2_text">«Dank SWISS CARS habe ich viel Zeit und Nerven gespart. Professionelle Verhandlung und schnelle Abwicklung.»</p>
+                        <h4 style="margin-top: 15px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_2_name">— Elena K.</h4>
+                    </article>
+                    
+                    <!-- Google Review 3 -->
+                    <article class="card" style="position: relative;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <div class="review-star">★★★★★</div>
+                            <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                        <p data-i18n="review_g3_text">«Hat mir viel Zeit und Stress erspart. Sehr kompetenter Concierge-Service in St. Gallen.»</p>
+                        <h4 style="margin-top: 15px; color: var(--text-main); font-size: 0.95rem;" data-i18n="review_g3_name">David R.</h4>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);" data-i18n="review_google">Google Rezension</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cantons Section -->
+        <section id="cantons" class="cantons-section">
+            <div class="cantons-video-container">
+                <video autoplay muted loop playsinline preload="none" class="cantons-bg-video" aria-hidden="true">
+                    <source src="367131.mp4" type="video/mp4">
+                </video>
+                <div class="cantons-overlay"></div>
+            </div>
+            <div class="container cantons-content-wrapper">
+                <h2 class="section-title" data-i18n="cantons_title">Regionen und Kantone</h2>
+                <p class="section-subtitle" data-i18n="cantons_subtitle">Schweizweit für Sie vor Ort: Zürich, Bern, Genf und weitere.</p>
+                
+                <div class="cantons-floating-area" id="floatingArea" aria-hidden="true">
+                    <div class="canton-floating-card">
+                        <h3>Zürich</h3>
+                        <p data-i18n="c_zh">Finanz- und Business-Hub.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Bern</h3>
+                        <p data-i18n="c_be">Die Bundeshauptstadt.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Waadt</h3>
+                        <p data-i18n="c_vd">Am wunderschönen Genfersee.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Aargau</h3>
+                        <p data-i18n="c_ag">Zentrale Verkehrsdrehscheibe.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>St. Gallen</h3>
+                        <p data-i18n="c_sg">Zentrum der Ostschweiz.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Genf</h3>
+                        <p data-i18n="c_ge">Diplomatie und Luxus.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Luzern</h3>
+                        <p data-i18n="c_lu">Alpiner Kultur-Hotspot.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Solothurn</h3>
+                        <p data-i18n="c_so">Historisches Zentrum.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Tessin</h3>
+                        <p data-i18n="c_ti">Die sonnige Südseite.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Basel-Landschaft</h3>
+                        <p data-i18n="c_bl">Grenznaher Logistik-Spot.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Wallis</h3>
+                        <p data-i18n="c_vs">Berg- und Kurregion.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Freiburg</h3>
+                        <p data-i18n="c_fr">Zweisprachiges Herz.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Thurgau</h3>
+                        <p data-i18n="c_tg">Im Nordosten daheim.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Basel-Stadt</h3>
+                        <p data-i18n="c_bs">Innovation und Kultur.</p>
+                    </div>
+                    <div class="canton-floating-card">
+                        <h3>Schwyz</h3>
+                        <p data-i18n="c_sz">Das Kernland der Schweiz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Modal Window -->
-    <div class="modal-overlay" id="orderModal">
+    <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <h3 class="modal-title">Заявка в Женеве</h3>
-            <p class="modal-subtitle">Оставьте контакт, и наш эксперт по Женеве перезвонит вам в ближайшее время.</p>
+            <button class="modal-close" id="modalClose" aria-label="Schliessen">&times;</button>
+            <h3 class="modal-title" id="modalTitle" data-i18n="modal_title">Anfrage absenden</h3>
+            <p class="modal-subtitle" data-i18n="modal_subtitle">Füllen Sie kurz das Formular aus – wir melden uns umgehend bei Ihnen.</p>
             <form id="orderForm">
-                <div class="bot-trap"><input type="text" id="honeyField"></div>
+                
+                <!-- HONEYPOT -->
+                <div class="bot-trap" aria-hidden="true">
+                    <label for="honeyField">Please leave this field empty</label>
+                    <input type="text" id="honeyField" name="honeyField" tabindex="-1" autocomplete="off">
+                </div>
+
                 <div class="form-group">
-                    <label>Ваше имя</label>
-                    <input type="text" id="userName" class="form-control" required placeholder="Имя">
+                    <label for="userName" data-i18n="form_name">Ihr Name</label>
+                    <input type="text" id="userName" class="form-control" required placeholder="Name">
                 </div>
                 <div class="form-group">
-                    <label>Телефон / WhatsApp</label>
-                    <input type="tel" id="userPhone" class="form-control" required placeholder="+41 ...">
+                    <label for="userPhone" data-i18n="form_phone">Telefon / WhatsApp</label>
+                    <input type="tel" id="userPhone" class="form-control" required placeholder="+41 ..." pattern="^[0-9+\-\s()]*$">
                 </div>
-                <button type="submit" class="btn" id="submitBtn">Оставить заявку</button>
+                <div class="form-group">
+                    <label for="userEmail" data-i18n="form_email">E-Mail-Adresse</label>
+                    <input type="email" id="userEmail" class="form-control" required placeholder="beispiel@domain.ch">
+                </div>
+                <div class="form-group">
+                    <label for="modalServiceInput" data-i18n="form_service">Leistungen</label>
+                    <select id="modalServiceInput" class="form-control">
+                        <option value="Individuelles Setup" data-i18n="opt_default">Wählen Sie eine Option oder übernehmen Sie den Rechner</option>
+                        <option value="Rundum-Sorglos Autokauf" data-i18n="srv1_title">Rundum-Sorglos Autokauf</option>
+                        <option value="Verkaufs-Support" data-i18n="srv8_title">Verkaufs-Support</option>
+                        <option value="Fahrzeugcheck und Live-Inspektion" data-i18n="srv2_title">Fahrzeugcheck und Live-Inspektion</option>
+                        <option value="Professionelle Preisverhandlung" data-i18n="srv3_title">Professionelle Preisverhandlung</option>
+                        <option value="Versicherungsabschluss" data-i18n="srv4_title">Versicherungsabschluss</option>
+                        <option value="Fahrzeugaufbereitung" data-i18n="srv5_title">Fahrzeugaufbereitung</option>
+                        <option value="Profi-Autofotoshooting" data-i18n="srv6_title">Profi-Autofotoshooting</option>
+                        <option value="Inseraterstellung" data-i18n="srv7_title">Inseraterstellung</option>
+                        <option value="Experten-Beratung und Vergleich" data-i18n="srv9_title">Experten-Beratung und Vergleich</option>
+                        <option value="Zulassungs-Service" data-i18n="srv10_title">Zulassungs-Service</option>
+                        <option value="MFK-Vorbereitung" data-i18n="srv11_title">MFK-Vorbereitung</option>
+                        <option value="Behebung von Mängeln (MFK)" data-i18n="srv14_title">Behebung von Mängeln (MFK)</option>
+                        <option value="Fahrzeugtransport" data-i18n="srv12_title">Fahrzeugtransport</option>
+                        <option value="Kundenservice nach dem Kauf" data-i18n="srv13_title">Kundenservice nach dem Kauf</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" id="submitBtn" data-i18n="form_submit">Jetzt anfragen</button>
             </form>
         </div>
     </div>
 
-    <footer>
+    <!-- Юридический блок в подвале (Footer) и Карта -->
+    <footer id="contact">
         <div class="container">
-            <p>&copy; 2026 SWISS CARS Geneva. Премиальный автоконсьерж в кантоне Женева.</p>
+            
+            <!-- Карта Google Maps из ТЗ -->
+            <div style="margin-bottom: 40px; border-radius: 14px; overflow: hidden; border: 1px solid var(--border);">
+                <iframe src="https://maps.google.com/maps?q=Treuackerstrasse%2013,%209000%20St.%20Gallen&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>SWISS CARS Concierge</h4>
+                    <!-- Кликабельный адрес с переходом в Google Maps (Профиль компании) -->
+                    <p><a href="https://maps.app.goo.gl/rsFYBUkemmzfVMMR7?g_st=it" target="_blank" rel="noopener noreferrer">Treuackerstrasse 13, 9000 St. Gallen, Schweiz</a></p>
+                    <p><a href="tel:+41764795820">+41 76 479 58 20</a></p>
+                    <p><a href="mailto:info@swisscars-concierge.ch">info@swisscars-concierge.ch</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Rechtliches</h4>
+                    <ul class="footer-links">
+                        <li><a href="#impressum">Impressum</a></li>
+                        <li><a href="#datenschutz">Datenschutzerklärung</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SWISS CARS. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
+    <!-- ПОЛНЫЙ СЛОВАРЬ И СКРИПТЫ (DE, RU, UKR) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const aboutVideo = document.getElementById('aboutVideo');
+            if (aboutVideo) {
+                aboutVideo.muted = true;
+                aboutVideo.play().catch(e => console.log("Auto-play prevented:", e));
+            }
+
+            // Определение текущего языка по URL папки
+            let currentLang = 'de'; 
+            if (window.location.pathname.includes('/ru/')) {
+                currentLang = 'ru';
+            } else if (window.location.pathname.includes('/ukr/')) {
+                currentLang = 'ukr';
+            }
+
             const switcher = document.getElementById('headerLangSwitcher');
             const langBtn = document.getElementById('headerLangBtn');
-            const langOptions = document.querySelectorAll('.lang-option');
 
-            langBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                switcher.classList.toggle('active');
-            });
-            document.addEventListener('click', () => switcher.classList.remove('active'));
+            // Установка текста в кнопке для десктопа
+            const desktopLangBtnText = { 'de': 'DE', 'ru': 'RU', 'ukr': 'UKR' };
+            if (langBtn) {
+                langBtn.textContent = desktopLangBtnText[currentLang];
+                langBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    switcher.classList.toggle('active');
+                    const expanded = switcher.classList.contains('active');
+                    langBtn.setAttribute('aria-expanded', expanded);
+                });
 
-            langOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    window.location.href = option.getAttribute('data-url');
+                document.addEventListener('click', () => {
+                    switcher.classList.remove('active');
+                    langBtn.setAttribute('aria-expanded', 'false');
+                });
+            }
+
+            // Мобильный селектор языков (Dropdown)
+            const mobileLangSelect = document.getElementById('mobileLangSelect');
+            if (mobileLangSelect) {
+                mobileLangSelect.value = currentLang; // Ставим актуальный язык
+                mobileLangSelect.addEventListener('change', (e) => {
+                    const lang = e.target.value;
+                    localStorage.setItem('swisscars_lang', lang);
+                    
+                    if (lang === 'de') window.location.href = '/';
+                    else if (lang === 'ru') window.location.href = '/ru/';
+                    else if (lang === 'ukr') window.location.href = '/ukr/';
+                });
+            }
+
+            // Инициализация выпадающего меню (Burger Menu)
+            const openBtn = document.getElementById('openMenuBtn');
+            const closeBtn = document.getElementById('closeMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuLinks = document.querySelectorAll('.menu-item-link');
+
+            if (openBtn && mobileMenu) {
+                openBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (closeBtn && mobileMenu) {
+                closeBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu) {
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
                 });
             });
 
+            const floatingArea = document.getElementById('floatingArea');
+            const floatingCards = document.querySelectorAll('.canton-floating-card');
+
+            if (floatingArea && floatingCards.length > 0) {
+                const isMobile = window.innerWidth <= 768;
+                const cardsData = Array.from(floatingCards).map((card) => {
+                    const cardWidth = isMobile ? 160 : 210;
+                    const cardHeight = 75;
+                    const areaWidth = floatingArea.clientWidth;
+                    const areaHeight = floatingArea.clientHeight;
+
+                    let x = Math.random() * Math.max(10, areaWidth - cardWidth);
+                    let y = Math.random() * Math.max(10, areaHeight - cardHeight);
+                    let vx = (Math.random() - 0.5) * 0.6;
+                    let vy = (Math.random() - 0.5) * 0.6;
+
+                    card.style.left = `${x}px`;
+                    card.style.top = `${y}px`;
+
+                    return { el: card, x, y, vx, vy, width: cardWidth, height: cardHeight };
+                });
+
+                function animateFloating() {
+                    if (!document.hidden) {
+                        const currentWidth = floatingArea.clientWidth;
+                        const currentHeight = floatingArea.clientHeight;
+
+                        cardsData.forEach(item => {
+                            item.x += item.vx;
+                            item.y += item.vy;
+
+                            if (item.x <= 0) {
+                                item.x = 0;
+                                item.vx *= -1;
+                            } else if (item.x + item.width >= currentWidth) {
+                                item.x = currentWidth - item.width;
+                                item.vx *= -1;
+                            }
+
+                            if (item.y <= 0) {
+                                item.y = 0;
+                                item.vy *= -1;
+                            } else if (item.y + item.height >= currentHeight) {
+                                item.y = currentHeight - item.height;
+                                item.vy *= -1;
+                            }
+
+                            item.el.style.left = `${item.x}px`;
+                            item.el.style.top = `${item.y}px`;
+                        });
+                    }
+                    requestAnimationFrame(animateFloating);
+                }
+
+                requestAnimationFrame(animateFloating);
+            }
+            
             const calcCards = document.querySelectorAll('.calc-card');
             const summaryList = document.getElementById('summaryList');
             const summaryItemsContainer = document.getElementById('summaryItemsContainer');
             const calcTotalPrice = document.getElementById('calcTotalPrice');
             const calcOrderBtn = document.getElementById('calcOrderBtn');
+            const modalServiceInput = document.getElementById('modalServiceInput');
+            const toggleServicesBtn = document.getElementById('toggleServicesBtn');
+            const hiddenServices = document.querySelectorAll('.calc-card.hidden-service');
+
+            let isExpanded = false;
+
+            const translations = {
+                de: {
+                    meta_title: "Autoconcierge-Service in der Schweiz — Premium Fahrzeugkauf, Verkauf und Rundum-Betreuung",
+                    nav_about: "Über uns",
+                    nav_services: "Rechner",
+                    nav_details: "Leistungen",
+                    nav_reviews: "Bewertungen",
+                    nav_contact: "Kontakt",
+                    btn_whatsapp: "WhatsApp",
+                    btn_request: "Anfrage",
+                    hero_title: "Ihr Autoconcierge <br><span>in der Schweiz</span>",
+                    hero_desc: "Voller Service beim Autokauf, Verkauf und Fahrzeugcheck inklusive der gesamten Bürokratie. Reibungslose Abwicklung, kein Stress und absolut transparent.",
+                    hero_btn: "Loslegen",
+                    about_main_title: "Warum wir?",
+                    about_main_subtitle: "Ihr Partner für den Autokauf und -verkauf",
+                    about_quote: "«Wir machen den Autokauf einfach, sicher und stressfrei.»",
+                    about_text_1: "Wir sparen Ihre Zeit und übernehmen die komplette Bürokratie für Sie. Egal ob Sie ein Auto suchen oder verkaufen möchten — wir kümmern uns um den gesamten Prozess in der Schweiz.",
+                    about_text_2: "<strong>Unser Service von A bis Z:</strong> Wir finden das passende Fahrzeug in der Schweiz, prüfen es gründlich (MFK-Check), regeln die Versicherung und melden das Auto direkt auf Ihren Namen an.",
+                    calc_main_title: "Preis-Kalkulator",
+                    calc_main_subtitle: "Stellen Sie sich Ihre Wunsch-Leistungen zusammen",
+                    srv1_title: "Rundum-Sorglos Autokauf",
+                    srv1_desc: "Full-Service: Wir finden Ihren Traumwagen passend zu Budget und Wünschen, prüfen das Angebot und regeln die gesamte Bürokratie inklusive Versicherung.",
+                    srv8_title: "Verkaufs-Support",
+                    srv8_desc: "Alles, was für einen schnellen und profitablen Verkauf erforderlich ist: professionelles Fotoshooting, Vorbereitung der Anzeige, Preisschätzung, Veröffentlichung und Transaktionsbegleitung.",
+                    srv2_title: "Fahrzeugcheck und Live-Inspektion",
+                    srv2_desc: "Hintergrund-Check, Inserat-Analyse und verdeckte Mängel + Vor-Ort-Check von Karosserie, Interieur, Motor und Fahrwerk mit Fotoreport.",
+                    srv3_title: "Professionelle Preisverhandlung",
+                    srv3_desc: "Wir stellen gezielte Fragen, prüfen die Vorgeschichte und verhandeln das beste Angebot für Sie heraus.",
+                    srv4_title: "Versicherungsabschluss",
+                    srv4_desc: "Optimale Police mit Top-Abdeckung und bestem Preis-Leistungs-Verhältnis sichern.",
+                    srv5_title: "Fahrzeugaufbereitung",
+                    srv5_desc: "Intensivwäsche, Politur und Profi-Innenreinigung für maximalen Wiederverkaufswert (je nach Aufwand).",
+                    srv6_title: "Profi-Autofotoshooting",
+                    srv6_desc: "Hochwertige Aufnahmen von Exterieur, Interieur, Motorraum und allen wichtigen Details.",
+                    srv7_title: "Inseraterstellung",
+                    srv7_desc: "Auffällige Beschreibung, ehrliche Vorteile und perfektes Setup für die Verkaufsplattformen.",
+                    srv9_title: "Experten-Beratung und Vergleich",
+                    srv9_desc: "Umfassender Check von Zuverlässigkeit, Unterhaltskosten, Schwachstellen und Ihren persönlichen Anforderungen.",
+                    srv10_title: "Zulassungs-Service",
+                    srv10_desc: "Versicherung, Dokumentenprüfung und reibungslose Einlösung der Kontrollschilder in der Schweiz.",
+                    srv11_title: "MFK-Vorbereitung",
+                    srv11_desc: "Vor-Check und Begleitung bei der Motorfahrzeugkontrolle.",
+                    srv14_title: "Behebung von Mängeln (MFK)",
+                    srv14_desc: "Wir beheben alle festgestellten Mängel vor oder nach der MFK und bereiten Ihr Fahrzeug optimal für die Prüfung vor. Von kleineren Reparaturen bis zur vollständigen Vorbereitung – wir kümmern uns um alles.",
+                    srv12_title: "Fahrzeugtransport",
+                    srv12_desc: "Organisation des Transports oder der Überführung aus einem anderen Kanton oder Gebiet.",
+                    srv13_title: "Kundenservice nach dem Kauf",
+                    srv13_desc: "Tipps zum Unterhalt, Werkstatt-Empfehlungen und Support für zukünftige Reparaturen.",
+                    srv_cost: "Kosten:",
+                    srv_from: "ab ",
+                    srv_indiv: "Auf Anfrage",
+                    calc_summary_title: "Ihre Auswahl",
+                    calc_empty: "Wählen Sie links eine oder mehrere Optionen aus",
+                    calc_total: "Total:",
+                    calc_btn_order: "Auswahl anfragen",
+                    calc_btn_wa: "Via WhatsApp besprechen",
+                    calc_btn_contact: "Kontaktieren Sie uns",
+                    details_title: "Unsere Leistungen",
+                    details_subtitle: "Das komplette Setup für Ihren fahrbaren Untersatz in der Schweiz",
+                    d1_title: "Rundum-Sorglos Autokauf",
+                    d1_desc: "Wir finden das perfekt auf Sie abgestimmte Auto, regeln Versicherungen und übernehmen die gesamte Bürokratie.",
+                    d2_title: "Prüfung und Inspektion",
+                    d2_desc: "Historien-Analyse, Aufdeckung versteckter Macken plus Vor-Ort-Check von Motor, Fahrwerk und Karosserie mit Bildmaterial.",
+                    d3_title: "Professionelle Preisverhandlung",
+                    d3_desc: "Wir stellen clevere Fragen, prüfen die Background-Story und verhandeln das beste Angebot für Sie heraus.",
+                    d4_title: "Optimaler Versicherungsschutz",
+                    d4_desc: "Faire Policen mit optimaler Abdeckung und starkem Preis-Leistungs-Verhältnis für Ihren Seelenfrieden.",
+                    d5_title: "Fahrzeugaufbereitung",
+                    d5_desc: "Wasch-Programm, Politur, Detail-Clean-Up und Tipps für einen schnelleren Abverkauf zum Höchstpreis.",
+                    d6_title: "Profi-Shooting",
+                    d6_desc: "Starke Aufnahmen von Exterieur, Interieur und allen Key-Features Ihres Fahrzeugs.",
+                    d7_title: "Inseraterstellung",
+                    d7_desc: "Auffälliger Text, ehrliche Vorteile und sauberes Setup für die gängigen Online-Marktplätze.",
+                    d8_title: "Verkaufs-Assistenz",
+                    d8_desc: "Komplette Begleitung beim Verkaufsprozess von A bis Z mit professioneller Preiskalkulation.",
+                    d9_title: "Expertenwissen und Vergleich",
+                    d9_desc: "Unabhängiger Check verschiedener Modelle nach Zuverlässigkeit, Schwachstellen und Alltagstauglichkeit.",
+                    d10_title: "Zulassungs-Express",
+                    d10_desc: "Papierkram, Versicherung und Schilder-Abholung stressfrei in der Schweiz abwickeln.",
+                    d11_title: "MFK-Vorbereitung",
+                    d11_desc: "Vorbereitung auf die Motorfahrzeugkontrolle und reibungsloser Ablauf.",
+                    d12_title: "Transport und Support",
+                    d12_desc: "Überführung aus anderen Kantonen sowie langfristiger Support bei Servicefragen und Wartung.",
+                    d13_title: "Behebung von Mängeln (MFK)",
+                    d13_desc: "Wir beheben alle festgestellten Mängel vor oder nach der MFK und bereiten Ihr Fahrzeug optimal für die Prüfung vor.",
+                    reviews_title: "Kundenstimmen",
+                    reviews_subtitle: "Was unsere Kunden über uns sagen",
+                    review_leave_text: "Waren Sie zufrieden?",
+                    review_leave_btn: "Auf Google bewerten",
+                    review_1_text: "«Top Service! Alles lief reibungslos von der Suche bis zur Zulassung. Sehr transparent und ehrlich.»",
+                    review_1_name: "— Alexander M.",
+                    review_2_text: "«Dank SWISS CARS habe ich viel Zeit und Nerven gespart. Professionelle Verhandlung und schnelle Abwicklung.»",
+                    review_2_name: "— Elena K.",
+                    review_g1_text: "«Sehr professionelle Beratung und reibungslose Abwicklung. Kann ich nur weiterempfehlen!»",
+                    review_g1_name: "Michael K.",
+                    review_g2_text: "«Top Service beim Autokauf! Alles wurde transparent kommuniziert und die MFK war kein Problem.»",
+                    review_g2_name: "Stefan W.",
+                    review_g3_text: "«Hat mir viel Zeit und Stress erspart. Sehr kompetenter Concierge-Service in St. Gallen.»",
+                    review_g3_name: "David R.",
+                    review_google: "Google Rezension",
+                    cantons_title: "Regionen und Kantone",
+                    cantons_subtitle: "Schweizweit für Sie vor Ort: Zürich, Bern, Genf und weitere.",
+                    c_zh: "Finanz- und Business-Hub.",
+                    c_be: "Die Bundeshauptstadt.",
+                    c_vd: "Am wunderschönen Genfersee.",
+                    c_ag: "Zentrale Verkehrsdrehscheibe.",
+                    c_sg: "Zentrum der Ostschweiz.",
+                    c_ge: "Diplomatie und Luxus.",
+                    c_lu: "Alpiner Kultur-Hotspot.",
+                    c_so: "Historisches Zentrum.",
+                    c_ti: "Die sonnige Südseite.",
+                    c_bl: "Grenznaher Logistik-Spot.",
+                    c_vs: "Berg- und Kurregion.",
+                    c_fr: "Zweisprachiges Herz.",
+                    c_tg: "Im Nordosten daheim.",
+                    c_bs: "Innovation und Kultur.",
+                    c_sz: "Das Kernland der Schweiz.",
+                    modal_title: "Anfrage absenden",
+                    modal_subtitle: "Füllen Sie kurz das Formular aus – wir melden uns umgehend bei Ihnen.",
+                    form_name: "Ihr Name",
+                    form_phone: "Telefon / WhatsApp",
+                    form_email: "E-Mail-Adresse",
+                    form_address: "Adresse",
+                    form_language: "Sprache / Язык",
+                    form_service: "Leistungen",
+                    opt_default: "Wählen Sie eine Option oder übernehmen Sie den Rechner",
+                    form_submit: "Jetzt anfragen"
+                },
+                ru: {
+                    meta_title: "Автоконсьерж-сервис в Швейцарии — Премиальный подбор, покупка и сопровождение авто",
+                    nav_about: "О компании",
+                    nav_services: "Калькулятор",
+                    nav_details: "Услуги",
+                    nav_reviews: "Отзывы",
+                    nav_contact: "Контакты",
+                    btn_whatsapp: "WhatsApp",
+                    btn_request: "Оставить заявку",
+                    hero_title: "Премиальный автоконсьерж <br><span>в Швейцарии</span>",
+                    hero_desc: "Полный комплекс услуг: экспертный подбор, детальная диагностика, продажа и полное юридическое сопровождение. Безупречный сервис и абсолютная конфиденциальность.",
+                    hero_btn: "Начать подбор",
+                    about_main_title: "Почему выбирают нас",
+                    about_main_subtitle: "Ваш партнер по покупке и продаже автомобилей",
+                    about_quote: "«Мы делаем покупку автомобиля простой, безопасной и без стресса.»",
+                    about_text_1: "Мы экономим ваше время и берем на себя всю бюрократию. Независимо от того, хотите ли вы купить или продать автомобиль — мы позаботимся обо всем процессе в Швейцарии.",
+                    about_text_2: "Комплексное сопровождение сделок — от экспертного поиска автомобиля внутри Швейцарии до получения ключей, прохождения техосмотра MFK, оформления страхования и официальной регистрации.",
+                    calc_main_title: "Калькулятор услуг",
+                    calc_main_subtitle: "Сформируйте индивидуальный пакет необходимых услуг для вашего автомобиля",
+                    srv1_title: "Покупка автомобиля под ключ",
+                    srv1_desc: "Поиск авто под ваши требования и бюджет, подбор лучших вариантов без потери времени, а также помощь в оформлении страховки и всей бюрократии.",
+                    srv8_title: "Помощь в продаже автомобиля",
+                    srv8_desc: "Всё необходимое для быстрой и выгодной продажи: профессиональная фотосъёмка, подготовка объявления, оценка цены, публикация и сопровождение сделки.",
+                    srv2_title: "Проверка и личный осмотр автомобиля",
+                    srv2_desc: "Анализ истории, объявлений, комплектации, скрытых недостатков + личный осмотр кузова, салона, мотора, подвески с фотоотчетом.",
+                    srv3_title: "Переговоры с продавцом и торг",
+                    srv3_desc: "Правильные вопросы, изучение истории автомобиля, обсуждение торга и выгодной цены.",
+                    srv4_title: "Подбор выгодной страховки",
+                    srv4_desc: "Оформление оптимальной страховки с лучшим соотношением цены и покрытия.",
+                    srv5_title: "Подготовка к продаже",
+                    srv5_desc: "Мойка, химчистка, полировка, рекомендации по повышению продажной стоимости (зависит от объема работ).",
+                    srv6_title: "Профессиональная фотосъемка",
+                    srv6_desc: "Качественные фото экстерьера, салона, двигателя, багажника и важных деталей.",
+                    srv7_title: "Создание продающего объявления",
+                    srv7_desc: "Цепляющее описание, честные преимущества и оформление для площадок.",
+                    srv9_title: "Консультации и экспертное сравнение",
+                    srv9_desc: "Разбор вариантов по надежности, обслуживанию, слабым местам и вашим задачам.",
+                    srv10_title: "Сопровождение при регистрации",
+                    srv10_desc: "Страховка, проверка документов и беспроблемное получение номерных знаков в Швейцарии.",
+                    srv11_title: "Помощь с техосмотром MFK",
+                    srv11_desc: "Предварительная оценка и сопровождение процесса.",
+                    srv14_title: "Устранение неисправностей (MFK)",
+                    srv14_desc: "Мы устраняем все выявленные неисправности до или после MFK и оптимально готовим ваш автомобиль к техосмотру. От мелкого ремонта до полной подготовки — мы берем все на себя.",
+                    srv12_title: "Доставка и перегон автомобиля",
+                    srv12_desc: "Организация доставки или перегона из другого города или кантона (расчет индивидуально).",
+                    srv13_title: "Поддержка после покупки",
+                    srv13_desc: "Консультации по обслуживанию, выбор сервиса, страховка и ремонт в будущем.",
+                    srv_cost: "Стоимость:",
+                    srv_from: "от ",
+                    srv_indiv: "По запросу",
+                    calc_summary_title: "Ваш расчет",
+                    calc_empty: "Выберите одну или несколько услуг из списка слева",
+                    calc_total: "Итого:",
+                    calc_btn_order: "Запросить расчет",
+                    calc_btn_wa: "Обсудить в WhatsApp",
+                    calc_btn_contact: "Связаться с нами",
+                    details_title: "Наши услуги",
+                    details_subtitle: "Профессиональные решения для каждого этапа владения автомобилем",
+                    d1_title: "Покупка под ключ",
+                    d1_desc: "Помогаем найти автомобиль, который действительно соответствует вашим требованиям и бюджету, берем на себя помощь в оформлении страховки и всей бюрократии.",
+                    d2_title: "Проверка и осмотр",
+                    d2_desc: "Анализ истории, объявлений, комплектации и скрытых дефектов, а также личный осмотр кузова, салона, мотора, подвески с подробным фотоотчетом.",
+                    d3_title: "Переговоры с продавцом",
+                    d3_desc: "Задаем правильные вопросы, уточняем историю автомобиля, обсуждаем торг и помогаем добиться максимально выгодной цены.",
+                    d4_title: "Подбор страховки",
+                    d4_desc: "Оформление оптимальной страховки с лучшим соотношением цены и покрытия для вашего спокойствия.",
+                    d5_title: "Подготовка к продаже",
+                    d5_desc: "Мойка, химчистка, полировка и рекомендации по повышению продажной стоимости для быстрой сделки.",
+                    d6_title: "Профессиональная фотосъемка",
+                    d6_desc: "Качественные фото экстерьера, салона, двигателя, багажника и всех важных деталей машины.",
+                    d7_title: "Создание объявления",
+                    d7_desc: "Цепляющее описание, честные преимущества и корректное оформление для популярных площадок.",
+                    d8_title: "Помощь в продаже",
+                    d8_desc: "Консультации, подготовка объявления, рекомендации по цене и полное сопровождение сделки.",
+                    d9_title: "Консультации и сравнение",
+                    d9_desc: "Разбор вариантов по надежности, обслуживанию, слабым местам и вашим личным задачам.",
+                    d10_title: "Сопровождение при регистрации",
+                    d10_desc: "Страховка, помощь с документами и получением номерных знаков в Швейцарии без стресса.",
+                    d11_title: "Помощь с MFK",
+                    d11_desc: "Предварительная оценка состояния и сопровождение процесса прохождения техосмотра.",
+                    d12_title: "Доставка и поддержка",
+                    d12_desc: "Организация доставки или перегона авто из другого кантону + постпродажные консультации по обслуживанию.",
+                    d13_title: "Устранение неисправностей (MFK)",
+                    d13_desc: "Мы устраняем все выявленные неисправности до или после MFK и оптимально готовим ваш автомобиль к техосмотру.",
+                    reviews_title: "Отзывы клиентов",
+                    reviews_subtitle: "Что говорят о нашей работе",
+                    review_leave_text: "Остались довольны нашей работой?",
+                    review_leave_btn: "Оценить в Google",
+                    review_1_text: "«Отличный сервис! Всё прошло гладко от поиска до регистрации авто. Прозрачно и честно.»",
+                    review_1_name: "— Александр М.",
+                    review_2_text: "«Сэкономили кучу времени и нервов. Профессиональный торг и быстрая постановка на учет. Рекомендую!»",
+                    review_2_name: "— Елена К.",
+                    review_g1_text: "«Очень профессиональная консультация и гладкое оформление. Могу только порекомендовать!»",
+                    review_g1_name: "Михаэль К.",
+                    review_g2_text: "«Топ сервис при покупке авто! Всё было прозрачно, и техосмотр MFK прошли без проблем.»",
+                    review_g2_name: "Штефан В.",
+                    review_g3_text: "«Сэкономили мне кучу времени и нервов. Очень компетентный консьерж-сервис в Санкт-Галлене.»",
+                    review_g3_name: "Давид Р.",
+                    review_google: "Отзыв из Google",
+                    cantons_title: "Регионы и кантоны",
+                    cantons_subtitle: "Оперативная работа по всей территории Швейцарии: Цюрих, Берн, Женева и другие регионы",
+                    c_zh: "Финансовый и деловой центр.",
+                    c_be: "Федеральная столица.",
+                    c_vd: "Кантон на Женевском озере.",
+                    c_ag: "Торговый узел страны.",
+                    c_sg: "Центр восточной части.",
+                    c_ge: "Дипломатия и роскошь.",
+                    c_lu: "Альпийский культурний центр.",
+                    c_so: "Исторический кантон.",
+                    c_ti: "Солнечный регион.",
+                    c_bl: "Узел на границе с ЕС.",
+                    c_vs: "Курортный регион.",
+                    c_fr: "Двуязычный регион.",
+                    c_tg: "Кантон на северо-востоке.",
+                    c_bs: "Столица инноваций.",
+                    c_sz: "Сердце Швейцарии.",
+                    modal_title: "Оформление заявки",
+                    modal_subtitle: "Заполните форму, и наш персональный специалист свяжется с вами в ближайшее время.",
+                    form_name: "Ваше имя",
+                    form_phone: "Телефон / WhatsApp",
+                    form_email: "Электронная почта",
+                    form_address: "Адрес",
+                    form_language: "Sprache / Язык",
+                    form_service: "Выбранная услуга",
+                    opt_default: "Выберите или оставьте расчет из калькулятора",
+                    form_submit: "Отправить заявку"
+                },
+                ukr: {
+                    meta_title: "Автоконсьєрж-сервіс у Швейцарії — Преміальний підбір, покупка та супровід авто",
+                    nav_about: "Про компанію",
+                    nav_services: "Калькулятор",
+                    nav_details: "Послуги",
+                    nav_reviews: "Відгуки",
+                    nav_contact: "Контакти",
+                    btn_whatsapp: "WhatsApp",
+                    btn_request: "Залишити заявку",
+                    hero_title: "Преміальний автоконсьєрж <br><span>у Швейцарії</span>",
+                    hero_desc: "Повний комплекс послуг: експертний підбір, детальна діагностика, продаж та повний юридичний супровід. Бездоганний сервіс та абсолютна конфіденційність.",
+                    hero_btn: "Почати підбір",
+                    about_main_title: "Чому обирають нас",
+                    about_main_subtitle: "Ваш партнер з купівлі та продажу автомобілів",
+                    about_quote: "«Ми робимо покупку автомобіля простою, безпечною та без стресу.»",
+                    about_text_1: "Ми економимо ваш час і беремо на себе всю бюрократію. Незалежно від того, чи хочете ви купити або продати автомобіль — ми подбаємо про весь процес у Швейцарії.",
+                    about_text_2: "Комплексний супровід угод — від експертного пошуку автомобіля всередині Швейцарії до отримання ключів, проходження техогляду MFK, оформлення страхування та офіційної реєстрації.",
+                    calc_main_title: "Калькулятор послуг",
+                    calc_main_subtitle: "Сформуйте індивідуальний пакет необхідних послуг для вашого автомобіля",
+                    srv1_title: "Купівля автомобіля під ключ",
+                    srv1_desc: "Пошук авто під ваші вимоги та бюджет, підбір найкращих варіантів без втрати часу, а також допомога в оформленні страховки та всієї бюрократии.",
+                    srv8_title: "Допомога в продажу автомобіля",
+                    srv8_desc: "Все необхідне для швидкого та вигідного продажу: професійна фотозйомка, підготовка оголошення, оцінка вартості, публікація та супровід угоди.",
+                    srv2_title: "Перевірка та особистий огляд автомобіля",
+                    srv2_desc: "Аналіз історії, оголошень, комплектації, прихованих недоліків + особистий огляд кузова, салону, мотора, підвіски з фотозвітом.",
+                    srv3_title: "Переговори з продавцем та торг",
+                    srv3_desc: "Правильні питання, вивчення історії автомобіля, обговорення торгу та вигідної ціни.",
+                    srv4_title: "Підбір вигідної страховки",
+                    srv4_desc: "Оформлення оптимальної страховки з найкращим співвідношенням ціни та покриття.",
+                    srv5_title: "Підготовка до продажу",
+                    srv5_desc: "Мийка, хімчистка, полірування, рекомендації щодо підвищення вартості продажу (залежить від обсягу робіт).",
+                    srv6_title: "Професійна фотозйомка",
+                    srv6_desc: "Якісні фото екстер'єру, салону, двигуна, багажника та важливих деталей.",
+                    srv7_title: "Створення продаючого оголошення",
+                    srv7_desc: "Чіпляючий опис, чесні переваги та оформлення для майданчиків.",
+                    srv9_title: "Консультації та експертне порівняння",
+                    srv9_desc: "Розбір варіантів за надійністю, обслуговуванням, слабкими місцями та вашими завданнями.",
+                    srv10_title: "Супровід при реєстрації",
+                    srv10_desc: "Страховка, перевірка документів та безпроблемне отримання номерних знаків у Швейцарії.",
+                    srv11_title: "Допомога з техоглядом MFK",
+                    srv11_desc: "Попередня оцінка та супровід процесу.",
+                    srv14_title: "Усунення несправностей (MFK)",
+                    srv14_desc: "Ми усуваємо всі виявлені несправності до або після MFK та оптимально готуємо ваш автомобіль до техогляду. Від дрібного ремонту до повної підготовки — ми беремо все на себе.",
+                    srv12_title: "Доставка та перегін автомобіля",
+                    srv12_desc: "Організація доставки або перегону з іншого міста чи кантону (розрахунок індивідуально).",
+                    srv13_title: "Підтримка після покупки",
+                    srv13_desc: "Консультації з обслуговування, вибір сервісу, страховка та ремонт у майбутньому.",
+                    srv_cost: "Вартість:",
+                    srv_from: "від ",
+                    srv_indiv: "За запитом",
+                    calc_summary_title: "Ваш розрахунок",
+                    calc_empty: "Виберіть одну або кілька послуг зі списку зліва",
+                    calc_total: "Всього:",
+                    calc_btn_order: "Запросити розрахунок",
+                    calc_btn_wa: "Обговорити в WhatsApp",
+                    calc_btn_contact: "Зв'язатися з нами",
+                    details_title: "Наші послуги",
+                    details_subtitle: "Професійні рішення для кожного етапу володіння автомобілем",
+                    d1_title: "Купівля під ключ",
+                    d1_desc: "Допомагаємо знайти автомобіль, який відповідає вашим вимогам та бюджету, беремо на себе оформлення страховки та бюрократію.",
+                    d2_title: "Перевірка та огляд",
+                    d2_desc: "Аналіз історії, оголошень, комплектації та прихованих дефектів, а також особистий огляд кузова, салону, мотора, підвіски з докладним фотозвітом.",
+                    d3_title: "Переговори з продавцем",
+                    d3_desc: "Ставимо правильні питання, уточнюємо історію автомобіля, обговорюємо торг і допомагаємо домогтися максимально вигідної ціни.",
+                    d4_title: "Підбір страховки",
+                    d4_desc: "Оформлення оптимальної страховки з найкращим співвідношенням ціни та покриття для вашого спокою.",
+                    d5_title: "Підготовка до продажу",
+                    d5_desc: "Мийка, хімчистка, полірування та рекомендації щодо підвищення вартості продажу для швидкої угоди.",
+                    d6_title: "Професійна фотозйомка",
+                    d6_desc: "Якісні фото екстер'єру, салону, двигуна, багажника та всіх важливих деталей машини.",
+                    d7_title: "Створення оголошення",
+                    d7_desc: "Чіпляючий опис, чесні переваги та коректне оформлення для популярних майданчиків.",
+                    d8_title: "Допомога в продажу",
+                    d8_desc: "Консультації, підготовка оголошення, рекомендації щодо ціни та повний супровід угоди.",
+                    d9_title: "Консультації та порівняння",
+                    d9_desc: "Розбір варіантів за надійністю, обслуговуванням, слабкими місцями та вашими особистими завданнями.",
+                    d10_title: "Супровід при реєстрації",
+                    d10_desc: "Страховка, допомога з документами та отриманням номерних знаків у Швейцарії без стресу.",
+                    d11_title: "Допомога з MFK",
+                    d11_desc: "Попередня оцінка стану та супровід процесу проходження техогляду.",
+                    d12_title: "Доставка та підтримка",
+                    d12_desc: "Організація доставки або перегону авто з іншого кантону + післяпродажні консультації з обслуговування.",
+                    d13_title: "Усунення несправностей (MFK)",
+                    d13_desc: "Ми усуваємо всі виявлені несправності до або після MFK та оптимально готуємо ваш автомобіль до техогляду.",
+                    reviews_title: "Відгуки клієнтів",
+                    reviews_subtitle: "Що кажуть про нашу роботу",
+                    review_leave_text: "Залишилися задоволені нашою роботою?",
+                    review_leave_btn: "Оцінити в Google",
+                    review_1_text: "«Відмінний сервіс! Все пройшло гладко від пошуку до реєстрації авто. Прозоро і чесно.»",
+                    review_1_name: "— Олександр М.",
+                    review_2_text: "«Зекономили купу часу і нервів. Професійний торг і швидка постановка на облік. Рекомендую!»",
+                    review_2_name: "— Олена К.",
+                    review_g1_text: "«Дуже професійна консультація та безпроблемне оформлення. Можу тільки порекомендувати!»",
+                    review_g1_name: "Міхаель К.",
+                    review_g2_text: "«Топ сервіс при покупці авто! Все було прозоро, і техогляд MFK пройшли без проблем.»",
+                    review_g2_name: "Штефан В.",
+                    review_g3_text: "«Зекономили мені купу часу і нервів. Дуже компетентний консьєрж-сервіс в Санкт-Галлені.»",
+                    review_g3_name: "Давід Р.",
+                    review_google: "Відгук з Google",
+                    cantons_title: "Регіони та кантони",
+                    cantons_subtitle: "Оперативна робота по всій території Швейцарії: Цюрих, Берн, Женева та інші регіони",
+                    c_zh: "Фінансовий та діловий центр.",
+                    c_be: "Федеральна столиця.",
+                    c_vd: "Кантон на Женевському озері.",
+                    c_ag: "Торговий вузол країни.",
+                    c_sg: "Центр східної частини.",
+                    c_ge: "Дипломатія та розкіш.",
+                    c_lu: "Альпійський культурний центр.",
+                    c_so: "Історичний кантон.",
+                    c_ti: "Сонячний регіон.",
+                    c_bl: "Вузол на кордоні з ЄС.",
+                    c_vs: "Курортный регіон.",
+                    c_fr: "Двомовний регіон.",
+                    c_tg: "Кантон на північному сході.",
+                    c_bs: "Столиця інновацій.",
+                    c_sz: "Серце Швейцарії.",
+                    modal_title: "Оформлення заявки",
+                    modal_subtitle: "Заповніть форму, і наш фахівець зв'яжеться з вами найближчим часом.",
+                    form_name: "Ваше ім'я",
+                    form_phone: "Телефон / WhatsApp",
+                    form_email: "Електронна пошта",
+                    form_address: "Адреса",
+                    form_language: "Sprache / Язык",
+                    form_service: "Вибрана послуга",
+                    opt_default: "Виберіть або залиште розрахунок з калькулятора",
+                    form_submit: "Надіслати заявку"
+                }
+            };
+
+            function setLanguage(lang) {
+                const dict = translations[lang];
+                if (!dict) return;
+                
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (dict[key]) {
+                        if (el.tagName === 'TITLE') {
+                            document.title = dict[key];
+                        } else {
+                            el.innerHTML = dict[key];
+                        }
+                    }
+                });
+                
+                document.documentElement.lang = lang;
+                
+                if (toggleServicesBtn) {
+                    const btnTexts = {
+                        de: { show: "Alle Leistungen anzeigen", hide: "Weniger anzeigen" },
+                        ru: { show: "Показать все услуги", hide: "Свернуть список" },
+                        ukr: { show: "Показати всі послуги", hide: "Згорнути список" }
+                    };
+                    const langSet = btnTexts[lang] || btnTexts.de;
+                    toggleServicesBtn.textContent = isExpanded ? langSet.hide : langSet.show;
+                }
+
+                updateCalculator();
+            }
+
+            setLanguage(currentLang);
+
+            // Обработка кликов для десктопного переключателя
+            const langOptions = document.querySelectorAll('.lang-dropdown .lang-option');
+            langOptions.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = option.getAttribute('data-lang');
+                    localStorage.setItem('swisscars_lang', lang);
+                    
+                    if (lang === 'de') window.location.href = '/';
+                    else if (lang === 'ru') window.location.href = '/ru/';
+                    else if (lang === 'ukr') window.location.href = '/ukr/';
+                    
+                    if (switcher) switcher.classList.remove('active');
+                });
+            });
+
+            if (toggleServicesBtn) {
+                toggleServicesBtn.addEventListener('click', () => {
+                    isExpanded = !isExpanded;
+                    hiddenServices.forEach(card => {
+                        card.classList.toggle('visible', isExpanded);
+                    });
+
+                    const btnTexts = {
+                        de: { show: "Alle Leistungen anzeigen", hide: "Weniger anzeigen" },
+                        ru: { show: "Показать все услуги", hide: "Свернуть список" },
+                        ukr: { show: "Показати всі послуги", hide: "Згорнути список" }
+                    };
+
+                    const langSet = btnTexts[currentLang] || btnTexts.de;
+                    toggleServicesBtn.textContent = isExpanded ? langSet.hide : langSet.show;
+                });
+            }
 
             function updateCalculator() {
                 const selectedCards = document.querySelectorAll('.calc-card.selected');
                 let total = 0;
                 let summaryHTML = '';
+                let serviceNamesForModal = [];
+                let hasFromService = false;
+                const langDict = translations[currentLang] || translations.de;
 
                 if (selectedCards.length > 0) {
                     summaryItemsContainer.style.display = 'none';
@@ -421,60 +1908,139 @@
 
                     selectedCards.forEach(card => {
                         const price = parseInt(card.getAttribute('data-price')) || 0;
-                        const name = card.getAttribute('data-name');
+                        const isFrom = card.getAttribute('data-from') === 'true';
+                        if (isFrom) hasFromService = true;
+                        
+                        const name = card.getAttribute(`data-name-${currentLang}`) || card.getAttribute('data-name-de');
                         total += price;
-                        summaryHTML += `<li><span>${name}</span><span>CHF ${price}</span></li>`;
+                        serviceNamesForModal.push(name);
+
+                        const fromPrefix = isFrom ? (langDict['srv_from'] || 'ab ') : '';
+                        const priceText = price > 0 ? `${fromPrefix}CHF ${price.toLocaleString()}` : langDict['srv_indiv'];
+                        summaryHTML += `<li><span>${name}</span><span>${priceText}</span></li>`;
                     });
+
                     summaryList.innerHTML = summaryHTML;
+                    if(serviceNamesForModal.length > 0) {
+                        modalServiceInput.value = serviceNamesForModal[0];
+                    }
                 } else {
                     summaryItemsContainer.style.display = 'block';
                     summaryList.style.display = 'none';
                     calcOrderBtn.setAttribute('disabled', 'true');
                 }
-                calcTotalPrice.textContent = `CHF ${total}`;
+
+                const totalPrefix = (hasFromService && total > 0) ? (langDict['srv_from'] || 'ab ') : '';
+                calcTotalPrice.textContent = `${totalPrefix}CHF ${total.toLocaleString()}`;
             }
 
             calcCards.forEach(card => {
                 card.addEventListener('click', () => {
-                    card.classList.toggle('selected');
+                    const isSelected = card.classList.toggle('selected');
+                    card.setAttribute('aria-pressed', isSelected);
                     updateCalculator();
+                });
+                
+                card.addEventListener('keydown', (e) => {
+                    if(e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        card.click();
+                    }
                 });
             });
 
             const modal = document.getElementById('orderModal');
-            document.querySelectorAll('.open-modal-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => { e.preventDefault(); modal.classList.add('active'); });
-            });
-            document.getElementById('modalClose').addEventListener('click', () => modal.classList.remove('active'));
-            
-            document.getElementById('orderForm').addEventListener('submit', (e) => {
-                e.preventDefault();
-                if (document.getElementById('honeyField').value !== "") return;
-                
-                const btn = document.getElementById('submitBtn');
-                const originalText = btn.textContent;
-                btn.textContent = 'Отправка...';
-                
-                const formData = new URLSearchParams();
-                formData.append('name', document.getElementById('userName').value);
-                formData.append('phone', document.getElementById('userPhone').value);
-                formData.append('email', 'geneva-landing@auto');
-                formData.append('service', 'Заявка с Landing Page Женева');
-                formData.append('source', 'swisscars_web_geneva'); 
+            const openModalBtns = document.querySelectorAll('.open-modal-btn');
+            const closeModalBtn = document.getElementById('modalClose');
 
-                fetch('https://script.google.com/macros/s/AKfycbyZp71TKlrcZduSfBQ25LTWxTtgoXwRhMAM_IEBLHESzmCxlljMm8L7h4SpQt_-7FiD/exec', {
-                    method: 'POST', mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: formData.toString()
-                }).then(() => {
-                    alert('Заявка отправлена! Наш эксперт в Женеве свяжется с вами.');
-                    modal.classList.remove('active');
-                    btn.textContent = originalText;
-                }).catch(() => {
-                    alert('Ошибка. Пожалуйста, напишите нам в WhatsApp.');
-                    btn.textContent = originalText;
+            openModalBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (modal) modal.classList.add('active');
                 });
             });
+
+            if (closeModalBtn && modal) {
+                closeModalBtn.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                });
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    e.target === modal && modal.classList.remove('active');
+                });
+            }
+
+            const orderForm = document.getElementById('orderForm');
+            let isSubmitting = false;
+
+            const sanitizeInput = (str) => {
+                const trimmed = str.trim();
+                return /^[=+\-@]/.test(trimmed) ? "'" + trimmed : trimmed;
+            };
+
+            if (orderForm) {
+                orderForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    if (isSubmitting) return;
+                    
+                    const lastSubmitTime = localStorage.getItem('lastSubmitTime');
+                    if (lastSubmitTime && (Date.now() - lastSubmitTime < 60000)) {
+                        alert(currentLang === 'de' ? 'Bitte warten Sie eine Minute vor der nächsten Anfrage.' : (currentLang === 'ukr' ? 'Будь ласка, зачекайте хвилину перед наступним запитом.' : 'Пожалуйста, подождите минуту перед следующей отправкой.'));
+                        return;
+                    }
+                    
+                    const honeyTrap = document.getElementById('honeyField').value;
+                    if (honeyTrap !== "") {
+                        orderForm.reset();
+                        document.getElementById('orderModal').classList.remove('active');
+                        return; 
+                    }
+
+                    const selectedService = document.getElementById('modalServiceInput').value;
+                    const submitBtn = document.getElementById('submitBtn');
+                    const originalText = submitBtn.textContent;
+
+                    isSubmitting = true;
+                    submitBtn.textContent = currentLang === 'de' ? 'Senden...' : (currentLang === 'ukr' ? 'Надсилання...' : 'Отправка...');
+                    submitBtn.setAttribute('disabled', 'true');
+
+                    const formData = new URLSearchParams();
+                    formData.append('name', sanitizeInput(document.getElementById('userName').value));
+                    formData.append('phone', sanitizeInput(document.getElementById('userPhone').value));
+                    formData.append('email', sanitizeInput(document.getElementById('userEmail').value));
+                    formData.append('service', selectedService);
+                    formData.append('source', 'swisscars_web_2026_seo'); 
+
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbyZp71TKlrcZduSfBQ25LTWxTtgoXwRhMAM_IEBLHESzmCxlljMm8L7h4SpQt_-7FiD/exec';
+
+                    fetch(scriptURL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: formData.toString()
+                    })
+                    .then(() => {
+                        localStorage.setItem('lastSubmitTime', Date.now()); 
+                        alert(currentLang === 'de' ? 'Anfrage erfolgreich gesendet! Wir melden uns umgehend bei Ihnen.' : (currentLang === 'ukr' ? 'Заявку успішно надіслано! Ми зв\'яжемося з вами найближчим часом.' : 'Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.'));
+                        orderForm.reset();
+                        document.getElementById('orderModal').classList.remove('active');
+                    })
+                    .catch(error => {
+                        console.error('Network Error:', error);
+                        alert(currentLang === 'de' ? 'Fehler beim Senden. Bitte schreiben Sie uns auf WhatsApp.' : (currentLang === 'ukr' ? 'Сталася помилка під час надсилання. Будь ласка, напишіть нам у WhatsApp.' : 'Произошла ошибка при отправке. Пожалуйста, напишите нам в WhatsApp.'));
+                    })
+                    .finally(() => {
+                        isSubmitting = false;
+                        submitBtn.textContent = originalText;
+                        submitBtn.removeAttribute('disabled');
+                    });
+                });
+            }
         });
     </script>
 </body>

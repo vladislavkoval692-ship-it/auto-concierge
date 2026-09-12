@@ -250,16 +250,38 @@
         .review-cta-card:hover { border-color: var(--accent); background: rgba(212, 175, 55, 0.05); }
         .review-star { color: var(--accent); font-size: 1.3rem; margin-bottom: 15px; letter-spacing: 2px; }
 
+        /* Cantons Section */
+        .cantons-section { position: relative; overflow: hidden; min-height: 650px; padding: 100px 0; }
+        .cantons-video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .cantons-bg-video { width: 100%; height: 100%; object-fit: cover; }
+        .cantons-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(4px); }
+        .cantons-content-wrapper { position: relative; z-index: 2; }
+        .cantons-floating-area { position: relative; width: 100%; height: 480px; overflow: hidden; margin-top: 30px; }
+        
+        .canton-floating-card {
+            position: absolute; background: rgba(19, 27, 46, 0.92); border: 1px solid var(--border); border-radius: 12px;
+            padding: 14px 18px; width: 210px; backdrop-filter: blur(8px); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: border-color 0.3s ease; will-change: transform;
+        }
+        .canton-floating-card:hover { border-color: var(--accent); z-index: 10; }
+        .canton-floating-card h3 { font-size: 1rem; margin-bottom: 4px; color: var(--text-main); }
+        .canton-floating-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.3; }
+
         /* Modal */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden; transition: var(--transition); padding: 16px; }
         .modal-overlay.active { opacity: 1; visibility: visible; }
         .modal-content { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 100%; max-width: 440px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.6); transform: translateY(20px); transition: var(--transition); max-height: 90vh; overflow-y: auto; }
         .modal-overlay.active .modal-content { transform: translateY(0); }
         .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--text-muted); font-size: 1.4rem; cursor: pointer; }
+        .modal-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; color: var(--text-main); }
+        .modal-subtitle { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px; }
+        
         .form-group { margin-bottom: 14px; text-align: left; }
         .form-group label { display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; }
         .form-control { width: 100%; background: var(--bg-color); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; color: var(--text-main); font-family: inherit; font-size: 0.95rem; }
         .form-control:focus { outline: none; border-color: var(--accent); }
+        select.form-control { cursor: pointer; }
+        .modal-content .btn { width: 100%; margin-top: 10px; padding: 14px; }
 
         /* Footer & Map Block */
         footer { background-color: var(--card-bg); border-top: 1px solid var(--border); padding: 60px 0 30px; }
@@ -271,8 +293,16 @@
         .footer-col a:hover { color: var(--accent); }
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+        .footer-links a:hover { color: var(--accent); }
         .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; margin-top: 20px; }
 
+        @media (max-width: 768px) {
+            .cantons-floating-area { height: 580px; }
+            .canton-floating-card { width: 180px; padding: 10px 12px; }
+            .canton-floating-card h3 { font-size: 0.9rem; }
+            .canton-floating-card p { font-size: 0.72rem; }
+        }
         .bot-trap { position: absolute; left: -9999px; opacity: 0; z-index: -1; }
 
         /* --- Мобильное меню и Бургер --- */
@@ -380,6 +410,11 @@
                     <a href="tel:+41764795820" class="mobile-phone-number">+41 76 479 58 20</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <span class="mobile-phone-label" data-i18n="form_email">E-Mail-Adresse</span>
+                    <a href="mailto:info@swisscars-concierge.ch" class="mobile-phone-number" style="font-size: 0.95rem; word-break: break-all;">info@swisscars-concierge.ch</a>
+                </div>
+                <!-- Кликабельный адрес с переходом в Google Maps (Профиль компании) -->
+                <div style="display: flex; flex-direction: column; gap: 4px;">
                     <span class="mobile-phone-label" data-i18n="form_address">Adresse</span>
                     <a href="https://maps.app.goo.gl/rsFYBUkemmzfVMMR7?g_st=it" target="_blank" rel="noopener noreferrer" class="mobile-phone-number" style="font-size: 0.95rem; display: inline-block;">Treuackerstrasse 13, 9000 St. Gallen, Schweiz</a>
                 </div>
@@ -413,20 +448,20 @@
                 <div class="trust-badge" data-i18n="trust_badge">100% Unabhängig & Transparent</div>
                 
                 <h1 data-i18n="hero_title">Gebrauchtwagen-Check & Autokauf in der Schweiz</h1>
-                <p class="hero-subtitle" data-i18n="hero_desc">Unabhängige Fahrzeugprüfung vor Ort, MFK-Check, Preisverhandlung und stressfreie Zulassung in allen Kantonen.</p>
+                <p class="hero-subtitle" data-i18n="hero_desc">Von der Fahrzeugsuche und Prüfung bis zur Preisverhandlung und Versicherung – alles aus einer Hand.</p>
                 
                 <ul class="hero-usps">
                     <li class="hero-usp-item">
                         <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> 
-                        <span data-i18n="usp_1">Vor-Ort-Check innerhalb von 24 Stunden schweizweit.</span>
+                        <span data-i18n="usp_1"><strong>Auto kaufen & Fahrzeugprüfung</strong><br>Wir finden Ihr Wunschfahrzeug, prüfen Zustand, Historie und Unterlagen und begleiten Sie sicher bis zum Kauf.</span>
                     </li>
                     <li class="hero-usp-item">
                         <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> 
-                        <span data-i18n="usp_2">Umfassender Foto-/Videobericht und Computerdiagnose.</span>
+                        <span data-i18n="usp_2"><strong>Auto verkaufen</strong><br>Professionelle Vorbereitung, Fahrzeugpräsentation und Verkaufsbegleitung – für einen schnellen und bestmöglichen Verkauf.</span>
                     </li>
                     <li class="hero-usp-item">
                         <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> 
-                        <span data-i18n="usp_3">Wir refinanzieren unsere Kosten durch gezielte Preisverhandlungen.</span>
+                        <span data-i18n="usp_3"><strong>Konfiguration & Versicherung</strong><br>Individuelle Fahrzeugkonfiguration und unabhängige Versicherungsberatung – mit optimalem Schutz zum besten Preis.</span>
                     </li>
                 </ul>
 
@@ -611,7 +646,6 @@
                             </div>
                         </div>
 
-                        <!-- Карточка 1: MFK-Vorbereitung -->
                         <div class="calc-card hidden-service" data-price="200" data-name-de="MFK-Vorbereitung" data-name-ru="Помощь с техосмотром MFK" data-name-ukr="Допомога з техоглядом MFK" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
@@ -626,7 +660,6 @@
                             </div>
                         </div>
 
-                        <!-- Карточка 2: Behebung von Mängeln (MFK) -->
                         <div class="calc-card hidden-service" data-price="0" data-name-de="Behebung von Mängeln (MFK)" data-name-ru="Устранение неисправностей (MFK)" data-name-ukr="Усунення несправностей (MFK)" role="button" aria-pressed="false" tabindex="0">
                             <div>
                                 <div class="calc-card-header">
@@ -1135,10 +1168,10 @@
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Anfrage",
                     hero_title: "Gebrauchtwagen-Check & Autokauf in der Schweiz",
-                    hero_desc: "Unabhängige Fahrzeugprüfung vor Ort, MFK-Check, Preisverhandlung und stressfreie Zulassung in allen Kantonen.",
-                    usp_1: "Vor-Ort-Check innerhalb von 24 Stunden schweizweit.",
-                    usp_2: "Umfassender Foto-/Videobericht und Computerdiagnose.",
-                    usp_3: "Wir refinanzieren unsere Kosten durch gezielte Preisverhandlungen.",
+                    hero_desc: "Von der Fahrzeugsuche und Prüfung bis zur Preisverhandlung und Versicherung – alles aus einer Hand.",
+                    usp_1: "<strong>Auto kaufen & Fahrzeugprüfung</strong><br>Wir finden Ihr Wunschfahrzeug, prüfen Zustand, Historie und Unterlagen und begleiten Sie sicher bis zum Kauf.",
+                    usp_2: "<strong>Auto verkaufen</strong><br>Professionelle Vorbereitung, Fahrzeugpräsentation und Verkaufsbegleitung – für einen schnellen und bestmöglichen Verkauf.",
+                    usp_3: "<strong>Konfiguration & Versicherung</strong><br>Individuelle Fahrzeugkonfiguration und unabhängige Versicherungsberatung – mit optimalem Schutz zum besten Preis.",
                     btn_hero_wa: "WhatsApp Chat",
                     btn_hero_calc: "Kosten berechnen",
                     trust_badge: "100% Unabhängig & Transparent",
@@ -1272,10 +1305,10 @@
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Оставить заявку",
                     hero_title: "Проверка и подбор авто в Швейцарии",
-                    hero_desc: "Независимая выездная диагностика перед покупкой, проверка перед MFK, торг с продавцом и оформление под ключ.",
-                    usp_1: "Выезд на осмотр за 24 часа по всей Швейцарии.",
-                    usp_2: "Полный фото/видеоотчет и компьютерная диагностика.",
-                    usp_3: "Окупаем свои услуги за счет аргументированного торга с продавцом.",
+                    hero_desc: "От поиска и проверки авто до переговоров о цене и страхования — всё из одних рук.",
+                    usp_1: "<strong>Покупка и проверка авто</strong><br>Найдем автомобиль вашей мечты, проверим состояние, историю, документы и сопроводим до самой покупки.",
+                    usp_2: "<strong>Продажа авто</strong><br>Профессиональная подготовка, презентация и сопровождение сделки — для быстрой и максимально выгодной продажи.",
+                    usp_3: "<strong>Конфигурация и страхование</strong><br>Индивидуальная конфигурация авто и независимые консультации по страхованию — оптимальная защита по лучшей цене.",
                     btn_hero_wa: "WhatsApp Chat",
                     btn_hero_calc: "Рассчитать стоимость",
                     trust_badge: "100% Независимо и прозрачно",
@@ -1387,7 +1420,7 @@
                     c_fr: "Двуязычный регион.",
                     c_tg: "Кантон на северо-востоке.",
                     c_bs: "Столица инноваций.",
-                    c_sz: "Серце Швейцарии.",
+                    c_sz: "Сердце Швейцарии.",
                     modal_title: "Оформление заявки",
                     modal_subtitle: "Заполните форму, и наш персональный специалист свяжется с вами в ближайшее время.",
                     form_name: "Ваше имя",
@@ -1409,10 +1442,10 @@
                     btn_whatsapp: "WhatsApp",
                     btn_request: "Залишити заявку",
                     hero_title: "Перевірка та підбір авто у Швейцарії",
-                    hero_desc: "Незалежна виїзна діагностика перед покупкою, перевірка перед MFK, торг із продавцем та оформлення під ключ.",
-                    usp_1: "Виїзд на огляд за 24 години по всій Швейцарії.",
-                    usp_2: "Повний фото/відеозвіт та комп'ютерна діагностика.",
-                    usp_3: "Окупаємо свої послуги завдяки аргументованому торгу з продавцем.",
+                    hero_desc: "Від пошуку та перевірки авто до переговорів щодо ціни та страхування — все з одних рук.",
+                    usp_1: "<strong>Купівля та перевірка авто</strong><br>Знайдемо автомобіль вашої мрії, перевіримо стан, історію, документи та супроводимо до самої покупки.",
+                    usp_2: "<strong>Продаж авто</strong><br>Професійна підготовка, презентація та супровід угоди — для швидкого та максимально вигідного продажу.",
+                    usp_3: "<strong>Конфігурація та страхування</strong><br>Індивідуальна конфігурація авто та незалежні консультації зі страхування — оптимальний захист за найкращою ціною.",
                     btn_hero_wa: "WhatsApp Chat",
                     btn_hero_calc: "Розрахувати вартість",
                     trust_badge: "100% Незалежно та прозоро",
@@ -1462,7 +1495,7 @@
                     calc_summary_title: "Ваш розрахунок",
                     calc_empty: "Виберіть одну або кілька послуг зі списку зліва",
                     calc_total: "Всього:",
-                    calc_btn_order: "Запросити розрахунок",
+                    calc_btn_order: "Запросить розрахунок",
                     calc_btn_wa: "Обговорити в WhatsApp",
                     calc_btn_contact: "Зв'язатися з нами",
                     details_title: "Наші послуги",
@@ -1511,7 +1544,7 @@
                     cantons_title: "Регіони та кантони",
                     cantons_subtitle: "Оперативна робота по всій території Швейцарії: Цюрих, Берн, Женева та інші регіони",
                     c_zh: "Фінансовий та діловий центр.",
-                    c_be: "Федеральна столиця.",
+                    c_be: "Федеральна столица.",
                     c_vd: "Кантон на Женевському озері.",
                     c_ag: "Торговий вузол країни.",
                     c_sg: "Центр східної частини.",

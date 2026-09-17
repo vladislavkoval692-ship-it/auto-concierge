@@ -12,17 +12,17 @@
     </script>
 
     <!-- Иконки для поисковиков (Google), вкладок ПК, Android и Safari (iOS) -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png?v=2">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=2">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png?v=2">
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png?v=2">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=2">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png?v=2">
-    <link rel="icon" href="/favicon.png?v=2" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://swisscars-concierge.ch/favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://swisscars-concierge.ch/favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://swisscars-concierge.ch/favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="48x48" href="https://swisscars-concierge.ch/favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://swisscars-concierge.ch/favicon.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://swisscars-concierge.ch/favicon.png?v=2">
+    <link rel="icon" href="https://swisscars-concierge.ch/favicon.png?v=2" type="image/png">
     
     <!-- Мета-теги для показа миниатюры сайта в результатах поиска Google -->
-    <meta name="thumbnail" content="/og-image.jpg">
-    <meta itemprop="image" content="/og-image.jpg">
+    <meta name="thumbnail" content="https://swisscars-concierge.ch/favicon.png?v=2">
+    <meta itemprop="image" content="https://swisscars-concierge.ch/favicon.png?v=2">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -102,10 +102,14 @@
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+        
+        /* Блокировка скролла для мобильного меню */
+        body.menu-open { overflow: hidden; touch-action: none; }
+
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
         /* Header */
-        header { position: fixed; top: 0; left: 0; width: 100%; background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(12px); z-index: 1000; border-bottom: 1px solid var(--border); padding: 12px 0; }
+        header { position: fixed; top: 0; left: 0; width: 100%; background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 1000; border-bottom: 1px solid var(--border); padding: 12px 0; }
         .header-content { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
         .logo { font-weight: 700; font-size: 1rem; letter-spacing: 0.5px; color: var(--text-main); text-decoration: none; cursor: pointer; flex-shrink: 0; }
         .logo span { color: var(--accent); }
@@ -135,21 +139,21 @@
 
         /* Desktop Language Switcher */
         .lang-switcher { position: relative; }
-        .lang-btn { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-main); padding: 8px 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; font-weight: 700; font-size: 0.8rem; }
+        .lang-btn { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-main); padding: 8px 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.5px; }
+        .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
         .lang-dropdown { position: absolute; top: calc(100% + 8px); right: 0; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: none; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); min-width: 140px; z-index: 1500; }
         .lang-switcher.active .lang-dropdown { display: block; }
-        .lang-option { padding: 12px 16px; cursor: pointer; color: var(--text-muted); font-size: 0.85rem; font-weight: 500; background: none; border: none; width: 100%; text-align: left; }
+        .lang-option { padding: 12px 16px; cursor: pointer; color: var(--text-muted); font-size: 0.85rem; font-family: inherit; font-weight: 500; background: none; border: none; width: 100%; text-align: left; transition: var(--transition); }
         .lang-option:hover { background: rgba(212, 175, 55, 0.12); color: var(--text-main); }
 
-        /* Hero Section (CRO Optimized & Mobile Speed) */
+        /* Hero Section */
         .hero { position: relative; overflow: hidden; background: var(--bg-color); padding: 140px 0 80px; text-align: center; min-height: 90vh; display: flex; align-items: center; justify-content: center; }
         @media (min-width: 768px) { .hero { padding: 160px 0 100px; } }
 
-        /* Video / Mobile Background optimization */
         .hero-video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: url('preview.webp') center/cover no-repeat; }
         .hero-video { width: 100%; height: 100%; object-fit: cover; }
         @media (max-width: 768px) {
-            .hero-video { display: none; } /* Скрываем тяжелое видео на смартфонах */
+            .hero-video { display: none; }
         }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.82); backdrop-filter: blur(2px); }
         
@@ -164,7 +168,6 @@
         .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
         .hero p.hero-subtitle { font-size: clamp(1rem, 2vw, 1.15rem); color: var(--text-muted); max-width: 800px; margin: 0 auto 30px; padding: 0 10px; }
 
-        /* USPs / Checkboxes */
         .hero-usps {
             list-style: none; padding: 0; margin: 0 auto 40px; max-width: 850px;
             display: flex; flex-direction: column; gap: 12px; text-align: left;
@@ -187,7 +190,7 @@
         .section-title { text-align: center; font-size: clamp(1.9rem, 4.5vw, 2.3rem); font-weight: 700; margin-bottom: 16px; }
         .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 50px; font-size: clamp(0.95rem, 2vw, 1.1rem); }
 
-        /* How it works (3 Steps) */
+        /* How it works */
         .how-it-works .step-card {
             background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 30px;
             text-align: center; transition: var(--transition);
@@ -250,6 +253,23 @@
         .review-cta-card:hover { border-color: var(--accent); background: rgba(212, 175, 55, 0.05); }
         .review-star { color: var(--accent); font-size: 1.3rem; margin-bottom: 15px; letter-spacing: 2px; }
 
+        /* Cantons Section */
+        .cantons-section { position: relative; overflow: hidden; min-height: 650px; padding: 100px 0; }
+        .cantons-video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .cantons-bg-video { width: 100%; height: 100%; object-fit: cover; }
+        .cantons-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(4px); }
+        .cantons-content-wrapper { position: relative; z-index: 2; }
+        .cantons-floating-area { position: relative; width: 100%; height: 480px; overflow: hidden; margin-top: 30px; }
+        
+        .canton-floating-card {
+            position: absolute; background: rgba(19, 27, 46, 0.92); border: 1px solid var(--border); border-radius: 12px;
+            padding: 14px 18px; width: 210px; backdrop-filter: blur(8px); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: border-color 0.3s ease; will-change: transform;
+        }
+        .canton-floating-card:hover { border-color: var(--accent); z-index: 10; }
+        .canton-floating-card h3 { font-size: 1rem; margin-bottom: 4px; color: var(--text-main); }
+        .canton-floating-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.3; }
+
         /* Modal */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden; transition: var(--transition); padding: 16px; }
         .modal-overlay.active { opacity: 1; visibility: visible; }
@@ -281,7 +301,7 @@
         .hamburger-btn { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; margin-left: 10px; }
         .hamburger-btn span { display: block; width: 100%; height: 2px; background-color: var(--text-main); border-radius: 2px; transition: all 0.3s ease; }
 
-        .mobile-menu-overlay { position: fixed; top: 0; right: -100%; width: 100%; max-width: 320px; height: 100vh; background: #0b0f19; border-left: 1px solid #1e293b; z-index: 2000; padding: 30px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: right 0.35s ease-in-out; box-shadow: -10px 0 30px rgba(0,0,0,0.6); overflow-y: auto; }
+        .mobile-menu-overlay { position: fixed; top: 0; right: -100%; width: 100%; max-width: 320px; height: 100vh; background: #0b0f19; border-left: 1px solid #1e293b; z-index: 2000; padding: 30px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: right 0.35s ease-in-out; box-shadow: -10px 0 30px rgba(0,0,0,0.6); overflow-y: auto; overscroll-behavior: contain; }
         .mobile-menu-overlay.active { right: 0; }
         .mobile-menu-close { align-self: flex-end; background: none; border: none; color: #94a3b8; font-size: 32px; cursor: pointer; line-height: 1; padding: 0 4px; }
         .mobile-menu-close:hover { color: #ffffff; }
@@ -295,23 +315,39 @@
         .mobile-nav-links a { color: #f8fafc; font-size: 1.25rem; font-weight: 600; text-decoration: none; transition: color 0.2s; }
         .mobile-nav-links a:hover { color: #d4af37; }
 
-        .mobile-menu-bottom { margin-top: auto; padding-top: 30px; border-top: 1px solid #1e293b; }
+        .mobile-menu-bottom { margin-top: auto; padding-top: 30px; border-top: 1px solid #1e293b; padding-bottom: env(safe-area-inset-bottom); }
         .mobile-lang-select { width: 100%; background: var(--card-bg); border: 1px solid var(--border); color: var(--text-main); padding: 10px 14px; border-radius: 8px; font-size: 1rem; font-family: inherit; outline: none; cursor: pointer; }
         .mobile-lang-select:focus { border-color: var(--accent); }
         .mobile-phone-label { font-size: 0.85rem; color: #94a3b8; }
         .mobile-phone-number { color: #ffffff; font-size: 1.15rem; font-weight: 700; text-decoration: none; display: inline-block; }
         .mobile-phone-number:hover { color: #d4af37; }
 
-        /* Иконка WhatsApp для мобильных устройств */
+        /* Иконка WhatsApp для мобильных устройств (Sticky) */
         .mobile-wa-btn { display: none; text-decoration: none; align-items: center; justify-content: center; }
         .mobile-wa-btn svg { width: 30px; height: 30px; fill: #25d366; transition: transform 0.2s ease; }
         .mobile-wa-btn:active svg { transform: scale(0.95); }
+        
+        .sticky-wa-btn {
+            display: none; position: fixed; bottom: max(20px, env(safe-area-inset-bottom)); right: 20px; 
+            width: 56px; height: 56px; background: #25d366; border-radius: 50%; z-index: 1999; 
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4); align-items: center; justify-content: center;
+            transition: transform 0.2s ease;
+        }
+        .sticky-wa-btn svg { width: 32px; height: 32px; fill: #fff; }
+        .sticky-wa-btn:active { transform: scale(0.9); }
 
         @media (max-width: 991px) {
             .nav-links, .open-modal-btn.header-btn, .lang-switcher { display: none !important; }
             .header-phone { display: none !important; }
             .mobile-wa-btn { display: flex !important; margin-right: 10px; }
             .hamburger-btn { display: flex; }
+            .sticky-wa-btn { display: flex; }
+        }
+        
+        /* Мобильная оптимизация форм и тактильный отклик */
+        @media (max-width: 768px) {
+            .form-control, .mobile-lang-select { font-size: 16px !important; }
+            .calc-card:active { transform: scale(0.98); }
         }
     </style>
 </head>
@@ -405,6 +441,11 @@
         </div>
     </div>
 
+    <!-- Плавающая кнопка WhatsApp для мобильных -->
+    <a href="https://wa.me/41764795820?text=Guten%20Tag,%20ich%20interessiere%20mich%20für%20den%20Autoconcierge-Service" target="_blank" class="sticky-wa-btn" aria-label="WhatsApp Chat">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+
     <main>
         <!-- Hero Section -->
         <section class="hero">
@@ -425,15 +466,15 @@
                 <ul class="hero-usps">
                     <li class="hero-usp-item">
                         <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> 
-                        <span data-i18n="usp_1"><strong>Auto kaufen & Fahrzeugprüfung</strong><br>Wir finden Ihr Wunschfahrzeug, prüfen Zustand, Historie und Unterlagen und begleiten Sie sicher bis zum Kauf.</span>
+                        <span data-i18n="usp_1">Vor-Ort-Check innerhalb von 24 Stunden schweizweit.</span>
                     </li>
                     <li class="hero-usp-item">
                         <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> 
-                        <span data-i18n="usp_2"><strong>Auto verkaufen</strong><br>Professionelle Vorbereitung, Fahrzeugpräsentation und Verkaufsbegleitung – für einen schnellen und bestmöglichen Verkauf.</span>
+                        <span data-i18n="usp_2">Umfassender Foto-/Videobericht und Computerdiagnose.</span>
                     </li>
                     <li class="hero-usp-item">
                         <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> 
-                        <span data-i18n="usp_3"><strong>Konfiguration & Versicherung</strong><br>Individuelle Fahrzeugkonfiguration und unabhängige Versicherungsberatung – mit optimalem Schutz zum besten Preis.</span>
+                        <span data-i18n="usp_3">Wir refinanzieren unsere Kosten durch gezielte Preisverhandlungen.</span>
                     </li>
                 </ul>
 
@@ -1098,14 +1139,14 @@
             if (openBtn && mobileMenu) {
                 openBtn.addEventListener('click', () => {
                     mobileMenu.classList.add('active');
-                    document.body.style.overflow = 'hidden';
+                    document.body.classList.add('menu-open');
                 });
             }
 
             if (closeBtn && mobileMenu) {
                 closeBtn.addEventListener('click', () => {
                     mobileMenu.classList.remove('active');
-                    document.body.style.overflow = '';
+                    document.body.classList.remove('menu-open');
                 });
             }
 
@@ -1113,10 +1154,78 @@
                 link.addEventListener('click', () => {
                     if (mobileMenu) {
                         mobileMenu.classList.remove('active');
-                        document.body.style.overflow = '';
+                        document.body.classList.remove('menu-open');
                     }
                 });
             });
+            
+            const floatingArea = document.getElementById('floatingArea');
+            const floatingCards = document.querySelectorAll('.canton-floating-card');
+
+            if (floatingArea && floatingCards.length > 0) {
+                const isMobile = window.innerWidth <= 768;
+                const cardsData = Array.from(floatingCards).map((card) => {
+                    const cardWidth = isMobile ? 160 : 210;
+                    const cardHeight = 75;
+                    const areaWidth = floatingArea.clientWidth;
+                    const areaHeight = floatingArea.clientHeight;
+
+                    let x = Math.random() * Math.max(10, areaWidth - cardWidth);
+                    let y = Math.random() * Math.max(10, areaHeight - cardHeight);
+                    let vx = (Math.random() - 0.5) * 0.6;
+                    let vy = (Math.random() - 0.5) * 0.6;
+
+                    card.style.left = `${x}px`;
+                    card.style.top = `${y}px`;
+
+                    return { el: card, x, y, vx, vy, width: cardWidth, height: cardHeight };
+                });
+
+                let isFloatingVisible = false;
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        isFloatingVisible = entries[0].isIntersecting;
+                    });
+                    const cantonsSection = document.getElementById('cantons');
+                    if(cantonsSection) observer.observe(cantonsSection);
+                } else {
+                    isFloatingVisible = true;
+                }
+
+                function animateFloating() {
+                    if (!document.hidden && isFloatingVisible) {
+                        const currentWidth = floatingArea.clientWidth;
+                        const currentHeight = floatingArea.clientHeight;
+
+                        cardsData.forEach(item => {
+                            item.x += item.vx;
+                            item.y += item.vy;
+
+                            if (item.x <= 0) {
+                                item.x = 0;
+                                item.vx *= -1;
+                            } else if (item.x + item.width >= currentWidth) {
+                                item.x = currentWidth - item.width;
+                                item.vx *= -1;
+                            }
+
+                            if (item.y <= 0) {
+                                item.y = 0;
+                                item.vy *= -1;
+                            } else if (item.y + item.height >= currentHeight) {
+                                item.y = currentHeight - item.height;
+                                item.vy *= -1;
+                            }
+
+                            item.el.style.left = `${item.x}px`;
+                            item.el.style.top = `${item.y}px`;
+                        });
+                    }
+                    requestAnimationFrame(animateFloating);
+                }
+
+                requestAnimationFrame(animateFloating);
+            }
             
             const calcCards = document.querySelectorAll('.calc-card');
             const summaryList = document.getElementById('summaryList');
@@ -1141,9 +1250,9 @@
                     btn_request: "Anfrage",
                     hero_title: "Gebrauchtwagen-Check & Autokauf in der Schweiz",
                     hero_desc: "Von der Fahrzeugsuche und Prüfung bis zur Preisverhandlung und Versicherung – alles aus einer Hand.",
-                    usp_1: "<strong>Auto kaufen & Fahrzeugprüfung</strong><br>Wir finden Ihr Wunschfahrzeug, prüfen Zustand, Historie und Unterlagen und begleiten Sie sicher bis zum Kauf.",
-                    usp_2: "<strong>Auto verkaufen</strong><br>Professionelle Vorbereitung, Fahrzeugpräsentation und Verkaufsbegleitung – für einen schnellen und bestmöglichen Verkauf.",
-                    usp_3: "<strong>Konfiguration & Versicherung</strong><br>Individuelle Fahrzeugkonfiguration und unabhängige Versicherungsberatung – mit optimalem Schutz zum besten Preis.",
+                    usp_1: "Vor-Ort-Check innerhalb von 24 Stunden schweizweit.",
+                    usp_2: "Umfassender Foto-/Videobericht und Computerdiagnose.",
+                    usp_3: "Wir refinanzieren unsere Kosten durch gezielte Preisverhandlungen.",
                     btn_hero_wa: "WhatsApp Chat",
                     btn_hero_calc: "Kosten berechnen",
                     trust_badge: "100% Unabhängig & Transparent",
@@ -1239,23 +1348,6 @@
                     review_g3_text: "«Hat mir viel Zeit und Stress erspart. Sehr kompetenter Concierge-Service in St. Gallen.»",
                     review_g3_name: "David R.",
                     review_google: "Google Rezension",
-                    cantons_title: "Regionen und Kantone",
-                    cantons_subtitle: "Schweizweit für Sie vor Ort: Zürich, Bern, Genf und weitere.",
-                    c_zh: "Finanz- und Business-Hub.",
-                    c_be: "Die Bundeshauptstadt.",
-                    c_vd: "Am wunderschönen Genfersee.",
-                    c_ag: "Zentrale Verkehrsdrehscheibe.",
-                    c_sg: "Zentrum der Ostschweiz.",
-                    c_ge: "Diplomatie und Luxus.",
-                    c_lu: "Alpiner Kultur-Hotspot.",
-                    c_so: "Historisches Zentrum.",
-                    c_ti: "Die sonnige Südseite.",
-                    c_bl: "Grenznaher Logistik-Spot.",
-                    c_vs: "Berg- und Kurregion.",
-                    c_fr: "Zweisprachiges Herz.",
-                    c_tg: "Im Nordosten daheim.",
-                    c_bs: "Innovation und Kultur.",
-                    c_sz: "Das Kernland der Schweiz.",
                     modal_title: "Anfrage absenden",
                     modal_subtitle: "Füllen Sie kurz das Formular aus – wir melden uns umgehend bei Ihnen.",
                     form_name: "Ihr Name",
@@ -1278,9 +1370,9 @@
                     btn_request: "Оставить заявку",
                     hero_title: "Проверка и подбор авто в Швейцарии",
                     hero_desc: "От поиска и проверки авто до переговоров о цене и страхования — всё из одних рук.",
-                    usp_1: "<strong>Покупка и проверка авто</strong><br>Найдем автомобиль вашей мечты, проверим состояние, историю, документы и сопроводим до самой покупки.",
-                    usp_2: "<strong>Продажа авто</strong><br>Профессиональная подготовка, презентация и сопровождение сделки — для быстрой и максимально выгодной продажи.",
-                    usp_3: "<strong>Конфигурация и страхование</strong><br>Индивидуальная конфигурация авто и независимые консультации по страхованию — оптимальная защита по лучшей цене.",
+                    usp_1: "Выезд на осмотр за 24 часа по всей Швейцарии.",
+                    usp_2: "Полный фото/видеоотчет и компьютерная диагностика.",
+                    usp_3: "Окупаем свои услуги за счет аргументированного торга с продавцом.",
                     btn_hero_wa: "WhatsApp Chat",
                     btn_hero_calc: "Рассчитать стоимость",
                     trust_badge: "100% Независимо и прозрачно",
@@ -1415,9 +1507,9 @@
                     btn_request: "Залишити заявку",
                     hero_title: "Перевірка та підбір авто у Швейцарії",
                     hero_desc: "Від пошуку та перевірки авто до переговорів щодо ціни та страхування — все з одних рук.",
-                    usp_1: "<strong>Купівля та перевірка авто</strong><br>Знайдемо автомобіль вашої мрії, перевіримо стан, історію, документи та супроводимо до самої покупки.",
-                    usp_2: "<strong>Продаж авто</strong><br>Професійна підготовка, презентація та супровід угоди — для швидкого та максимально вигідного продажу.",
-                    usp_3: "<strong>Конфігурація та страхування</strong><br>Індивідуальна конфігурація авто та незалежні консультації зі страхування — оптимальний захист за найкращою ціною.",
+                    usp_1: "Виїзд на огляд за 24 години по всій Швейцарії.",
+                    usp_2: "Повний фото/відеозвіт та комп'ютерна діагностика.",
+                    usp_3: "Окупаємо свої послуги завдяки аргументованому торгу з продавцем.",
                     btn_hero_wa: "WhatsApp Chat",
                     btn_hero_calc: "Розрахувати вартість",
                     trust_badge: "100% Незалежно та прозоро",
@@ -1506,11 +1598,11 @@
                     review_1_name: "— Олександр М.",
                     review_2_text: "«Зекономили купу часу і нервів. Професійний торг і швидка постановка на облік. Рекомендую!»",
                     review_2_name: "— Олена К.",
-                    review_g1_text: "«Дуже професійна консультація та безпроблемне оформлення. Можу тільки порекомендовать!»",
+                    review_g1_text: "«Дуже професійна консультація та безпроблемне оформлення. Можу тільки порекомендувати!»",
                     review_g1_name: "Міхаель К.",
-                    review_g2_text: "«Топ сервіс при покупці авто! Все було прозоро, і техогляд MFK пройшли без проблем.»",
+                    review_g2_text: "«Топ сервіс при покупці авто! Все було прозоро, и техогляд MFK пройшли без проблем.»",
                     review_g2_name: "Штефан В.",
-                    review_g3_text: "«Зекономили мені купу часу і нервів. Дуже компетентний консьєрж-сервіс в Санкт-Галлене.»",
+                    review_g3_text: "«Зекономили мені купу часу і нервів. Дуже компетентний консьєрж-сервіс в Санкт-Галлені.»",
                     review_g3_name: "Давід Р.",
                     review_google: "Відгук з Google",
                     cantons_title: "Регіони та кантони",
@@ -1528,7 +1620,7 @@
                     c_vs: "Курортный регіон.",
                     c_fr: "Двомовний регіон.",
                     c_tg: "Кантон на північному сході.",
-                    c_bs: "Столиця інновацій.",
+                    c_bs: "Столица інновацій.",
                     c_sz: "Серце Швейцарії.",
                     modal_title: "Оформлення заявки",
                     modal_subtitle: "Заповніть форму, і наш фахівець зв'яжеться з вами найближчим часом.",

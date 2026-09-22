@@ -49,7 +49,7 @@
     <meta property="og:site_name" content="SWISS CARS Concierge">
 
     <!-- Политика безопасности контента (CSP) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://script.google.com https://www.google-analytics.com https://region1.google-analytics.com; img-src 'self' data: https://www.google-analytics.com; frame-src 'self' https://maps.google.com https://www.google.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://script.google.com https://www.google-analytics.com https://*.google-analytics.com https://*.clarity.ms https://c.clarity.ms; img-src 'self' data: https://swisscars-concierge.ch https://*.clarity.ms;">
     
     <!-- SEO: Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,16 +57,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- SEO: Schema.org (JSON-LD) -->
-    <script type="application/ld+json">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@type": "AutomotiveBusiness",
-      "name": "SWISS CARS",
+      "@type": "AutoRepair",
+      "@id": "https://swisscars-concierge.ch/#business",
+      "name": "SWISS CARS Concierge",
       "image": "https://swisscars-concierge.ch/og-image.jpg",
-      "@id": "https://swisscars-concierge.ch/",
       "url": "https://swisscars-concierge.ch/",
       "telephone": "+41764795820",
-      "priceRange": "$$$",
+      "priceRange": "CHF",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Treuackerstrasse 13",
@@ -74,14 +76,46 @@
         "postalCode": "9000",
         "addressCountry": "CH"
       },
-      "areaServed": "Switzerland",
-      "description": "Premium Autoconcierge-Service in der Schweiz. Fahrzeugkauf, Verkauf, Inspektion und Zulassungsservice.",
-      "sameAs": [
-        "https://swisscars-concierge.ch/"
+      "areaServed": [
+        {"@type": "City", "name": "Zürich"},
+        {"@type": "City", "name": "Bern"},
+        {"@type": "City", "name": "St. Gallen"}
+      ],
+      "description": "Professioneller Autoconcierge-Service in der Schweiz: Gebrauchtwagen-Check vor dem Kauf, Vorbereitung auf die MFK-Prüfung und Fahrzeugkaufbegleitung."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://swisscars-concierge.ch/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was beinhaltet der Gebrauchtwagen-Check vor dem Kauf?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wir prüfen Karosserie und Lackdicke auf Unfallschäden, lesen den Fehlerspeicher der Fahrzeugelektronik aus, kontrollieren Motor, Bremsen und Fahrwerk und führen eine Probefahrt durch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Können Sie den MFK-Zustand des Autos vorab beurteilen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, wir prüfen alle MFK-relevanten Bauteile vor Ort, damit Sie unerwartete Mängel und hohe Nachprüfungskosten vor der amtlichen Motorfahrzeugkontrolle vermeiden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "In welchen Regionen der Schweiz sind Sie im Einsatz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wir bieten die mobile Fahrzeugbesichtigung und Kaufbegleitung vor allem in den Regionen Zürich, Bern und St. Gallen sowie nach Absprache in der gesamten Deutschschweiz an."
+          }
+        }
       ]
     }
-    </script>
-
+  ]
+}
+</script>
     <style>
         :root {
             --bg-color: #0b0f19;

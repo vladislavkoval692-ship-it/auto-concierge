@@ -598,4 +598,89 @@
                     calcOrderBtn.removeAttribute('disabled');
 
                     selectedCards.forEach(card => {
-                        const price = parseInt(card.getAttribute('data-price
+                        const price = parseInt(card.getAttribute('data-price')) || 0;
+                        const isFrom = card.getAttribute('data-from') === 'true';
+                        if (isFrom) hasFromService = true;
+                        const name = card.getAttribute('data-name');
+                        
+                        total += price;
+                        const priceText = price > 0 ? (isFrom ? `від CHF ${price}` : `CHF ${price}`) : 'За запитом';
+                        summaryHTML += `<li><span>${name}</span><span>${priceText}</span></li>`;
+                    });
+
+                    summaryList.innerHTML = summaryHTML;
+                    modalServiceInput.value = selectedCards[0].getAttribute('data-name');
+                } else {
+                    summaryItemsContainer.style.display = 'block';
+                    summaryList.style.display = 'none';
+                    calcOrderBtn.setAttribute('disabled', 'true');
+                }
+
+                currentCalculatedTotal = total;
+                calcTotalPrice.textContent = total > 0 ? (hasFromService ? `від CHF ${total}` : `CHF ${total}`) : 'CHF 0';
+            }
+
+            calcCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('selected');
+                    updateCalculator();
+                });
+            });
+
+            const modal = document.getElementById('orderModal');
+            const openModalBtns = document.querySelectorAll('.open-modal-btn');
+            const closeModalBtn = document.getElementById('modalClose');
+
+            openModalBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (modal) modal.classList.add('active');
+                });
+            });
+
+            if (closeModalBtn && modal) {
+                closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+            }
+
+            const orderForm = document.getElementById('orderForm');
+            let isSubmitting = false;
+
+            if (orderForm) {
+                orderForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (isSubmitting || document.getElementById('honeyField').value !== "") return;
+                    
+                    const submitBtn = document.getElementById('submitBtn');
+                    const originalText = submitBtn.textContent;
+                    isSubmitting = true;
+                    submitBtn.textContent = 'Відправлення...';
+                    submitBtn.disabled = true;
+
+                    const formData = new URLSearchParams();
+                    formData.append('name', document.getElementById('userName').value.trim());
+                    formData.append('phone', document.getElementById('userPhone').value.trim());
+                    formData.append('service', document.getElementById('modalServiceInput').value);
+                    formData.append('source', 'swisscars_zurich_ukr'); 
+
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbyZp71TKlrcZduSfBQ25LTWxTtgoXwRhMAM_IEBLHESzmCxlljMm8L7h4SpQt_-7FiD/exec';
+
+                    fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: formData })
+                    .then(() => {
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'form_submit', { 'event_category': 'lead', 'value': currentCalculatedTotal });
+                        }
+                        alert('Заявку успішно надіслано!');
+                        orderForm.reset();
+                        modal.classList.remove('active');
+                    })
+                    .finally(() => {
+                        isSubmitting = false;
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

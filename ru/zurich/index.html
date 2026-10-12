@@ -167,4 +167,520 @@
         @media (min-width: 768px) { .calc-services-grid { grid-template-columns: repeat(2, 1fr); } }
         .calc-card { background: rgba(19, 27, 46, 0.85); border: 1px solid var(--border); border-radius: 14px; padding: 24px; transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; backdrop-filter: blur(10px); }
         .calc-card:hover { border-color: rgba(212, 175, 55, 0.5); }
-        .calc-card.selected { border-color: var(--accent); background: rgba(212, 175, 55, 0
+        .calc-card.selected { border-color: var(--accent); background: rgba(212, 175, 55, 0.1); }
+        .calc-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 12px; }
+        .calc-card h3 { font-size: 1.1rem; color: var(--text-main); font-weight: 600; }
+        .calc-checkbox { width: 24px; height: 24px; border: 2px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; background: var(--bg-color); flex-shrink: 0; }
+        .calc-card.selected .calc-checkbox { background: var(--accent); border-color: var(--accent); color: #0b0f19; }
+        .calc-card.selected .calc-checkbox::after { content: '✓'; font-weight: 900; font-size: 0.9rem; }
+        .calc-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; }
+        .calc-card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 15px; font-size: 0.9rem; color: var(--text-muted); }
+        .calc-price { font-size: 1.15rem; font-weight: 700; color: var(--accent); }
+        
+        .calc-summary { background: rgba(19, 27, 46, 0.95); border: 1px solid var(--border); border-radius: 16px; padding: 28px; position: static; backdrop-filter: blur(12px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); }
+        @media (min-width: 992px) { .calc-summary { position: sticky; top: 90px; } }
+        .calc-summary h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+        .summary-items-list { list-style: none; margin-bottom: 20px; max-height: 200px; overflow-y: auto; }
+        .summary-items-list li { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; display: flex; justify-content: space-between; gap: 12px; }
+        .summary-items-list li span:last-child { color: var(--text-main); font-weight: 600; white-space: nowrap; }
+        .summary-empty { color: var(--text-muted); font-style: italic; font-size: 0.9rem; margin-bottom: 20px; text-align: center; padding: 20px 0; }
+        .summary-total { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 18px; margin-bottom: 24px; font-size: 1.1rem; font-weight: 600; }
+        .summary-total-price { font-size: 1.5rem; color: var(--accent); font-weight: 700; }
+        .summary-actions { display: flex; flex-direction: column; gap: 14px; }
+        .summary-actions .btn { width: 100%; padding: 14px; font-size: 0.95rem; }
+
+        .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 16px; padding: 20px 24px; cursor: pointer; transition: var(--transition); }
+        .faq-item:hover { border-color: rgba(212, 175, 55, 0.4); }
+        .faq-question { font-weight: 600; font-size: 1.1rem; color: var(--text-main); display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+        .faq-item.active .faq-answer { max-height: 300px; margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border); }
+
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden; transition: var(--transition); padding: 16px; }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-content { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 100%; max-width: 440px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.6); transform: translateY(20px); transition: var(--transition); max-height: 90vh; overflow-y: auto; }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--text-muted); font-size: 1.4rem; cursor: pointer; }
+        .form-control { width: 100%; background: var(--bg-color); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; color: var(--text-main); font-family: inherit; font-size: 16px !important; margin-bottom: 14px;}
+        .form-control:focus { outline: none; border-color: var(--accent); }
+
+        footer { background-color: #080b13; border-top: 1px solid var(--border); padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(4, 1fr); } }
+        .footer-col h4 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 20px; font-weight: 600; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; margin-top: 20px; }
+        .bot-trap { position: absolute; left: -9999px; opacity: 0; z-index: -1; }
+
+        .hamburger-btn { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; margin-left: 10px; }
+        .hamburger-btn span { display: block; width: 100%; height: 2px; background-color: var(--text-main); border-radius: 2px; transition: all 0.3s ease; }
+        .mobile-menu-overlay { position: fixed; top: 0; right: -100%; width: 100%; max-width: 320px; height: 100vh; background: #0b0f19; border-left: 1px solid #1e293b; z-index: 2000; padding: 30px 24px; display: flex; flex-direction: column; justify-content: space-between; transition: right 0.35s ease-in-out; box-shadow: -10px 0 30px rgba(0,0,0,0.6); overflow-y: auto; }
+        .mobile-menu-overlay.active { right: 0; }
+        .mobile-menu-close { align-self: flex-end; background: none; border: none; color: #94a3b8; font-size: 32px; cursor: pointer; line-height: 1; padding: 0 4px; }
+        .mobile-nav-links { list-style: none; display: flex; flex-direction: column; gap: 22px; padding: 0; margin: 40px 0; }
+        .mobile-nav-links a { color: #f8fafc; font-size: 1.25rem; font-weight: 600; text-decoration: none; transition: color 0.2s; }
+        .mobile-lang-select { width: 100%; background: var(--card-bg); border: 1px solid var(--border); color: var(--text-main); padding: 12px; border-radius: 8px; font-size: 16px !important; outline: none; }
+        
+        .sticky-wa-btn { display: none; position: fixed; bottom: 20px; right: 20px; width: 56px; height: 56px; background: #25d366; border-radius: 50%; z-index: 1999; box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4); align-items: center; justify-content: center; }
+        .sticky-wa-btn svg { width: 32px; height: 32px; fill: #fff; }
+        
+        @media (max-width: 991px) {
+            .nav-links, .header-phone, .lang-switcher { display: none !important; }
+            .hamburger-btn, .sticky-wa-btn { display: flex; }
+        }
+    </style>
+    
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "yk82wx5o7m");
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="/ru/" class="logo" aria-label="На главную">SWISS<span>CARS</span></a>
+            <nav aria-label="Главная навигация">
+                <ul class="nav-links">
+                    <li><a href="/ru/autokauf-schweiz/">Купить авто</a></li>
+                    <li><a href="/ru/autoverkauf-schweiz/">Продать авто</a></li>
+                    <li><a href="/ru/fahrzeugcheck/">Проверка авто</a></li>
+                    <li><a href="#services">Цены</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <a href="tel:+41764795820" class="header-phone">+41 76 479 58 20</a>
+                
+                <div class="lang-switcher" id="headerLangSwitcher">
+                    <button class="lang-btn" id="headerLangBtn" aria-expanded="false">RU</button>
+                    <div class="lang-dropdown" role="menu">
+                        <a href="/zurich/" class="lang-option" style="display:block;">DE - Deutsch</a>
+                        <a href="/ru/zurich/" class="lang-option" style="display:block;">RU - Русский</a>
+                        <a href="/ukr/zurich/" class="lang-option" style="display:block;">UKR - Українська</a>
+                    </div>
+                </div>
+                <button class="hamburger-btn" id="openMenuBtn" aria-label="Открыть меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div>
+            <button class="mobile-menu-close" id="closeMenuBtn">&times;</button>
+            <ul class="mobile-nav-links">
+                <li><a href="/ru/autokauf-schweiz/">Купить авто</a></li>
+                <li><a href="/ru/autoverkauf-schweiz/">Продать авто</a></li>
+                <li><a href="/ru/fahrzeugcheck/">Проверка авто</a></li>
+                <li><a href="#services">Цены и калькулятор</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 30px;">
+                <a href="tel:+41764795820" style="color:#fff; font-weight:700; text-decoration:none; font-size:1.1rem;">+41 76 479 58 20</a>
+                <a href="mailto:info@swisscars-concierge.ch" style="color:#fff; text-decoration:none;">info@swisscars-concierge.ch</a>
+            </div>
+        </div>
+        <div class="mobile-menu-bottom">
+            <select id="mobileLangSelect" class="mobile-lang-select" onchange="window.location.href=this.value;">
+                <option value="/zurich/">Deutsch (DE)</option>
+                <option value="/ru/zurich/" selected>Русский (RU)</option>
+                <option value="/ukr/zurich/">Українська (UKR)</option>
+            </select>
+        </div>
+    </div>
+
+    <a href="https://wa.me/41764795820" target="_blank" class="sticky-wa-btn" aria-label="WhatsApp Chat">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+    </a>
+
+    <main>
+        <section class="hero">
+            <div class="hero-video-container">
+                <video id="desktopHeroVideo" class="hero-video" preload="none" muted playsinline loop poster="/preview.webp">
+                    <source src="/158316-816359649.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container hero-content">
+                <div class="trust-badge">100% Независимо и Безопасно</div>
+                
+                <h1>Покупка и выездная проверка авто в Цюрихе</h1>
+                <p class="hero-subtitle">Выезжаем в любую точку Цюриха и кантона: замер ЛКП, компьютерная диагностика, тест-драйв, оценка MFK и профессиональный торг с продавцом.</p>
+                
+                <div class="hero-buttons">
+                    <a href="/ru/autokauf-schweiz/" class="btn">Купить авто</a>
+                    <a href="/ru/autoverkauf-schweiz/" class="btn btn-outline">Продать авто</a>
+                    <a href="/ru/fahrzeugcheck/" class="btn btn-outline">Проверить авто</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="seo-content" style="background: var(--bg-color);">
+            <div class="container">
+                <div class="seo-content-block">
+                    <h2>Зачем нужна независимая проверка авто перед покупкой в Цюрихе?</h2>
+                    <p>Автомобильный рынок Цюриха — крупнейший в Швейцарии. Здесь продаются сотни машин ежедневно: от официальных дилеров до частных продавцов. Однако даже в Швейцарии существует риск купить автомобиль со скрученным пробегом, скрытыми кузовными повреждениями или предстоящим дорогостоящим ремонтом. Наша <strong>служба автоконсьержа в Цюрихе</strong> создана для того, чтобы полностью защитить вас от таких рисков.</p>
+                    <p>Мы выезжаем прямо к продавцу в Цюрихе с профессиональным диагностическим оборудованием. Мы проверяем толщину лакокрасочного покрытия, считываем блоки управления на скрытые ошибки, проверяем историю обслуживания и состояние подвески.</p>
+
+                    <h3>Как проходит покупка автомобиля с нами в Цюрихе</h3>
+                    <ul>
+                        <li><strong>1. Консультация и подбор:</strong> Вы отправляете нам ссылку на объявление в Цюрихе или мы находим варианты под ваш бюджет.</li>
+                        <li><strong>2. Выездная диагностика:</strong> Наш эксперт выезжает к автосалону или частнику в Цюрихе для полной проверки кузова, мотора и электроники.</li>
+                        <li><strong>3. Аудит документов и MFK:</strong> Проверяем сервисную книжку, свежесть прохождения MFK (техосмотра) и юридическую чистоту.</li>
+                        <li><strong>4. Профессиональный торг:</strong> Используя найденные нюансы, мы аргументированно снижаем цену у продавца.</li>
+                        <li><strong>5. Оформление и страховка:</strong> Помогаем с постановкой на учет в Strassenverkehrsamt Цюриха и подбором выгодной страховки.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Services -->
+        <section id="hauptleistungen" style="background: rgba(19, 27, 46, 0.3);">
+            <div class="container">
+                <h2 class="section-title">Наши ключевые услуги</h2>
+                <div class="main-services-grid">
+                    <div class="main-service-card">
+                        <div class="main-service-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19 14V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-9-1.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM22 7v10H6v2h16c1.1 0 2-.9 2-2V7h-2z"/></svg>
+                        </div>
+                        <h3>Покупка авто</h3>
+                        <p>Полное сопровождение сделки по покупке машины в Цюрихе и по всей Швейцарии.</p>
+                        <a href="/ru/autokauf-schweiz/" class="btn" style="width:100%;">Сопровождение покупки</a>
+                    </div>
+                    
+                    <div class="main-service-card">
+                        <div class="main-service-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                        </div>
+                        <h3>Проверка авто</h3>
+                        <p>Выездная диагностика состояния, ЛКП и истории автомобиля на месте перед покупкой в Цюрихе.</p>
+                        <a href="/ru/fahrzeugcheck/" class="btn" style="width:100%;">Заказать проверку</a>
+                    </div>
+
+                    <div class="main-service-card">
+                        <div class="main-service-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                        </div>
+                        <h3>Продажа авто</h3>
+                        <p>Подготовка вашего авто к продаже, качественная фотосессия и общение с покупателями.</p>
+                        <a href="/ru/autoverkauf-schweiz/" class="btn" style="width:100%;">Помощь в продаже</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section id="services" style="background: var(--bg-color);">
+            <div class="container">
+                <h2 class="section-title">Цены и калькулятор</h2>
+                <div class="calc-layout">
+                    <div class="calc-services-grid">
+                        <div class="calc-card" data-price="450" data-from="true" data-name="Покупка авто под ключ Цюрих">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3>Покупка авто под ключ в Цюрихе</h3>
+                                    <div class="calc-checkbox"></div>
+                                </div>
+                                <p>Подбор, выездные проверки, переговоры и сопровождение сделки.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span>Стоимость:</span><span class="calc-price">от CHF 450</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card" data-price="150" data-from="true" data-name="Выездная проверка в Цюрихе">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3>Выездная проверка в Цюрихе</h3>
+                                    <div class="calc-checkbox"></div>
+                                </div>
+                                <p>Замер ЛКП, компьютерная диагностика, тест-драйв и отчет по состоянию.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span>Стоимость:</span><span class="calc-price">от CHF 150</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card" data-price="70" data-name="Торг с продавцом">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3>Переговоры и торг</h3>
+                                    <div class="calc-checkbox"></div>
+                                </div>
+                                <p>Профессиональный торг с продавцом для максимального снижения цены.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span>Стоимость:</span><span class="calc-price">CHF 70</span>
+                            </div>
+                        </div>
+
+                        <div class="calc-card" data-price="250" data-from="true" data-name="Помощь в продаже">
+                            <div>
+                                <div class="calc-card-header">
+                                    <h3>Помощь в продаже</h3>
+                                    <div class="calc-checkbox"></div>
+                                </div>
+                                <p>Фотосъемка, публикация объявлений и сопровождение продажи в Цюрихе.</p>
+                            </div>
+                            <div class="calc-card-footer">
+                                <span>Стоимость:</span><span class="calc-price">от CHF 250</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="calc-summary">
+                        <h3>Ваш расчет</h3>
+                        <div id="summaryItemsContainer"><p class="summary-empty">Выберите услугу из списка слева</p></div>
+                        <ul class="summary-items-list" id="summaryList" style="display: none;"></ul>
+                        <div class="summary-total"><span>Итого:</span><span class="summary-total-price" id="calcTotalPrice">CHF 0</span></div>
+                        <div class="summary-actions">
+                            <button class="btn open-modal-btn" id="calcOrderBtn" disabled>Отправить заявку</button>
+                            <a href="https://wa.me/41764795820?text=Здравствуйте,%20нужна%20проверка%20авто%20в%20Цюрихе" target="_blank" class="btn btn-whatsapp">Обсудить в WhatsApp</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" style="background: rgba(19, 27, 46, 0.3);">
+            <div class="container" style="max-width: 800px;">
+                <h2 class="section-title">Часто задаваемые вопросы (Цюрих)</h2>
+                
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">Вы выезжаете на проверку авто по всему кантону Цюрих?</div>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">Да, мы выезжаем как в сам город Цюрих, так и во все прилегающие населенные пункты кантона Цюрих directly к продавцу.</span>
+                    </div>
+                </div>
+                
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">Сколько стоит выездная проверка машины в Цюрихе?</div>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">Разовая комплексная проверка автомобиля на месте перед покупкой начинается от 150 CHF.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 style="font-size: 1.3rem; margin-bottom: 5px; color: var(--text-main);">Оформление заявки</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px;">Заполните форму, и мы свяжемся с вами.</p>
+            <form id="orderForm">
+                <input type="text" id="honeyField" class="bot-trap" tabindex="-1">
+                <input type="text" id="userName" class="form-control" required placeholder="Ваше имя">
+                <input type="tel" id="userPhone" class="form-control" required placeholder="Телефон / WhatsApp">
+                <select id="modalServiceInput" class="form-control">
+                    <option value="Auto kaufen Zürich">Покупка авто в Цюрихе</option>
+                    <option value="Fahrzeug prüfen Zürich">Проверка авто в Цюрихе</option>
+                    <option value="Andere Anfrage">Другой вопрос</option>
+                </select>
+                <button type="submit" class="btn" id="submitBtn" style="width: 100%; margin-top: 10px;">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>SWISS CARS</h4>
+                <p>Автоконсьерж в Цюрихе</p>
+                <p><a href="https://maps.app.goo.gl/rsFYBUkemmzfVMMR7?g_st=it" target="_blank" rel="noopener noreferrer">Treuackerstrasse 13<br>9000 St. Gallen, Schweiz</a></p>
+                <p style="margin-top: 15px;"><a href="tel:+41764795820">+41 76 479 58 20</a></p>
+                <p><a href="mailto:info@swisscars-concierge.ch">info@swisscars-concierge.ch</a></p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Услуги</h4>
+                <ul class="footer-links">
+                    <li><a href="/ru/autokauf-schweiz/">Покупка авто</a></li>
+                    <li><a href="/ru/autoverkauf-schweiz/">Продажа авто</a></li>
+                    <li><a href="/ru/fahrzeugcheck/">Проверка авто</a></li>
+                    <li><a href="/ru/mfk/">Услуги MFK</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Регионы</h4>
+                <ul class="footer-links">
+                    <li><a href="/ru/zurich/">Цюрих</a></li>
+                    <li><a href="/ru/bern/">Берн</a></li>
+                    <li><a href="/ru/geneva/">Женева</a></li>
+                    <li><a href="/ru/st-gallen/">Санкт-Галлен</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Информация</h4>
+                <ul class="footer-links">
+                    <li><a href="/ru/ueber-uns/">О нас</a></li>
+                    <li><a href="/ru/kontakt/">Контакты</a></li>
+                    <li><a href="/ru/impressum/">Impressum</a></li>
+                    <li><a href="/ru/datenschutz/">Datenschutz</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SWISS CARS. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const desktopVideo = document.getElementById('desktopHeroVideo');
+            if (desktopVideo && window.innerWidth > 768) {
+                desktopVideo.autoplay = true;
+                desktopVideo.play().catch(e => console.log("Auto-play prevented:", e));
+            }
+
+            const langBtn = document.getElementById('headerLangBtn');
+            const switcher = document.getElementById('headerLangSwitcher');
+            if (langBtn) {
+                langBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    switcher.classList.toggle('active');
+                });
+                document.addEventListener('click', () => {
+                    switcher.classList.remove('active');
+                });
+            }
+
+            const openBtn = document.getElementById('openMenuBtn');
+            const closeBtn = document.getElementById('closeMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (openBtn && mobileMenu) {
+                openBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('active');
+                    document.body.classList.add('menu-open');
+                });
+            }
+            if (closeBtn && mobileMenu) {
+                closeBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('remove');
+                    document.body.classList.remove('menu-open');
+                });
+            }
+
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+
+            const calcCards = document.querySelectorAll('.calc-card');
+            const summaryList = document.getElementById('summaryList');
+            const summaryItemsContainer = document.getElementById('summaryItemsContainer');
+            const calcTotalPrice = document.getElementById('calcTotalPrice');
+            const calcOrderBtn = document.getElementById('calcOrderBtn');
+            const modalServiceInput = document.getElementById('modalServiceInput');
+
+            let currentCalculatedTotal = 0;
+
+            function updateCalculator() {
+                const selectedCards = document.querySelectorAll('.calc-card.selected');
+                let total = 0;
+                let summaryHTML = '';
+                let hasFromService = false;
+
+                if (selectedCards.length > 0) {
+                    summaryItemsContainer.style.display = 'none';
+                    summaryList.style.display = 'block';
+                    calcOrderBtn.removeAttribute('disabled');
+
+                    selectedCards.forEach(card => {
+                        const price = parseInt(card.getAttribute('data-price')) || 0;
+                        const isFrom = card.getAttribute('data-from') === 'true';
+                        if (isFrom) hasFromService = true;
+                        const name = card.getAttribute('data-name');
+                        
+                        total += price;
+                        const priceText = price > 0 ? (isFrom ? `от CHF ${price}` : `CHF ${price}`) : 'По запросу';
+                        summaryHTML += `<li><span>${name}</span><span>${priceText}</span></li>`;
+                    });
+
+                    summaryList.innerHTML = summaryHTML;
+                    modalServiceInput.value = selectedCards[0].getAttribute('data-name');
+                } else {
+                    summaryItemsContainer.style.display = 'block';
+                    summaryList.style.display = 'none';
+                    calcOrderBtn.setAttribute('disabled', 'true');
+                }
+
+                currentCalculatedTotal = total;
+                calcTotalPrice.textContent = total > 0 ? (hasFromService ? `от CHF ${total}` : `CHF ${total}`) : 'CHF 0';
+            }
+
+            calcCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('selected');
+                    updateCalculator();
+                });
+            });
+
+            const modal = document.getElementById('orderModal');
+            const openModalBtns = document.querySelectorAll('.open-modal-btn');
+            const closeModalBtn = document.getElementById('modalClose');
+
+            openModalBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (modal) modal.classList.add('active');
+                });
+            });
+
+            if (closeModalBtn && modal) {
+                closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+            }
+
+            const orderForm = document.getElementById('orderForm');
+            let isSubmitting = false;
+
+            if (orderForm) {
+                orderForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (isSubmitting || document.getElementById('honeyField').value !== "") return;
+                    
+                    const submitBtn = document.getElementById('submitBtn');
+                    const originalText = submitBtn.textContent;
+                    isSubmitting = true;
+                    submitBtn.textContent = 'Отправка...';
+                    submitBtn.disabled = true;
+
+                    const formData = new URLSearchParams();
+                    formData.append('name', document.getElementById('userName').value.trim());
+                    formData.append('phone', document.getElementById('userPhone').value.trim());
+                    formData.append('service', document.getElementById('modalServiceInput').value);
+                    formData.append('source', 'swisscars_zurich_ru'); 
+
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbyZp71TKlrcZduSfBQ25LTWxTtgoXwRhMAM_IEBLHESzmCxlljMm8L7h4SpQt_-7FiD/exec';
+
+                    fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: formData })
+                    .then(() => {
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'form_submit', { 'event_category': 'lead', 'value': currentCalculatedTotal });
+                        }
+                        alert('Заявка успешно отправлена!');
+                        orderForm.reset();
+                        modal.classList.remove('active');
+                    })
+                    .finally(() => {
+                        isSubmitting = false;
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
